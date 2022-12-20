@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Uploads With AJAX</title>
+</head>
+
+<body onload="categoriesfd()">
+
+    
+    <script type="text/javascript" src="catfordropdown.js"></script>
+
+    <form id="file-form" action="uploadfile.php" method="post" enctype="multipart/form-data">
+        Upload a File:
+        <input type="file" id="myfile" name="myfile">
+        <input type="submit" id="submit" name="submit" value="Upload File Now" >
+    </form>
+   
+
+    <select id="selectcat" >
+        <option>Categories</option>
+      </select>
+
+      <p id="status"></p>
+      <script type="text/javascript" src="uploadFile.js"></script>
+
+    
+    
+    
+</body>
+</html>
+
