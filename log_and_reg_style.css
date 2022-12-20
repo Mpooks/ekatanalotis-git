@@ -1,0 +1,377 @@
+body{  
+  background-color:#062C5A;
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+  background: url("https://www.creativefabrica.com/wp-content/uploads/2020/03/14/A-Illustration-Vector-City-Background-Graphics-3644670-1.jpg") no-repeat center center fixed;
+  background-size:cover;
+  align-items:center;
+  justify-content:center;
+  overflow-x: hidden;   
+    }
+ 
+*{
+    font-family: Bahnschrift SemiBold, Bahnschrift;
+ }
+ 
+ 
+
+.hello{
+     display:inline-block;
+      }
+ 
+ 
+.overlay {
+  position: fixed;
+  max-width:100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  transition: opacity 100ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index:1;
+ }
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+ }
+
+
+
+
+.myform {
+  text-align:center;
+  width:360px;
+  max-height:540px;
+  max-width:100%;
+  overflow-y: auto;
+  background:#13225B;
+  color:#fff;
+  top:50%;
+  left:50%;
+  position: relative;
+  transform:translate(-50%,-50%);
+  box-sizing:border-box;
+  padding-top:10px;
+  transition: all 5s ease-in-out;
+ }
+
+@media screen and (max-height: 500px) {
+  .myform {
+    height:200px;
+  }
+}
+
+@media screen and (max-height:700px) and (max-width:520px) {
+  
+button.nav {
+  width:80px;
+  font-size:8px;
+  }
+}
+
+ 
+.search-bar{
+  border-radius: 10px;
+  border-style: solid;
+  border-color: hsl(240, 64%, 27%);
+  text-align:center;
+  width:100%;
+  max-width:700px;
+  height:50px;
+  background: rgb(255, 254, 253);
+  top:50%;
+  left:50%;
+  position: relative;
+  transform:translate(-50%,140px);
+  display:flex;
+  border-radius:60px;
+  padding-top:10px;
+  z-index: 1;
+ 
+  }
+
+  .kat_proiod_text_div {
+    margin-left: 5%;
+    margin-top: -1%;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .dropbtn {
+    color: rgb(0, 0, 0);
+    background-color:rgb(255, 254, 253);
+    border-style: solid;
+    border-color:  hsl(240, 64%, 27%);
+    border-radius: 40px;
+    width:295px;
+    height:60px;
+    font-size: 18px;
+    padding-right: 100px;
+    z-index: 1;
+
+    
+  }
+
+  .dropdown_div {
+    display: inline-block;
+    margin-top: -1.4%;
+    margin-left: 26%;
+    margin-right: 90%;
+    z-index: 1;
+   
+  }
+
+ 
+  
+
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    border-radius: 20px;
+    background-color: hsl(240, 64%, 27%);
+    
+    width:295px;
+    box-shadow: 0px 8px 16px 0px #ffffff;
+    z-index: 2;
+
+    
+  }
+  
+  .dropdown-content a {
+    color: rgb(246, 244, 244);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+  }
+  
+  .dropdown-content a:hover {
+    background-color:hsl(212, 71%, 34%);
+    
+  }
+  
+  .dropdown_div:hover .dropdown-content {
+    display: block;
+    
+  }
+  
+  .dropdown_div:hover .dropbtn {
+    background-color: #ffffff;
+  
+  }
+
+
+ .vertical {
+  border-left: 6px solid black;
+  height: 200px;
+  position:absolute;
+  left: 50%;
+}
+
+
+
+
+.myImage{
+  vertical-align:middle;
+  height: 64px;
+ }
+ 
+.userimage{
+ height:100px;
+ width:100px;
+ border-radius:50%
+
+ 
+ } 
+ 
+.myform h1{
+ margin:0;
+ font-size:24px;
+ }
+ 
+.myform p{
+ color: #fff;
+ margin:0;
+ padding-left:30px;
+ text-align:left;
+ font-size: 18px;
+ }
+ 
+.myform input{
+ width:80%;
+ margin-bottom:20px;
+ }
+ 
+.myform input[type="text"], input[type="password"]
+ {
+ border:none;
+ border-bottom: 2px solid rgb(255, 255, 255);
+ background:transparent;
+ outline:none;
+ height:40px;
+ color:#fff;
+ font-size:16px;
+ }
+ 
+.myform button{
+ border:none;
+ outline:none;
+ height:40px;
+ width:260px;
+ background:#fff;
+ color:#06144B;
+ font-size:18px;
+ border-radius:20px;
+ padding: 0px 20px;
+ margin-top: 10px;
+ margin-bottom:10px;
+ text-align:center;
+ }
+ 
+.myform button:hover{
+ cursor:pointer;    
+ opacity: .75;
+ }
+ 
+.myform a{
+ text-align:center;
+ text-decoration:none;
+ font-size:14px;
+ line-height:20px;
+ color:#fff;
+ }
+ 
+.bnav{                                               /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
+ border:2px solid #fff;
+ outline:none;
+ height:40px;
+ width:100px;
+ background-color:#06144B;
+ color:#fff;
+ font-size:11px;
+ border-radius:20px;
+ padding: 0px 20px;
+ margin-top: 10px;
+ margin-bottom:10px;
+ text-align:center;
+ font-weight: 900;
+
+ line-height:32px;
+ padding: 0 20px;
+ float:right;
+ margin-right:20px;
+ }
+ 
+button:hover{
+ cursor:pointer; 
+ opacity: .75;
+ }
+ 
+.myform .close {
+  position: absolute;
+  top: 15px;
+  left:90%;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(134, 134, 134);
+ }
+
+.myform .close:hover {
+  color: #fff;
+ }
+ 
+nav{
+ background:#13225B;
+ height:60px;
+ width:100%;
+ }
+ 
+label.logo{
+ color:white;
+ font-size:18px;
+ line-height:20px;
+ padding: 0 10px;
+ font-weight:bold;
+ }
+ 
+
+ 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+ }
+ 
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+ }
+ 
+.slider {
+  padding-left:10px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  transition: .4s;
+ }
+ 
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  transition: .4s;
+ }
+ 
+input:checked + .slider {
+  background-color: #2196F3;
+ }
+ 
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+ }
+ 
+input:checked + .slider:before {
+  transform: translateX(16px);
+ }
+
+.slider.round {
+  border-radius: 34px;
+ }
+
+.slider.round:before {
+  border-radius: 50%;
+ }
+
+#mapid{
+  border-radius: 10px;
+  border-style: solid;
+  border-color: midnightblue;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  height: 360px;
+  max-width: 100%;
+  margin-top: 150px;
+  z-index: 0;
+}
+ 

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>our e-καταναλωτής</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" type="text/css" href="log_and_reg_style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>
+    </head>
+    
+    <body>
+        <nav>
+        <label class="logo"> <a href="loginphp.php"><img src="pngwing.com.png" class="myImage"/></a>
+        <div class="hello">
+            <p>our e-καταναλωτής</p>
+        </div> </label>
+        <a href="#signUp"><button class="bnav">SIGN UP</button></a>
+        <a href="#logIn"><button class="bnav">LOG IN</button></a>
+        </nav>
+
+        
+
+
+            <form class="search-bar">
+
+                <div class="kat_proiod_text_div">
+                    <h3>Κατηγορίες Προιόντων</h3>
+                </div>
+    
+                <div class="dropdown_div">
+                    <button class="dropbtn" disabled>Dropdown</button>
+                    <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                    </div>
+                </div> 
+                
+            </form>
+
+       
+
+
+
+        <div id="mapid"></div>
+        <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"> </script>   
+        <script src="mapjs.js"></script>
+
+
+        <div id="logIn" class="overlay">
+            <div class="myform">
+
+                <img src="boy.png" class="userimage"/>
+                <a class="close" href="#">&times;</a>
+                <h1> Log In</h1>
+                <form>
+                    <p>Username</p>
+                <input type="text" name="" required placeholder="Enter your username">
+                <p> Password </p>
+                <input type="password" name="" required placeholder="Enter your password"><br>
+                <br>
+                    <label class="switch"> <input type="checkbox"><span class="slider round"> </span></label>
+                <a> Remember me</a><br>
+                
+                <br>
+                    <button>Log In</button><br>
+                <a href="loginphp.php"> Forgot your password? </a>
+                <br>
+                <a href="#signUp"> Don't have an account yet? Sign Up </a>
+                </form>
+
+        </div>
+            </div>
+
+        <div id="signUp" class="overlay">
+            <div class="myform">
+
+                <img src="girl.png" class="userimage"/>
+                <a class="close" href="#">&times;</a>
+                <h1> Sign Up</h1>
+                <form>
+                    <p>Email</p>
+                    <input type="text" name="" required placeholder="Enter your email">
+                    <p>Username</p>
+                    <input type="text" name="" required placeholder="Enter your username">
+                    <p> Password </p>
+                    <input type="password" name="" required placeholder="Enter your password"><br>
+                    <button>Sign Up</button><br>
+                    <a href="#logIn"> Already have an account? Log in </a>
+                </form>
+
+        </div>
+            </div>
+
+
+
+    
+
+    </body>
+</html>
