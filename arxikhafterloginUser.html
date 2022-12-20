@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>our e-καταναλωτής</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" type="text/css" href="arxikhmetaloginUser.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>        
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+        
+    </head>
+    
+    <body>
+
+        <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <img src="barz.png" class="bar">
+        </label>
+        <label class="logo"> <a href="loginphp.php"><img src="pngwing.com.png" class="myImage"/></a>
+        <div class="hello">
+            <p>our e-καταναλωτής</p>
+        </div> 
+        </label>
+        
+        <div class="avatarDropdown" style="float:right;">
+
+        <button class="bnav"><img src="boy.png"></button>
+        
+        <div class="avatarDropdown-content">
+            <a href="#">My Profile</a>
+            <a href="logout.php">Log out</a>
+          </div>
+        </div>
+
+        <ul>
+            <li><a class="active" style="text-decoration:none;"href="#">Home</a></li>
+            <li><a style="text-decoration:none;"href="#">About</a></li>
+            <li><a style="text-decoration:none;"href="#">Contact</a></li>
+            <li><a style="text-decoration:none;"href="#">Terms & Conditions</a></li>
+        </ul>
+        
+        </nav>
+
+        
+        
+
+        <form action="https://www.google.com/search" method="get" class="search-bar">
+
+            <div class="dropdown_div">
+                <button class="dropbtn" disabled>Dropdown</button>
+                <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+                </div>
+            </div> 
+            
+            <div class="search_input_div">
+                <input type="search" placeholder="search" name="q">
+            </div>
+            
+            <div class="submit_button_div">
+                <button type="submit"><img src="search.png"></button>
+            </div>
+            
+        </form>
+
+        <div id="mapid"></div>
+        <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"> </script>   
+        <script src="mapjs.js"></script>
+  
+
+
+ 
+
+    
+
+    </body>
+</html>
