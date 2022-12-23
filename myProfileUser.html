@@ -6,8 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
         <link rel="shortcut icon" href="#">
         <link rel="stylesheet" type="text/css" href="myProfileUser.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>        
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>       
+        <script src="https://kit.fontawesome.com/61d91c0317.js" crossorigin="anonymous"></script> 
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="toggle_password.js"></script>
     </head>
     
     <body>
@@ -45,27 +47,37 @@
         <div class="wrapper">
             <div class="left">
                 <img src="boy.png" alt="user" width="100">
-                <h4>Username</h4>
-                <p>My Profile</p>
             </div>
             <div class="right">
                 <div class="info">
                     <h3>Information</h3>
-                    <div class="info_data"></div>
-                        <div class="data">
+                    <div class="info_data">
+                        <div class="data3">
+                            <h4>Username</h4>
+                            <label class="usernamebox">
+                                <input type="text" id="fname" name="fname" readonly><br>
+                            </label>
+                        </div>
+                        <div class="data1">
                             <h4>Email</h4>
-                            <p>wqewqeqw@gmail.com</p>
+                            <label class="emailbox">
+                                <input type="text" id="fname" name="fname" readonly><br>
+                            </label>
                         </div>
-                        <div class="data">
+                        <div class="data2">
                             <h4>Password</h4>
-                            <p>**********</p>
+                            <label class="passwordbox">
+                                <input type="password" value="peos" id="myInput">
+                                
+                            </label>
+                            <span><i class="fa-solid fa-eye" onclick="myFunction()"></i></span>
                         </div>
-                    
+                    </div>
                 </div>
  
                 <div class="projects">
                     <h3>projects</h3>
-                    <div class="projects_data"></div>
+                    <div class="projects_data">
                         <div class="data">
                             <h4>Recent</h4>
                             <p>Lorem ipsum dolor sit amet.</p>
@@ -74,6 +86,7 @@
                             <h4>Most Viewed</h4>
                             <p>Lorem, ipsum dolor.</p>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
