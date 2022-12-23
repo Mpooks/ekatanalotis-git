@@ -11,7 +11,7 @@
     
     <body>
         <nav>
-        <label class="logo"> <a href="loginphp.php"><img src="pngwing.com.png" class="myImage"/></a>
+        <label class="logo"> <a href="arxikh.html"><img src="pngwing.com.png" class="myImage"/></a>
         <div class="hello">
             <p>our e-καταναλωτής</p>
         </div> </label>
@@ -54,21 +54,22 @@
                 <img src="boy.png" class="userimage"/>
                 <a class="close" href="#">&times;</a>
                 <h1> Log In</h1>
-                <form>
+                <form id="logInUser" >
                     <p>Username</p>
-                <input type="text" name="" required placeholder="Enter your username">
+                <input type="text" id="user" name="user" required placeholder="Enter your username">
                 <p> Password </p>
-                <input type="password" name="" required placeholder="Enter your password"><br>
+                <input type="password" id="pass" name="pass" required placeholder="Enter your password"><br>
                 <br>
                     <label class="switch"> <input type="checkbox"><span class="slider round"> </span></label>
                 <a> Remember me</a><br>
-                
+                <a id="status"></a>
                 <br>
-                    <button>Log In</button><br>
+                    <button type="submit" id="logg">Log In</button><br>
                 <a href="loginphp.php"> Forgot your password? </a>
                 <br>
                 <a href="#signUp"> Don't have an account yet? Sign Up </a>
                 </form>
+                <script type="text/javascript" src="login.js"></script>
 
         </div>
             </div>
