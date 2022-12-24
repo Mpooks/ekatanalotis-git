@@ -37,10 +37,6 @@ async function userinfo(){
       {
         statusDiv.innerHTML = "You have successfully updated your information!";
       }
-      else if(ndata[i]==1)
-      {
-        statusDiv.innerHTML = "This email is already taken!";
-      }
       else{
         statusDiv.innerHTML = "This username is already taken!";
       }

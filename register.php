@@ -17,6 +17,7 @@ if (isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['email']) && 
     $email = mysqli_real_escape_string($con, $email);
     $password = mysqli_real_escape_string($con, $password);
     $cpassword = mysqli_real_escape_string($con, $cpassword);
+    $email = strtolower($email);
 
 
     $arr = array();
@@ -33,15 +34,15 @@ if (isset($_POST['user']) && isset($_POST['pass']) && isset($_POST['email']) && 
                    $arr[] = 5;
                 }
                 else {
-                if(strlen($password)<8 || !preg_match("#[0-9]+#",$password) || !preg_match("#[A-Z]+#",$password) || !preg_match("#[-+_!@#$%^&*.,?]+#",$password)){
+                if(!preg_match_all('$\S*(?=\S{8,})(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*$', $password)){
                             $arr[] = 6;
                 }
                 else{
-                    /*$createuser=mysqli_query($con,"INSERT INTO users VALUES(NULL,'$email','$username','$password',DATE(NOW()),0,0,0,0,'NO')");
+                    $createuser=mysqli_query($con,"INSERT INTO users VALUES(NULL,'$email','$username','$password',DATE(NOW()),0,0,0,0,'NO')");
                     $usernow = mysqli_query($con, "select * from users where  username = '$username'");
                     while ($u = mysqli_fetch_assoc($usernow)) {
                         $_SESSION['id'] = $u["id"];
-                    }*/
+                    }
                     $arr[] = 0;
                 }
                 } 
