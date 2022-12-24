@@ -12,7 +12,7 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
     $username = mysqli_real_escape_string($con, $username);
     $password = mysqli_real_escape_string($con, $password);
 
-    $users = mysqli_query($con, "select * from users where username = '$username' and passw = '$password'");
+    $users = mysqli_query($con, "select * from users where  username = '$username' and  passw = '$password'");
     $count = mysqli_num_rows($users);
     $arr = array();
 

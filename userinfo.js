@@ -1,8 +1,6 @@
 async function userinfo(){
     const form = document.getElementById("info");
-    const email = document.getElementById("email");
-    const user = document.getElementById("username");
-    const pswrd = document.getElementById("passwrd");
+    const btn= document.getElementById("changebtn");
     
     const response = await fetch('./userinfo.php');
         
@@ -18,4 +16,35 @@ async function userinfo(){
       document.getElementById("lasttok").value=data[i].last_tokens;
     }
     
+    btn.onclick = async function changeUserInfo(event){
+     var user=document.getElementById('username').value;
+     var email=document.getElementById('email').value;
+     var pswrd=document.getElementById('passwrd').value;
+     var statusDiv = document.getElementById('status');
+
+     event.preventDefault();
+     var nformData = new FormData();
+     nformData.append('user', user);
+     nformData.append('pass', pswrd);
+     nformData.append('email', email);
+     const response = await fetch('./updateprof.php',{ method: 'POST', body: nformData });
+    
+    var ndata = await response.json();
+
+     console.log(ndata);
+    for (let i = 0; i < ndata.length; i++) {
+      if(ndata[i]==0)
+      {
+        statusDiv.innerHTML = "You have successfully updated your information!";
+      }
+      else if(ndata[i]==1)
+      {
+        statusDiv.innerHTML = "This email is already taken!";
+      }
+      else{
+        statusDiv.innerHTML = "This username is already taken!";
+      }
     }
+  }
+    
+}

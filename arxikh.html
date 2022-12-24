@@ -80,16 +80,20 @@
                 <img src="girl.png" class="userimage"/>
                 <a class="close" href="#">&times;</a>
                 <h1> Sign Up</h1>
-                <form>
+                <form id="RegisterUser">
                     <p>Email</p>
-                    <input type="text" name="" required placeholder="Enter your email">
+                    <input type="text" id="emailr" name="emailr" required placeholder="Enter your email">
                     <p>Username</p>
-                    <input type="text" name="" required placeholder="Enter your username">
+                    <input type="text" id="userr" name="userr" required placeholder="Enter your username">
                     <p> Password </p>
-                    <input type="password" name="" required placeholder="Enter your password"><br>
-                    <button>Sign Up</button><br>
+                    <input type="password" id="passr" name="passr" required placeholder="Enter your password">
+                    <p> Re-enter password </p>
+                    <input type="password" id="cpassr" name="cpassr" required placeholder="Enter your password"><br>
+                    <a id="statusr"></a>
+                    <button type="submit" id="regg">Sign Up</button><br>
                     <a href="#logIn"> Already have an account? Log in </a>
                 </form>
+                <script type="text/javascript" src="register.js"></script>
 
         </div>
             </div>
