@@ -96,7 +96,7 @@ button.nav {
   }
 
   .kat_proiod_text_div {
-    margin-left: 5%;
+    margin-left: 10%;
     margin-top: -1%;
     display: inline-block;
     white-space: nowrap;
@@ -113,7 +113,7 @@ button.nav {
 
   #selectcat{
     height: 61px;
-    width: 53%;
+    width: 48%;
     font-size: 18px;
     position: absolute;
     border-style:solid;
