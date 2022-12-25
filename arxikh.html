@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>
     </head>
     
-    <body>
+    <body onload="categoriesfd()">
         <nav>
         <label class="logo"> <a href="arxikh.html"><img src="pngwing.com.png" class="myImage"/></a>
         <div class="hello">
@@ -20,6 +20,9 @@
         </nav>
 
         
+        <script type="text/javascript" src="catfordropdown.js"></script>
+
+
 
 
             <form class="search-bar">
@@ -29,18 +32,14 @@
                 </div>
     
                 <div class="dropdown_div">
-                    <button class="dropbtn" disabled>Dropdown</button>
-                    <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                    </div>
+                    <select id="selectcat" >
+                        <option value="black" class="dropdown_content">Categories</option>
+                      </select>
                 </div> 
                 
             </form>
 
        
-
 
 
         <div id="mapid"></div>
