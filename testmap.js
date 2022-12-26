@@ -4,7 +4,7 @@ const response = await fetch('./shopsformap.php');
     
 var data = await response.json();
 
-let mymap = L.map("map", {
+let mymap = L.map("mapid", {
   zoom: 15,
   center: L.latLng([38.246242, 21.7350847])
 }); 

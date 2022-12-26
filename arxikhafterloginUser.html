@@ -6,13 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
         <link rel="shortcut icon" href="#">
         <link rel="stylesheet" type="text/css" href="arxikhmetaloginUser.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>        
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.0/dist/leaflet.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@3.0.2/dist/leaflet-search.min.css" />
+        <script src="https://unpkg.com/leaflet@1.3.0/dist/leaflet.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/3.0.2/leaflet-search.min.js"></script>       
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
         
     </head>
     
-    <body onload="categoriesfd()">
+    <body onload="mapd(),categoriesfd()">
 
         <nav>
         <input type="checkbox" id="check">
@@ -63,9 +66,8 @@
         </form>
         
 
-        <div id="mapid"></div>
-        <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"> </script>   
-        <script src="mapjs.js"></script>
+        <div id="mapid"></div>  
+        <script type="text/javascript" src="testmap.js"></script>
   
 
 
