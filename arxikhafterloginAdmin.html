@@ -13,7 +13,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/3.0.2/leaflet-search.min.js"></script>
     </head>
     
-    <body>
+    <body onload="categoriesfd()">
 
         <nav>
         <input type="checkbox" id="check">
@@ -46,6 +46,10 @@
         
         </nav>
 
+
+
+        <script type="text/javascript" src="catfordropdown.js"></script>
+
         
         
         <form class="search-bar">
@@ -55,12 +59,9 @@
             </div>
 
             <div class="dropdown_div">
-                <button class="dropbtn" disabled>Dropdown</button>
-                <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-                </div>
+                <select id="selectcat" >
+                    <option value="black" class="dropdown_content">Categories</option>
+                  </select>
             </div> 
             
         </form>
