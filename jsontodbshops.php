@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include 'dbconn.php';
 
 function addShopD($filename)
@@ -23,16 +23,18 @@ function addShopD($filename)
         }else{
         $name = "Unknown";
         }
-
-        $sql = "INSERT INTO shop VALUES($sid,'$name','$types',$slat,$slon)";
-        if (mysqli_query($con, $sql)) {
-            echo "Records inserted successfully.";
+        $thisshop = mysqli_query($con, "SELECT * FROM shop WHERE shopid=$sid");
+        if (mysqli_num_rows($thisshop) > 0) {
+            $updateshop = mysqli_query($con, "UPDATE shop SET sname='$name',stype='$types',latitude=$slat,longitude=$slon WHERE shopid=$sid");
         } else {
-            echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
+            $sql = mysqli_query($con, "INSERT INTO shop VALUES($sid,'$name','$types',$slat,$slon)");
         }
     }
+    unlink($filename);
 
     closeDB($con);
 }
+
+
 
 ?>
