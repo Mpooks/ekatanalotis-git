@@ -1,63 +1,78 @@
 <?php
-
+session_start();
 include 'dbconn.php';
-$con=openDB();
 
-
-$jsondata = file_get_contents('products_1670611007.json');
-$data = json_decode($jsondata, true);
-
-$product = $data['products'];
-$category = $data['categories'];
-
-foreach($category as $c)
+function addCat($filename)
 {
-    $catid = $c['id'];
-    $catname = $c['name'];
-    $catname = str_replace("'","\'",$catname);
-    $catsubcat = $c['subcategories'];
+    $con = openDB();
 
-    $sql1 = "INSERT INTO pcategory VALUES('$catid','$catname')";
-    if(mysqli_query($con, $sql1)){
-       echo "Records inserted successfully.";
-    } 
-    else{
-    echo "ERROR: Could not able to execute $sql1. " . mysqli_error($con);
-    }
 
-    foreach($catsubcat as $sc)
-    {
-        $subname = $sc['name'];
-        $subname = str_replace("'","\'",$subname);
-        $subuuid = $sc['uuid'];
-        
-        $sql2 = "INSERT INTO subcategory VALUES('$subuuid','$subname','$catid')";
-        if(mysqli_query($con, $sql2)){
-           echo "Records inserted successfully.";
-        } 
-        else{
-        echo "ERROR: Could not able to execute $sql2. " . mysqli_error($con);
+    $jsondata = file_get_contents($filename);
+    $data = json_decode($jsondata, true);
+
+    if (array_key_exists('categories', $data)) {
+        $category = $data['categories'];
+
+        foreach ($category as $c) {
+            $catid = $c['id'];
+            $catname = $c['name'];
+            $catname = str_replace("'", "\'", $catname);
+            $catsubcat = $c['subcategories'];
+            $thiscat = mysqli_query($con, "SELECT * FROM pcategory WHERE cid='$catid'");
+           if (mysqli_num_rows($thiscat) > 0) {
+            $updatcat = mysqli_query($con, "UPDATE pcategory SET cname='$catname' WHERE cid='$catid'");
+            } else {
+                $sql1 = mysqli_query($con, "INSERT INTO pcategory VALUES('$catid','$catname')");
+            }
+
+            foreach ($catsubcat as $sc) {
+                $subname = $sc['name'];
+                $subname = str_replace("'", "\'", $subname);
+                $subuuid = $sc['uuid'];
+                $thissubcat = mysqli_query($con, "SELECT * FROM subcategory WHERE cat_id='$catid' AND sub_id='$subuuid'");
+            if (mysqli_num_rows($thissubcat) > 0) {
+             $updatesubcat = mysqli_query($con, "UPDATE subcategory SET subname='$subname' WHERE cat_id='$catid' AND sub_id='$subuuid'");
+                } else {
+                    $sql2 = mysqli_query($con, "INSERT INTO subcategory VALUES('$subuuid','$subname','$catid')");
+                }
+            }
         }
     }
-}
+    if (array_key_exists('products', $data)) {
+        $product = $data['products'];
 
-foreach($product as $p)
-{
-    $pid = $p['id'];
-    $name =$p['name'];
-    $name = str_replace("'","\'",$name);
-    $cat = $p['category'];
-    $subcat = $p['subcategory'];
-
-    $sql3 = "INSERT INTO product VALUES($pid,'$name','$subcat','$cat')";
-    if(mysqli_query($con, $sql3)){
-       echo "Records inserted successfully.";
-    } 
-    else{
-    echo "ERROR: Could not able to execute $sql3. " . mysqli_error($con);
+        foreach ($product as $p) {
+            $pid = $p['id'];
+            $name = $p['name'];
+            $name = str_replace("'", "\'", $name);
+            $cat = $p['category'];
+            $subcat = $p['subcategory'];
+            $ex=mysqli_query($con, "SELECT * FROM pcategory WHERE cid='$cat'");
+            if (mysqli_num_rows($ex) > 0) {
+                $cat = $p['category'];
+                $subcat = $p['subcategory'];
+            }
+            else{
+                $exofother=mysqli_query($con, "SELECT * FROM pcategory WHERE cid='Other'");
+                if (mysqli_num_rows($exofother) > 0) {
+                    $cat = 'Other';
+                    $subcat = 'Other';
+                } else {
+                    $createotherc=mysqli_query($con, "INSERT INTO pcategory VALUES('Other','Other')");
+                    $createothersc=mysqli_query($con, "INSERT INTO subcategory VALUES('Other','Other','Other')");
+                }
+            }
+            $thisprod = mysqli_query($con, "SELECT * FROM product WHERE pid=$pid");
+            if (mysqli_num_rows($thisprod) > 0) {
+             $updateprod = mysqli_query($con, "UPDATE product SET pname='$name',psub_id='$subcat',pcat_id='$cat' WHERE pid=$pid");
+            } else {
+                $sql3 = mysqli_query($con, "INSERT INTO product VALUES($pid,'$name','$subcat','$cat')");
+            }
+        }
     }
-}
+    unlink($filename);
 
-closeDB($con);
+    closeDB($con);
+}
 
 ?>

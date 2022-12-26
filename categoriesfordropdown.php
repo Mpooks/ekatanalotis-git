@@ -11,9 +11,6 @@ if (mysqli_num_rows($categories) > 0) {
         $arr[]=$cat;
     }
 }
-else {
-    echo "There are no results";
-}
 
 echo json_encode($arr, JSON_UNESCAPED_UNICODE);
 closeDB($con);

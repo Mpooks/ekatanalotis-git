@@ -1,11 +1,13 @@
 (function(){
   var form = document.getElementById('file-form');
-  var fileSelect = document.getElementById('myfile');
+  
   var uploadButton = document.getElementById('submit');
-  var statusDiv = document.getElementById('status');
+  
 
-  form.onsubmit = function(event) {
+  form.onsubmit = async function(event) {
       event.preventDefault();
+      var fileSelect = document.getElementById('myfile');
+      var statusDiv = document.getElementById('status');
 
       statusDiv.innerHTML = 'Uploading . . . ';
       var files = fileSelect.files;
@@ -19,17 +21,27 @@
       }
       formData.append('myfile', file, file.name);
 
-      var xhr = new XMLHttpRequest();
+      const response = await fetch('./uploadfile.php',{ method: 'POST', body: formData });
+    
+      var ndata = await response.json();
 
-      xhr.open('POST', './uploadfile.php', true);
-  
-      xhr.onload = function () {
-        if (xhr.status === 200) {
-          statusDiv.innerHTML = 'Your upload is successful..';
-        } else {
-          statusDiv.innerHTML = 'An error occurred during the upload. Try again.';
+      for (let i = 0; i < ndata.length; i++) {
+        if(ndata[i]==0)
+        {
+          statusDiv.innerHTML = "You have successfully uploaded the file!";
         }
-      };
-      xhr.send(formData);
+        else if(ndata[i]==1){
+          statusDiv.innerHTML = "An error occured please try again!";
+        }
+        else if(ndata[i]==2){
+          statusDiv.innerHTML = "This file does not contain information about shops!";
+        }
+        else if(ndata[i]==3){
+          statusDiv.innerHTML = "This file is corrupted! Please try again!";
+        }
+        else{
+          statusDiv.innerHTML = "This file is empty!";
+        }
+      }
   }
 })();

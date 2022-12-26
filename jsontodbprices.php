@@ -1,34 +1,36 @@
 <?php
-
+session_start();
 include 'dbconn.php';
-$con=openDB();
-
-
-$jsondata = file_get_contents('products_prices.json');
-$data = json_decode($jsondata, true);
-
-$product = $data['data'];
-
-foreach($product as $p)
+function addPrice($filename)
 {
-    $i = $p['id'];
-    $pricep = $p['prices'];
+    $con = openDB();
 
-    foreach($pricep as $pr)
-    {
-        $d = $pr['date'];
-        $pri = $pr['price'];
 
-        $sql = "INSERT INTO prices VALUES($i,'$d',$pri)";
-        if(mysqli_query($con, $sql)){
-           echo "Records inserted successfully.";
-        } 
-        else{
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($con);
+    $jsondata = file_get_contents($filename);
+    $data = json_decode($jsondata, true);
+
+    $product = $data['data'];
+
+    foreach ($product as $p) {
+        $i = $p['id'];
+        $pricep = $p['prices'];
+
+        foreach ($pricep as $pr) {
+            $d = $pr['date'];
+            $pri = $pr['price'];
+            $thisprod = mysqli_query($con, "SELECT * FROM prices WHERE prid=$i AND dateofp='$d'");
+            if (mysqli_num_rows($thisprod) > 0) {
+                $updateprod = mysqli_query($con, "UPDATE prices SET priceP=$pri WHERE prid=$i AND dateofp='$d'");
+            } else {
+                $ex = mysqli_query($con, "SELECT * FROM product WHERE pid=$i");
+                if (mysqli_num_rows($ex) > 0) {
+                    $sql = mysqli_query($con, "INSERT INTO prices VALUES($i,'$d',$pri)");
+                }
+            }
         }
     }
+    unlink($filename);
+
+    closeDB($con);
 }
-
-closeDB($con);
-
 ?>

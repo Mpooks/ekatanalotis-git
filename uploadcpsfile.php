@@ -1,5 +1,6 @@
 <?php
-    include 'jsontodbshops.php';
+
+    include 'jsontodbcategories.php';
     $currentDir = getcwd();
     $uploadDirectory = "./";
 
@@ -7,9 +8,9 @@
 
     $fileExtensions = ['json']; 
 
-    $fileName = $_FILES['myfile']['name'];
-    $fileTmpName  = $_FILES['myfile']['tmp_name'];
-    $fileType = $_FILES['myfile']['type'];
+    $fileName = $_FILES['cpsfile']['name'];
+    $fileTmpName  = $_FILES['cpsfile']['tmp_name'];
+    $fileType = $_FILES['cpsfile']['type'];
     $fileExtension = pathinfo($fileName, PATHINFO_EXTENSION);
 
     $uploadPath = $currentDir . $uploadDirectory . basename($fileName); 
@@ -24,19 +25,20 @@ $arr = array();
         if ($errors==0) {
             $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
             $jsondata = file_get_contents($uploadPath);
-        if (!empty($jsondata)) {
+            if (!empty($jsondata)) {
             if(is_array(json_decode($jsondata, true))){
             $data = json_decode($jsondata, true);
-            if (array_key_exists('elements', $data)) {
-                addshopD($currentDir . $uploadDirectory . basename($fileName));
-                if ($didUpload) {
+            if (array_key_exists('products', $data)||array_key_exists('categories', $data)) {
+                addCat($uploadPath);
+                if ($didUpload) { 
+                                  
                     $arr[] = 0;
-                } else {
+                    } else {
                     $arr[] = 1;
-                }
-            } else {
-                unlink($uploadPath);
-                $arr[] = 2;
+                    }
+            }else{
+            unlink($uploadPath);
+            $arr[] = 2;
             }
         } else {
             unlink($uploadPath);
