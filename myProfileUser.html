@@ -12,7 +12,7 @@
         <script src="toggle_password.js"></script>
     </head>
     
-    <body>
+    <body onload="userinfo()">
 
         <nav>
         <input type="checkbox" id="check">
@@ -43,46 +43,57 @@
         </ul>
         
         </nav>
-
+        
         <div class="wrapper">
+
             <div class="left">
                 <img src="boy.png" alt="user" width="100"><br><br>
                 <h4>Information</h4><br>
                 <p>Total Score</p>
-                <input type="text" class="total_score" value="2310" disabled>
+                <input type="text" id="totals" class="total_score" value="2310" disabled>
                 <p>This Month's Score</p>
-                <input type="text" class="month_score" value="donta" disabled>
+                <input type="text" id="months" class="month_score" value="donta" disabled>
                 <p>Last Month's Tokens</p>
-                <input type="text" class="month_tokens" value="esta" disabled>
+                <input type="text" id="lasttok" class="month_tokens" value="esta" disabled>
                 <p>All Time Token Score</p>
-                <input type="text" class="total_tokens" value="dinero" disabled>
+                <input type="text" id="totaltok" class="total_tokens" value="dinero" disabled>
             </div>
+
+
             <div class="right">
+
                 <div class="info">
                     <h3>Information</h3>
                     <div class="info_data">
                         <div class="data3">
                             <h4>Username</h4>
                             <label class="usernamebox">
-                                <input type="text" id="fname" name="fname" readonly><br>
+                                <input type="text" id="username" name="username" ><br>
                             </label>
                         </div>
                         <div class="data1">
                             <h4>Email</h4>
                             <label class="emailbox">
-                                <input type="text" id="fname" name="fname" readonly><br>
+                                <input type="text" id="email" name="email" readonly><br>
                             </label>
                         </div>
                         <div class="data2">
                             <h4>Password</h4>
                             <label class="passwordbox">
-                                <input type="password" value="peos" id="myInput">  
-                            </label>
-                            <span><i class="fa-solid fa-eye" onclick="myFunction()"></i></span>
-                        </div>
+                                <input type="password" id="passwrd" name="password"> 
+                                <span>
+                                    <i class="fa-solid fa-eye" onclick="myFunction()"></i>
+                                </span>
+                            </label>    
+                        </div> 
+
+                        <button id="changebtn">change</button><br>
+                        
                     </div>
                 </div>
- 
+                    <script type="text/javascript" src="userinfo.js"></script>
+
+
                 <div class="projects">
                     <h3></h3>
                     <div class="other_data">

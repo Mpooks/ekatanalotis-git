@@ -219,10 +219,7 @@ label.logo{
   min-width: 360px;
   top: 20%;
   position: relative;
-
-
   display: flex;
-
 }
 
 
@@ -387,6 +384,8 @@ tbody tr,td{
   margin-bottom: 10px;
   
 }
+
+
 
 
 
