@@ -78,43 +78,50 @@ button.nav {
 
 
  
-.search-bar{
-  border-radius: 10px;
-  border-style: solid;
-  border-color: hsl(240, 64%, 27%);
+.serch_bar_div{
+  display: block;
   text-align:center;
   width:100%;
   max-width:700px;
   height:50px;
-  background: rgb(255, 254, 253);
   top:50%;
   left:50%;
   position: relative;
   transform:translate(-50%,140px);
+  padding-bottom: 2%;
+
+}
+ 
+.serch_bar_div .search-bar{
+  border-radius: 10px;
+  height: 60px;
+  border-style: solid;
+  border-color: hsl(240, 64%, 27%);
+  text-align:center;
+  background: rgb(255, 254, 253);
+  position: relative;
   display:flex;
   border-radius:60px;
-  padding-top:10px;
   z-index: 1;
  
   }
 
   .kat_proiod_text_div {
     margin-left: 10%;
-    margin-top: 1%;
+    padding-top: 3%;
     display: inline-block;
     white-space: nowrap;
   }
 
  
-  .dropdown_div {
+  .serch_bar_div .search-bar .dropdown_div {
     display: inline-block;
     margin-left: 15%;
-    margin-top: -1.5%;
     z-index: 1;
    
   }
 
-  #selectcat{
+  .serch_bar_div .search-bar .dropdown_div #selectcat{
     height: 61px;
     width: 48%;
     font-size: 18px;
@@ -126,17 +133,18 @@ button.nav {
     border-radius: 60px;
     text-align: center;
 
+
   }
   
 
-    .dropdown_content{
+  .serch_bar_div .search-bar .dropdown_div #selectcat .dropdown_content{
     display:inline-table;
     background-color: #60b02b;
     border-radius: 60px;
-
     align-items: center;
   }
-  
+
+
   .dropdown_div:hover #selectcat {
     background-color: #dadada;
   
