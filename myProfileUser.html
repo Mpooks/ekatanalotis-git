@@ -48,14 +48,14 @@
 
             <div class="left">
                 <img src="boy.png" alt="user" width="100"><br><br>
-                <h4>Information</h4><br>
+                <h4>Achievements</h4><br>
                 <p>Total Score</p>
                 <input type="text" id="totals" class="total_score" value="2310" disabled>
                 <p>This Month's Score</p>
                 <input type="text" id="months" class="month_score" value="donta" disabled>
                 <p>Last Month's Tokens</p>
                 <input type="text" id="lasttok" class="month_tokens" value="esta" disabled>
-                <p>All Time Token Score</p>
+                <p>Total Tokens</p>
                 <input type="text" id="totaltok" class="total_tokens" value="dinero" disabled>
             </div>
 
@@ -63,7 +63,7 @@
             <div class="right">
 
                 <div class="info">
-                    <h3>Information</h3>
+                    <h3>Credentials</h3>
                     <div class="info_data">
                         <div class="data3">
                             <h4>Username</h4>
@@ -77,19 +77,22 @@
                                 <input type="text" id="email" name="email" readonly><br>
                             </label>
                         </div>
+
                         <div class="data2">
                             <h4>Password</h4>
                             <label class="passwordbox">
-                                <input type="password" id="passwrd" name="password"> 
-                                <span>
+                                <span class="spanaki">
                                     <i class="fa-solid fa-eye" onclick="myFunction()"></i>
                                 </span>
-                            </label>    
+                                <input type="password" id="passwrd" name="password"> 
+                                
+                            </label>   
+                             
                         </div> 
-
-                        <button id="changebtn">change</button><br>
                         
                     </div>
+                    
+                    <button class="changebtn" id="changebtn">Save</button>
                 </div>
                     <script type="text/javascript" src="userinfo.js"></script>
 
