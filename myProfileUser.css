@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 
+
+
 body{  
   background-color:#062C5A;
   padding:0;
@@ -9,13 +11,15 @@ body{
   background-size:cover;
   align-items:center;
   justify-content:center;
-  overflow-x: hidden;   
+  overflow-x: hidden; 
+  scrollbar-color:  #01a9ac #01dbdf;
     }
  
 *{
     font-family: 'Roboto Condensed', sans-serif, SemiBold, Bahnschrift;
     margin: 0;
     padding: 0;
+
  }
  
  
@@ -207,14 +211,16 @@ label.logo{
 
 .wrapper{
   height: 80%;
-  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
   margin-bottom: 100px;
   width: 80%;
-  min-width: 405px;
-  top: 50%;
+  min-width: 360px;
+  top: 20%;
   position: relative;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+
   display: flex;
 
 }
@@ -223,41 +229,41 @@ label.logo{
 
 .wrapper .left{
   position: relative;
-  width: 100px;
+  width: 30%;
   background: linear-gradient(to right, #01a9ac, #01dbdf);
-  padding: 30px 25px;
+  padding: 20px 10px;
   border-bottom-left-radius: 5px;
   text-align: center;
-  color: #fff;
-
+  color: #000;
+  min-width: 100px;
+  max-width: 200px;
 }
 
 .wrapper .left img{
-  width: 100px;
-  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  max-width: 100px;
   border-radius: 5px;
-
 }
 
 .wrapper .left h4{
   margin-bottom: 10px;
-
+  font-size: 16px;
 }
 
 .wrapper .left p{
-
-  font-size: 12px;
-
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .wrapper .right{
   position: relative;
   min-width: 100px;
-  width: 80%;
+  width: 70%;
   background: #fff;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  padding: 30px 25px;
+  padding: 30px 15px;
 
 }
 
@@ -273,7 +279,6 @@ label.logo{
   color: #353c4e;
   text-transform: uppercase;
   letter-spacing: 5px;
-
 }
 
 label.emailbox{
@@ -320,3 +325,71 @@ span{
   font-size: 20px;
   color: #7a7977;
 }
+
+.ldl_data{
+  margin-top: 5px;
+  overflow-y: auto;
+  height: 200px;
+  margin-bottom: 10px;
+  
+}
+
+.ldl_data thead th {
+  position: sticky; 
+  top: 0px; 
+}
+
+table {
+  border-collapse: collapse; 
+  width: 100%;
+  table-layout: fixed;
+  font-size: 90%;
+  text-align: center;
+  min-width: 300px; /*auto edw de kserw giati leitourgei pragmatika*/
+}
+
+td {
+  padding: 10px 10px;
+  word-wrap: break-word;
+}
+th {
+  background: #01a9ac;
+  
+  padding: 5px 5px;
+  
+}
+
+tbody tr,td{
+  border: 1px solid #01a9ac;
+  border-bottom: none;
+  border-right: none;
+}
+
+.total_score, .month_score { 
+  padding-right: 25px;
+  background: url("https://o.remove.bg/downloads/68024bf9-e7db-4639-b669-99fdc9c2d7de/images-removebg-preview.png") no-repeat right;
+  background-size: 20px;
+  width: 100px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+
+  
+.month_tokens, .total_tokens{
+  padding-right: 25px;
+  background: url("toppng.com-gold-coins-512x512.png") no-repeat right;
+  background-size: 20px;
+  width: 100px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 10px;
+  
+}
+
+
+
+
+
+
