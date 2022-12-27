@@ -212,7 +212,7 @@ label.logo{
 .wrapper{
   height: 80%;
   margin-left: 10%;
-  margin-top: 100px;
+  margin-top: 40px;
   margin-bottom: 100px;
   width: 80%;
   min-width: 360px;
@@ -387,12 +387,12 @@ tbody tr,td{
 
 
 .changebtn{                                               /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
-  border:2px solid #fff;
+  border:2px solid #005e60;
   outline:none;
   height:40px;
   width:80px;
-  background-color:#06144B;
-  color:#fff;
+  background: linear-gradient(to right, #01a9ac, #01dbdf);
+  color:#000;
   font-size:16px;
   border-radius:20px;
   padding: 0px 20px;
