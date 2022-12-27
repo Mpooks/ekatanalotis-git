@@ -2,9 +2,10 @@
   var form = document.getElementById('file-form');
   
   var uploadButton = document.getElementById('submit');
+  var delb = document.getElementById('del');
   
 
-  form.onsubmit = async function(event) {
+  uploadButton.onclick = async function(event) {
       event.preventDefault();
       var fileSelect = document.getElementById('myfile');
       var statusDiv = document.getElementById('status');
@@ -44,4 +45,20 @@
         }
       }
   }
+  delb.onclick = async function(event) {
+    event.preventDefault();
+    const response = await fetch('./deleteshops.php');
+    
+      var ndata = await response.json();
+      for (let i = 0; i < ndata.length; i++) {
+        if(ndata[i]==0)
+        {
+          alert("You have successfully deleted all the shops!");
+          mapd();
+        }
+        else{
+          alert("Something went wrong, please try again!");
+        }
+  }
+}
 })();

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 body{  
     background-color:#062C5A;
     padding:0;
@@ -11,7 +12,7 @@ body{
       }
    
   *{
-      font-family: Bahnschrift SemiBold, Bahnschrift;
+      font-family: 'Inconsolata';
       margin: 0;
       padding: 0;
    }
@@ -54,6 +55,10 @@ body{
    opacity: .75;
   
    }
+   .bar{
+    height: 30px;
+    width: 30px;
+  }
    
   nav{
    background:#13225B;
@@ -179,6 +184,14 @@ body{
     margin-left: 20px;
     transition: transform 0.7s ease-in-out;
     }
+    
+ .vertical {
+    border-left: 6px solid black;
+    height: 200px;
+    position:absolute;
+    left: 50%;
+  }
+  
    
    
    .bnav img{
@@ -216,17 +229,120 @@ body{
   }
   
   
-  #mapid{
+
+
+  /*Apo edw prosthetw gia ta shops*/
+
+  .boxforinfo{
+    background-color: #fff;
+    height: 80%;
+    margin-top: 320px;
+    width: 65%;
+    min-width: 405px;
+    top: 20%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+
+  .boxforinfo .tboxforinfo{
+    background: linear-gradient(to right, #01a9ac, #01dbdf);
+  }
+
+  .boxforinfo .tboxforinfo h1{
+    padding-top:1%;
+    padding-bottom:1%;
+    text-align:center;
+    color:#fff;
+  }
+
+
+  .boxforinfo .bboxforinfo{
+    padding-top:2%;
+    padding-bottom:2%;
+
+  }
+
+  .boxforinfo .bboxforinfo .info1{
+    margin-bottom: 2%;
+align-content:center;  }
+
+  
+  .boxforinfo .bboxforinfo .info1 h3{
+    padding-bottom: 5px;
+    color: #353c4e;
+    letter-spacing: 2px;
+    width:25%;
+    text-align:center;
+    display: inline-block;
+  }
+  .boxforinfo .bboxforinfo .info1 p{
+    padding-top:2%;
+    padding-bottom: 5px;
+    color: #353c4e;
+    letter-spacing: 2px;
+    width:100%;
+    text-align:center;
+    display: inline-block;
+  }
+  .boxforinfo .bboxforinfo .info1 h2{
+    padding-top:2%;
+    padding-bottom: 5px;
+    color: #353c4e;
+    letter-spacing: 2px;
+    width:100%;
+    text-align:center;
+    display: inline-block;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  
+  
+  .boxforinfo .bboxforinfo .info1 .inputfile {
+    font-size:12px;
+    background:white;
+    border-radius:50px;
+    
+    width:30%;
+    outline:none;
+    }
+
+   .boxforinfo .bboxforinfo .info1 ::file-selector-button {
+    color:white;
+    background:#20486a;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    box-shadow:1px 1px 1px rgb(192, 192, 192);
+    outline:none;
+    }
+
+    .boxforinfo .bboxforinfo .info1 ::file-selector-button:hover {
+    background:#577e9f;
+    }
+
+    .boxforinfo .bboxforinfo .info1 button{
+        color:white;
+    background:#20486a;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    box-shadow:1px 1px 1px rgb(192, 192, 192);
+    outline:none;
+        }
+
+ #mapid{
     border-radius: 10px;
     border-style: solid;
-    border-color: midnightblue;
+    border-color: #20486a;
     margin-left: auto;
     margin-right: auto;
-    width: 700px;
+    width: 76%;
     height: 360px;
     max-width: 100%;
-    margin-top: 150px;
     z-index: 0;
   }
+   
    
   
