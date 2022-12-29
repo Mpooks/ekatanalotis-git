@@ -12,7 +12,7 @@ URL = "https://e-katanalotis.gov.gr"
 #final JSON
 results = {}
 results['fetch_date']=int(time.time())
-results['data']=[]
+results['images']=[]
 
 #get product information
 options = webdriver.ChromeOptions()
@@ -38,47 +38,20 @@ for i in range(len(productid)):
     html = browser.page_source
     soup = BeautifulSoup(html, features="html5lib")
 
-
-    if soup.find(id='ember298'):
-     #get dates from price chart
-     date_data = browser.execute_script('return Highcharts.charts[0].series[0].data.map(x => x.category)')
-     #append year to date labels
-     date_data = [s +'/2022' for s in date_data]
-
-     #get prices from price chart
-     price_data = browser.execute_script('return Highcharts.charts[0].series[0].data.map(x => x.y)')
-    else:
-        for j in range(6):
-         price=soup.find('div',attrs={'class':'col-3 col-lg-7 col-xl-7 v-center d-flex flex-column align-items-end justify-content-center'})
-         price_data[j]=price.find('span',attrs={'class':'product-price-number'}).text
-         price_data[j]=price_data[j][0:4]
-         price_data[j]=float(price_data[j])
-         date_data[j]=date.today()-timedelta(days = 6-j)
-
-
+    images=soup.find('div',attrs={'class':'col-12 col-lg-4 offset-lg-2 d-flex align-items-start'})
+    image=images.find('img',attrs={'class':'product-img'})
+    images_url = image['src']          
     browser.quit()
-
-    #transform dates
-    if soup.find(id='ember46'):
-     for j in range(len(date_data)):
-         dparts = date_data[j].split("/")
-         newd = '2022-'+dparts[1]+'-'+dparts[0]
-         date_data[j]=newd
-    else:
-        for j in range(6):
-            date_data[j]=str(date_data[j])
         
     #create a result object
     result = {}
     result['id']=productid[i]
-    result['prices']=[]
-    for j in range(len(date_data)):
-        result['prices'].append({'date':date_data[j], 'price':price_data[j]})
+    result['image']=images_url
     
     #append it to the list
-    results['data'].append(result)
+    results['images'].append(result)
     
 
 print('Done')
-with open("products_prices"+".json", "w", encoding='utf-8') as outfile:
+with open("products_images"+".json", "w", encoding='utf-8') as outfile:
     json.dump(results, outfile, ensure_ascii=False, indent=2)

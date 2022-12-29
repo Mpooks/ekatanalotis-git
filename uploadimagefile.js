@@ -1,21 +1,20 @@
 (function(){
-    var ub=document.getElementById("cpsubmit");
-    var db=document.getElementById("delcps");
-    var dbc=document.getElementById("delcat");
+    var iform = document.getElementById('priceform');
+    var ubi=document.getElementById("isubmit");
+    var dbi=document.getElementById("deli");
 
-  
-    ub.onclick = async function(event) {
+    ubi.onclick = async function(event) {
         event.preventDefault();
-        var fileSelect = document.getElementById('cpsfile');
-        var statusDiv = document.getElementById('cpsstatus');
+        var fileSelect = document.getElementById('ifile');
+        var statusDiv = document.getElementById('istatus');
   
         statusDiv.innerHTML = 'Uploading . . . ';
         statusDiv.innerHTML = 'Uploading . . . ';
-      if(!(document.getElementById("cpsfile") && document.getElementById("cpsfile").value)) {
+      if(!(document.getElementById("ifile") && document.getElementById("ifile").value)) {
         statusDiv.innerHTML = "You must select a file first!";
       }else{
         var files = fileSelect.files;
-  
+        
         var formData = new FormData();
   
         var file = files[0]; 
@@ -23,9 +22,12 @@
             statusDiv.innerHTML = 'You cannot upload this file because it’s not a JSON file.';
             return;
         }
-        formData.append('cpsfile', file, file.name);
+
+
+
+        formData.append('ifile', file, file.name);
   
-        const response = await fetch('./uploadcpsfile.php',{ method: 'POST', body: formData });
+        const response = await fetch('./uploadifile.php',{ method: 'POST', body: formData });
       
         var ndata = await response.json();
   
@@ -39,49 +41,38 @@
             statusDiv.innerHTML = "An error occured please try again!";
           }
           else if(ndata[i]==2){
-            statusDiv.innerHTML = "This file does not contain information about categories or products!";
+            statusDiv.innerHTML = "This file does not contain information about product images!";
           }
           else if(ndata[i]==3){
             statusDiv.innerHTML = "This file is corrupted! Please try again!";
           }
-          else{
+          else if(ndata[i]==4){
             statusDiv.innerHTML = "This file is empty!";
           }
+          else{
+            statusDiv.innerHTML = "You cannot add images because you have no products in the database!";
+          }
         }
+    }
+    }
+    dbi.onclick = async function(event) {
+        event.preventDefault();
+        const response = await fetch('./deleteimages.php');
+        
+          var ndata = await response.json();
+          for (let i = 0; i < ndata.length; i++) {
+            if(ndata[i]==0)
+            {
+              allpri();
+              alert("You have successfully deleted all the images!");
+            }
+            else{
+              alert("Something went wrong, please try again!");
+            }
       }
     }
-    db.onclick = async function(event) {
-      event.preventDefault();
-      const response = await fetch('./deleteproducts.php');
-      
-        var ndata = await response.json();
-        for (let i = 0; i < ndata.length; i++) {
-          if(ndata[i]==0)
-          {
-            allpri();
-            alert("You have successfully deleted all the products!");
-          }
-          else{
-            alert("Something went wrong, please try again!");
-          }
-    }
-  }
-  dbc.onclick = async function(event) {
-    event.preventDefault();
-    const response = await fetch('./deletecat.php');
-    
-      var ndata = await response.json();
-      for (let i = 0; i < ndata.length; i++) {
-        if(ndata[i]==0)
-        {
-          alert("You have successfully deleted all the categories!");
-        }
-        else{
-          alert("Something went wrong, please try again!");
-        }
-  }
-}
- 
+  })();
+
   async function allpri(){
     const boxes = document.querySelectorAll('.row');
 
@@ -92,10 +83,11 @@
     const d = document.createElement('div');
     d.classList.add('row');
     f.appendChild(d);
+    
     const response = await fetch('./allproducts.php');
         
     var data = await response.json();
-
+    var s = document.getElementById('ps');
     if (data.length===0){
       const st = document.createElement('h3');
       st.classList.add('producth3');
@@ -131,7 +123,6 @@
   }
 }
 }
-
-})();
+  
   
   

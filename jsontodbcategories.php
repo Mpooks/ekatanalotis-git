@@ -56,7 +56,12 @@ function addCat($filename)
                 $exofother=mysqli_query($con, "SELECT * FROM pcategory WHERE cid='Other'");
                 if (mysqli_num_rows($exofother) > 0) {
                     $cat = 'Other';
-                    $subcat = 'Other';
+                    $exofothers=mysqli_query($con, "SELECT * FROM subcategory WHERE cat_id='Other'AND sub_id='Other'");
+                    if (mysqli_num_rows($exofother) > 0) {
+                        $subcat = 'Other';
+                    } else {
+                        $createotherssc=mysqli_query($con, "INSERT INTO subcategory VALUES('Other','Other','Other')");
+                    }
                 } else {
                     $createotherc=mysqli_query($con, "INSERT INTO pcategory VALUES('Other','Other')");
                     $createothersc=mysqli_query($con, "INSERT INTO subcategory VALUES('Other','Other','Other')");
@@ -66,7 +71,7 @@ function addCat($filename)
             if (mysqli_num_rows($thisprod) > 0) {
              $updateprod = mysqli_query($con, "UPDATE product SET pname='$name',psub_id='$subcat',pcat_id='$cat' WHERE pid=$pid");
             } else {
-                $sql3 = mysqli_query($con, "INSERT INTO product VALUES($pid,'$name','$subcat','$cat')");
+                $sql3 = mysqli_query($con, "INSERT INTO product VALUES($pid,'$name','$subcat','$cat','https://warply.s3.amazonaws.com/applications/ed840ad545884deeb6c6b699176797ed/products/default_product_image.jpg')");
             }
         }
     }
