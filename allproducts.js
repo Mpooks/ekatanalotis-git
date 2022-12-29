@@ -1,15 +1,16 @@
 async function allpr(){
     const d = document.getElementById("showprod");
+    const f = document.getElementById("showp") 
     
     const response = await fetch('./allproducts.php');
         
     var data = await response.json();
 ;
   if (data.length===0){
-    const st = document.createElement('h3');
-    st.classList.add('producth3');
-    st.textContent='There are no products in the database!';
-    d.appendChild(st);
+    const st = document.createElement('h2');
+      st.classList.add('producth2');
+      st.textContent='There are no products in the database!';
+      d.appendChild(st);
   }else{
 
     for (let j = 0; j < data.length; j++) {

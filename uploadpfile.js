@@ -78,15 +78,16 @@
     const f = document.getElementById("showp") 
     const d = document.createElement('div');
     d.classList.add('row');
+    d.id='showprod';
     f.appendChild(d);
     
     const response = await fetch('./allproducts.php');
         
     var data = await response.json();
-    var s = document.getElementById('ps');
+
     if (data.length===0){
-      const st = document.createElement('h3');
-      st.classList.add('producth3');
+      const st = document.createElement('h2');
+      st.classList.add('producth2');
       st.textContent='There are no products in the database!';
       d.appendChild(st);
     }else{

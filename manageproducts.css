@@ -382,3 +382,13 @@ align-content:center;  }
     width:100px;
     float:left;
 }
+.producth2{
+  padding-top:5rem;
+  padding-bottom: 5px;
+  color: #353c4e;
+  letter-spacing: 2px;
+  width:100%;
+  text-align:center;
+  text-decoration: underline;  
+  text-decoration-color: #181c25;  
+}
