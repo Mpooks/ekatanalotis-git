@@ -211,9 +211,8 @@ label.logo{
 
 .wrapper{
   height: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
+  margin-left: 10%;
+  margin-top: 40px;
   margin-bottom: 100px;
   width: 80%;
   min-width: 360px;
@@ -232,7 +231,7 @@ label.logo{
   border-bottom-left-radius: 5px;
   text-align: center;
   color: #000;
-  min-width: 100px;
+  min-width: 140px;
   max-width: 200px;
 }
 
@@ -245,13 +244,15 @@ label.logo{
 
 .wrapper .left h4{
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 19px;
 }
 
 .wrapper .left p{
   font-size: 16px;
   font-weight: bold;
 }
+
+
 
 .wrapper .right{
   position: relative;
@@ -260,8 +261,7 @@ label.logo{
   background: #fff;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  padding: 30px 15px;
-
+  padding: 30px 10px;
 }
 
 .wrapper .right .info, .wrapper .right .projects{
@@ -271,26 +271,24 @@ label.logo{
 
 .wrapper .right .info h3, .wrapper .right .projects h3{
   margin-bottom: 15px;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
   border-bottom: 1px solid #e0e0e0;
   color: #353c4e;
   text-transform: uppercase;
   letter-spacing: 5px;
 }
 
-label.emailbox{
+label.emailbox, label.usernamebox{
   position: absolute;
-  width: 205px;
+  width: 80%;
+  max-width: 205px;
 }
 
 label.passwordbox{
   position: absolute;
-  width: 205px;
-}
-
-label.usernamebox{
-  position: absolute;
-  width: 205px;
+  width: 80%;
+  max-width: 205px;
+  transform: translate(0,-19px);
 }
 
 .data1,.data2,.data3{
@@ -310,11 +308,13 @@ input{
   box-shadow: 0 5px 30px rgba(22,89,233,0.15);
 }
 
-span{
+.spanaki{
   position: relative;
-  left: 205px;
-  transform: translate(0,-60%);
-  top: 4px;
+  left: 81%;
+  width: 80%;
+  max-width: 205px;
+  float: right;
+  top: 24px;
   cursor: pointer;
 }
 
@@ -364,7 +364,7 @@ tbody tr,td{
 
 .total_score, .month_score { 
   padding-right: 25px;
-  background: url("https://o.remove.bg/downloads/68024bf9-e7db-4639-b669-99fdc9c2d7de/images-removebg-preview.png") no-repeat right;
+  background: url("score.png") no-repeat right;
   background-size: 20px;
   width: 100px;
   text-align: center;
@@ -376,7 +376,7 @@ tbody tr,td{
   
 .month_tokens, .total_tokens{
   padding-right: 25px;
-  background: url("toppng.com-gold-coins-512x512.png") no-repeat right;
+  background: url("token.png") no-repeat right;
   background-size: 20px;
   width: 100px;
   text-align: center;
@@ -386,7 +386,27 @@ tbody tr,td{
 }
 
 
+.changebtn{                                               /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
+  border:2px solid #005e60;
+  outline:none;
+  height:40px;
+  width:80px;
+  background: linear-gradient(to right, #01a9ac, #01dbdf);
+  color:#000;
+  font-size:16px;
+  border-radius:20px;
+  padding: 0px 20px;
+  margin-top: 30px;
+  text-align:center;
+  font-weight: bold;
+  }
+  
+ button:hover{
+  cursor:pointer; 
+  opacity: .75;
+  }
 
+  
 
 
 
