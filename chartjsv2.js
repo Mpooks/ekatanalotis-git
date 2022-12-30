@@ -58,7 +58,6 @@ const fallbackPicker = document.querySelector('.fallbackDatePicker');
 const fallbackLabel = document.querySelector('.fallbackLabel');
 
 const yearSelect = document.querySelector('#year');
-console.log(yearSelect.value)
 const monthSelect = document.querySelector('#month');
 
 // Hide fallback initially
@@ -90,13 +89,16 @@ function populateYears() {
   // Get the current year as a number
   const date = new Date();
   const year = date.getFullYear();
-
+  const option = document.createElement('option');
+  option.textContent = 'None';
+  yearSelect.appendChild(option);
   // Make this year, and the 100 years before it available in the year <select>
   for (let i = 0; i <= 100; i++) {
     const option = document.createElement('option');
     option.textContent = year - i;
     yearSelect.appendChild(option);
   }
+  
 }
 function val() {
     d = document.getElementById("month").value;
