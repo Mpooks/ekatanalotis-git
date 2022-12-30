@@ -18,6 +18,7 @@ navigator.geolocation.watchPosition(success, error);        //vazoume watchposit
 
 let markersLayer = L.layerGroup(); 
 
+
 mymap.addLayer(markersLayer);
 
 markersLayer.addTo(mymap);
@@ -26,8 +27,8 @@ let controlSearch = new L.Control.Search({
   layer: markersLayer,
   propertyName: "title",
   initial: false,
-  zoom: 15,
-  marker: false
+  zoom: null,
+  marker: false,
 });
 
 mymap.addControl(controlSearch);
@@ -40,7 +41,6 @@ for (i in data) {
   let title = data[i].sname;
   let lat=parseFloat(data[i].latitude);
   let long=parseFloat(data[i].longitude);
-  console.log(title);
   let marker = L.marker(L.latLng(lat,long), {title: title });
   marker.bindPopup("title: " + title);
   marker.addTo(markersLayer);
@@ -83,5 +83,143 @@ function error(err) {
         alert("Cannot get current location");
     }
 
+}
+var redIcon = new L.Icon({iconUrl:'marker-icon-2x-red.png',iconSize: [25, 41],
+iconAnchor: [12, 41],popupAnchor: [1, -34],});
+
+var is = document.getElementById('searchtext9');
+var el = document.querySelector(".search-button");
+el.onclick = async function(event) {
+  document.getElementById('selectcat').value='black';
+  if(is.value.length===0){
+    markersLayer.clearLayers();
+          const response = await fetch('./shopsformap.php');
+          var data = await response.json();
+          if (JSON.stringify(data)=='{}') {
+
+          }
+          else{
+          for (i in data) {
+            let title = data[i].sname;
+            let lat=parseFloat(data[i].latitude);
+            let long=parseFloat(data[i].longitude);
+              let marker = L.marker(L.latLng(lat,long));
+
+            marker.bindPopup("title: " + title);
+            marker.addTo(markersLayer);
+          }
+          }
+
+    }else{
+      var c = document.getElementById('searchtext9').value;
+    console.log(c);
+    var formData = new FormData();
+    formData.append('shop', c);
+    const response = await fetch('./searchpersname.php',{ method: 'POST', body: formData });
+    markersLayer.clearLayers();
+    
+    var data = await response.json();
+  
+    if (JSON.stringify(data)=='{}') {
+  
+    }
+    else{
+    for (i in data) {
+    let title = data[i].sname;
+    let lat=parseFloat(data[i].latitude);
+    let long=parseFloat(data[i].longitude);
+    let col=data[i].color;
+    if(col=='0'){
+      let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+      marker.bindPopup("title: " + title);
+    marker.addTo(markersLayer);
+    }else{
+      let marker = L.marker(L.latLng(lat,long));
+      marker.bindPopup("title: " + title);
+    marker.addTo(markersLayer);
+    }
+    
+    }
+    }
+
+    }
+  }
+
+is.addEventListener("keypress", async function(event) {
+    document.getElementById('selectcat').value='black';
+    var c = document.getElementById('searchtext9').value;
+    if(c.length === 0){
+        markersLayer.clearLayers();
+          const response = await fetch('./shopsformap.php');
+          var data = await response.json();
+          if (JSON.stringify(data)=='{}') {
+
+          }
+          else{
+          for (i in data) {
+            let title = data[i].sname;
+            let lat=parseFloat(data[i].latitude);
+            let long=parseFloat(data[i].longitude);
+            let marker = L.marker(L.latLng(lat,long), {title: title });
+            marker.bindPopup("title: " + title);
+            marker.addTo(markersLayer);
+          }
+          }
+
+    }else{
+    if (event.key === "Enter") {
+
+      el.click();
+    }
+  }
+  });
+
+
+var sel = document.getElementById('selectcat');
+sel.onchange = async function getSelected(){
+  document.getElementById('searchtext9').value=null;
+    var s = document.getElementById('selectcat').value;
+    console.log(s);
+    if(s!=='black'){
+    var formData = new FormData();
+    formData.append('select', s);
+    const response = await fetch('./searchpercat.php',{ method: 'POST', body: formData });
+    markersLayer.clearLayers();
+    
+    var data = await response.json();
+  
+    if (JSON.stringify(data)=='{}') {
+  
+    }
+    else{
+    for (i in data) {
+    let title = data[i].sname;
+    let lat=parseFloat(data[i].latitude);
+    let long=parseFloat(data[i].longitude);
+    let marker = L.marker(L.latLng(lat,long), {title: title });
+    marker.bindPopup("title: " + title);
+    marker.addTo(markersLayer);
+    }
+    }
+  
+  }else{
+    markersLayer.clearLayers();
+          const response = await fetch('./shopsformap.php');
+          var data = await response.json();
+          if (JSON.stringify(data)=='{}') {
+
+          }
+          else{
+          for (i in data) {
+            let title = data[i].sname;
+            let lat=parseFloat(data[i].latitude);
+            let long=parseFloat(data[i].longitude);
+            let marker = L.marker(L.latLng(lat,long), {title: title });
+            marker.bindPopup("title: " + title);
+            marker.addTo(markersLayer);
+          }
+          }
+
+}
 }
 }
