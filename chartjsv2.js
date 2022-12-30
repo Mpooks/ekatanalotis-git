@@ -46,6 +46,73 @@ const data = {
     }
   };
 
+
+
+function filterChart(date){
+  console.log(date.value);
+  const yearSelect = document.querySelector('#year');
+  console.log(yearSelect.value);
+  const monthSelect = document.querySelector('#month');
+  console.log(monthSelect.value);
+
+
+  var endDate = `${date.value}-31`;
+  if (monthSelect.value == 'January') {
+  	endDate = `${date.value}-31`;
+    } 
+    else if (monthSelect.value == 'February') {
+    endDate = `${date.value}-28`;
+    } 
+    else if (monthSelect.value == 'March') {
+    endDate = `${date.value}-31`;
+     }
+    else if (monthSelect.value == 'April') {
+    endDate = `${date.value}-30`;
+    }
+    else if (monthSelect.value == 'May') {
+    endDate = `${date.value}-31`;
+    } 
+    else if (monthSelect.value == 'June') {
+    endDate = `${date.value}-30`;
+    } 
+    else if (monthSelect.value == 'July') {
+    endDate = `${date.value}-31`;
+    }
+    else if (monthSelect.value == 'August') {
+    endDate = `${date.value}-31`;
+    } 
+    else if (monthSelect.value == 'September') {
+    endDate = `${date.value}-30`;
+    }
+    else if (monthSelect.value == 'October') {
+    endDate = `${date.value}-31`;
+    } 
+    else if (monthSelect.value == 'November') {
+    endDate = `${date.value}-30`;
+    } 
+    else if (monthSelect.value == 'December') {
+    endDate = `${date.value}-31`;
+    } 
+
+  
+    const startDate = `${date.value}-01`; 
+  console.log(endDate);
+  
+  var e = myChart.config.options.scales.x.min = startDate;
+  console.log(e)
+  var b = myChart.config.options.scales.x.max = endDate;
+  console.log(b)
+  myChart.update();
+}
+
+yearSelect = document.querySelector('#year');
+
+function reset(){
+  myChart.config.options.scales.x.min = '2022-01-01';
+  myChart.config.options.scales.x.max = '2022-12-31';
+  myChart.update();
+}
+
   // render init block
   const myChart = new Chart(
     document.getElementById('myChart'),
@@ -56,9 +123,6 @@ const data = {
 const nativePicker = document.querySelector('.nativeDatePicker');
 const fallbackPicker = document.querySelector('.fallbackDatePicker');
 const fallbackLabel = document.querySelector('.fallbackLabel');
-
-const yearSelect = document.querySelector('#year');
-const monthSelect = document.querySelector('#month');
 
 // Hide fallback initially
 fallbackPicker.style.display = 'none';
@@ -100,6 +164,7 @@ function populateYears() {
   }
   
 }
+
 function val() {
     d = document.getElementById("month").value;
     console.log(monthSelect.value);
