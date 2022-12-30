@@ -53,14 +53,16 @@ const data = {
   );
 
   function filterChart(date){
+    console.log(date.value);
     const year = date.value.substring(0, 4);
-    const month = date.value.substring(7, 10);
+    const month = date.value.substring(5, 7);
+    
     const lastDay = (y,m) => {
-       return new Date(y, m, 0).getDate()
+      return new Date(y, m, 0).getDate()
     };
 
+    lastDay(year, month);
 
-    
     const startDate = `${date.value}-01`; 
     const endDate = `${date.value}-${lastDay(year, month)}`;
     myChart.config.options.scales.x.min = startDate;
@@ -70,6 +72,6 @@ const data = {
 
   function reset(){
     myChart.config.options.scales.x.min = '2022-01-01';
-    myChart.config.options.scales.x.max = '2022-12-12';
+    myChart.config.options.scales.x.max = '2022-12-31';
     myChart.update();
   }
