@@ -47,55 +47,38 @@ const data = {
   };
 
 
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
 
-function filterChart(date){
-  console.log(date.value);
-  const yearSelect = document.querySelector('#year');
+  const yearSelect = document.getElementById('year');
+  
+  for (let i = 0; i <= 100; i++) {
+    const option = document.createElement('option');
+    option.textContent = year - i;
+    option.value = year - i;
+    yearSelect.appendChild(option);
+  }
+
+
+function filterChart(){
+
   console.log(yearSelect.value);
-  const monthSelect = document.querySelector('#month');
+  const monthSelect = document.getElementById('month');
   console.log(monthSelect.value);
 
 
-  var endDate = `${date.value}-31`;
-  if (monthSelect.value == 'January') {
-  	endDate = `${date.value}-31`;
-    } 
-    else if (monthSelect.value == 'February') {
-    endDate = `${date.value}-28`;
-    } 
-    else if (monthSelect.value == 'March') {
-    endDate = `${date.value}-31`;
-     }
-    else if (monthSelect.value == 'April') {
-    endDate = `${date.value}-30`;
-    }
-    else if (monthSelect.value == 'May') {
-    endDate = `${date.value}-31`;
-    } 
-    else if (monthSelect.value == 'June') {
-    endDate = `${date.value}-30`;
-    } 
-    else if (monthSelect.value == 'July') {
-    endDate = `${date.value}-31`;
-    }
-    else if (monthSelect.value == 'August') {
-    endDate = `${date.value}-31`;
-    } 
-    else if (monthSelect.value == 'September') {
-    endDate = `${date.value}-30`;
-    }
-    else if (monthSelect.value == 'October') {
-    endDate = `${date.value}-31`;
-    } 
-    else if (monthSelect.value == 'November') {
-    endDate = `${date.value}-30`;
-    } 
-    else if (monthSelect.value == 'December') {
-    endDate = `${date.value}-31`;
-    } 
 
-  
-    const startDate = `${date.value}-01`; 
+
+  const lastDay = (y,m) => {
+    return new Date(y, m, 0).getDate()
+  };
+
+  lastDay(yearSelect.value, monthSelect.value);
+console.log(lastDay(yearSelect.value, monthSelect.value));
+  const startDate = `${monthSelect.value}-01`;
+  const endDate = `${monthSelect.value}-${lastDay(yearSelect.value, monthSelect.value)}`; 
   console.log(endDate);
   
   var e = myChart.config.options.scales.x.min = startDate;
@@ -105,7 +88,6 @@ function filterChart(date){
   myChart.update();
 }
 
-yearSelect = document.querySelector('#year');
 
 function reset(){
   myChart.config.options.scales.x.min = '2022-01-01';
@@ -113,66 +95,3 @@ function reset(){
   myChart.update();
 }
 
-  // render init block
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
-
-// Get UI elements
-const nativePicker = document.querySelector('.nativeDatePicker');
-const fallbackPicker = document.querySelector('.fallbackDatePicker');
-const fallbackLabel = document.querySelector('.fallbackLabel');
-
-// Hide fallback initially
-fallbackPicker.style.display = 'none';
-fallbackLabel.style.display = 'none';
-
-// Test whether a new date input falls back to a text input or not
-const test = document.createElement('input');
-
-try {
-  test.type = 'month';
-} catch (e) {
-  console.log(e.description);
-}
-
-// If it does, run the code inside the if () {} block
-if (test.type === 'text') {
-  // Hide the native picker and show the fallback
-  nativePicker.style.display = 'none';
-  fallbackPicker.style.display = 'block';
-  fallbackLabel.style.display = 'block';
-
-  // Populate the years dynamically
-  // (the months are always the same, therefore hardcoded)
-  populateYears();
-}
-
-function populateYears() {
-  // Get the current year as a number
-  const date = new Date();
-  const year = date.getFullYear();
-  const option = document.createElement('option');
-  option.textContent = 'None';
-  yearSelect.appendChild(option);
-  // Make this year, and the 100 years before it available in the year <select>
-  for (let i = 0; i <= 100; i++) {
-    const option = document.createElement('option');
-    option.textContent = year - i;
-    yearSelect.appendChild(option);
-  }
-  
-}
-
-function val() {
-    d = document.getElementById("month").value;
-    console.log(monthSelect.value);
-
-}
-
-function val1() {
-    d = document.getElementById("year").value;
-    console.log(yearSelect.value);
-
-}
