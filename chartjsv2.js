@@ -53,6 +53,7 @@ const data = {
   );
 
   const yearSelect = document.getElementById('year');
+  year= new Date().getFullYear();
   
   for (let i = 0; i <= 100; i++) {
     const option = document.createElement('option');
@@ -68,23 +69,45 @@ function filterChart(){
   const monthSelect = document.getElementById('month');
   console.log(monthSelect.value);
 
+  const lastDay = (y,m) => {
+    return new Date(y, m, 0).getDate()
+  };
 
+  var y=yearSelect.value;
+  var m=monthSelect.value;
+  const date=y.toString()+'-'+m.toString();
 
+  lastDay(yearSelect.value, monthSelect.value);
+  const startDate = `${date}-01`;
+  const endDate = `${date}-${lastDay(yearSelect.value, monthSelect.value)}`; 
+  console.log(endDate);
+  console.log(startDate);
+  myChart.config.options.scales.x.min = startDate;
+  myChart.config.options.scales.x.max = endDate;
+  myChart.update();
+}
+
+function filterYearChart(){
+
+  console.log(yearSelect.value);
+  const monthSelect = document.getElementById('month');
+  console.log(monthSelect.value);
 
   const lastDay = (y,m) => {
     return new Date(y, m, 0).getDate()
   };
 
+  var y=yearSelect.value;
+  var m=monthSelect.value;
+  const date=y.toString()+'-'+m.toString();
+
   lastDay(yearSelect.value, monthSelect.value);
-console.log(lastDay(yearSelect.value, monthSelect.value));
-  const startDate = `${monthSelect.value}-01`;
-  const endDate = `${monthSelect.value}-${lastDay(yearSelect.value, monthSelect.value)}`; 
+  const startDate = `${date}-01`;
+  const endDate = `${date}-${lastDay(yearSelect.value, monthSelect.value)}`; 
   console.log(endDate);
-  
-  var e = myChart.config.options.scales.x.min = startDate;
-  console.log(e)
-  var b = myChart.config.options.scales.x.max = endDate;
-  console.log(b)
+  console.log(startDate);
+  myChart.config.options.scales.x.min = startDate;
+  myChart.config.options.scales.x.max = endDate;
   myChart.update();
 }
 

@@ -65,6 +65,8 @@ const data = {
 
     const startDate = `${date.value}-01`; 
     const endDate = `${date.value}-${lastDay(year, month)}`;
+    console.log(endDate);
+  console.log(startDate);
     myChart.config.options.scales.x.min = startDate;
     myChart.config.options.scales.x.max = endDate;
     myChart.update();
