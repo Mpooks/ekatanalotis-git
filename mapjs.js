@@ -22,6 +22,8 @@ let markersLayer = L.layerGroup();
 mymap.addLayer(markersLayer);
 
 markersLayer.addTo(mymap);
+
+
 let controlSearch = new L.Control.Search({
   position: "topright",
   layer: markersLayer,
@@ -70,6 +72,8 @@ function success(pos) {
 
 
     mymap.setView([lat, lng]);              //focus se kathe neo position meta apo update position
+
+    marker.bindPopup("This is the Transamerica Pyramid").openPopup();
 
 }
 
