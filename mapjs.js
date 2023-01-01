@@ -44,8 +44,25 @@ for (i in data) {
   let lat=parseFloat(data[i].latitude);
   let long=parseFloat(data[i].longitude);
   let marker = L.marker(L.latLng(lat,long), {title: title });
-  marker.bindPopup("title: " + title);
+
+  let template0 = `
+  <h3>Offers :</h3>
+  `
+  
+  let template1 = `
+  
+  <button class="review_but"> Review </button>
+  `
+  let template2 = `
+  <br><br><br>`
+
+  let template3 = `
+  <button class="offer_but"> New offer </button>
+  `
+  marker.bindPopup("Shop: " + title + "<br>" + template0 + template2 + template1 + template3);
   marker.addTo(markersLayer);
+
+
 }
 }
 
@@ -73,7 +90,7 @@ function success(pos) {
 
     mymap.setView([lat, lng]);              //focus se kathe neo position meta apo update position
 
-    marker.bindPopup("This is the Transamerica Pyramid").openPopup();
+    marker.bindPopup("This is the Transamerica Pyramid");
 
 }
 
