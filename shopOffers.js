@@ -57,7 +57,7 @@ async function allof(){
       buttoni.textContent='Details';
       buttoni.id=data[j].pid;
       buttoni.addEventListener("click", function(){
-        op(data[j].ofID,data[j].pname,data[j].pr,data[j].ld,data[j].lw,data[j].d,data[j].lik,data[j].disl,data[j].st,data[j].imagep,data[j].username);
+        op(data[j].sc,data[j].ofID,data[j].pname,data[j].pr,data[j].ld,data[j].lw,data[j].d,data[j].lik,data[j].disl,data[j].st,data[j].imagep,data[j].username);
     });
 
       pr.classList.add('producth4');
@@ -74,7 +74,7 @@ async function allof(){
     }
     
 }
-async function op(oDP,p,pr,ld,lw,d,like,disl,st,pim,us){
+async function op(score,oDP,p,pr,ld,lw,d,like,disl,st,pim,us){
     const im=document.getElementById("offid");
     im.src = pim;
     const pn=document.getElementById("pname");
@@ -111,6 +111,8 @@ async function op(oDP,p,pr,ld,lw,d,like,disl,st,pim,us){
     
     const usernn=document.getElementById("usern");
     usernn.textContent='Username: '+us;
+    const sco=document.getElementById("scoree");
+    sco.textContent='Total score: '+score;
     const ll=document.getElementById("likes");
     ll.textContent='Likes: '+like;
     const dsl=document.getElementById("dislikes");

@@ -404,7 +404,7 @@ body{
   
    .avatarDropdown-content {
     display: none;
-    position: absolute;
+    position:relative;
     right: 0;
     background-color: #041c3a;
     min-width: auto;

@@ -47,7 +47,7 @@ for (i in data) {
 
 
 
-  let template = [ `<h3>Offers :</h3>`,`<button class="review_but"> Review </button>`,` <br><br><br>`,`<button class="offer_but"> New offer </button>`]
+  let template = [ `<h3>Offers :</h3>`,`<button class="review_but" id="rb"> Review </button>`,` <br><br><br>`,`<button id="db" class="offer_but"> New offer </button>`]
 
 
   marker.bindPopup(title + "<br><br>" + template[0] + template[2] + template[1] + template[3]);

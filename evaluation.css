@@ -296,6 +296,8 @@ body{
     width:70%;
     text-align:center;
     display: inline-block;
+    text-decoration: underline;  
+  text-decoration-color: #181c25; 
   }
   .offerp{
     color: #353c4e;
@@ -384,6 +386,8 @@ body{
     margin:0;
     font-size:24px;
     padding-top:10px;
+    text-decoration: underline;  
+  text-decoration-color: #181c25; 
     }
     
    .myform p{
@@ -406,7 +410,6 @@ body{
     border-radius:20px;
     padding: 0px 20px;
     margin-top: 10px;
-    margin-bottom:10px;
     text-align:center;
     }
     
