@@ -81,7 +81,7 @@ function success(pos) {
 
     mymap.setView([lat, lng]);              //focus se kathe neo position meta apo update position
 
-    marker.bindPopup("This is the Transamerica Pyramid");
+    marker.bindPopup("This is my current location");
 
 }
 
