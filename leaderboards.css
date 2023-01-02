@@ -118,6 +118,7 @@ label.logo{
     display: block;
   }
 
+  
   ul{
     position: absolute;
     width: auto;
@@ -315,4 +316,29 @@ input[type="button"]:not(.active) {
 
 input[type="button"]:hover:not(.active) {
 	background-color: #ddd;
+}
+
+
+@media (max-width: 335px){
+  .checkbtn{
+    display: block;
+  }
+  label.logo{
+    font-size:10px;
+    line-height:20px;
+    padding: 0 5px;
+    font-weight:bold;
+    }
+
+    nav ul li a{
+      
+      font-size: 10px;
+      padding: 2px 5px;
+      border-radius: 3px;
+     }
+
+     .myImage{
+      vertical-align:middle;
+      height: 64px;
+     }
 }
