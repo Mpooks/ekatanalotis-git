@@ -1,12 +1,12 @@
-var $table = document.getElementById("myTable"),
-$n = 10,
-$rowCount = $table.rows.length,
-$firstRow = $table.rows[0].firstElementChild.tagName,
-$hasHead = ($firstRow === "TH"),
+var $table = document.getElementById("myTable");
+var $n = 10;
+var $rowCount = $table.rows.length;
+var $firstRow = $table.rows[0].firstElementChild.tagName;
+var $hasHead = ($firstRow === "TH");
 
-$tr = [], // array gia kathe grammi
-$i,$ii,$j = ($hasHead)?1:0, // counters gia na metrame apo to row 1 an yparxei head sto row 0
-$th = ($hasHead?$table.rows[(0)].outerHTML:""); // krataei to header
+var $tr = []; // array gia kathe grammi
+var $i,$ii,$j = ($hasHead)?1:0; // counters gia na metrame apo to row 1 an yparxei head sto row 0
+var $th = ($hasHead?$table.rows[(0)].outerHTML:""); // krataei to header
 var $pageCount = Math.ceil($rowCount / $n);
 
 if ($pageCount > 1) {
