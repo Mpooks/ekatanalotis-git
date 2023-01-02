@@ -22,6 +22,8 @@ let markersLayer = L.layerGroup();
 mymap.addLayer(markersLayer);
 
 markersLayer.addTo(mymap);
+
+
 let controlSearch = new L.Control.Search({
   position: "topright",
   layer: markersLayer,
@@ -42,8 +44,16 @@ for (i in data) {
   let lat=parseFloat(data[i].latitude);
   let long=parseFloat(data[i].longitude);
   let marker = L.marker(L.latLng(lat,long), {title: title });
-  marker.bindPopup("title: " + title);
+
+
+
+  let template = [ `<h3>Offers :</h3>`,`<button class="review_but"> Review </button>`,` <br><br><br>`,`<button class="offer_but"> New offer </button>`]
+
+
+  marker.bindPopup(title + "<br><br>" + template[0] + template[2] + template[1] + template[3]);
   marker.addTo(markersLayer);
+
+
 }
 }
 
@@ -70,6 +80,8 @@ function success(pos) {
 
 
     mymap.setView([lat, lng]);              //focus se kathe neo position meta apo update position
+
+    marker.bindPopup("This is my current location");
 
 }
 

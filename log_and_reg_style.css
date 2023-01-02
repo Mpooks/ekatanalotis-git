@@ -129,16 +129,12 @@ button.nav {
     border-color: hsl(240, 64%, 27%);
     border-radius: 60px;
     text-align: center;
-
-
   }
   
 
   .serch_bar_div .search-bar .dropdown_div #selectcat .dropdown_content{
     display:inline-table;
-    background-color: #60b02b;
     border-radius: 60px;
-
     align-items: center;
   }
   
@@ -370,3 +366,13 @@ input:checked + .slider:before {
   z-index: 0;
 }
  
+.leaflet-popup-content-wrapper .leaflet-popup-content{  
+  height: 170px;
+  width: 170px;
+  font-size: 15px;
+  
+}
+
+.leaflet-popup-tip-container .leaflet-popup-tip{
+background: rgb(212, 191, 0);
+}
