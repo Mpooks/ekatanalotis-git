@@ -1,0 +1,522 @@
+
+body{  
+    background-color:#062C5A;
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    background: url("https://www.creativefabrica.com/wp-content/uploads/2020/03/14/A-Illustration-Vector-City-Background-Graphics-3644670-1.jpg") no-repeat center center fixed;
+    background-size:cover;
+    align-items:center;
+    justify-content:center;
+    overflow-x: hidden;
+      }
+   
+  *{
+      font-family:  Bahnschrift SemiBold, Bahnschrift;
+      margin: 0;
+      padding: 0;
+   }
+   
+   
+   
+  .hello{
+       display:inline-block;
+        }
+   
+
+  
+  @media screen and (max-height:700px) and (max-width:520px) {
+    
+  button.nav {
+    width:80px;
+    font-size:8px;
+    }
+  }
+  
+  
+
+   
+   
+  .myImage{
+    vertical-align:middle;
+    height: 64px;
+   }
+   
+  .userimage{
+   height:150px;
+   width:150px;
+   } 
+  
+   
+  
+  button:hover{
+   cursor:pointer; 
+   opacity: .75;
+  
+   }
+   .bar{
+    height: 30px;
+    width: 30px;
+  }
+   
+  nav{
+   background:#13225B;
+   height:60px;
+   width:100%;
+   }
+   
+  label.logo{
+   color:white;
+   font-size:18px;
+   line-height:20px;
+   padding: 0 10px;
+   font-weight:bold;
+   }
+  
+   nav ul{
+    float: right;
+   }
+  
+   nav ul li{
+    display: inline-block;
+    line-height: 60px;
+    margin: 0 0px;
+    padding-left: 0px;
+    padding-right: 10px;
+   }
+   
+   nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+   }
+  
+   a.active,a:hover{
+    background: #021727c9;
+    transition: 0.5s;
+   }
+   
+   .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 70px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;  
+   }
+  
+   #check{
+      display:none;
+   }
+  
+   @media (max-width: 952px){
+    label.logo{
+      font-size: 15px;
+      padding: 0 5px;
+    }
+  
+    nav ul li a{
+      font-size: 16px;
+    }
+   }
+  
+   @media (max-width: 858px){
+    .checkbtn{
+      display: block;
+      
+    }
+  
+    ul{
+      position: absolute;
+      width: auto;
+      height: auto;
+      background: #041c3a;
+      top: 60px;
+      right: -100%;
+      text-align: left;
+      transition: all .5s;
+      z-index: 2;
+    }
+  
+    nav ul li{
+      display: block;
+      margin: 30px 0;
+      line-height: 10px;
+    }
+  
+    nav ul li a{
+      font-size: 16px;
+    }
+  
+    nav ul li a:hover,nav ul li a.active{
+      background: none;
+      color: #062C5A;
+  
+    }
+  
+    #check:checked ~ ul{
+      right: 0;
+    }
+  
+   }
+  
+   .avatarDropdown{
+    
+    display: inline-block;
+    overflow: hidden;
+   }
+  
+   .avatarDropdown .bnav{                                            /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
+    border:2px solid #fff;
+    outline:none;
+    height:40px;
+    width:40px;
+    background-color:#06144B;
+    border-radius:20px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    text-align:center;
+    position:relative;
+    margin-right:20px;
+    margin-left: 20px;
+    transition: transform 0.7s ease-in-out;
+    }
+    
+ .vertical {
+    border-left: 6px solid black;
+    height: 200px;
+    position:absolute;
+    left: 50%;
+  }
+  
+   
+   
+   .bnav img{
+       
+       width: 36px;
+       height: 36px;
+   }
+  
+   .avatarDropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #041c3a;
+    min-width: auto;
+    padding: 10px 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
+  }
+  
+  .avatarDropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .avatarDropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .avatarDropdown:hover .avatarDropdown-content {
+    display: block;
+  }
+
+  /*Apo edw prosthetw gia thn aksiologhsh*/
+
+  .boxforinfo{
+    height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 80%;
+  min-width: 360px;
+  top: 20%;
+  position: relative;
+  background-color:#fff;
+}
+
+  .boxforinfo .tboxforinfo{
+    background: linear-gradient(to right, #01a9ac, #01dbdf);
+  }
+
+  .boxforinfo .tboxforinfo h1{
+    padding-top:1%;
+    padding-bottom:1%;
+    text-align:center;
+    color:#fff;
+  }
+
+
+  .boxforinfo .bboxforinfo{
+    padding-top:2%;
+    padding-bottom:2%;
+
+  }
+      
+    .boxforinfo .bboxforinfo .showoffer{
+      margin-bottom: 2%;
+      align-content:center;  
+    }
+
+        .boxforinfo .bboxforinfo .row{
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: 15px;
+            margin-left: 15px;
+            overflow-y: auto;
+            height:300px;
+        }
+
+        .container {
+          margin-left:5% ;
+          margin-bottom:5% ;
+          background-color: #fff;
+          border:none;
+          width:90%;
+          border-radius:25px;
+          box-shadow:1px 1px 1px rgb(192, 192, 192);
+          outline:none;
+          height: 12rem;
+      }
+
+
+     .offerh3{
+      padding-top:10px;
+    padding-bottom: 10px;
+    color: #353c4e;
+    letter-spacing: 2px;
+    font-size:14px;
+    width:70%;
+    text-align:center;
+    display: inline-block;
+  }
+  .offerp{
+    color: #353c4e;
+    letter-spacing: 2px;
+    width:35%;
+    font-size:11px;
+    padding-left:5px;
+    padding-bottom:2px;
+    text-align:center;
+    display: inline-block;
+  }
+
+.offerh2{
+  padding-top:5rem;
+  padding-bottom: 5px;
+  color: #353c4e;
+  letter-spacing: 2px;
+  width:100%;
+  text-align:center;
+  text-decoration: underline;  
+  text-decoration-color: #181c25;  
+}
+
+.offerbutton{
+    float:right;
+    margin-right:2rem;
+    width:25%;
+    border-radius: 25%;
+    color:white;
+    background:#20486a;
+    padding:10px;
+    border:none;
+    border-radius:50px;
+    box-shadow:1px 1px 1px rgb(192, 192, 192);
+    outline:none;
+}
+
+
+/*form box*/
+
+.overlay {
+    position: fixed;
+    max-width:100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    transition: opacity 100ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index:1;
+   }
+  
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+   }
+  
+  
+  
+  
+  .myform {
+    text-align:center;
+    width:360px;
+    height:640px;
+    max-width:100%;
+    overflow-y: auto;
+    background:#fff;
+    color:#000;
+    top:50%;
+    left:50%;
+    position: relative;
+    transform:translate(-50%,-50%);
+    box-sizing:border-box;
+    padding-top:10px;
+    transition: all 5s ease-in-out;
+   }
+  
+  @media screen and (max-height: 500px) {
+    .myform {
+      height:200px;
+    }
+  }
+  .myform h1{
+    margin:0;
+    font-size:24px;
+    padding-top:10px;
+    }
+    
+   .myform p{
+    color: #000;
+    margin:0;
+    text-align:center;
+    font-size: 18px;
+    padding-top:10px;
+    }
+    
+    
+   .myform .buttony{
+    border:none;
+    outline:none;
+    height:40px;
+    width:40%;
+    background:#fff;
+    color:#06144B;
+    font-size:18px;
+    border-radius:20px;
+    padding: 0px 20px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    text-align:center;
+    }
+    
+   .myform .buttony:hover{
+    cursor:pointer;    
+    opacity: .75;
+    }
+
+    .myform .close {
+        position: absolute;
+        top: 15px;
+        left:90%;
+        transition: all 200ms;
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(134, 134, 134);
+       }
+      
+      .myform .close:hover {
+        color: #fff;
+       }  
+
+       .myform .beforebl{
+        width:40%;
+        text-align:center;
+        border-color: #000;
+        border-radius: 25%;
+        height:40px;
+        width:40%;
+        background:#fff;
+        color:#000;
+        font-size:18px;
+       padding: 0px 20px;
+       margin-top: 10px;
+       margin-bottom:10px;
+       text-align:center;
+       }
+
+       .myform .beforebd{
+        width:40%;
+        text-align:center;
+        border-color: #000;
+        border-radius: 25%;
+        height:40px;
+        width:40%;
+        background:#fff;
+        color:#000;
+        font-size:18px;
+       padding: 0px 20px;
+       margin-top: 10px;
+       margin-bottom:10px;
+       text-align:center;
+       }
+
+       .myform .beforebl:hover{
+        cursor:pointer;    
+        opacity: .75;
+        border-color: #1cb743c9;
+        color:#1cb743c9;
+        }
+        .myform .beforebd:hover{
+        cursor:pointer;    
+        opacity: .75;
+        border-color: #b41e1ec9;
+        color:#b41e1ec9;
+        }
+
+        .myform .afterbl{
+            width:40%;
+            text-align:center;
+            border-color: #fff;
+            border-radius: 25%;
+            height:40px;
+            width:40%;
+            background:#1cb743c9;
+            color:#fff;
+            font-size:18px;
+           padding: 0px 20px;
+           margin-top: 10px;
+           margin-bottom:10px;
+           text-align:center;
+        }
+        .myform .afterbd{
+            width:40%;
+            text-align:center;
+            border-color: #fff;
+            border-radius: 25%;
+            height:40px;
+            width:40%;
+            background:#b41e1ec9;
+            color:#fff;
+            font-size:18px;
+           padding: 0px 20px;
+           margin-top: 10px;
+           margin-bottom:10px;
+           text-align:center;
+        }
+
+        .myform .afterbl:hover{
+            cursor:pointer;    
+            opacity: .75;
+            border-color: #1cb743c9;
+            background:#fff;
+            color:#1cb743c9;
+            }
+        .myform .afterbd:hover{
+            cursor:pointer;    
+            opacity: .75;
+            border-color: #b41e1ec9;
+            background:#fff;
+            color:#b41e1ec9;
+            }
