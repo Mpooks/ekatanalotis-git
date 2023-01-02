@@ -45,21 +45,12 @@ for (i in data) {
   let long=parseFloat(data[i].longitude);
   let marker = L.marker(L.latLng(lat,long), {title: title });
 
-  let template0 = `
-  <h3>Offers :</h3>
-  `
-  
-  let template1 = `
-  
-  <button class="review_but"> Review </button>
-  `
-  let template2 = `
-  <br><br><br>`
 
-  let template3 = `
-  <button class="offer_but"> New offer </button>
-  `
-  marker.bindPopup("Shop: " + title + "<br>" + template0 + template2 + template1 + template3);
+
+  let template = [ `<h3>Offers :</h3>`,`<button class="review_but"> Review </button>`,` <br><br><br>`,`<button class="offer_but"> New offer </button>`]
+
+
+  marker.bindPopup(title + "<br><br>" + template[0] + template[2] + template[1] + template[3]);
   marker.addTo(markersLayer);
 
 
