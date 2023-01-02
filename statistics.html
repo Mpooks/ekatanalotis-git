@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>our e-καταναλωτής</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="statistics.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.1.1/dist/chart.umd.js"></script>    
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>  
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        
+    </head>
+    
+    <body>
+
+      <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <img src="barz.png" class="bar">
+        </label>
+        <label class="logo"> <a href="arxikhafterloginAdmin.html"><img src="pngwing.com.png" class="myImage"/></a>
+        <div class="hello">
+            <p>our e-καταναλωτής</p>
+        </div> 
+        </label>
+        
+        <div class="avatarDropdown" style="float:right;">
+
+        <button class="bnav"><img src="boy.png"></button>
+        
+        <div class="avatarDropdown-content">
+            <a href="myprofileadmin.html">My Profile</a>
+            <a href="logout.php">Log out</a>
+          </div>
+        </div>
+
+        <ul>
+            <li><a style="text-decoration:none;"href="arxikhafterloginAdmin.html">Home</a></li>
+            <li><a style="text-decoration:none;"href="manageproducts.html">Products</a></li>
+            <li><a style="text-decoration:none;"href="manageshops.html">Stores</a></li>
+            <li><a class="active" style="text-decoration:none;"href="#">Statistics</a></li>
+            <li><a style="text-decoration:none;"href="#">Leaderboards</a></li>
+        </ul>
+        
+        </nav>
+
+        <div class="chartCard">
+            <div class="chartBox">
+                <canvas id="myChart"></canvas>
+                <form>
+                      <div>
+                        <span>
+                          <label for="month">Month:</label>
+                          <select onchange="filterChart()" id="month" name="month">
+                            <option value="None" selected>None</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                          </select>
+                        </span>
+                        <span>
+                          <label for="year">Year:</label>
+                          <select onchange="filterYearChart()" id="year" name="year">
+                          <option value="2023" selected>2023</option>
+                          </select>
+                        </span>
+                      </div>
+                  </form>
+                  
+                <button onclick="reset()">Reset</button>
+            </div>
+
+        </div>
+
+        <div class="weekCard">
+          <div class="weekBox">
+              <canvas id="weekChart"></canvas>
+              <form>
+                    <div>
+                      <span>
+                        <label for="month">Month:</label>
+                        <select onchange="filterChart()" id="month" name="month">
+                          <option value="None" selected>None</option>
+                          <option value="01">January</option>
+                          <option value="02">February</option>
+                          <option value="03">March</option>
+                          <option value="04">April</option>
+                          <option value="05">May</option>
+                          <option value="06">June</option>
+                          <option value="07">July</option>
+                          <option value="08">August</option>
+                          <option value="09">September</option>
+                          <option value="10">October</option>
+                          <option value="11">November</option>
+                          <option value="12">December</option>
+                        </select>
+                      </span>
+                      <span>
+                        <label for="year">Year:</label>
+                        <select onchange="filterYearChart()" id="year" name="year">
+                        <option value="2023" selected>2023</option>
+                        </select>
+                      </span>
+                    </div>
+                </form>
+                
+              <button onclick="reset()">Reset</button>
+          </div>
+
+      </div>
+      
+        <script type="text/javascript" src="statistics.js"></script>
+    </body>
+</html>
