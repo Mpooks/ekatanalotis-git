@@ -19,9 +19,10 @@ body{
    
    
    
-  .hello{
-       display:inline-block;
-        }
+   .hello{
+    display:inline-block;
+    font-size: min(2vw, 17px);
+     }
    
 
   
@@ -339,7 +340,7 @@ body{
 /*form box*/
 
 .overlay {
-    position: fixed;
+  position: fixed;
     max-width:100%;
     top: 0;
     bottom: 0;
@@ -350,12 +351,12 @@ body{
     visibility: hidden;
     opacity: 0;
     z-index:1;
-   }
+}
   
   .overlay:target {
     visibility: visible;
     opacity: 1;
-   }
+  }
   
   
   
@@ -519,3 +520,35 @@ body{
             background:#fff;
             color:#b41e1ec9;
             }
+
+            @media (max-width: 335px){
+              .checkbtn{
+                display: block;
+              }
+              label.logo{
+                font-size:10px;
+                line-height:20px;
+                padding: 0 5px;
+                font-weight:bold;
+                }
+                
+nav ul li a{              
+font-size: 10px;
+padding: 2px 5px;
+border-radius: 3px;
+}
+            
+.myImage{
+ vertical-align:middle;
+height: 64px;
+}
+.bnav{
+margin-right: 15px;
+ }
+ }
+            
+@media (max-width: 320px){
+  .bnav{
+  margin-right: 10px;
+  }
+}

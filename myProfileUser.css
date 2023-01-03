@@ -24,9 +24,10 @@ body{
  
  
  
-.hello{
-     display:inline-block;
-      }
+ .hello{
+  display:inline-block;
+  font-size: min(2vw, 17px);
+   }
 
 @media screen and (max-height:700px) and (max-width:520px) {
 button.nav {
@@ -407,7 +408,38 @@ tbody tr,td{
   }
 
   
-
+  @media (max-width: 335px){
+    .checkbtn{
+      display: block;
+    }
+    label.logo{
+      font-size:10px;
+      line-height:20px;
+      padding: 0 5px;
+      font-weight:bold;
+      }
+  
+      nav ul li a{
+        
+        font-size: 10px;
+        padding: 2px 5px;
+        border-radius: 3px;
+       }
+  
+       .myImage{
+        vertical-align:middle;
+        height: 64px;
+       }
+       .bnav{
+        margin-right: 15px;
+       }
+  }
+  
+  @media (max-width: 320px){
+       .bnav{
+        margin-right: 10px;
+       }
+  }
 
 
 

@@ -28,7 +28,6 @@ body{
   display:inline-block;
   font-size: min(2vw, 17px);
    }
-
 @media screen and (max-height:700px) and (max-width:520px) {
 button.nav {
   width:80px;
@@ -119,7 +118,6 @@ label.logo{
     display: block;
   }
 
-  
   ul{
     position: absolute;
     width: auto;
@@ -211,49 +209,140 @@ label.logo{
   display: block;
 }
 
-
-
-
-.right{
-  height: 500px;
+.wrapper{
+  height: 80%;
+  margin-left: 10%;
   margin-top: 40px;
-  margin: 0 auto;
+  margin-bottom: 100px;
+  width: 80%;
+  min-width: 360px;
+  top: 20%;
   position: relative;
   display: flex;
-  min-width: 300px;
-  width: 80%;
-  background: #fff;
+}
+
+
+
+.wrapper .left{
+  position: relative;
+  width: 30%;
+  background: linear-gradient(to right, #01a9ac, #01dbdf);
+  padding: 20px 10px;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+  color: #000;
+  min-width: 140px;
+  max-width: 200px;
+}
+
+.wrapper .left img{
+  width: 100%;
+  height: auto;
+  max-width: 100px;
   border-radius: 5px;
+}
+
+.wrapper .left h4{
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+
+.wrapper .left p{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+.wrapper .right{
+  position: relative;
+  min-width: 100px;
+  width: 70%;
+  background: #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   padding: 30px 10px;
 }
 
-.right .project{
+.wrapper .right .info, .wrapper .right .projects{
   margin-bottom: 30px;
-  padding: 8px 16px;
-  padding-right: 8px;
-  height: 500px;
+
 }
 
-
-
-.right .subwrap h3{
+.wrapper .right .info h3, .wrapper .right .projects h3{
   margin-bottom: 15px;
   padding-bottom: 15px;
   border-bottom: 1px solid #e0e0e0;
   color: #353c4e;
   text-transform: uppercase;
   letter-spacing: 5px;
-  text-align: center;
+}
+
+label.emailbox, label.usernamebox{
+  position: absolute;
+  width: 80%;
+  max-width: 205px;
+}
+
+label.passwordbox{
+  position: absolute;
+  width: 80%;
+  max-width: 205px;
+  transform: translate(0,-19px);
+}
+
+.data1,.data2,.data3{
+  margin-bottom: 28px;
+}
+
+
+
+input{
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 3px;
+  color: #4a4a4a;
+  letter-spacing: 0.5px;
+  box-shadow: 0 5px 30px rgba(22,89,233,0.15);
+}
+
+.spanaki{
+  position: relative;
+  left: 81%;
+  width: 80%;
+  max-width: 205px;
+  float: right;
+  top: 24px;
+  cursor: pointer;
+}
+
+.fa{
+  font-size: 20px;
+  color: #7a7977;
+}
+
+.ldl_data{
+  margin-top: 5px;
+  overflow-y: auto;
+  height: 200px;
+  margin-bottom: 10px;
+  
+}
+
+.ldl_data thead th {
+  position: sticky; 
+  top: 0px; 
 }
 
 table {
-  height: 100px;
   border-collapse: collapse; 
   width: 100%;
   table-layout: fixed;
   font-size: 90%;
   text-align: center;
-  min-width: 200px; /*auto edw de kserw giati leitourgei pragmatika*/
+  min-width: 300px; /*auto edw de kserw giati leitourgei pragmatika*/
 }
 
 td {
@@ -261,85 +350,96 @@ td {
   word-wrap: break-word;
 }
 th {
-  color: #fff;
-  background: midnightblue;
+  background: #01a9ac;
+  
   padding: 5px 5px;
+  
 }
 
- tr{
-  border-bottom: 1px solid midnightblue;
-
+tbody tr,td{
+  border: 1px solid #01a9ac;
+  border-bottom: none;
+  border-right: none;
 }
 
-tr:last-child{
-  border-bottom: 0;
-}
-
-td:nth-child(1) {  
-  text-align: left;
-}
-
-th:nth-child(1) {  
-  text-align: left;
-}
-
-td:nth-child(2) {  
-  text-align: left;
-}
-
-th:nth-child(2) {  
-  text-align: left;
-}
-
-input[type="button"] {
-  margin-top: 10px;
-	transition: all .3s;
-    border: 1px solid #ddd;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 5px;
-	font-size: 15px;
-}
-
-.buttons{
-  position: relative;
-
-}
-
-input[type="button"]:not(.active) {
-	background-color:transparent;
-}
-
-.active {
-	background-color: midnightblue;
-	color :#fff;
-}
-
-input[type="button"]:hover:not(.active) {
-	background-color: #ddd;
+.total_score, .month_score { 
+  padding-right: 25px;
+  background: url("score.png") no-repeat right;
+  background-size: 20px;
+  width: 100px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 10px;
 }
 
 
-@media (max-width: 335px){
-  .checkbtn{
-    display: block;
+  
+.month_tokens, .total_tokens{
+  padding-right: 25px;
+  background: url("token.png") no-repeat right;
+  background-size: 20px;
+  width: 100px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 10px;
+  
+}
+
+
+.changebtn{                                               /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
+  border:2px solid #005e60;
+  outline:none;
+  height:40px;
+  width:80px;
+  background: linear-gradient(to right, #01a9ac, #01dbdf);
+  color:#000;
+  font-size:16px;
+  border-radius:20px;
+  padding: 0px 20px;
+  margin-top: 30px;
+  text-align:center;
+  font-weight: bold;
   }
-  label.logo{
-    font-size:10px;
-    line-height:20px;
-    padding: 0 5px;
-    font-weight:bold;
+  
+ button:hover{
+  cursor:pointer; 
+  opacity: .75;
+  }
+
+  
+  @media (max-width: 335px){
+    .checkbtn{
+      display: block;
     }
+    label.logo{
+      font-size:10px;
+      line-height:20px;
+      padding: 0 5px;
+      font-weight:bold;
+      }
+  
+      nav ul li a{
+        
+        font-size: 10px;
+        padding: 2px 5px;
+        border-radius: 3px;
+       }
+  
+       .myImage{
+        vertical-align:middle;
+        height: 64px;
+       }
+       .bnav{
+        margin-right: 15px;
+       }
+  }
+  
+  @media (max-width: 320px){
+       .bnav{
+        margin-right: 10px;
+       }
+  }
 
-    nav ul li a{
-      
-      font-size: 10px;
-      padding: 2px 5px;
-      border-radius: 3px;
-     }
 
-     .myImage{
-      vertical-align:middle;
-      height: 64px;
-     }
-}
+
+
