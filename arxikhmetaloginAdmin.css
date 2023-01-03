@@ -18,9 +18,10 @@ body{
    
    
    
-  .hello{
-       display:inline-block;
-        }
+   .hello{
+    display:inline-block;
+    font-size: min(2vw, 17px);
+     }
    
    
   .overlay {
@@ -79,17 +80,16 @@ body{
   
    
   .serch_bar_div{
+    margin-top: 200px;
     display: block;
     text-align:center;
     width:100%;
     max-width:700px;
     height:50px;
-    top:50%;
-    left:50%;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
-    transform:translate(-50%,140px);
     padding-bottom: 2%;
-  
   }
    
   .serch_bar_div .search-bar{
@@ -107,23 +107,20 @@ body{
     }
   
     .kat_proiod_text_div {
-      margin-left: 10%;
-      padding-top: 3%;
       display: inline-block;
       white-space: nowrap;
+      width: 60%;
     }
   
    
     .serch_bar_div .search-bar .dropdown_div {
       display: inline-block;
-      margin-left: 15%;
       z-index: 1;
-     
     }
-  
+
     .serch_bar_div .search-bar .dropdown_div #selectcat{
-      height: 61px;
-      width: 48%;
+      height: 62px;
+      width: 40%;
       font-size: 18px;
       position: absolute;
       border-style:solid;
@@ -132,8 +129,7 @@ body{
       border-color: hsl(240, 64%, 27%);
       border-radius: 60px;
       text-align: center;
-  
-  
+      margin-top: -1px;
     }
     
   
@@ -488,18 +484,17 @@ body{
     border-radius: 50%;
    }
   
-  #mapid{
-    border-radius: 10px;
-    border-style: solid;
-    border-color: midnightblue;
-    margin-left: auto;
-    margin-right: auto;
-    width: 700px;
-    height: 360px;
-    max-width: 100%;
-    margin-top: 150px;
-    z-index: 0;
-  }
+#mapid{
+  border-radius: 10px;
+  border-style: solid;
+  border-color: midnightblue;
+  margin: 0 auto;
+  width: 700px;
+  height: 360px;
+  max-width: 100%;
+  margin-top: 50px;
+  z-index: 0;
+}
    
   .leaflet-popup-content-wrapper .leaflet-popup-content{  
     height: 170px;
@@ -534,5 +529,14 @@ body{
        .myImage{
         vertical-align:middle;
         height: 64px;
+       }
+       .bnav{
+        margin-right: 15px;
+       }
+  }
+  
+  @media (max-width: 320px){
+       .bnav{
+        margin-right: 10px;
        }
   }

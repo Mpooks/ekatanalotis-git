@@ -89,9 +89,7 @@ button.nav {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-
   padding-bottom: 2%;
-
 }
  
 .serch_bar_div .search-bar{
@@ -108,8 +106,7 @@ button.nav {
   }
 
   .kat_proiod_text_div {
-
-    display: inline;
+    display: inline-block;
     white-space: nowrap;
     width: 60%;
   }
@@ -120,10 +117,8 @@ button.nav {
 
  
   .serch_bar_div .search-bar .dropdown_div {
-    display: inline;
-
+    display: inline-block;
     z-index: 1;
-   
   }
 
   .serch_bar_div .search-bar .dropdown_div #selectcat{
