@@ -18,8 +18,10 @@ body{
 
 .hello{
      display:inline-block;
+     font-size: min(2vw, 17px);
       }
  
+
  
 .overlay {
   position: fixed;
@@ -78,15 +80,16 @@ button.nav {
 
 
 .serch_bar_div{
+  margin-top: 200px;
   display: block;
   text-align:center;
   width:100%;
   max-width:700px;
   height:50px;
-  top:50%;
-  left:50%;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
-  transform:translate(-50%,140px);
+
   padding-bottom: 2%;
 
 }
@@ -101,26 +104,31 @@ button.nav {
   display:flex;
   border-radius:60px;
   z-index: 1;
- 
+
   }
 
   .kat_proiod_text_div {
-    margin-left: 10%;
-    display: inline-block;
+
+    display: inline;
     white-space: nowrap;
+    width: 60%;
   }
+
+
+
+
 
  
   .serch_bar_div .search-bar .dropdown_div {
-    display: inline-block;
-    margin-left: 15%;
+    display: inline;
+
     z-index: 1;
    
   }
 
   .serch_bar_div .search-bar .dropdown_div #selectcat{
-    height: 61px;
-    width: 48%;
+    height: 62px;
+    width: 40%;
     font-size: 18px;
     position: absolute;
     border-style:solid;
@@ -129,6 +137,7 @@ button.nav {
     border-color: hsl(240, 64%, 27%);
     border-radius: 60px;
     text-align: center;
+    margin-top: -1px;
   }
   
 
@@ -242,19 +251,19 @@ button.nav {
  border:2px solid #fff;
  outline:none;
  height:40px;
- width:100px;
+ max-width: 100px;
+ min-width: 70px;
+ width:20%;
  background-color:#06144B;
  color:#fff;
- font-size:11px;
+ font-size:min(2vw, 11px);
  border-radius:20px;
  padding: 0px 20px;
  margin-top: 10px;
  margin-bottom:10px;
  text-align:center;
  font-weight: 900;
-
  line-height:32px;
- padding: 0 20px;
  float:right;
  margin-right:20px;
  }
@@ -357,12 +366,11 @@ input:checked + .slider:before {
   border-radius: 10px;
   border-style: solid;
   border-color: midnightblue;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   width: 700px;
   height: 360px;
   max-width: 100%;
-  margin-top: 150px;
+  margin-top: 50px;
   z-index: 0;
 }
  
@@ -398,5 +406,14 @@ background: rgb(212, 191, 0);
      .myImage{
       vertical-align:middle;
       height: 64px;
+     }
+     .bnav{
+      margin-right: 15px;
+     }
+}
+
+@media (max-width: 320px){
+     .bnav{
+      margin-right: 10px;
      }
 }
