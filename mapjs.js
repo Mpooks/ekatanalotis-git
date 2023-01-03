@@ -1,5 +1,5 @@
 async function mapd(){
-
+ 
 const response = await fetch('./shopsformap.php');
     
 var data = await response.json();
@@ -43,16 +43,32 @@ for (i in data) {
   let title = data[i].sname;
   let lat=parseFloat(data[i].latitude);
   let long=parseFloat(data[i].longitude);
-  let marker = L.marker(L.latLng(lat,long), {title: title });
+  let sid=data[i].shopid;
+  let marker = L.marker(L.latLng(lat,long), {title: title});
+
+  var formData1= new FormData();
+  formData1.append('s', data[i].shopid);
+  const response1 = await fetch('./findoffers.php',{ method: 'POST', body: formData1 });
+        
+  var data1 = await response1.json();
+  if (data1.length==0) {
+    let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="but"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
-
-  let template = [ `<h3>Offers :</h3>`,`<button class="review_but" id="rb"> Review </button>`,` <br><br><br>`,`<button id="db" class="offer_but"> New offer </button>`]
-
-
-  marker.bindPopup(title + "<br><br>" + template[0] + template[2] + template[1] + template[3]);
-  marker.addTo(markersLayer);
-
+    marker.bindPopup(template[2] + template[0] + template[1] );
+    marker.addTo(markersLayer);
+  }
+  else{
+    var str='';
+    for(j in data1){
+      var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
+      str=str.concat(a);
+      console.log(str);
+    }
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<button id="db" class="but"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
+     marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+     marker.addTo(markersLayer);
+}
 
 }
 }
@@ -113,12 +129,35 @@ el.onclick = async function(event) {
           else{
           for (i in data) {
             let title = data[i].sname;
-            let lat=parseFloat(data[i].latitude);
-            let long=parseFloat(data[i].longitude);
-              let marker = L.marker(L.latLng(lat,long));
+  let lat=parseFloat(data[i].latitude);
+  let long=parseFloat(data[i].longitude);
+  let sid=data[i].shopid;
+  let marker = L.marker(L.latLng(lat,long), {title: title});
 
-            marker.bindPopup("title: " + title);
-            marker.addTo(markersLayer);
+  var formData1= new FormData();
+  formData1.append('s', data[i].shopid);
+  const response1 = await fetch('./findoffers.php',{ method: 'POST', body: formData1 });
+        
+  var data1 = await response1.json();
+  if (data1.length==0) {
+    let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="but"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+
+
+    marker.bindPopup(template[2] + template[0] + template[1] );
+    marker.addTo(markersLayer);
+  }
+  else{
+    var str='';
+    for(j in data1){
+      var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
+      str=str.concat(a);
+      console.log(str);
+    }
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<button id="db" class="but"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
+     marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+     marker.addTo(markersLayer);
+}
+
           }
           }
 
@@ -137,18 +176,50 @@ el.onclick = async function(event) {
     }
     else{
     for (i in data) {
-    let title = data[i].sname;
-    let lat=parseFloat(data[i].latitude);
-    let long=parseFloat(data[i].longitude);
-    let col=data[i].color;
+      let title = data[i].sname;
+      let lat=parseFloat(data[i].latitude);
+      let long=parseFloat(data[i].longitude);
+      let sid=data[i].shopid;
+      let col=data[i].color;
+      var formData1= new FormData();
+      formData1.append('sH', data[i].shopid);
+      formData1.append('shopis', title);
+      const response1 = await fetch('./offersfromsearchshop.php',{ method: 'POST', body: formData1 });
+            
+      var data1 = await response1.json();
+      if (data1.length==0) {
+        let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="but"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+        if(col=='0'){
+        let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+          marker.bindPopup(template[2] + template[0] + template[1] );
+        marker.addTo(markersLayer);
+        }
+        else{
+          let marker = L.marker(L.latLng(lat,long));
+          marker.bindPopup(template[2] + template[0] + template[1] );
+          marker.addTo(markersLayer);
+        }
+      }
+      else{
+        var str='';
+        for(j in data1){
+          var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
+          str=str.concat(a);
+          console.log(str);
+        }
     if(col=='0'){
       let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
-      marker.bindPopup("title: " + title);
-    marker.addTo(markersLayer);
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<button id="db" class="but"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
+         marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+         marker.addTo(markersLayer);
+
     }else{
       let marker = L.marker(L.latLng(lat,long));
-      marker.bindPopup("title: " + title);
-    marker.addTo(markersLayer);
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<button id="db" class="but"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
+         marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+         marker.addTo(markersLayer);
+    }
+    
     }
     
     }
@@ -170,11 +241,34 @@ is.addEventListener("keypress", async function(event) {
           else{
           for (i in data) {
             let title = data[i].sname;
-            let lat=parseFloat(data[i].latitude);
-            let long=parseFloat(data[i].longitude);
-            let marker = L.marker(L.latLng(lat,long), {title: title });
-            marker.bindPopup("title: " + title);
-            marker.addTo(markersLayer);
+  let lat=parseFloat(data[i].latitude);
+  let long=parseFloat(data[i].longitude);
+  let sid=data[i].shopid;
+  let marker = L.marker(L.latLng(lat,long), {title: title});
+
+  var formData1= new FormData();
+  formData1.append('s', data[i].shopid);
+  const response1 = await fetch('./findoffers.php',{ method: 'POST', body: formData1 });
+        
+  var data1 = await response1.json();
+  if (data1.length==0) {
+    let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="but"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+
+
+    marker.bindPopup(template[2] + template[0] + template[1] );
+    marker.addTo(markersLayer);
+  }
+  else{
+    var str='';
+    for(j in data1){
+      var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
+      str=str.concat(a);
+      console.log(str);
+    }
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<button id="db" class="but"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
+     marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+     marker.addTo(markersLayer);
+}
           }
           }
 
@@ -190,11 +284,11 @@ is.addEventListener("keypress", async function(event) {
 var sel = document.getElementById('selectcat');
 sel.onchange = async function getSelected(){
   document.getElementById('searchtext9').value=null;
-    var s = document.getElementById('selectcat').value;
-    console.log(s);
-    if(s!=='black'){
+    var se = document.getElementById('selectcat').value;
+    console.log(se);
+    if(se!=='black'){
     var formData = new FormData();
-    formData.append('select', s);
+    formData.append('select', se);
     const response = await fetch('./searchpercat.php',{ method: 'POST', body: formData });
     markersLayer.clearLayers();
     
@@ -205,12 +299,37 @@ sel.onchange = async function getSelected(){
     }
     else{
     for (i in data) {
-    let title = data[i].sname;
-    let lat=parseFloat(data[i].latitude);
-    let long=parseFloat(data[i].longitude);
-    let marker = L.marker(L.latLng(lat,long), {title: title });
-    marker.bindPopup("title: " + title);
-    marker.addTo(markersLayer);
+      let title = data[i].sname;
+      let lat=parseFloat(data[i].latitude);
+      let long=parseFloat(data[i].longitude);
+      let sid=data[i].shopid;
+      let marker = L.marker(L.latLng(lat,long), {title: title});
+    
+      var formData1= new FormData();
+      console.log(sid);
+      formData1.append('sH',sid);
+      formData1.append('select', se);
+      const response1 = await fetch('./offersfromsearchcat.php',{ method: 'POST', body: formData1 });
+            
+      var data1 = await response1.json();
+      if (data1.length==0) {
+        let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="but"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+
+
+    marker.bindPopup(template[2] + template[0] + template[1] );
+        marker.addTo(markersLayer);
+      }
+      else{
+        var str='';
+        for(j in data1){
+          var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
+          str=str.concat(a);
+          console.log(str);
+        }
+          let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<button id="db" class="but"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
+         marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+         marker.addTo(markersLayer);
+    }
     }
     }
   
@@ -224,11 +343,34 @@ sel.onchange = async function getSelected(){
           else{
           for (i in data) {
             let title = data[i].sname;
-            let lat=parseFloat(data[i].latitude);
-            let long=parseFloat(data[i].longitude);
-            let marker = L.marker(L.latLng(lat,long), {title: title });
-            marker.bindPopup("title: " + title);
-            marker.addTo(markersLayer);
+  let lat=parseFloat(data[i].latitude);
+  let long=parseFloat(data[i].longitude);
+  let sid=data[i].shopid;
+  let marker = L.marker(L.latLng(lat,long), {title: title});
+
+  var formData1= new FormData();
+  formData1.append('s', data[i].shopid);
+  const response1 = await fetch('./findoffers.php',{ method: 'POST', body: formData1 });
+        
+  var data1 = await response1.json();
+  if (data1.length==0) {
+    let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="but"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+
+
+    marker.bindPopup(template[2] + template[0] + template[1] );
+    marker.addTo(markersLayer);
+  }
+  else{
+    var str='';
+    for(j in data1){
+      var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
+      str=str.concat(a);
+      console.log(str);
+    }
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<button id="db" class="but"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
+     marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+     marker.addTo(markersLayer);
+}
           }
           }
 
