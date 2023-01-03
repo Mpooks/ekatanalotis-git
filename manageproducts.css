@@ -19,9 +19,10 @@ body{
    
    
    
-  .hello{
-       display:inline-block;
-        }
+   .hello{
+    display:inline-block;
+    font-size: min(2vw, 17px);
+     }
    
 
   
@@ -414,5 +415,14 @@ align-content:center;  }
      .myImage{
       vertical-align:middle;
       height: 64px;
+     }
+     .bnav{
+      margin-right: 15px;
+     }
+}
+
+@media (max-width: 320px){
+     .bnav{
+      margin-right: 10px;
      }
 }

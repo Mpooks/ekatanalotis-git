@@ -24,9 +24,10 @@ body{
  
  
  
-.hello{
-     display:inline-block;
-      }
+ .hello{
+  display:inline-block;
+  font-size: min(2vw, 17px);
+   }
 
 @media screen and (max-height:700px) and (max-width:520px) {
 button.nav {

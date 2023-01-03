@@ -430,6 +430,15 @@ tbody tr,td{
         vertical-align:middle;
         height: 64px;
        }
+       .bnav{
+        margin-right: 15px;
+       }
+  }
+  
+  @media (max-width: 320px){
+       .bnav{
+        margin-right: 10px;
+       }
   }
 
 
