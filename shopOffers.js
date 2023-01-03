@@ -60,7 +60,6 @@ async function allof(){
         op(data[j].sc,data[j].ofID,data[j].pname,data[j].pr,data[j].ld,data[j].lw,data[j].d,data[j].lik,data[j].disl,data[j].st,data[j].imagep,data[j].username);
     });
 
-      pr.classList.add('producth4');
       so.appendChild(v);
       v.appendChild(p);
       v.appendChild(pr);
