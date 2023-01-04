@@ -5,7 +5,15 @@ $con = openDB();
 
 $o = $_POST['o'];
 $t=mysqli_query($con, "INSERT INTO userlikes VALUES(".$_SESSION['id'].",$o,'DISLIKE')");
-
+$user=mysqli_query($con, "SELECT monthly_score,id from users INNER JOIN offer ON offer.userid=users.id WHERE offer_id=$o");
+if (mysqli_num_rows($user) > 0) {
+    while ($u = mysqli_fetch_assoc($user)) {
+        if($u['monthly_score']>0){
+            $t=$u['id'];
+            $user = mysqli_query($con, "UPDATE users SET monthly_score=monthly_score-1 WHERE id=$t");
+        }
+    }
+}
 closeDB($con);
 
 
