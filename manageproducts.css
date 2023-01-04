@@ -232,20 +232,20 @@ body{
   /*Apo edw prosthetw gia ta products*/
 
   .boxforinfo{
+    background-color: #fff;
     height: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  width: 80%;
-  min-width: 360px;
-  top: 20%;
-  position: relative;
-  background-color:#fff;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 65%;
+    margin-bottom: 100px;
+    position: relative;
+    border-radius: 5px;
 }
 
   .boxforinfo .tboxforinfo{
-    background: linear-gradient(to right, #01a9ac, #01dbdf);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: linear-gradient( to right, midnightblue, #01dbdf);
   }
 
   .boxforinfo .tboxforinfo h1{
@@ -256,26 +256,33 @@ body{
   }
 
 
-  .boxforinfo .bboxforinfo{
+  .bboxforinfo{
     padding-top:2%;
     padding-bottom:2%;
-
+    margin: 0 auto;
+    text-align: center;
+    padding: 8px 16px;
   }
 
-  .boxforinfo .bboxforinfo .info1{
+  .info1{
+    width: 100%;
     margin-bottom: 2%;
-align-content:center;  }
+  }
 
   
   .boxforinfo .bboxforinfo .info1 h3{
+    padding-top: 20px;
+    font-size: 20px;
+    margin: 0 auto; 
     padding-bottom: 5px;
     color: #353c4e;
-    letter-spacing: 2px;
-    width:25%;
     text-align:center;
     display: inline-block;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
   }
-  .boxforinfo .bboxforinfo .info1 p{
+
+    .boxforinfo .bboxforinfo .info1 p{
     padding-top:2%;
     padding-bottom: 5px;
     color: #353c4e;
@@ -284,31 +291,32 @@ align-content:center;  }
     text-align:center;
     display: inline-block;
   }
+
   .boxforinfo .bboxforinfo .info1 h2{
-    padding-top:2%;
+    font-size: 20px;
+    padding-top:20px;
     padding-bottom: 5px;
     color: #353c4e;
-    letter-spacing: 2px;
     width:100%;
     text-align:center;
     display: inline-block;
     border-bottom: 1px solid #e0e0e0;
   }
   
-  
-  
   .boxforinfo .bboxforinfo .info1 .inputfile {
+    padding-top: 5px;
+    margin-left: 5%;
     font-size:12px;
     background:white;
     border-radius:50px;
-    
-    width:30%;
+    float: left;
+    width:80%;
     outline:none;
     }
 
    .boxforinfo .bboxforinfo .info1 ::file-selector-button {
     color:white;
-    background:#20486a;
+    background:midnightblue;
     padding:15px;
     border:none;
     border-radius:50px;
@@ -317,18 +325,71 @@ align-content:center;  }
     }
 
     .boxforinfo .bboxforinfo .info1 ::file-selector-button:hover {
-    background:#577e9f;
-    }
+      background:#577e9f;
+      }
+  
+      .boxforinfo .bboxforinfo .info1 button{
+          color:white;
+      background:midnightblue;
+      padding: 15px 0px;
+      border:none;
+      border-radius:50px;
+      box-shadow:1px 1px 1px rgb(192, 192, 192);
+      outline:none;
+          }
 
-    .boxforinfo .bboxforinfo .info1 button{
-        color:white;
-    background:#20486a;
-    padding:15px;
-    border:none;
-    border-radius:50px;
-    box-shadow:1px 1px 1px rgb(192, 192, 192);
-    outline:none;
-        }
+          .dlt{
+            margin-top: 10px;
+            width: 80px;
+            font-size: 12px;
+            float: right;
+            margin-right: 5%;
+          }
+        
+          .upld{
+            margin-top: 10px;
+            width: 60px;
+            font-size: 12px;
+            float: right;
+            margin-right: 5px;
+          }
+
+          .delcps{
+            margin-top: 10px;
+            width: 110px;
+            font-size: 12px;
+            float: right;
+            margin-right: 5px;
+          }
+        
+          .delcat{
+            margin-top: 10px;
+            width: 120px;
+            font-size: 12px;
+            float: right;
+            margin-right: 5px;
+          }
+
+          .delp{
+            margin-top: 10px;
+            width: 110px;
+            font-size: 12px;
+            float: right;
+            margin-right: 5px;
+          }
+        
+          .deli{
+            margin-top: 10px;
+            width: 120px;
+            font-size: 12px;
+            float: right;
+            margin-right: 5px;
+          }
+        
+          p{
+            font-size: 15px;
+            width: 10%;
+          }
       
     .boxforinfo .bboxforinfo .showp{
       margin-bottom: 2%;
@@ -390,7 +451,7 @@ align-content:center;  }
   letter-spacing: 2px;
   width:100%;
   text-align:center;
-  text-decoration: underline;  
+  font-weight: bold;
   text-decoration-color: #181c25;  
 }
 
