@@ -123,7 +123,7 @@ label.logo{
     position: absolute;
     width: auto;
     height: 180px;
-    background: #041c3a;
+    background: midnightblue;
     top: 60px;
     right: -100%;
     text-align: left;
@@ -186,7 +186,7 @@ label.logo{
   display: none;
   position: absolute;
   right: 0;
-  background-color: #041c3a;
+  background-color: midnightblue;
   min-width: auto;
   padding: 10px 10px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -227,11 +227,11 @@ label.logo{
 .wrapper .left{
   position: relative;
   width: 30%;
-  background: linear-gradient(to right, #01a9ac, #01dbdf);
+  background: linear-gradient( to right, midnightblue, #005f9a, #01dbdf);
   padding: 20px 10px;
   border-bottom-left-radius: 5px;
   text-align: center;
-  color: #000;
+  color: #fff;
   min-width: 140px;
   max-width: 200px;
 }
@@ -351,14 +351,14 @@ td {
   word-wrap: break-word;
 }
 th {
-  background: #01a9ac;
-  
+  background: #01dbdf;
+  color: #fff;
   padding: 5px 5px;
   
 }
 
 tbody tr,td{
-  border: 1px solid #01a9ac;
+  border: 1px solid #01dbdf;
   border-bottom: none;
   border-right: none;
 }
@@ -369,7 +369,7 @@ tbody tr,td{
   background-size: 20px;
   width: 100px;
   text-align: center;
-  color: #000;
+  color: #fff;
   margin-bottom: 10px;
 }
 
@@ -381,19 +381,19 @@ tbody tr,td{
   background-size: 20px;
   width: 100px;
   text-align: center;
-  color: #000;
+  color: #fff;
   margin-bottom: 10px;
   
 }
 
 
 .changebtn{                                               /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
-  border:2px solid #005e60;
+  border:2px solid #01a9ac;
   outline:none;
   height:40px;
   width:80px;
-  background: linear-gradient(to right, #01a9ac, #01dbdf);
-  color:#000;
+  background: #01dbdf;
+  color:#fff;
   font-size:16px;
   border-radius:20px;
   padding: 0px 20px;

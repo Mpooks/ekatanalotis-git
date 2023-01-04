@@ -61,7 +61,7 @@ body{
   }
    
   nav{
-   background:#13225B;
+   background:midnightblue;
    height:60px;
    width:100%;
    }
@@ -133,7 +133,7 @@ body{
       position: absolute;
       width: auto;
       height: auto;
-      background: #041c3a;
+      background: midnightblue;
       top: 60px;
       right: -100%;
       text-align: left;
@@ -174,7 +174,7 @@ body{
     outline:none;
     height:40px;
     width:40px;
-    background-color:#06144B;
+    background-color:midnightblue;
     border-radius:20px;
     margin-top: 10px;
     margin-bottom:10px;
@@ -204,7 +204,7 @@ body{
     display: none;
     position: absolute;
     right: 0;
-    background-color: #041c3a;
+    background-color: midnightblue;
     min-width: auto;
     padding: 10px 10px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -241,10 +241,13 @@ body{
   top: 20%;
   position: relative;
   background-color:#fff;
+  border-radius: 5px;
 }
 
   .boxforinfo .tboxforinfo{
-    background: linear-gradient(to right, #01a9ac, #01dbdf);
+    background: linear-gradient( to right, midnightblue, #01dbdf);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
 
   .boxforinfo .tboxforinfo h1{
