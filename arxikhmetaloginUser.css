@@ -92,8 +92,8 @@ button.nav {
 }
  
 .serch_bar_div .search-bar{
-  border-radius: 10px;
   height: 60px;
+  border-radius: 10px;
   border-style: solid;
   border-color: hsl(240, 64%, 27%);
   text-align:center;
@@ -102,13 +102,15 @@ button.nav {
   display:flex;
   border-radius:60px;
   z-index: 1;
- 
   }
 
   .kat_proiod_text_div {
+    position: relative;
     display: inline-block;
     white-space: nowrap;
     width: 60%;
+    text-align: center;
+    top: 20px;
   }
 
  
@@ -118,17 +120,19 @@ button.nav {
   }
 
   .serch_bar_div .search-bar .dropdown_div #selectcat{
-    height: 62px;
+    height: 60px;
     width: 40%;
     font-size: 18px;
     position: absolute;
     border-style:solid;
     background-color: hsl(0, 0%, 100%);
     box-shadow: hsl(240, 64%, 27%);
-    border-color: hsl(240, 64%, 27%);
-    border-radius: 60px;
+    border: none;
+    border-left: 2px solid;
+    border-color: rgba(178, 175, 175, 0.701);
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
     text-align: center;
-    margin-top: -1px;
   }
   
 

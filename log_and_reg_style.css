@@ -12,6 +12,8 @@ body{
  
 *{
     font-family: Bahnschrift SemiBold, Bahnschrift;
+    margin: 0;
+    padding: 0;
  }
  
  
@@ -93,6 +95,7 @@ button.nav {
 }
  
 .serch_bar_div .search-bar{
+  height: 60px;
   border-radius: 10px;
   border-style: solid;
   border-color: hsl(240, 64%, 27%);
@@ -102,19 +105,16 @@ button.nav {
   display:flex;
   border-radius:60px;
   z-index: 1;
-
   }
 
   .kat_proiod_text_div {
+    position: relative;
     display: inline-block;
     white-space: nowrap;
     width: 60%;
+    text-align: center;
+    top: 20px;
   }
-
-
-
-
-
  
   .serch_bar_div .search-bar .dropdown_div {
     display: inline-block;
