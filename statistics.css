@@ -68,6 +68,7 @@ body{
    background:#13225B;
    height:60px;
    width:100%;
+   min-width: 250px;
    }
    
   label.logo{
@@ -296,21 +297,19 @@ body{
 }
 
 .chartCard{
+  position: relative;
   height: 80%;
-  width: 80%;
-  margin-left: 10%;
-  margin-top: 40px;
-  margin-bottom: 100px;
-  min-width: 360px;
-  top: 20%;
-    color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10%;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .chartBox{
-    width: 90%;
+    width: 100%;
     padding: 20px;
     border-radius: 20px;
     border: solid 3px midnightblue;
@@ -318,21 +317,20 @@ body{
 }
 
 .weekCard{
+  position: relative;
   height: 80%;
-  width: 80%;
-  margin-left: 10%;
-  margin-top: 40px;
-  margin-bottom: 100px;
-  min-width: 360px;
-  top: 20%;
-    color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10%;
+  margin-bottom: auto;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .weekBox{
-    width: 90%;
+    width: 100%;
     padding: 20px;
     border-radius: 20px;
     border: solid 3px midnightblue;
@@ -372,3 +370,44 @@ body{
       margin-right: 10px;
      }
 }
+
+.reset{
+  border:2px solid #005e60;
+  outline:none;
+  height:25px;
+  width: 70px;
+  background: linear-gradient(to right, #01a9ac, #01dbdf);
+  color:#000;
+  font-size:16px;
+  border-radius:20px;
+  text-align:center;
+  font-weight: bold;
+  float: right;
+  margin-top: 8px;
+}
+
+.reset:hover{
+  cursor:pointer; 
+  opacity: .75;
+  }
+
+input{
+  margin-left: 15px;
+  margin-top: 5px;
+  height: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  width: 20%;
+  max-width: 150px;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 3px;
+  color: #4a4a4a;
+  letter-spacing: 0.5px;
+  box-shadow: 0 5px 30px rgba(22,89,233,0.15);
+}
+
+.chartBox a{
+  background: #fff;
+  margin-left: 5px;
+ }
