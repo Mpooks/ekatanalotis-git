@@ -51,13 +51,18 @@ const data = {
     document.getElementById('myChart'),
     config
   );
-
+  const dateErr = document.getElementById('valid');
+  const minp=document.getElementById("mi");
+  minp.addEventListener("keypress", async function(event) {
+  if (event.key === "Enter") {
+    dateErr.innerHTML = "";
+    filterChart(minp);
+  }
+  });
   function filterChart(date){
-    var dateErr = document.getElementById('valid');
     console.log(date.value);
     const year = date.value.substring(0, 4);
     const month = date.value.substring(5, 7);
-    
 
     
     const lastDay = (y,m) => {

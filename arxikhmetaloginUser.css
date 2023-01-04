@@ -162,7 +162,7 @@ button.nav {
     
   }
 
-  .ulclass a.active,a:hover{
+  .ulclass a.active,.ulclass a:hover{
     background: #021727c9;
     transition: 0.5s;
    }
