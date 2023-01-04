@@ -187,7 +187,7 @@ async function op(score,oDP,p,pr,ld,lw,d,like,disl,st,pim,us){
         }
     }
 
-    location.href = "?#offer";
+    window.location.href  = "?#offerd";
   }
   }
 

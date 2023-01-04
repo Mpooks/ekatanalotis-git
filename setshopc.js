@@ -3,5 +3,5 @@ async function gotoev(sid){
     sid=parseInt(sid);
     formData.append('sh', sid);
     const response = await fetch('./setcurrentshop.php',{ method: 'POST', body: formData });
-    window.location='evaluationUser.html';
+    window.location='evaluationUser.html?';
   }

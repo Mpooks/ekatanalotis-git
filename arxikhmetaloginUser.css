@@ -67,6 +67,9 @@ body{
   .myform {
     height:200px;
   }
+  .myformadd {
+    height:200px;
+  }
 }
 
 @media screen and (max-height:700px) and (max-width:520px) {
@@ -296,10 +299,6 @@ label.logo{
   border-radius: 3px;
  }
 
- a.active,a:hover{
-  background: #021727c9;
-  transition: 0.5s;
- }
  
  .checkbtn{
   font-size: 30px;
@@ -560,13 +559,28 @@ background: rgb(212, 191, 0);
   border-radius: 20%;
   height:30px;
   margin-top:5px;
-  margin-left:10px;
+  margin-left:15px;
   background:midnightblue;
   color:rgb(255, 255, 255);
   font-size:12px;
  padding: 0px 20px;
  text-align:center;
 }
+.leaflet-popup-content-wrapper .leaflet-popup-content .noofbut{
+  width:40%;
+  text-align:center;
+  border:none;
+  border-radius: 20%;
+  height:30px;
+  margin-top:5px;
+  margin-left:30%;
+  background:midnightblue;
+  color:rgb(255, 255, 255);
+  font-size:12px;
+ padding: 0px 20px;
+ text-align:center;
+}
+
 @media (max-width: 335px){
   .checkbtn{
     display: block;
@@ -599,3 +613,63 @@ background: rgb(212, 191, 0);
       margin-right: 10px;
      }
 }
+
+.myformadd {
+  text-align:center;
+  width:360px;
+  height:300px;
+  max-width:100%;
+  overflow-y: auto;
+  background:#13225B;
+  color:#fff;
+  top:50%;
+  left:50%;
+  position: relative;
+  transform:translate(-50%,-50%);
+  box-sizing:border-box;
+  padding-top:10px;
+  transition: all 5s ease-in-out;
+ }
+
+ .myformadd h1{
+  margin:0;
+  font-size:24px;
+  }
+  
+ .myformadd p{
+  color: #fff;
+  margin:0;
+  padding-left:30px;
+  text-align:left;
+  font-size: 18px;
+  }
+    
+ .myformadd button{
+  border:none;
+  outline:none;
+  height:40px;
+  width:260px;
+  background:#fff;
+  color:#06144B;
+  font-size:18px;
+  border-radius:20px;
+  padding: 0px 20px;
+  margin-top: 10px;
+  margin-bottom:10px;
+  text-align:center;
+  }
+  
+ .myformadd .close {
+   position: absolute;
+   top: 15px;
+   left:90%;
+   transition: all 200ms;
+   font-size: 30px;
+   font-weight: bold;
+   text-decoration: none;
+   color: rgb(134, 134, 134);
+  }
+ 
+ .myformadd .close:hover {
+   color: #fff;
+  }
