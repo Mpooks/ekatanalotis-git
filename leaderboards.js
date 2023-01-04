@@ -1,3 +1,23 @@
+async function lboard(){
+	const lb = document.getElementById("tbod");
+	
+	const response = await fetch('./leaderboard.php');
+		
+	var data = await response.json();
+  
+	for (let i = 0; i < data.length; i++) {
+	  const tr = document.createElement('tr');
+	  const tdr=document.createElement('td');
+	  tdr.textContent=i+1;
+	  const tdu=document.createElement('td');
+	  tdu.textContent=data[i].username;
+	  const tdp=document.createElement('td');
+	  tdp.textContent=data[i].total_score;
+		tr.appendChild(tdr);
+		tr.appendChild(tdu);
+		tr.appendChild(tdp);
+		lb.appendChild(tr)
+	}
 var $table = document.getElementById("myTable");
 var $n = 10;
 var $rowCount = $table.rows.length;
@@ -37,4 +57,5 @@ function pageButtons($pCount,$cur) {
 		$buttons += "<input type='button'id='id"+$i+"'value='"+$i+"' onclick='sort("+$i+")'>";
 	$buttons += "<input type='button' class='nextbutton' value='Next' onclick='sort("+($cur + 1)+")' "+$nextDis+">";
 	return $buttons;
+}
 }
