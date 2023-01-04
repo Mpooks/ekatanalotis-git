@@ -159,7 +159,10 @@ body{
       
     }
 
-
+    .ulclass a.active,a:hover{
+      background: #021727c9;
+      transition: 0.5s;
+     }
   
   
    .vertical {
