@@ -65,7 +65,7 @@ for (i in data) {
       str=str.concat(a);
       console.log(str);
     }
-      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<button id="db" class="but"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<a href="#offerd"><button id="db" class="but"> New offer </button></a>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
      marker.addTo(markersLayer);
 }
@@ -139,7 +139,7 @@ searchc.onclick = async function(event){
         
   var data1 = await response1.json();
   if (data1.length==0) {
-    let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="noofbut"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+    let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<a href="#offerd"><button class="noofbut"> New offer </button></a>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
     marker.bindPopup(template[2] + template[0] + template[1] );
@@ -152,7 +152,7 @@ searchc.onclick = async function(event){
       str=str.concat(a);
       console.log(str);
     }
-      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<button id="db" class="but"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<a href="#offerd"><button id="db" class="but"> New offer </button></a>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
      marker.addTo(markersLayer);
   }
@@ -183,7 +183,7 @@ el.onclick = async function(event) {
         
   var data1 = await response1.json();
   if (data1.length==0) {
-    let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="noofbut"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+    let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<a href="#offerd"><button class="noofbut"> New offer </button></a>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
     marker.bindPopup(template[2] + template[0] + template[1] );
@@ -196,7 +196,7 @@ el.onclick = async function(event) {
       str=str.concat(a);
       console.log(str);
     }
-      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<button id="db" class="but"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<a href="#offerd"><button id="db" class="but"> New offer </button></a>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
      marker.addTo(markersLayer);
   }
@@ -240,14 +240,14 @@ el.onclick = async function(event) {
           }
 
         let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
-        let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<button id="db" class="but"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
+        let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<a href="#offerd"><button id="db" class="but"> New offer </button></a>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
            marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
            marker.addTo(markersLayer);  
         
       }else{
       let marker = L.marker(L.latLng(lat,long));
-      let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="noofbut"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>'];
-         marker.bindPopup(template[2] + template[0] + template[1]);
+      let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<a href="#offerd"><button class="noofbut"> New offer </button></a>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+      marker.bindPopup(template[2] + template[0] + template[1]);
          marker.addTo(markersLayer);
     }
     
@@ -300,7 +300,7 @@ sel.onchange = async function getSelected(){
             
       var data1 = await response1.json();
       if (data1.length==0) {
-        let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="noofbut"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+        let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<a href="#offerd"><button class="noofbut"> New offer </button></a>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
     marker.bindPopup(template[2] + template[0] + template[1] );
@@ -313,7 +313,7 @@ sel.onchange = async function getSelected(){
           str=str.concat(a);
           console.log(str);
         }
-          let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<button id="db" class="but"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
+          let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<a href="#offerd"><button class="but"> New offer </button></a>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
          marker.addTo(markersLayer);
     }
@@ -341,7 +341,7 @@ sel.onchange = async function getSelected(){
         
   var data1 = await response1.json();
   if (data1.length==0) {
-    let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="noofbut"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+    let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<a href="#offerd"><button class="noofbut"> New offer </button></a>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
     marker.bindPopup(template[2] + template[0] + template[1] );
@@ -354,7 +354,7 @@ sel.onchange = async function getSelected(){
       str=str.concat(a);
       console.log(str);
     }
-      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<button id="db" class="but"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>',`<a href="#offerd"><button class="but"> New offer </button></a>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
      marker.addTo(markersLayer);
 }
