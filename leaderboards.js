@@ -53,8 +53,6 @@ function pageButtons($pCount,$cur) {
 	var	$prevDis = ($cur == 1)?"disabled":"",
 		$nextDis = ($cur == $pCount)?"disabled":"",
 		$buttons = "<input type='button' class='prevbutton' value='Prev' onclick='sort("+($cur - 1)+")' "+$prevDis+">";
-	for ($i=1; $i<=$pCount;$i++)
-		$buttons += "<input type='button'id='id"+$i+"'value='"+$i+"' onclick='sort("+$i+")'>";
 	$buttons += "<input type='button' class='nextbutton' value='Next' onclick='sort("+($cur + 1)+")' "+$nextDis+">";
 	return $buttons;
 }

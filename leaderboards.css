@@ -215,22 +215,23 @@ label.logo{
 
 
 .right{
-  height: 500px;
-  margin-top: 40px;
+  height: auto;
   margin: 0 auto;
+  margin-top: 100px;
   position: relative;
   display: flex;
-  min-width: 300px;
+  min-width: 280px;
   width: 80%;
   background: #fff;
   border-radius: 5px;
   padding: 30px 10px;
+  margin-bottom: 100px;
 }
 
 .right .project{
   margin-bottom: 30px;
   padding: 8px 16px;
-  padding-right: 8px;
+  padding-left: 0px;
   height: 500px;
 }
 
@@ -246,6 +247,10 @@ label.logo{
   text-align: center;
 }
 
+.right .subwrap{
+  padding: 8px 16px;
+}
+
 table {
   height: 100px;
   border-collapse: collapse; 
@@ -253,7 +258,7 @@ table {
   table-layout: fixed;
   font-size: 90%;
   text-align: center;
-  min-width: 200px; /*auto edw de kserw giati leitourgei pragmatika*/
+   /*auto edw de kserw giati leitourgei pragmatika*/
 }
 
 td {
@@ -268,7 +273,7 @@ th {
 
  tr{
   border-bottom: 1px solid midnightblue;
-
+  height: 10px;
 }
 
 tr:last-child{
@@ -290,35 +295,6 @@ td:nth-child(2) {
 th:nth-child(2) {  
   text-align: left;
 }
-
-input[type="button"] {
-  margin-top: 10px;
-	transition: all .3s;
-    border: 1px solid #ddd;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 5px;
-	font-size: 15px;
-}
-
-.buttons{
-  position: relative;
-
-}
-
-input[type="button"]:not(.active) {
-	background-color:transparent;
-}
-
-.active {
-	background-color: midnightblue;
-	color :#fff;
-}
-
-input[type="button"]:hover:not(.active) {
-	background-color: #ddd;
-}
-
 
 @media (max-width: 335px){
   .checkbtn{
@@ -343,3 +319,22 @@ input[type="button"]:hover:not(.active) {
       height: 64px;
      }
 }
+
+.prevbtn, .nextbtn{
+  border:2px solid #01a9ac;
+  outline:none;
+  height:40px;
+  width:80px;
+  background: midnightblue;
+  color:#fff;
+  font-size:12px;
+  border-radius:20px;
+  margin-top: 30px;
+  text-align:center;
+  font-weight: bold;
+}
+
+button:hover{
+  cursor:pointer; 
+  opacity: .75;
+  }

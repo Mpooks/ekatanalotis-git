@@ -236,7 +236,7 @@ body{
     height: 80%;
     margin: 0 auto;
     margin-top: 100px;
-    width: 65%;
+    width: 90%;
     margin-bottom: 100px;
     position: relative;
     border-radius: 5px;
@@ -397,23 +397,23 @@ body{
     }
 
         .boxforinfo .bboxforinfo .row{
-            display: flex;
-            flex-wrap: wrap;
-            margin-right: 15px;
-            margin-left: 15px;
-            overflow-y: auto;
-            height:300px;
+          margin: 0 auto;
+          display: flex;
+          flex-wrap: wrap;
+          overflow-y: auto;
+          height: 300px;
         }
 
         .container {
-          margin-left:10% ;
-          margin-bottom:5% ;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 2%;
           background-color: #fff;
-          border:none;
-          width:80%;
-          border-radius:25px;
-          box-shadow:1px 1px 1px rgb(192, 192, 192);
-          outline:none;
+          border: none;
+          width: 98%;
+          border-radius: 25px;
+          box-shadow: 2px 2px 2px rgb(192 192 192);
+          outline: none;
           height: 8rem;
       }
 
@@ -422,27 +422,33 @@ body{
         display: flex;
     }
      .producth3{
-      padding-top:10px;
-    padding-bottom: 5px;
-    color: #353c4e;
-    letter-spacing: 2px;
-    width:40%;
-    text-align:center;
-    display: inline-block;
+      margin: auto auto;
+      font-size: min(3vw,15px);
+      padding-top: 10px;
+      padding-bottom: 5px;
+      color: #353c4e;
+      letter-spacing: 2px;
+      width: 40%;
+      text-align: center;
+      display: inline-block;
+      font-weight: bold;
   }
   .producth4{
-    padding-top:3rem;
+    margin: 0 auto;
+    margin-right: 0px;
+    padding-top: 3rem;
     padding-bottom: 5px;
     color: #353c4e;
-    letter-spacing: 2px;
-    width:20%;
-    float:right;
+    width: 15%;
+    float: right;
+    font-size: min(3vw,15px);
   }
   .productimg{
-    padding-left:20px;
-    height:100px;
-    width:100px;
-    float:left;
+    margin: auto auto;
+    padding-left: 0px;
+    height: 100px;
+    width: 100px;
+    float: left;
 }
 .producth2{
   padding-top:5rem;
