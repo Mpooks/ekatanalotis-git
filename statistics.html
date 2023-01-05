@@ -12,7 +12,7 @@
         <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     </head>
     
-    <body onload="reset()">
+    <body onload="charts()">
 
       <nav>
         <input type="checkbox" id="check">
@@ -50,7 +50,7 @@
               <canvas id="myChart"></canvas>
               <input id="mi" type="month" placeholder="YYYY-MM"/>
 
-              <button onclick="reset()" class="reset">Reset</button>
+              <button id="mb" class="reset">Reset</button>
               <a id="valid"></a>
           </div>
         </div>

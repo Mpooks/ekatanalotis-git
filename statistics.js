@@ -1,8 +1,24 @@
+async function charts()
+{
+const lab = new Array();
+const d = new Array();
+const response = await fetch('./monthoffersdata.php');
+    
+let data1 = await response.json();
+if (data1.length===0){
+
+}else{
+for (let v = 0; v < data1.length; v++) {
+    lab.push(data1[v].offer_date);
+    d.push(data1[v].tof)
+}
+}
+
 const data = {
-  labels: ['2022-08-03', '2022-08-04', '2022-10-06', '2022-10-07', '2022-12-04', '2022-12-05', '2023-01-04'],
+  labels: lab,
   datasets: [{
     label: 'Total Offers per Month',
-    data: [18, 12, 6, 9, 12, 3, 9],
+    data: d,
     backgroundColor: [
       'rgba(1, 169, 172, 1)',
     ],
@@ -21,7 +37,7 @@ const data = {
     options: {
       scales: {
         x:{ 
-            min: '2022-01-05',
+            min: '2022-01-01',
             max: '2022-12-31',
             type: 'time',
             time: {
@@ -46,7 +62,7 @@ const data = {
     }
   };
 
-
+  const bm=document.getElementById("mb");
   const myChart = new Chart(
     document.getElementById('myChart'),
     config
@@ -61,9 +77,27 @@ const data = {
   });
   function filterChart(date){
     console.log(date.value);
-    const year = date.value.substring(0, 4);
-    const month = date.value.substring(5, 7);
-
+    const extra='0';
+    if(date.value.includes('-')){
+      var year = date.value.substring(0, 4);
+      var month = date.value.substring(5, 7);
+      if(date.value.substring(6, 7)===""){
+        month=extra.concat(month);
+        date.value=year+'-'+month;
+      }
+    }
+    else{
+    var year = date.value.substring(0, 4);
+    var month = date.value.substring(4, 6);
+    if(date.value.substring(5, 6)===""){
+      month=extra.concat(month);
+      date.value=year+'-'+month;
+    }else{
+      date.value=year+'-'+month;
+      year = date.value.substring(0, 4);
+      month = date.value.substring(5, 7);
+    }
+    }
     
     const lastDay = (y,m) => {
       return new Date(y, m, 0).getDate()
@@ -97,10 +131,10 @@ const data = {
   }
     
   }
-
-  function reset(){
+  bm.onclick= function reset(){
     myChart.config.options.scales.x.min = '2022-01-01';
     myChart.config.options.scales.x.max = '2022-12-31';
     myChart.update();
   }
+}
 
