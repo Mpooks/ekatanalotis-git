@@ -1,408 +1,408 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
-body{  
-    background-color:#062C5A;
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
-    background: url("https://www.creativefabrica.com/wp-content/uploads/2020/03/14/A-Illustration-Vector-City-Background-Graphics-3644670-1.jpg") no-repeat center center fixed;
-    background-size:cover;
-    align-items:center;
-    justify-content:center;
-    overflow-x: hidden;
-      }
-   
-  *{
-      font-family: 'Inconsolata';
-      margin: 0;
-      padding: 0;
-   }
-   
-   
-   
-   .hello{
-    display:inline-block;
-    font-size: min(2vw, 17px);
-     }
-   
+body{ 
+ background-color:#062C5A;
+ padding:0;
+ margin:0;
+ box-sizing:border-box;
+ background: url("https://www.creativefabrica.com/wp-content/uploads/2020/03/14/A-Illustration-Vector-City-Background-Graphics-3644670-1.jpg") no-repeat center center fixed;
+ background-size:cover;
+ align-items:center;
+ justify-content:center;
+ overflow-x: hidden;
+ }
+ 
+ *{
+ font-family: 'Inconsolata';
+ margin: 0;
+ padding: 0;
+ }
+ 
+ 
+ 
+ .hello{
+ display:inline-block;
+ font-size: min(2vw, 17px);
+ }
+ 
 
-  
-  @media screen and (max-height:700px) and (max-width:520px) {
-    
-  button.nav {
-    width:80px;
-    font-size:8px;
-    }
-  }
-  
-  
+ 
+ @media screen and (max-height:700px) and (max-width:520px) {
+ 
+ button.nav {
+ width:80px;
+ font-size:8px;
+ }
+ }
+ 
+ 
 
-   
-   
-  .myImage{
-    vertical-align:middle;
-    height: 64px;
-   }
-   
-  .userimage{
-   height:100px;
-   width:100px;
-   border-radius:50%
-   } 
-  
-   
-  
-  button:hover{
-   cursor:pointer; 
-   opacity: .75;
-  
-   }
-   .bar{
-    height: 30px;
-    width: 30px;
-  }
-   
-  nav{
-    background: linear-gradient(to right, midnightblue,midnightblue,midnightblue, #18acae);
-   height:60px;
-   width:100%;
-   }
-   
-  label.logo{
-   color:white;
-   font-size:18px;
-   line-height:20px;
-   padding: 0 10px;
-   font-weight:bold;
-   }
-  
-   nav ul{
-    float: right;
-   }
-  
-   nav ul li{
-    display: inline-block;
-    line-height: 60px;
-    margin: 0 0px;
-    padding-left: 0px;
-    padding-right: 10px;
-   }
-   
-   nav ul li a{
-    color: white;
-    font-size: 17px;
-    padding: 7px 13px;
-    border-radius: 3px;
-   }
-  
-   a.active,a:hover{
-    background: #021727c9;
-    transition: 0.5s;
-   }
-   
-   .checkbtn{
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 70px;
-    margin-right: 20px;
-    cursor: pointer;
-    display: none;  
-   }
-  
-   #check{
-      display:none;
-   }
-  
-   @media (max-width: 952px){
-    label.logo{
-      font-size: 15px;
-      padding: 0 5px;
-    }
-  
-    nav ul li a{
-      font-size: 16px;
-    }
-   }
-  
-   @media (max-width: 858px){
-    .checkbtn{
-      display: block;
-      
-    }
-  
-    ul{
-      position: absolute;
-      width: auto;
-      height: auto;
-      background: midnightblue;
-      top: 60px;
-      right: -100%;
-      text-align: left;
-      transition: all .5s;
-      z-index: 2;
-    }
-  
-    nav ul li{
-      display: block;
-      margin: 30px 0;
-      line-height: 10px;
-    }
-  
-    nav ul li a{
-      font-size: 16px;
-    }
-  
-    nav ul li a:hover,nav ul li a.active{
-      background: none;
-      color: #062C5A;
-  
-    }
-  
-    #check:checked ~ ul{
-      right: 0;
-    }
-  
-   }
-  
-   .avatarDropdown{
-    
-    display: inline-block;
-    overflow: hidden;
-   }
-  
-   .avatarDropdown .bnav{                                            /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
-    border:2px solid #fff;
-    outline:none;
-    height:40px;
-    width:40px;
-    background-color:#06144B;
-    border-radius:20px;
-    margin-top: 10px;
-    margin-bottom:10px;
-    text-align:center;
-    position:relative;
-    margin-right:20px;
-    margin-left: 20px;
-    transition: transform 0.7s ease-in-out;
-    }
-    
+ 
+ 
+ .myImage{
+ vertical-align:middle;
+ height: 64px;
+ }
+ 
+ .userimage{
+ height:100px;
+ width:100px;
+ border-radius:50%
+ } 
+ 
+ 
+ 
+ button:hover{
+ cursor:pointer; 
+ opacity: .75;
+ 
+ }
+ .bar{
+ height: 30px;
+ width: 30px;
+ }
+ 
+ nav{
+ background: linear-gradient(to right, midnightblue,midnightblue,midnightblue, #18acae);
+ height:60px;
+ width:100%;
+ }
+ 
+ label.logo{
+ color:white;
+ font-size:18px;
+ line-height:20px;
+ padding: 0 10px;
+ font-weight:bold;
+ }
+ 
+ nav ul{
+ float: right;
+ }
+ 
+ nav ul li{
+ display: inline-block;
+ line-height: 60px;
+ margin: 0 0px;
+ padding-left: 0px;
+ padding-right: 10px;
+ }
+ 
+ nav ul li a{
+ color: white;
+ font-size: 17px;
+ padding: 7px 13px;
+ border-radius: 3px;
+ }
+ 
+ a.active,a:hover{
+ background: #021727c9;
+ transition: 0.5s;
+ }
+ 
+ .checkbtn{
+ font-size: 30px;
+ color: white;
+ float: right;
+ line-height: 70px;
+ margin-right: 20px;
+ cursor: pointer;
+ display: none; 
+ }
+ 
+ #check{
+ display:none;
+ }
+ 
+ @media (max-width: 952px){
+ label.logo{
+ font-size: 15px;
+ padding: 0 5px;
+ }
+ 
+ nav ul li a{
+ font-size: 16px;
+ }
+ }
+ 
+ @media (max-width: 858px){
+ .checkbtn{
+ display: block;
+ 
+ }
+ 
+ ul{
+ position: absolute;
+ width: auto;
+ height: auto;
+ background: midnightblue;
+ top: 60px;
+ right: -100%;
+ text-align: left;
+ transition: all .5s;
+ z-index: 2;
+ }
+ 
+ nav ul li{
+ display: block;
+ margin: 30px 0;
+ line-height: 10px;
+ }
+ 
+ nav ul li a{
+ font-size: 16px;
+ }
+ 
+ nav ul li a:hover,nav ul li a.active{
+ background: none;
+ color: #062C5A;
+ 
+ }
+ 
+ #check:checked ~ ul{
+ right: 0;
+ }
+ 
+ }
+ 
+ .avatarDropdown{
+ 
+ display: inline-block;
+ overflow: hidden;
+ }
+ 
+ .avatarDropdown .bnav{ /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
+ border:2px solid #fff;
+ outline:none;
+ height:40px;
+ width:40px;
+ background-color:#06144B;
+ border-radius:20px;
+ margin-top: 10px;
+ margin-bottom:10px;
+ text-align:center;
+ position:relative;
+ margin-right:20px;
+ margin-left: 20px;
+ transition: transform 0.7s ease-in-out;
+ }
+ 
  .vertical {
-    border-left: 6px solid black;
-    height: 200px;
-    position:absolute;
-    left: 50%;
-  }
-  
-   
-   
-   .bnav img{
-       
-       width: 36px;
-       height: 36px;
-   }
-  
-   .avatarDropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: midnightblue;
-    min-width: auto;
-    padding: 10px 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 3;
-  }
-  
-  .avatarDropdown-content a {
-    float: none;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .avatarDropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  .avatarDropdown:hover .avatarDropdown-content {
-    display: block;
-  }
-  
-  
+ border-left: 6px solid black;
+ height: 200px;
+ position:absolute;
+ left: 50%;
+ }
+ 
+ 
+ 
+ .bnav img{
+ 
+ width: 36px;
+ height: 36px;
+ }
+ 
+ .avatarDropdown-content {
+ display: none;
+ position: absolute;
+ right: 0;
+ background-color: midnightblue;
+ min-width: auto;
+ padding: 10px 10px;
+ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ z-index: 3;
+ }
+ 
+ .avatarDropdown-content a {
+ float: none;
+ color: white;
+ padding: 12px 16px;
+ text-decoration: none;
+ display: block;
+ text-align: left;
+ }
+ 
+ .avatarDropdown-content a:hover {
+ background-color: #ddd;
+ }
+ 
+ .avatarDropdown:hover .avatarDropdown-content {
+ display: block;
+ }
+ 
+ 
 
 
-  /*Apo edw prosthetw gia ta shops*/
+ /*Apo edw prosthetw gia ta shops*/
 
-  .boxforinfo{
-    background-color: #fff;
-    height: 80%;
-    margin: 0 auto;
-    margin-top: 100px;
-    width: 65%;
-    margin-bottom: 100px;
-    position: relative;
-    border-radius: 5px;
-  }
+ .boxforinfo{
+ background-color: #fff;
+ height: 80%;
+ margin: 0 auto;
+ margin-top: 100px;
+ width: 65%;
+ margin-bottom: 100px;
+ position: relative;
+ border-radius: 5px;
+ }
 
-  .tboxforinfo{
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    background: linear-gradient( to right, midnightblue, #01dbdf);
-  }
+ .tboxforinfo{
+ border-top-left-radius: 5px;
+ border-top-right-radius: 5px;
+ background: linear-gradient( to right, midnightblue, #01dbdf);
+ }
 
-  .boxforinfo .tboxforinfo h1{
-    padding-top:1%;
-    padding-bottom:1%;
-    text-align:center;
-    color:#fff;
-  }
+ .boxforinfo .tboxforinfo h1{
+ padding-top:1%;
+ padding-bottom:1%;
+ text-align:center;
+ color:#fff;
+ }
 
 
-  .bboxforinfo{
-    padding-top:2%;
-    padding-bottom:2%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 8px 16px;
-  }
+ .bboxforinfo{
+ padding-top:2%;
+ padding-bottom:2%;
+ margin: 0 auto;
+ text-align: center;
+ padding: 8px 16px;
+ }
 
-  .info1{
-    width: 100%;
-    margin-bottom: 2%;
-  }
+ .info1{
+ width: 100%;
+ margin-bottom: 2%;
+ }
 
-  
-  .boxforinfo .bboxforinfo .info1 h3{
-    font-size: 20px;
-    margin: 0 auto; 
-    padding-bottom: 5px;
-    color: #353c4e;
-    text-align:center;
-    display: inline-block;
-    border-bottom: 1px solid #e0e0e0;
-    width: 100%;
-  }
-  .boxforinfo .bboxforinfo .info1 p{
-    padding-top:2%;
-    padding-bottom: 5px;
-    color: #353c4e;
-    letter-spacing: 2px;
-    width:100%;
-    text-align:center;
-    display: inline-block;
-  }
-  .boxforinfo .bboxforinfo .info1 h2{
-    font-size: 20px;
-    padding-top:10px;
-    padding-bottom: 5px;
-    color: #353c4e;
-    width:100%;
-    text-align:center;
-    display: inline-block;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  
-  
-  
-  .boxforinfo .bboxforinfo .info1 .inputfile {
-    padding-top: 5px;
-    margin-left: 5%;
-    font-size:12px;
-    background:white;
-    border-radius:50px;
-    float: left;
-    width:80%;
-    outline:none;
-    }
+ 
+ .boxforinfo .bboxforinfo .info1 h3{
+ font-size: 20px;
+ margin: 0 auto; 
+ padding-bottom: 5px;
+ color: #353c4e;
+ text-align:center;
+ display: inline-block;
+ border-bottom: 1px solid #e0e0e0;
+ width: 100%;
+ }
+ .boxforinfo .bboxforinfo .info1 p{
+ padding-top:2%;
+ padding-bottom: 5px;
+ color: #353c4e;
+ letter-spacing: 2px;
+ width:100%;
+ text-align:center;
+ display: inline-block;
+ }
+ .boxforinfo .bboxforinfo .info1 h2{
+ font-size: 20px;
+ padding-top:10px;
+ padding-bottom: 5px;
+ color: #353c4e;
+ width:100%;
+ text-align:center;
+ display: inline-block;
+ border-bottom: 1px solid #e0e0e0;
+ }
+ 
+ 
+ 
+ .boxforinfo .bboxforinfo .info1 .inputfile {
+ padding-top: 5px;
+ margin-left: 5%;
+ font-size:12px;
+ background:white;
+ border-radius:50px;
+ float: left;
+ width:80%;
+ outline:none;
+ }
 
-   .boxforinfo .bboxforinfo .info1 ::file-selector-button {
-    color:white;
-    background:midnightblue;
-    padding:15px;
-    border:none;
-    border-radius:50px;
-    box-shadow:1px 1px 1px rgb(192, 192, 192);
-    outline:none;
-    }
+ .boxforinfo .bboxforinfo .info1 ::file-selector-button {
+ color:white;
+ background:midnightblue;
+ padding:15px;
+ border:none;
+ border-radius:50px;
+ box-shadow:1px 1px 1px rgb(192, 192, 192);
+ outline:none;
+ }
 
-    .boxforinfo .bboxforinfo .info1 ::file-selector-button:hover {
-    background:#577e9f;
-    }
+ .boxforinfo .bboxforinfo .info1 ::file-selector-button:hover {
+ background:#577e9f;
+ }
 
-    .boxforinfo .bboxforinfo .info1 button{
-        color:white;
-    background:midnightblue;
-    padding: 15px 0px;
-    border:none;
-    border-radius:50px;
-    box-shadow:1px 1px 1px rgb(192, 192, 192);
-    outline:none;
-        }
+ .boxforinfo .bboxforinfo .info1 button{
+ color:white;
+ background:midnightblue;
+ padding: 15px 0px;
+ border:none;
+ border-radius:50px;
+ box-shadow:1px 1px 1px rgb(192, 192, 192);
+ outline:none;
+ }
 
-  .dlt{
-    min-width: 50px;
-    width: 80px;
-    font-size: 12px;
-    float: right;
-    margin-right: 5%;
-  }
+ .dlt{
+ min-width: 50px;
+ width: 80px;
+ font-size: 12px;
+ float: right;
+ margin-right: 5%;
+ }
 
-  .upld{
-    min-width: 50px;
-    width: 60px;
-    font-size: 12px;
-    float: right;
-    margin-right: 5px;
-  }
+ .upld{
+ min-width: 50px;
+ width: 60px;
+ font-size: 12px;
+ float: right;
+ margin-right: 5px;
+ }
 
-  p{
-    font-size: 15px;
-    width: 10%;
-  }
+ p{
+ font-size: 15px;
+ width: 10%;
+ }
 
  #mapid{
-    border-radius: 10px;
-    border-style: solid;
-    border-color: midnightblue;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
-    width: 76%;
-    height: 360px;
-    max-width: 100%;
-    z-index: 0;
-  }
-   
-  @media (max-width: 335px){
-    .checkbtn{
-      display: block;
-    }
-    label.logo{
-      font-size:10px;
-      line-height:20px;
-      padding: 0 5px;
-      font-weight:bold;
-      }
-  
-      nav ul li a{
-        
-        font-size: 10px;
-        padding: 2px 5px;
-        border-radius: 3px;
-       }
-  
-       .myImage{
-        vertical-align:middle;
-        height: 64px;
-       }
-       .bnav{
-        margin-right: 15px;
-       }
-  }
-  
-  @media (max-width: 320px){
-       .bnav{
-        margin-right: 10px;
-       }
-  }
+ border-radius: 10px;
+ border-style: solid;
+ border-color: midnightblue;
+ margin-left: auto;
+ margin-right: auto;
+ margin-bottom: 50px;
+ width: 76%;
+ height: 360px;
+ max-width: 100%;
+ z-index: 0;
+ }
+ 
+ @media (max-width: 335px){
+ .checkbtn{
+ display: block;
+ }
+ label.logo{
+ font-size:10px;
+ line-height:20px;
+ padding: 0 5px;
+ font-weight:bold;
+ }
+ 
+ nav ul li a{
+ 
+ font-size: 10px;
+ padding: 2px 5px;
+ border-radius: 3px;
+ }
+ 
+ .myImage{
+ vertical-align:middle;
+ height: 64px;
+ }
+ .bnav{
+ margin-right: 15px;
+ }
+ }
+ 
+ @media (max-width: 320px){
+ .bnav{
+ margin-right: 10px;
+ }
+ }

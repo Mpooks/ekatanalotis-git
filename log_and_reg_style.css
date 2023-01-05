@@ -1,185 +1,185 @@
-body{  
-  background-color:#062C5A;
-  padding:0;
-  margin:0;
-  box-sizing:border-box;
-  background: url("https://www.creativefabrica.com/wp-content/uploads/2020/03/14/A-Illustration-Vector-City-Background-Graphics-3644670-1.jpg") no-repeat center center fixed;
-  background-size:cover;
-  align-items:center;
-  justify-content:center;
-  overflow-x: hidden;   
-    }
+body{ 
+ background-color:#062C5A;
+ padding:0;
+ margin:0;
+ box-sizing:border-box;
+ background: url("https://www.creativefabrica.com/wp-content/uploads/2020/03/14/A-Illustration-Vector-City-Background-Graphics-3644670-1.jpg") no-repeat center center fixed;
+ background-size:cover;
+ align-items:center;
+ justify-content:center;
+ overflow-x: hidden; 
+ }
  
 *{
-    font-family: Bahnschrift SemiBold, Bahnschrift;
-    margin: 0;
-    padding: 0;
+ font-family: Bahnschrift SemiBold, Bahnschrift;
+ margin: 0;
+ padding: 0;
  }
  
  
 
 .hello{
-     display:inline-block;
-     font-size: min(2vw, 17px);
-      }
+ display:inline-block;
+ font-size: min(2vw, 17px);
+ }
  
 
  
 .overlay {
-  position: fixed;
-  max-width:100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.9);
-  transition: opacity 100ms;
-  visibility: hidden;
-  opacity: 0;
-  z-index:1;
+ position: fixed;
+ max-width:100%;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ background: rgba(0, 0, 0, 0.9);
+ transition: opacity 100ms;
+ visibility: hidden;
+ opacity: 0;
+ z-index:1;
  }
 
 .overlay:target {
-  visibility: visible;
-  opacity: 1;
+ visibility: visible;
+ opacity: 1;
  }
 
 
 
 
 .myform {
-  text-align:center;
-  width:360px;
-  height:580px;
-  max-width:100%;
-  overflow-y: auto;
-  background:#13225B;
-  color:#fff;
-  top:50%;
-  left:50%;
-  position: relative;
-  transform:translate(-50%,-50%);
-  box-sizing:border-box;
-  padding-top:10px;
-  transition: all 5s ease-in-out;
+ text-align:center;
+ width:360px;
+ height:580px;
+ max-width:100%;
+ overflow-y: auto;
+ background:#13225B;
+ color:#fff;
+ top:50%;
+ left:50%;
+ position: relative;
+ transform:translate(-50%,-50%);
+ box-sizing:border-box;
+ padding-top:10px;
+ transition: all 5s ease-in-out;
  }
 
 @media screen and (max-height: 500px) {
-  .myform {
-    height:200px;
-  }
+ .myform {
+ height:200px;
+ }
 }
 
 @media screen and (max-height:700px) and (max-width:520px) {
-  
+ 
 button.nav {
-  width:80px;
-  font-size:8px;
-  }
+ width:80px;
+ font-size:8px;
+ }
 }
 
 
 
 
 .serch_bar_div{
-  margin-top: 152px;
-  display: block;
-  text-align:center;
-  width:100%;
-  max-width:700px;
-  height:50px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  padding-bottom: 2%;
+ margin-top: 152px;
+ display: block;
+ text-align:center;
+ width:100%;
+ max-width:700px;
+ height:50px;
+ margin-left: auto;
+ margin-right: auto;
+ position: relative;
+ padding-bottom: 2%;
 }
  
 .serch_bar_div .search-bar{
-  height: 60px;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: midnightblue;
-  text-align:center;
-  background: rgb(255, 254, 253);
-  position: relative;
-  display:flex;
-  border-radius:60px;
-  z-index: 1;
-  }
+ height: 60px;
+ border-radius: 10px;
+ border-style: solid;
+ border-color: midnightblue;
+ text-align:center;
+ background: rgb(255, 254, 253);
+ position: relative;
+ display:flex;
+ border-radius:60px;
+ z-index: 1;
+ }
 
-  .kat_proiod_text_div {
-    position: relative;
-    display: inline-block;
-    white-space: nowrap;
-    width: 60%;
-    text-align: center;
-    top: 20px;
-  }
+ .kat_proiod_text_div {
+ position: relative;
+ display: inline-block;
+ white-space: nowrap;
+ width: 60%;
+ text-align: center;
+ top: 20px;
+ }
  
-  .serch_bar_div .search-bar .dropdown_div {
-    display: inline-block;
-    z-index: 1;
-  }
+ .serch_bar_div .search-bar .dropdown_div {
+ display: inline-block;
+ z-index: 1;
+ }
 
-  .serch_bar_div .search-bar .dropdown_div #selectcat{
-    height: 60px;
-    width: 40%;
-    font-size: 18px;
-    position: absolute;
-    border-style:solid;
-    background-color: hsl(0, 0%, 100%);
-    box-shadow: midnightblue;
-    border: none;
-    border-left: 2px solid;
-    border-color: rgba(178, 175, 175, 0.701);
-    border-top-right-radius: 60px;
-    border-bottom-right-radius: 60px;
-    text-align: center;
-    
-  }
-  
+ .serch_bar_div .search-bar .dropdown_div #selectcat{
+ height: 60px;
+ width: 40%;
+ font-size: 18px;
+ position: absolute;
+ border-style:solid;
+ background-color: hsl(0, 0%, 100%);
+ box-shadow: midnightblue;
+ border: none;
+ border-left: 2px solid;
+ border-color: rgba(178, 175, 175, 0.701);
+ border-top-right-radius: 60px;
+ border-bottom-right-radius: 60px;
+ text-align: center;
+ 
+ }
+ 
 
-  .serch_bar_div .search-bar .dropdown_div #selectcat .dropdown_content{
-    display:inline-table;
-    border-radius: 60px;
-    align-items: center;
-    
-  }
+ .serch_bar_div .search-bar .dropdown_div #selectcat .dropdown_content{
+ display:inline-table;
+ border-radius: 60px;
+ align-items: center;
+ 
+ }
 
-  
-  .dropdown_div:hover #selectcat {
-    background-color: #dadada;
-  
-  }
-  
-  
-  #dropdown_content a:hover {
-    background-color:hsl(0, 19%, 54%);
-    
-  }
-  
-  .dropdown_div:hover .dropdown_content {
-    display: block;
-    
-  }
-  
-  
+ 
+ .dropdown_div:hover #selectcat {
+ background-color: #dadada;
+ 
+ }
+ 
+ 
+ #dropdown_content a:hover {
+ background-color:hsl(0, 19%, 54%);
+ 
+ }
+ 
+ .dropdown_div:hover .dropdown_content {
+ display: block;
+ 
+ }
+ 
+ 
 
 
 
  .vertical {
-  border-left: 6px solid black;
-  height: 200px;
-  position:absolute;
-  left: 50%;
+ border-left: 6px solid black;
+ height: 200px;
+ position:absolute;
+ left: 50%;
 }
 
 
 
 
 .myImage{
-  vertical-align:middle;
-  height: 64px;
+ vertical-align:middle;
+ height: 64px;
  }
  
 .userimage{
@@ -235,7 +235,7 @@ button.nav {
  }
  
 .myform button:hover{
- cursor:pointer;    
+ cursor:pointer; 
  opacity: .75;
  }
  
@@ -247,7 +247,7 @@ button.nav {
  color:#fff;
  }
  
-.bnav{                                               /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
+.bnav{ /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
  border:2px solid #fff;
  outline:none;
  height:40px;
@@ -274,18 +274,18 @@ button:hover{
  }
  
 .myform .close {
-  position: absolute;
-  top: 15px;
-  left:90%;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: rgb(134, 134, 134);
+ position: absolute;
+ top: 15px;
+ left:90%;
+ transition: all 200ms;
+ font-size: 30px;
+ font-weight: bold;
+ text-decoration: none;
+ color: rgb(134, 134, 134);
  }
 
 .myform .close:hover {
-  color: #fff;
+ color: #fff;
  }
  
 nav{
@@ -305,80 +305,80 @@ label.logo{
 
  
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 42px;
-  height: 24px;
+ position: relative;
+ display: inline-block;
+ width: 42px;
+ height: 24px;
  }
  
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+ opacity: 0;
+ width: 0;
+ height: 0;
  }
  
 .slider {
-  padding-left:10px;
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  transition: .4s;
+ padding-left:10px;
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #ccc;
+ transition: .4s;
+ transition: .4s;
  }
  
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: .4s;
-  transition: .4s;
+ position: absolute;
+ content: "";
+ height: 16px;
+ width: 16px;
+ left: 4px;
+ bottom: 4px;
+ background-color: white;
+ transition: .4s;
+ transition: .4s;
  }
  
 input:checked + .slider {
-  background-color: #2196F3;
+ background-color: #2196F3;
  }
  
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+ box-shadow: 0 0 1px #2196F3;
  }
  
 input:checked + .slider:before {
-  transform: translateX(16px);
+ transform: translateX(16px);
  }
 
 .slider.round {
-  border-radius: 34px;
+ border-radius: 34px;
  }
 
 .slider.round:before {
-  border-radius: 50%;
+ border-radius: 50%;
  }
 
 #mapid{
-  border-radius: 10px;
-  border-style: solid;
-  border-color: midnightblue;
-  margin: 0 auto;
-  width: 700px;
-  height: 360px;
-  max-width: 100%;
-  margin-top: 50px;
-  z-index: 0;
+ border-radius: 10px;
+ border-style: solid;
+ border-color: midnightblue;
+ margin: 0 auto;
+ width: 700px;
+ height: 360px;
+ max-width: 100%;
+ margin-top: 50px;
+ z-index: 0;
 }
  
-.leaflet-popup-content-wrapper .leaflet-popup-content{  
-  height: 290px;
-  width: 280px;
-  font-size: 10px;
-  
+.leaflet-popup-content-wrapper .leaflet-popup-content{ 
+ height: 290px;
+ width: 280px;
+ font-size: 10px;
+ 
 }
 
 
@@ -386,113 +386,113 @@ input:checked + .slider:before {
 background: rgb(212, 191, 0);
 }
 
-.leaflet-popup-content-wrapper .leaflet-popup-content .container{  
-  margin-left:5% ;
-  margin-bottom:5% ;
-  background-color: #fff;
-  border:none;
-  width:90%;
-  border-radius:25px;
-  box-shadow:1px 1px 1px rgb(192, 192, 192);
-  outline:none;
-  height: 160px;
-  overflow:auto;
+.leaflet-popup-content-wrapper .leaflet-popup-content .container{ 
+ margin-left:5% ;
+ margin-bottom:5% ;
+ background-color: #fff;
+ border:none;
+ width:90%;
+ border-radius:25px;
+ box-shadow:1px 1px 1px rgb(192, 192, 192);
+ outline:none;
+ height: 160px;
+ overflow:auto;
 }
-.leaflet-popup-content-wrapper .leaflet-popup-content .row{  
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: 15px;
-  margin-left: 15px;
-  overflow-y: auto;
-  height:240px;
+.leaflet-popup-content-wrapper .leaflet-popup-content .row{ 
+ display: flex;
+ flex-wrap: wrap;
+ margin-right: 15px;
+ margin-left: 15px;
+ overflow-y: auto;
+ height:240px;
 }
 
-.leaflet-popup-content-wrapper .leaflet-popup-content .popuph3,.leaflet-popup-content-wrapper .leaflet-popup-content .popp{  
-  text-align:center;
-  padding-left:5px;
-  margin: 0 0;
+.leaflet-popup-content-wrapper .leaflet-popup-content .popuph3,.leaflet-popup-content-wrapper .leaflet-popup-content .popp{ 
+ text-align:center;
+ padding-left:5px;
+ margin: 0 0;
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content .popuph2{
-  padding-top:4rem;
-  padding-bottom: 5px;
-  color: #353c4e;
-  letter-spacing: 2px;
-  width:100%;
-  font-size:15px;
-  text-align:center;
-  text-decoration: underline;  
-  text-decoration-color: #181c25;  
+ padding-top:4rem;
+ padding-bottom: 5px;
+ color: #353c4e;
+ letter-spacing: 2px;
+ width:100%;
+ font-size:15px;
+ text-align:center;
+ text-decoration: underline; 
+ text-decoration-color: #181c25; 
 }
 .leaflet-popup-content-wrapper .leaflet-popup-content .ps{
-  color: #353c4e;
-  letter-spacing: 2px;
-  width:100%;
-  font-size:12px;
-  text-align:center;
-  text-decoration: underline;  
-  text-decoration-color: #181c25;  
-  margin-bottom:1px;
+ color: #353c4e;
+ letter-spacing: 2px;
+ width:100%;
+ font-size:12px;
+ text-align:center;
+ text-decoration: underline; 
+ text-decoration-color: #181c25; 
+ margin-bottom:1px;
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content .but{
-  width:40%;
-  text-align:center;
-  border:none;
-  border-radius: 20%;
-  height:30px;
-  margin-top:5px;
-  margin-left:15px;
-  background:midnightblue;
-  color:rgb(255, 255, 255);
-  font-size:12px;
+ width:40%;
+ text-align:center;
+ border:none;
+ border-radius: 20%;
+ height:30px;
+ margin-top:5px;
+ margin-left:15px;
+ background:midnightblue;
+ color:rgb(255, 255, 255);
+ font-size:12px;
  padding: 0px 20px;
  text-align:center;
 }
 .leaflet-popup-content-wrapper .leaflet-popup-content .noofbut{
-  width:40%;
-  text-align:center;
-  border:none;
-  border-radius: 20%;
-  height:30px;
-  margin-top:5px;
-  margin-left:30%;
-  background:midnightblue;
-  color:rgb(255, 255, 255);
-  font-size:12px;
+ width:40%;
+ text-align:center;
+ border:none;
+ border-radius: 20%;
+ height:30px;
+ margin-top:5px;
+ margin-left:30%;
+ background:midnightblue;
+ color:rgb(255, 255, 255);
+ font-size:12px;
  padding: 0px 20px;
  text-align:center;
 }
 
 @media (max-width: 335px){
-  .checkbtn{
-    display: block;
-  }
-  label.logo{
-    font-size:10px;
-    line-height:20px;
-    padding: 0 5px;
-    font-weight:bold;
-    }
+ .checkbtn{
+ display: block;
+ }
+ label.logo{
+ font-size:10px;
+ line-height:20px;
+ padding: 0 5px;
+ font-weight:bold;
+ }
 
-    nav ul li a{
-      
-      font-size: 10px;
-      padding: 2px 5px;
-      border-radius: 3px;
-     }
+ nav ul li a{
+ 
+ font-size: 10px;
+ padding: 2px 5px;
+ border-radius: 3px;
+ }
 
-     .myImage{
-      vertical-align:middle;
-      height: 64px;
-     }
-     .bnav{
-      margin-right: 15px;
-     }
+ .myImage{
+ vertical-align:middle;
+ height: 64px;
+ }
+ .bnav{
+ margin-right: 15px;
+ }
 }
 
 @media (max-width: 320px){
-     .bnav{
-      margin-right: 10px;
-     }
+ .bnav{
+ margin-right: 10px;
+ }
 }

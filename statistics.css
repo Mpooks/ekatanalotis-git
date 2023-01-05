@@ -1,413 +1,413 @@
-body{  
-    background-color:#062C5A;
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
-    background: url("https://www.creativefabrica.com/wp-content/uploads/2020/03/14/A-Illustration-Vector-City-Background-Graphics-3644670-1.jpg") no-repeat center center fixed;
-    background-size:cover;
-    align-items:center;
-    justify-content:center;
-    overflow-x: hidden;
-      }
-   
-  *{
-      font-family: Bahnschrift SemiBold, Bahnschrift;
-      margin: 0;
-      padding: 0;
-   }
-   
-   
-   
-   .hello{
-    display:inline-block;
-    font-size: min(2vw, 17px);
-     }
-   
-   
+body{ 
+ background-color:#062C5A;
+ padding:0;
+ margin:0;
+ box-sizing:border-box;
+ background: url("https://www.creativefabrica.com/wp-content/uploads/2020/03/14/A-Illustration-Vector-City-Background-Graphics-3644670-1.jpg") no-repeat center center fixed;
+ background-size:cover;
+ align-items:center;
+ justify-content:center;
+ overflow-x: hidden;
+ }
+ 
+ *{
+ font-family: Bahnschrift SemiBold, Bahnschrift;
+ margin: 0;
+ padding: 0;
+ }
+ 
+ 
+ 
+ .hello{
+ display:inline-block;
+ font-size: min(2vw, 17px);
+ }
+ 
+ 
 
-  
-  @media screen and (max-height:700px) and (max-width:520px) {
-    
-  button.nav {
-    width:80px;
-    font-size:8px;
-    }
-  }
+ 
+ @media screen and (max-height:700px) and (max-width:520px) {
+ 
+ button.nav {
+ width:80px;
+ font-size:8px;
+ }
+ }
 
 
-  
-  
-   .vertical {
-    border-left: 6px solid black;
-    height: 200px;
-    position:absolute;
-    left: 50%;
-  }
-  
+ 
+ 
+ .vertical {
+ border-left: 6px solid black;
+ height: 200px;
+ position:absolute;
+ left: 50%;
+ }
+ 
 
-   
-   
-  .myImage{
-    vertical-align:middle;
-    height: 64px;
-   }
-   
-  .userimage{
-   height:100px;
-   width:100px;
-   border-radius:50%
-   } 
-  
-  .bar{
-    height: 30px;
-    width: 30px;
-  }
-   
+ 
+ 
+ .myImage{
+ vertical-align:middle;
+ height: 64px;
+ }
+ 
+ .userimage{
+ height:100px;
+ width:100px;
+ border-radius:50%
+ } 
+ 
+ .bar{
+ height: 30px;
+ width: 30px;
+ }
+ 
 
-  nav{
-   background:#13225B;
-   height:60px;
-   width:100%;
-   min-width: 250px;
-   }
-   
-  label.logo{
-   color:white;
-   font-size:18px;
-   line-height:20px;
-   padding: 0 10px;
-   font-weight:bold;
-   }
-  
-   nav ul{
-    float: right;
-   }
-  
-   nav ul li{
-    display: inline-block;
-    line-height: 60px;
-    margin: 0 0px;
-    padding-left: 0px;
-    padding-right: 10px;
-   }
-   
-   nav ul li a{
-    color: white;
-    font-size: 17px;
-    padding: 7px 13px;
-    border-radius: 3px;
-   }
-  
-   a.active,a:hover{
-    background: #021727c9;
-    transition: 0.5s;
-   }
-   
-   .checkbtn{
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 70px;
-    margin-right: 20px;
-    cursor: pointer;
-    display: none;  
-   }
-  
-   #check{
-      display:none;
-   }
-  
-   @media (max-width: 952px){
-    label.logo{
-      font-size: 15px;
-      padding: 0 5px;
-    }
-  
-    nav ul li a{
-      font-size: 16px;
-    }
-   }
-  
-   @media (max-width: 858px){
-    .checkbtn{
-      display: block;
-      
-    }
-  
-    ul{
-      position: absolute;
-      width: auto;
-      height: auto;
-      background: #041c3a;
-      top: 60px;
-      right: -100%;
-      text-align: left;
-      transition: all .5s;
-      z-index: 2;
-    }
-  
-    nav ul li{
-      display: block;
-      margin: 30px 0;
-      line-height: 10px;
-    }
-  
-    nav ul li a{
-      font-size: 16px;
-    }
-  
-    nav ul li a:hover,nav ul li a.active{
-      background: none;
-      color: #062C5A;
-  
-    }
-  
-    #check:checked ~ ul{
-      right: 0;
-    }
-  
-   }
-  
-   .avatarDropdown{
-    
-    display: inline-block;
-    overflow: hidden;
-   }
-  
-   .avatarDropdown .bnav{                                            /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
-    border:2px solid #fff;
-    outline:none;
-    height:40px;
-    width:40px;
-    background-color:#06144B;
-    border-radius:20px;
-    margin-top: 10px;
-    margin-bottom:10px;
-    text-align:center;
-    position:relative;
-    margin-right:20px;
-    margin-left: 20px;
-    transition: transform 0.7s ease-in-out;
-    }
-   
-   
-   .bnav img{
-       
-       width: 36px;
-       height: 36px;
-   }
-  
-   .avatarDropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: #041c3a;
-    min-width: auto;
-    padding: 10px 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 3;
-  }
-  
-  .avatarDropdown-content a {
-    float: none;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .avatarDropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  .avatarDropdown:hover .avatarDropdown-content {
-    display: block;
-  }
-  
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 42px;
-    height: 24px;
-   }
-   
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-   }
-   
-  .slider {
-    padding-left:10px;
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    transition: .4s;
-   }
-   
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    transition: .4s;
-   }
-   
-  input:checked + .slider {
-    background-color: #2196F3;
-   }
-   
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-   }
-   
-  input:checked + .slider:before {
-    transform: translateX(16px);
-   }
-  
-  .slider.round {
-    border-radius: 34px;
-   }
-  
-  .slider.round:before {
-    border-radius: 50%;
-   }
-  
+ nav{
+ background:#13225B;
+ height:60px;
+ width:100%;
+ min-width: 250px;
+ }
+ 
+ label.logo{
+ color:white;
+ font-size:18px;
+ line-height:20px;
+ padding: 0 10px;
+ font-weight:bold;
+ }
+ 
+ nav ul{
+ float: right;
+ }
+ 
+ nav ul li{
+ display: inline-block;
+ line-height: 60px;
+ margin: 0 0px;
+ padding-left: 0px;
+ padding-right: 10px;
+ }
+ 
+ nav ul li a{
+ color: white;
+ font-size: 17px;
+ padding: 7px 13px;
+ border-radius: 3px;
+ }
+ 
+ a.active,a:hover{
+ background: #021727c9;
+ transition: 0.5s;
+ }
+ 
+ .checkbtn{
+ font-size: 30px;
+ color: white;
+ float: right;
+ line-height: 70px;
+ margin-right: 20px;
+ cursor: pointer;
+ display: none; 
+ }
+ 
+ #check{
+ display:none;
+ }
+ 
+ @media (max-width: 952px){
+ label.logo{
+ font-size: 15px;
+ padding: 0 5px;
+ }
+ 
+ nav ul li a{
+ font-size: 16px;
+ }
+ }
+ 
+ @media (max-width: 858px){
+ .checkbtn{
+ display: block;
+ 
+ }
+ 
+ ul{
+ position: absolute;
+ width: auto;
+ height: auto;
+ background: #041c3a;
+ top: 60px;
+ right: -100%;
+ text-align: left;
+ transition: all .5s;
+ z-index: 2;
+ }
+ 
+ nav ul li{
+ display: block;
+ margin: 30px 0;
+ line-height: 10px;
+ }
+ 
+ nav ul li a{
+ font-size: 16px;
+ }
+ 
+ nav ul li a:hover,nav ul li a.active{
+ background: none;
+ color: #062C5A;
+ 
+ }
+ 
+ #check:checked ~ ul{
+ right: 0;
+ }
+ 
+ }
+ 
+ .avatarDropdown{
+ 
+ display: inline-block;
+ overflow: hidden;
+ }
+ 
+ .avatarDropdown .bnav{ /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
+ border:2px solid #fff;
+ outline:none;
+ height:40px;
+ width:40px;
+ background-color:#06144B;
+ border-radius:20px;
+ margin-top: 10px;
+ margin-bottom:10px;
+ text-align:center;
+ position:relative;
+ margin-right:20px;
+ margin-left: 20px;
+ transition: transform 0.7s ease-in-out;
+ }
+ 
+ 
+ .bnav img{
+ 
+ width: 36px;
+ height: 36px;
+ }
+ 
+ .avatarDropdown-content {
+ display: none;
+ position: absolute;
+ right: 0;
+ background-color: #041c3a;
+ min-width: auto;
+ padding: 10px 10px;
+ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ z-index: 3;
+ }
+ 
+ .avatarDropdown-content a {
+ float: none;
+ color: white;
+ padding: 12px 16px;
+ text-decoration: none;
+ display: block;
+ text-align: left;
+ }
+ 
+ .avatarDropdown-content a:hover {
+ background-color: #ddd;
+ }
+ 
+ .avatarDropdown:hover .avatarDropdown-content {
+ display: block;
+ }
+ 
+ .switch {
+ position: relative;
+ display: inline-block;
+ width: 42px;
+ height: 24px;
+ }
+ 
+ .switch input {
+ opacity: 0;
+ width: 0;
+ height: 0;
+ }
+ 
+ .slider {
+ padding-left:10px;
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #ccc;
+ transition: .4s;
+ transition: .4s;
+ }
+ 
+ .slider:before {
+ position: absolute;
+ content: "";
+ height: 16px;
+ width: 16px;
+ left: 4px;
+ bottom: 4px;
+ background-color: white;
+ transition: .4s;
+ transition: .4s;
+ }
+ 
+ input:checked + .slider {
+ background-color: #2196F3;
+ }
+ 
+ input:focus + .slider {
+ box-shadow: 0 0 1px #2196F3;
+ }
+ 
+ input:checked + .slider:before {
+ transform: translateX(16px);
+ }
+ 
+ .slider.round {
+ border-radius: 34px;
+ }
+ 
+ .slider.round:before {
+ border-radius: 50%;
+ }
+ 
 
 .chartMenu{
-    width: 100vw;
-    height: 40px;
-    background: #1a1a1a;
-    color: midnightblue;
+ width: 100vw;
+ height: 40px;
+ background: #1a1a1a;
+ color: midnightblue;
 }
 
 .chartMenu p{
-    padding: 10px;
-    font-size: 20px;
+ padding: 10px;
+ font-size: 20px;
 }
 
 .chartCard{
-  position: relative;
-  height: 80%;
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 10%;
-  color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ position: relative;
+ height: 80%;
+ width: 90%;
+ margin: 0 auto;
+ margin-top: 10%;
+ color: #000;
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 
 .chartBox{
-    width: 100%;
-    padding: 20px;
-    border-radius: 20px;
-    border: solid 3px midnightblue;
-    background: white;
+ width: 100%;
+ padding: 20px;
+ border-radius: 20px;
+ border: solid 3px midnightblue;
+ background: white;
 }
 
 .weekCard{
-  position: relative;
-  height: 80%;
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 10%;
-  margin-bottom: auto;
-  color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ position: relative;
+ height: 80%;
+ width: 90%;
+ margin: 0 auto;
+ margin-top: 10%;
+ margin-bottom: auto;
+ color: #000;
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 
 .weekBox{
-    width: 100%;
-    padding: 20px;
-    border-radius: 20px;
-    border: solid 3px midnightblue;
-    background: white;
+ width: 100%;
+ padding: 20px;
+ border-radius: 20px;
+ border: solid 3px midnightblue;
+ background: white;
 }
 
 
 @media (max-width: 335px){
-  .checkbtn{
-    display: block;
-  }
-  label.logo{
-    font-size:10px;
-    line-height:20px;
-    padding: 0 5px;
-    font-weight:bold;
-    }
+ .checkbtn{
+ display: block;
+ }
+ label.logo{
+ font-size:10px;
+ line-height:20px;
+ padding: 0 5px;
+ font-weight:bold;
+ }
 
-    nav ul li a{
-      
-      font-size: 10px;
-      padding: 2px 5px;
-      border-radius: 3px;
-     }
+ nav ul li a{
+ 
+ font-size: 10px;
+ padding: 2px 5px;
+ border-radius: 3px;
+ }
 
-     .myImage{
-      vertical-align:middle;
-      height: 64px;
-     }
-     .bnav{
-      margin-right: 15px;
-     }
+ .myImage{
+ vertical-align:middle;
+ height: 64px;
+ }
+ .bnav{
+ margin-right: 15px;
+ }
 }
 
 @media (max-width: 320px){
-     .bnav{
-      margin-right: 10px;
-     }
+ .bnav{
+ margin-right: 10px;
+ }
 }
 
 .reset{
-  border:2px solid #005e60;
-  outline:none;
-  height:25px;
-  width: 70px;
-  background: linear-gradient(to right, #01a9ac, #01dbdf);
-  color:#000;
-  font-size:16px;
-  border-radius:20px;
-  text-align:center;
-  font-weight: bold;
-  float: right;
-  margin-top: 8px;
+ border:2px solid #005e60;
+ outline:none;
+ height:25px;
+ width: 70px;
+ background: linear-gradient(to right, #01a9ac, #01dbdf);
+ color:#000;
+ font-size:16px;
+ border-radius:20px;
+ text-align:center;
+ font-weight: bold;
+ float: right;
+ margin-top: 8px;
 }
 
 .reset:hover{
-  cursor:pointer; 
-  opacity: .75;
-  }
+ cursor:pointer; 
+ opacity: .75;
+ }
 
 input{
-  margin-left: 15px;
-  margin-top: 5px;
-  height: 30px;
-  text-align: center;
-  box-sizing: border-box;
-  width: 20%;
-  max-width: 150px;
-  border: none;
-  padding: 5px 5px;
-  border-radius: 3px;
-  color: #4a4a4a;
-  letter-spacing: 0.5px;
-  box-shadow: 0 5px 30px rgba(22,89,233,0.15);
+ margin-left: 15px;
+ margin-top: 5px;
+ height: 30px;
+ text-align: center;
+ box-sizing: border-box;
+ width: 20%;
+ max-width: 150px;
+ border: none;
+ padding: 5px 5px;
+ border-radius: 3px;
+ color: #4a4a4a;
+ letter-spacing: 0.5px;
+ box-shadow: 0 5px 30px rgba(22,89,233,0.15);
 }
 
 .chartBox a{
-  background: #fff;
-  margin-left: 5px;
+ background: #fff;
+ margin-left: 5px;
  }
