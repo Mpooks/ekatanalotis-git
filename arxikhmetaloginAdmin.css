@@ -1,507 +1,507 @@
-body{  
-    background-color:#062C5A;
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
-    background: url("https://www.creativefabrica.com/wp-content/uploads/2020/03/14/A-Illustration-Vector-City-Background-Graphics-3644670-1.jpg") no-repeat center center fixed;
-    background-size:cover;
-    align-items:center;
-    justify-content:center;
-    overflow-x: hidden;
-      }
-   
-  *{
-      font-family: Bahnschrift SemiBold, Bahnschrift;
-      margin: 0;
-      padding: 0;
-   }
-   
-   
-   
-   .hello{
-    display:inline-block;
-    font-size: min(2vw, 17px);
-     }
-   
-   
-  .overlay {
-    position: fixed;
-    max-width:100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.9);
-    transition: opacity 100ms;
-    visibility: hidden;
-    opacity: 0;
-    z-index:1;
-   }
-  
-  .overlay:target {
-    visibility: visible;
-    opacity: 1;
-   }
-  
-  
-  
-  
-  .myform {
-    text-align:center;
-    width:360px;
-    max-height:540px;
-    max-width:100%;
-    overflow-y: auto;
-    background:#13225B;
-    color:#fff;
-    top:50%;
-    left:50%;
-    position: relative;
-    transform:translate(-50%,-50%);
-    box-sizing:border-box;
-    padding-top:10px;
-    transition: all 5s ease-in-out;
-   }
-  
-  @media screen and (max-height: 500px) {
-    .myform {
-      height:200px;
-    }
-  }
-  
-  @media screen and (max-height:700px) and (max-width:520px) {
-    
-  button.nav {
-    width:80px;
-    font-size:8px;
-    }
-  }
-  
-  
-   
+body{ 
+ background-color:#062C5A;
+ padding:0;
+ margin:0;
+ box-sizing:border-box;
+ background: url("https://www.creativefabrica.com/wp-content/uploads/2020/03/14/A-Illustration-Vector-City-Background-Graphics-3644670-1.jpg") no-repeat center center fixed;
+ background-size:cover;
+ align-items:center;
+ justify-content:center;
+ overflow-x: hidden;
+ }
+ 
+*{
+ font-family: Bahnschrift SemiBold, Bahnschrift;
+ margin: 0;
+ padding: 0;
+ }
+ 
+ 
+ 
+ .hello{
+ display:inline-block;
+ font-size: min(2vw, 17px);
+ }
+ 
+ 
+ .overlay {
+ position: fixed;
+ max-width:100%;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ background: rgba(0, 0, 0, 0.9);
+ transition: opacity 100ms;
+ visibility: hidden;
+ opacity: 0;
+ z-index:1;
+ }
+ 
+ .overlay:target {
+ visibility: visible;
+ opacity: 1;
+ }
+ 
+ 
+ 
+ 
+ .myform {
+ text-align:center;
+ width:360px;
+ max-height:540px;
+ max-width:100%;
+ overflow-y: auto;
+ background:#13225B;
+ color:#fff;
+ top:50%;
+ left:50%;
+ position: relative;
+ transform:translate(-50%,-50%);
+ box-sizing:border-box;
+ padding-top:10px;
+ transition: all 5s ease-in-out;
+ }
+ 
+ @media screen and (max-height: 500px) {
+ .myform {
+ height:200px;
+ }
+ }
+ 
+ @media screen and (max-height:700px) and (max-width:520px) {
+ 
+ button.nav {
+ width:80px;
+ font-size:8px;
+ }
+ }
+ 
+ 
+ 
 .serch_bar_div{
-  margin-top: 152px;
-  display: block;
-  text-align:center;
-  width:100%;
-  max-width:700px;
-  height:50px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  padding-bottom: 2%;
+ margin-top: 152px;
+ display: block;
+ text-align:center;
+ width:100%;
+ max-width:700px;
+ height:50px;
+ margin-left: auto;
+ margin-right: auto;
+ position: relative;
+ padding-bottom: 2%;
 }
-   
-  .serch_bar_div .search-bar{
-    height: 60px;
-    border-radius: 10px;
-    border-style: solid;
-    border-color: midnightblue;
-    text-align:center;
-    background: rgb(255, 254, 253);
-    position: relative;
-    display:flex;
-    border-radius:60px;
-    z-index: 1;
-    }
-  
-    .kat_proiod_text_div {
-      position: relative;
-      display: inline-block;
-      white-space: nowrap;
-      width: 60%;
-      text-align: center;
-      top: 20px;
-    }
-  
-   
-    .serch_bar_div .search-bar .dropdown_div {
-      display: inline-block;
-      z-index: 1;
-    }
+ 
+ .serch_bar_div .search-bar{
+ height: 60px;
+ border-radius: 10px;
+ border-style: solid;
+ border-color: midnightblue;
+ text-align:center;
+ background: rgb(255, 254, 253);
+ position: relative;
+ display:flex;
+ border-radius:60px;
+ z-index: 1;
+ }
+ 
+ .kat_proiod_text_div {
+ position: relative;
+ display: inline-block;
+ white-space: nowrap;
+ width: 60%;
+ text-align: center;
+ top: 20px;
+ }
+ 
+ 
+ .serch_bar_div .search-bar .dropdown_div {
+ display: inline-block;
+ z-index: 1;
+ }
 
-    .serch_bar_div .search-bar .dropdown_div #selectcat{
-      height: 60px;
-      width: 40%;
-      font-size: 18px;
-      position: absolute;
-      border-style:solid;
-      background-color: hsl(0, 0%, 100%);
-      box-shadow: midnightblue;
-      border: none;
-      border-left: 2px solid;
-      border-color: rgba(178, 175, 175, 0.701);
-      border-top-right-radius: 60px;
-      border-bottom-right-radius: 60px;
-      text-align: center;
-    }
-    
-  
-    .serch_bar_div .search-bar .dropdown_div #selectcat .dropdown_content{
-      display:inline-table;
-      border-radius: 60px;
-      align-items: center;
-    }
-    
-    .dropdown_div:hover #selectcat {
-      background-color: #dadada;
-    
-    }
-    
-    
-    #dropdown_content a:hover {
-      background-color:hsl(0, 19%, 54%);
-      
-    }
-    
-    .dropdown_div:hover .dropdown_content {
-      display: block;
-      
-    }
+ .serch_bar_div .search-bar .dropdown_div #selectcat{
+ height: 60px;
+ width: 40%;
+ font-size: 18px;
+ position: absolute;
+ border-style:solid;
+ background-color: hsl(0, 0%, 100%);
+ box-shadow: midnightblue;
+ border: none;
+ border-left: 2px solid;
+ border-color: rgba(178, 175, 175, 0.701);
+ border-top-right-radius: 60px;
+ border-bottom-right-radius: 60px;
+ text-align: center;
+ }
+ 
+ 
+ .serch_bar_div .search-bar .dropdown_div #selectcat .dropdown_content{
+ display:inline-table;
+ border-radius: 60px;
+ align-items: center;
+ }
+ 
+ .dropdown_div:hover #selectcat {
+ background-color: #dadada;
+ 
+ }
+ 
+ 
+ #dropdown_content a:hover {
+ background-color:hsl(0, 19%, 54%);
+ 
+ }
+ 
+ .dropdown_div:hover .dropdown_content {
+ display: block;
+ 
+ }
 
-    .ulclass a.active, .ulclass a:hover{
-      background: #021727c9;
-      transition: 0.5s;
-     }
-  
-  
-   .vertical {
-    border-left: 6px solid black;
-    height: 200px;
-    position:absolute;
-    left: 50%;
-  }
-  
+ .ulclass a.active, .ulclass a:hover{
+ background: #021727c9;
+ transition: 0.5s;
+ }
+ 
+ 
+ .vertical {
+ border-left: 6px solid black;
+ height: 200px;
+ position:absolute;
+ left: 50%;
+ }
+ 
 
-   
-   
-  .myImage{
-    vertical-align:middle;
-    height: 64px;
-   }
-   
-  .userimage{
-   height:100px;
-   width:100px;
-   border-radius:50%
-   } 
-  
-  .bar{
-    height: 30px;
-    width: 30px;
-  }
-   
-  .myform h1{
-   margin:0;
-   font-size:24px;
-   }
-   
-  .myform p{
-   color: #fff;
-   margin:0;
-   padding-left:30px;
-   text-align:left;
-   font-size: 18px;
-   }
-   
-  .myform input{
-   width:80%;
-   margin-bottom:20px;
-   }
-   
-  .myform input[type="text"], input[type="password"]
-   {
-   border:none;
-   border-bottom: 2px solid #ccc;
-   background:transparent;
-   outline:none;
-   height:40px;
-   color:#fff;
-   font-size:16px;
-   }
-   
-  .myform button{
-   border:none;
-   outline:none;
-   height:40px;
-   width:260px;
-   background:#fff;
-   color:#06144B;
-   font-size:18px;
-   border-radius:20px;
-   padding: 0px 20px;
-   margin-top: 10px;
-   margin-bottom:10px;
-   text-align:center;
-   }
-   
-  .myform button:hover{
-   cursor:pointer;    
-   opacity: .75;
-   }
-   
-  .myform a{
-   text-align:center;
-   text-decoration:none;
-   font-size:14px;
-   line-height:20px;
-   color:#fff;
-   }
-  
-  
-  
-  button:hover{
-   cursor:pointer; 
-   opacity: .75;
-  
-   }
-   
-  .myform .close {
-    position: absolute;
-    top: 15px;
-    left:90%;
-    transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: rgb(134, 134, 134);
-   }
-  
-  .myform .close:hover {
-    color: #fff;
-   }
-   
-  nav{
-   background:midnightblue;
-   height:60px;
-   width:100%;
-   }
-   
-  label.logo{
-   color:white;
-   font-size:18px;
-   line-height:20px;
-   padding: 0 10px;
-   font-weight:bold;
-   }
-  
-   nav ul{
-    float: right;
-   }
-  
-   nav ul li{
-    display: inline-block;
-    line-height: 60px;
-    margin: 0 0px;
-    padding-left: 0px;
-    padding-right: 10px;
-   }
-   
-   nav ul li a{
-    color: white;
-    font-size: 17px;
-    padding: 7px 13px;
-    border-radius: 3px;
-   }
-  
-   .checkbtn{
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 70px;
-    margin-right: 20px;
-    cursor: pointer;
-    display: none;  
-   }
-  
-   #check{
-      display:none;
-   }
-  
-   @media (max-width: 952px){
-    label.logo{
-      font-size: 15px;
-      padding: 0 5px;
-    }
-  
-    nav ul li a{
-      font-size: 16px;
-    }
-   }
-  
-   @media (max-width: 858px){
-    .checkbtn{
-      display: block;
-      
-    }
-  
-    ul{
-      position: absolute;
-      width: auto;
-      height: auto;
-      background: midnightblue;
-      top: 60px;
-      right: -100%;
-      text-align: left;
-      transition: all .5s;
-      z-index: 2;
-    }
-  
-    nav ul li{
-      display: block;
-      margin: 30px 0;
-      line-height: 10px;
-    }
-  
-    nav ul li a{
-      font-size: 16px;
-    }
-  
-    nav ul li a:hover,nav ul li a.active{
-      background: none;
-      color: #062C5A;
-  
-    }
-  
-    #check:checked ~ ul{
-      right: 0;
-    }
-  
-   }
-  
-   .avatarDropdown{
+ 
+ 
+ .myImage{
+ vertical-align:middle;
+ height: 64px;
+ }
+ 
+ .userimage{
+ height:100px;
+ width:100px;
+ border-radius:50%
+ } 
+ 
+ .bar{
+ height: 30px;
+ width: 30px;
+ }
+ 
+ .myform h1{
+ margin:0;
+ font-size:24px;
+ }
+ 
+ .myform p{
+ color: #fff;
+ margin:0;
+ padding-left:30px;
+ text-align:left;
+ font-size: 18px;
+ }
+ 
+ .myform input{
+ width:80%;
+ margin-bottom:20px;
+ }
+ 
+ .myform input[type="text"], input[type="password"]
+ {
+ border:none;
+ border-bottom: 2px solid #ccc;
+ background:transparent;
+ outline:none;
+ height:40px;
+ color:#fff;
+ font-size:16px;
+ }
+ 
+ .myform button{
+ border:none;
+ outline:none;
+ height:40px;
+ width:260px;
+ background:#fff;
+ color:#06144B;
+ font-size:18px;
+ border-radius:20px;
+ padding: 0px 20px;
+ margin-top: 10px;
+ margin-bottom:10px;
+ text-align:center;
+ }
+ 
+ .myform button:hover{
+ cursor:pointer; 
+ opacity: .75;
+ }
+ 
+ .myform a{
+ text-align:center;
+ text-decoration:none;
+ font-size:14px;
+ line-height:20px;
+ color:#fff;
+ }
+ 
+ 
+ 
+ button:hover{
+ cursor:pointer; 
+ opacity: .75;
+ 
+ }
+ 
+ .myform .close {
+ position: absolute;
+ top: 15px;
+ left:90%;
+ transition: all 200ms;
+ font-size: 30px;
+ font-weight: bold;
+ text-decoration: none;
+ color: rgb(134, 134, 134);
+ }
+ 
+ .myform .close:hover {
+ color: #fff;
+ }
+ 
+ nav{
+ background:midnightblue;
+ height:60px;
+ width:100%;
+ }
+ 
+ label.logo{
+ color:white;
+ font-size:18px;
+ line-height:20px;
+ padding: 0 10px;
+ font-weight:bold;
+ }
+ 
+ nav ul{
+ float: right;
+ }
+ 
+ nav ul li{
+ display: inline-block;
+ line-height: 60px;
+ margin: 0 0px;
+ padding-left: 0px;
+ padding-right: 10px;
+ }
+ 
+ nav ul li a{
+ color: white;
+ font-size: 17px;
+ padding: 7px 13px;
+ border-radius: 3px;
+ }
+ 
+ .checkbtn{
+ font-size: 30px;
+ color: white;
+ float: right;
+ line-height: 70px;
+ margin-right: 20px;
+ cursor: pointer;
+ display: none; 
+ }
+ 
+ #check{
+ display:none;
+ }
+ 
+ @media (max-width: 952px){
+ label.logo{
+ font-size: 15px;
+ padding: 0 5px;
+ }
+ 
+ nav ul li a{
+ font-size: 16px;
+ }
+ }
+ 
+ @media (max-width: 858px){
+ .checkbtn{
+ display: block;
+ 
+ }
+ 
+ ul{
+ position: absolute;
+ width: auto;
+ height: auto;
+ background: midnightblue;
+ top: 60px;
+ right: -100%;
+ text-align: left;
+ transition: all .5s;
+ z-index: 2;
+ }
+ 
+ nav ul li{
+ display: block;
+ margin: 30px 0;
+ line-height: 10px;
+ }
+ 
+ nav ul li a{
+ font-size: 16px;
+ }
+ 
+ nav ul li a:hover,nav ul li a.active{
+ background: none;
+ color: #062C5A;
+ 
+ }
+ 
+ #check:checked ~ ul{
+ right: 0;
+ }
+ 
+ }
+ 
+ .avatarDropdown{
 
-    display: block;
-    overflow: hidden;
-   }
-  
-   .avatarDropdown .bnav{                                            /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
-    border:2px solid #fff;
-    outline:none;
-    height:40px;
-    width:40px;
-    background-color:#06144B;
-    border-radius:20px;
-    margin-top: 10px;
-    margin-bottom:10px;
-    text-align:center;
-    position:relative;
-    margin-right:20px;
-    margin-left: 20px;
-    transition: transform 0.7s ease-in-out;
-    }
-   
-   
-   .bnav img{
-       
-       width: 36px;
-       height: 36px;
-   }
-  
-   .avatarDropdown-content {
-    width: 120px;
-    display: none;
-    position:absolute;
-    right: 0;
-    background-color: midnightblue;
-    min-width: auto;
-    padding: 10px auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 3;
-  }
-  
-  .avatarDropdown-content a {
-    float: none;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .avatarDropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  .avatarDropdown:hover .avatarDropdown-content {
-    display: block;
-  }
-  
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 42px;
-    height: 24px;
-   }
-   
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-   }
-   
-  .slider {
-    padding-left:10px;
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    transition: .4s;
-   }
-   
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    transition: .4s;
-   }
-   
-  input:checked + .slider {
-    background-color: #2196F3;
-   }
-   
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-   }
-   
-  input:checked + .slider:before {
-    transform: translateX(16px);
-   }
-  
-  .slider.round {
-    border-radius: 34px;
-   }
-  
-  .slider.round:before {
-    border-radius: 50%;
-   }
-  
+ display: block;
+ overflow: hidden;
+ }
+ 
+ .avatarDropdown .bnav{ /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
+ border:2px solid #fff;
+ outline:none;
+ height:40px;
+ width:40px;
+ background-color:#06144B;
+ border-radius:20px;
+ margin-top: 10px;
+ margin-bottom:10px;
+ text-align:center;
+ position:relative;
+ margin-right:20px;
+ margin-left: 20px;
+ transition: transform 0.7s ease-in-out;
+ }
+ 
+ 
+ .bnav img{
+ 
+ width: 36px;
+ height: 36px;
+ }
+ 
+ .avatarDropdown-content {
+ width: 120px;
+ display: none;
+ position:absolute;
+ right: 0;
+ background-color: midnightblue;
+ min-width: auto;
+ padding: 10px auto;
+ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ z-index: 3;
+ }
+ 
+ .avatarDropdown-content a {
+ float: none;
+ color: white;
+ padding: 12px 16px;
+ text-decoration: none;
+ display: block;
+ text-align: left;
+ }
+ 
+ .avatarDropdown-content a:hover {
+ background-color: #ddd;
+ }
+ 
+ .avatarDropdown:hover .avatarDropdown-content {
+ display: block;
+ }
+ 
+ .switch {
+ position: relative;
+ display: inline-block;
+ width: 42px;
+ height: 24px;
+ }
+ 
+ .switch input {
+ opacity: 0;
+ width: 0;
+ height: 0;
+ }
+ 
+ .slider {
+ padding-left:10px;
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #ccc;
+ transition: .4s;
+ transition: .4s;
+ }
+ 
+ .slider:before {
+ position: absolute;
+ content: "";
+ height: 16px;
+ width: 16px;
+ left: 4px;
+ bottom: 4px;
+ background-color: white;
+ transition: .4s;
+ transition: .4s;
+ }
+ 
+ input:checked + .slider {
+ background-color: #2196F3;
+ }
+ 
+ input:focus + .slider {
+ box-shadow: 0 0 1px #2196F3;
+ }
+ 
+ input:checked + .slider:before {
+ transform: translateX(16px);
+ }
+ 
+ .slider.round {
+ border-radius: 34px;
+ }
+ 
+ .slider.round:before {
+ border-radius: 50%;
+ }
+ 
 #mapid{
-  border-radius: 10px;
-  border-style: solid;
-  border-color: midnightblue;
-  margin: 0 auto;
-  width: 700px;
-  height: 360px;
-  max-width: 100%;
-  margin-top: 50px;
-  z-index: 0;
+ border-radius: 10px;
+ border-style: solid;
+ border-color: midnightblue;
+ margin: 0 auto;
+ width: 700px;
+ height: 360px;
+ max-width: 100%;
+ margin-top: 50px;
+ z-index: 0;
 }
-   
-.leaflet-popup-content-wrapper .leaflet-popup-content{  
-  height: 290px;
-  width: 280px;
-  font-size: 10px;
-  
+ 
+.leaflet-popup-content-wrapper .leaflet-popup-content{ 
+ height: 290px;
+ width: 280px;
+ font-size: 10px;
+ 
 }
 
 
@@ -509,174 +509,343 @@ body{
 background: rgb(212, 191, 0);
 }
 
-.leaflet-popup-content-wrapper .leaflet-popup-content .container{  
-  margin-left:5% ;
-  margin-bottom:5% ;
-  background-color: #fff;
-  border:none;
-  width:90%;
-  border-radius:25px;
-  box-shadow:1px 1px 1px rgb(192, 192, 192);
-  outline:none;
-  height: 160px;
-  overflow:auto;
+.leaflet-popup-content-wrapper .leaflet-popup-content .container{ 
+ margin-left:5% ;
+ margin-bottom:5% ;
+ background-color: #fff;
+ border:none;
+ width:90%;
+ border-radius:25px;
+ box-shadow:1px 1px 1px rgb(192, 192, 192);
+ outline:none;
+ height: 160px;
+ overflow:auto;
 }
-.leaflet-popup-content-wrapper .leaflet-popup-content .row{  
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: 15px;
-  margin-left: 15px;
-  overflow-y: auto;
-  height:240px;
+.leaflet-popup-content-wrapper .leaflet-popup-content .row{ 
+ display: flex;
+ flex-wrap: wrap;
+ margin-right: 15px;
+ margin-left: 15px;
+ overflow-y: auto;
+ height:240px;
 }
 
-.leaflet-popup-content-wrapper .leaflet-popup-content .popuph3,.leaflet-popup-content-wrapper .leaflet-popup-content .popp{  
-  text-align:center;
-  padding-left:5px;
-  margin: 0 0;
+.leaflet-popup-content-wrapper .leaflet-popup-content .popuph3,.leaflet-popup-content-wrapper .leaflet-popup-content .popp{ 
+ text-align:center;
+ padding-left:5px;
+ margin: 0 0;
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content .popuph2{
-  padding-top:4rem;
-  padding-bottom: 5px;
-  color: #353c4e;
-  letter-spacing: 2px;
-  width:100%;
-  font-size:15px;
-  text-align:center;
-  text-decoration: underline;  
-  text-decoration-color: #181c25;  
+ padding-top:4rem;
+ padding-bottom: 5px;
+ color: #353c4e;
+ letter-spacing: 2px;
+ width:100%;
+ font-size:15px;
+ text-align:center;
+ text-decoration: underline; 
+ text-decoration-color: #181c25; 
 }
 .leaflet-popup-content-wrapper .leaflet-popup-content .ps{
-  color: #353c4e;
-  letter-spacing: 2px;
-  width:100%;
-  font-size:12px;
-  text-align:center;
-  text-decoration: underline;  
-  text-decoration-color: #181c25;  
-  margin-bottom:1px;
+ color: #353c4e;
+ letter-spacing: 2px;
+ width:100%;
+ font-size:12px;
+ text-align:center;
+ text-decoration: underline; 
+ text-decoration-color: #181c25; 
+ margin-bottom:1px;
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content .but{
-  width:30%;
-  text-align:center;
-  border:none;
-  border-radius: 20%;
-  height:30px;
-  margin-top:5px;
-  margin-left:5px;
-  background:midnightblue;
-  color:rgb(255, 255, 255);
-  font-size:12px;
+ width:30%;
+ text-align:center;
+ border:none;
+ border-radius: 20%;
+ height:30px;
+ margin-top:5px;
+ margin-left:5px;
+ background:midnightblue;
+ color:rgb(255, 255, 255);
+ font-size:12px;
  padding: 0px 20px;
  text-align:center;
 }
 .leaflet-popup-content-wrapper .leaflet-popup-content .noofbut{
-  width:40%;
-  text-align:center;
-  border:none;
-  border-radius: 20%;
-  height:30px;
-  margin-top:5px;
-  margin-left:30%;
-  background:midnightblue;
-  color:rgb(255, 255, 255);
-  font-size:12px;
+ width:40%;
+ text-align:center;
+ border:none;
+ border-radius: 20%;
+ height:30px;
+ margin-top:5px;
+ margin-left:30%;
+ background:midnightblue;
+ color:rgb(255, 255, 255);
+ font-size:12px;
  padding: 0px 20px;
  text-align:center;
 }
 
-  @media (max-width: 335px){
-    .checkbtn{
-      display: block;
-    }
-    label.logo{
-      font-size:10px;
-      line-height:20px;
-      padding: 0 5px;
-      font-weight:bold;
-      }
-  
-      nav ul li a{
-        
-        font-size: 10px;
-        padding: 2px 5px;
-        border-radius: 3px;
-       }
-  
-       .myImage{
-        vertical-align:middle;
-        height: 64px;
-       }
-       .bnav{
-        margin-right: 15px;
-       }
-  }
-  
-  @media (max-width: 320px){
-       .bnav{
-        margin-right: 10px;
-       }
-  }
+ @media (max-width: 335px){
+ .checkbtn{
+ display: block;
+ }
+ label.logo{
+ font-size:10px;
+ line-height:20px;
+ padding: 0 5px;
+ font-weight:bold;
+ }
+ 
+ nav ul li a{
+ 
+ font-size: 10px;
+ padding: 2px 5px;
+ border-radius: 3px;
+ }
+ 
+ .myImage{
+ vertical-align:middle;
+ height: 64px;
+ }
+ .bnav{
+ margin-right: 15px;
+ }
+ }
+ 
+ @media (max-width: 320px){
+ .bnav{
+ margin-right: 10px;
+ }
+ }
 
-  .myformadd {
-    text-align:center;
-    width:360px;
-    height:300px;
-    max-width:100%;
-    overflow-y: auto;
-    background:#13225B;
-    color:#fff;
-    top:50%;
-    left:50%;
-    position: relative;
-    transform:translate(-50%,-50%);
-    box-sizing:border-box;
-    padding-top:10px;
-    transition: all 5s ease-in-out;
-   }
-  
-   .myformadd h1{
-    padding-top:15px;
-    margin:0;
-    font-size:24px;
-    }
-    
-   .myformadd p{
-    color: #fff;
-    margin:0;
-    padding-left:30px;
-    text-align:left;
-    font-size: 18px;
-    }
-      
-   .myformadd button{
-    border:none;
-    outline:none;
-    height:40px;
-    width:260px;
-    background:#fff;
-    color:#06144B;
-    font-size:18px;
-    border-radius:20px;
-    padding: 0px 20px;
-    margin-top: 10px;
-    margin-bottom:10px;
-    text-align:center;
-    }
-    
-   .myformadd .close {
-     position: absolute;
-     top: 15px;
-     left:90%;
-     transition: all 200ms;
-     font-size: 30px;
-     font-weight: bold;
-     text-decoration: none;
-     color: rgb(134, 134, 134);
-    }
-   
-   .myformadd .close:hover {
-     color: #fff;
-    }
+ .myformadd {
+ margin: 0 auto;
+ text-align:center;
+ width: 90%;
+ height:90%;
+ margin-top: 50px;
+ overflow-y: auto;
+ background:#061347;
+ color:#fff;
+ position: relative;
+ box-sizing:border-box;
+ transition: all 5s ease-in-out;
+ }
+ 
+ .myformadd h1{
+ margin-top: -20px;
+ font-size:24px;
+ margin-bottom: 22px;
+ }
+ 
+ .myformadd p{
+ color: #fff;
+ margin:0;
+ padding-left:30px;
+ text-align:left;
+ font-size: 18px;
+ }
+ 
+ .myformadd button{
+ border:none;
+ outline:none;
+ height:40px;
+ width:260px;
+ background:#fff;
+ color:#06144B;
+ font-size:18px;
+ border-radius:20px;
+ padding: 0px 20px;
+ margin-top: 10px;
+ margin-bottom:10px;
+ text-align:center;
+ }
+ 
+ .myformadd .close {
+ position: relative;
+ top: 15px;
+ margin-left: 93%;
+ transition: all 200ms;
+ font-size: 30px;
+ font-weight: bold;
+ text-decoration: none;
+ color: rgb(134, 134, 134);
+ }
+ 
+ .myformadd .close:hover {
+ color: #fff;
+ }
+ 
+ span {
+ padding-left: 15px;
+ }
+ 
+ 
+ .mobile-accordion-lvl2, .mobile-accordion-lv3 {
+ background-color: #061347;;
+ }
+ 
+ 
+ .accordion {
+ margin: 0 auto;
+ margin-top: 20px;
+ background-color: #061347;
+ width: 95%;
+ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+ } 
+ 
+ p.first-level-menu, p.second-level-menu, p.third-level-menu {
+ margin: auto; 
+ padding: 15px 20px;
+ border-bottom: solid #eeeeee 1px;
+ width: 90%;
+ }
+ 
+ .accordion-lvl1, .accordion-lvl2 {
+ width: 90%;
+ display: inline-block;
+ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+ background-color: #061347;
+ }
+ 
+ .accordion-lvl3 {
+ width: 90%;
+ margin-left: 3%;
+ display: inline-block;
+ }
+ 
+ 
+ 
+ 
+ /* Style the element that is used to open and close the accordion class */
+ 
+ 
+ p.fad-accordion, p.fak-accordion, p.fac-accordion {
+ background-color: #061347;;
+ color: rgb(255, 255, 255);
+ cursor: pointer;
+ padding: 18px 18px 0px;
+ width: 90%;
+ text-align: left;
+ outline: none;
+ transition: 0.4s;
+ margin-bottom: 0px;
+ border-top: solid #f4f4f4 1px;
+ }
+ 
+ /* Add a background color to the accordion if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+ p.fad-accordion.active, p.fak-accordion.active, p.accordion:hover, p.fac-accordion.active {
+ background-color: #061347;
+ }
+ 
+ /* Unicode character for "plus" sign (+) */
+ p.fad-accordion:after, p.fak-accordion:after, p.fac-accordion:after {
+ content: '\2795';
+ font-size: 13px;
+ color: #777;
+ float: right;
+ margin-left: 5px;
+ }
+ 
+ p.first-level-menu:after, p.second-level-menu:after, p.third-level-menu:after {
+ content: '\2795';
+ font-size: 13px;
+ color: #777;
+ float: right;
+ margin-left: -5px;
+ cursor: pointer;
+ }
+ 
+ 
+ /* Unicode character for "minus" sign (-) */
+ p.fad-accordion.active:after, p.fak-accordion.active:after, p.fac-accordion.active:after {
+ content: "\2796";
+ }
+ 
+ p.first-level-menu.active:after, p.second-level-menu.active:after, p.third-level-menu.active:after {
+ content: "\2796";
+ }
+ 
+ /* Style the element that is used for the panel class */
+ div.first-level-panel{
+ padding: 5px 18px;
+ background-color: #061347;
+ max-height: 0;
+ overflow: hidden;
+ transition: 0.6s ease-in-out;
+ opacity: 0;
+ text-align: left;
+ padding-left: 18px;
+ width: 90%;
+ margin: 0 auto;
+ }
+ 
+ div.second-level-panel, div.third-level-panel {
+ padding: 5px 18px;
+ background-color: #061347;
+ max-height: 0;
+ overflow: hidden;
+ transition: 0.6s ease-in-out;
+ opacity: 0;
+ text-align: left;
+ padding-left: 18px;
+ width: 90%;
+ margin: 5px 0px;
+ }
+ 
+ 
+ 
+ div.first-level-panel.show, div.second-level-panel.show, div.third-level-panel.show {
+ background-color: #061347;
+ opacity: 1;
+ max-height: 500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+ overflow-y: auto;
+ width: 90%;
+ }
+ 
+ div.second-level-panel.show, div.third-level-panel.show {
+ opacity: 1;
+ max-height: 500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+ overflow-y: auto;
+ width: 90%;
+ margin-left: 2%;
+ }
+ 
+ 
+ .searchbar {
+ margin: 0 auto;
+ justify-content: center;
+ width: 60%;
+ display: flex;
+ align-items: center;
+ position: relative;
+ overflow: hidden;
+ background-color: #061347;
+ backdrop-filter: blur(2px);
+ }
+ .searchbar-icon {
+ position: absolute;
+ right: 27px;
+ top: 25px;
+ background-color: transparent;
+ color: #646464;
+ cursor: pointer;
+ }
+ input[type=text] {
+ width: 100%;
+ padding: 9px;
+ border: none;
+ margin: 16px 14px;
+ font-size: 18px;
+ background-color: #fff;
+ text-align: left;
+ text-indent: 8px;
+ outline: none;
+ }
+ .searchbar , input[type=text] {
+ border-radius: 30px;
+ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+ 
+ }
