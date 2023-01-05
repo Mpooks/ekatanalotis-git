@@ -88,6 +88,7 @@ dislikes INT NOT NULL DEFAULT 0,
 stock ENUM('YES','NO') NOT NULL DEFAULT 'YES',
 userid INT,
 active_offer ENUM('ACTIVE','INACTIVE') NOT NULL DEFAULT 'ACTIVE',
+last_day_of_offer DATE NOT NULL,
 PRIMARY KEY(offer_id),
 CONSTRAINT PROD
 FOREIGN KEY (product_id) REFERENCES product(pid)
