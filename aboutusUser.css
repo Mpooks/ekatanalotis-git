@@ -261,6 +261,9 @@ body{
  .boxforinfo .bboxforinfo{
  padding-top:2%;
  padding-bottom:2%;
+ background: linear-gradient( to left, rgb(152, 152, 251), #92deff);
+
+
 
  }
  
@@ -277,6 +280,29 @@ body{
  overflow-y: auto;
  height:300px;
  }
+
+ .boxforinfo .bboxforinfo .about_us_pic{
+    display: table-cell;
+    max-width: 20%;
+
+ }
+
+ .boxforinfo .bboxforinfo  .about_us_pic .info_pic{
+    margin-top: 8%;
+    margin-left: 15%;
+}
+
+.boxforinfo .bboxforinfo .about_us_text{
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 8%;
+    padding-right: 2%;
+    padding-top: 2%;
+}
+
+
+
+
 
 
 
