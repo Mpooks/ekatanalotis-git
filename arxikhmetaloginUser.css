@@ -23,7 +23,9 @@ body{
  font-size: min(2vw, 17px);
  }
  
- 
+ .accheight{
+    height:350px
+}
 .overlay {
  position: fixed;
  max-width:100%;
@@ -633,6 +635,7 @@ background: rgb(212, 191, 0);
  position: relative;
  box-sizing:border-box;
  transition: all 5s ease-in-out;
+ z-index: 2;
  }
 
  .myformadd h1{
@@ -643,9 +646,7 @@ background: rgb(212, 191, 0);
  
  .myformadd p{
  color: #fff;
- margin:0;
- padding-left:30px;
- text-align:left;
+
  font-size: 18px;
  }
  
@@ -702,6 +703,7 @@ background: rgb(212, 191, 0);
  padding: 15px 20px;
  border-bottom: solid #eeeeee 1px;
  width: 90%;
+ text-align: left;
  }
  
  .accordion-lvl1, .accordion-lvl2 {
@@ -804,6 +806,7 @@ background: rgb(212, 191, 0);
  max-height: 500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
  overflow-y: auto;
  width: 90%;
+ height: 76%;
  }
 
  div.second-level-panel.show, div.third-level-panel.show {
@@ -834,7 +837,7 @@ background: rgb(212, 191, 0);
  color: #646464;
  cursor: pointer;
 }
-input[type=text] {
+.srch {
  width: 100%;
  padding: 9px;
  border: none;
@@ -845,8 +848,61 @@ input[type=text] {
  text-indent: 8px;
  outline: none;
 }
-.searchbar , input[type=text] {
- border-radius: 30px;
- box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
- 
-}
+
+.offerbar , .username{
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+   }
+
+
+.offerbar {
+    margin: 0 auto;
+    margin-top: 10px;
+    justify-content: center;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: #061347;
+    backdrop-filter: blur(2px);
+   }
+
+   .searchbar , .srch {
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+    
+   }
+
+   .usernamebox{
+    width: 62%;
+   }
+
+   .username{
+    width: 80%;
+    margin: 0 auto;
+    max-width: 240px;
+    padding: 9px;
+    border: none;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 18px;
+    background-color: #fff;
+    text-align: left;
+    text-indent: 8px;
+    outline: none;
+   }
+
+   .npstatusp{
+    margin: 0 auto;
+    padding-top:2%;
+    padding-bottom: 5px;
+    color: #353c4e;
+    letter-spacing: 2px;
+    width:100%;
+    text-align:center;
+    display: inline-block;
+    }
+
+   

@@ -641,211 +641,267 @@ background: rgb(212, 191, 0);
  }
  
  .myformadd p{
- color: #fff;
- margin:0;
- padding-left:30px;
- text-align:left;
- font-size: 18px;
- }
- 
- .myformadd button{
- border:none;
- outline:none;
- height:40px;
- width:260px;
- background:#fff;
- color:#06144B;
- font-size:18px;
- border-radius:20px;
- padding: 0px 20px;
- margin-top: 10px;
- margin-bottom:10px;
- text-align:center;
- }
- 
- .myformadd .close {
- position: relative;
- top: 15px;
- margin-left: 93%;
- transition: all 200ms;
- font-size: 30px;
- font-weight: bold;
- text-decoration: none;
- color: rgb(134, 134, 134);
- }
- 
- .myformadd .close:hover {
- color: #fff;
- }
- 
- span {
- padding-left: 15px;
- }
- 
- 
- .mobile-accordion-lvl2, .mobile-accordion-lv3 {
- background-color: #061347;;
- }
- 
- 
- .accordion {
- margin: 0 auto;
- margin-top: 20px;
- background-color: #061347;
- width: 95%;
- box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
- } 
- 
- p.first-level-menu, p.second-level-menu, p.third-level-menu {
- margin: auto; 
- padding: 15px 20px;
- border-bottom: solid #eeeeee 1px;
- width: 90%;
- }
- 
- .accordion-lvl1, .accordion-lvl2 {
- width: 90%;
- display: inline-block;
- box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
- background-color: #061347;
- }
- 
- .accordion-lvl3 {
- width: 90%;
- margin-left: 3%;
- display: inline-block;
- }
- 
- 
- 
- 
- /* Style the element that is used to open and close the accordion class */
- 
- 
- p.fad-accordion, p.fak-accordion, p.fac-accordion {
- background-color: #061347;;
- color: rgb(255, 255, 255);
- cursor: pointer;
- padding: 18px 18px 0px;
- width: 90%;
- text-align: left;
- outline: none;
- transition: 0.4s;
- margin-bottom: 0px;
- border-top: solid #f4f4f4 1px;
- }
- 
- /* Add a background color to the accordion if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
- p.fad-accordion.active, p.fak-accordion.active, p.accordion:hover, p.fac-accordion.active {
- background-color: #061347;
- }
- 
- /* Unicode character for "plus" sign (+) */
- p.fad-accordion:after, p.fak-accordion:after, p.fac-accordion:after {
- content: '\2795';
- font-size: 13px;
- color: #777;
- float: right;
- margin-left: 5px;
- }
- 
- p.first-level-menu:after, p.second-level-menu:after, p.third-level-menu:after {
- content: '\2795';
- font-size: 13px;
- color: #777;
- float: right;
- margin-left: -5px;
- cursor: pointer;
- }
- 
- 
- /* Unicode character for "minus" sign (-) */
- p.fad-accordion.active:after, p.fak-accordion.active:after, p.fac-accordion.active:after {
- content: "\2796";
- }
- 
- p.first-level-menu.active:after, p.second-level-menu.active:after, p.third-level-menu.active:after {
- content: "\2796";
- }
- 
- /* Style the element that is used for the panel class */
- div.first-level-panel{
- padding: 5px 18px;
- background-color: #061347;
- max-height: 0;
- overflow: hidden;
- transition: 0.6s ease-in-out;
- opacity: 0;
- text-align: left;
- padding-left: 18px;
- width: 90%;
- margin: 0 auto;
- }
- 
- div.second-level-panel, div.third-level-panel {
- padding: 5px 18px;
- background-color: #061347;
- max-height: 0;
- overflow: hidden;
- transition: 0.6s ease-in-out;
- opacity: 0;
- text-align: left;
- padding-left: 18px;
- width: 90%;
- margin: 5px 0px;
- }
- 
- 
- 
- div.first-level-panel.show, div.second-level-panel.show, div.third-level-panel.show {
- background-color: #061347;
- opacity: 1;
- max-height: 500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
- overflow-y: auto;
- width: 90%;
- }
- 
- div.second-level-panel.show, div.third-level-panel.show {
- opacity: 1;
- max-height: 500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
- overflow-y: auto;
- width: 90%;
- margin-left: 2%;
- }
- 
- 
- .searchbar {
- margin: 0 auto;
- justify-content: center;
- width: 60%;
- display: flex;
- align-items: center;
- position: relative;
- overflow: hidden;
- background-color: #061347;
- backdrop-filter: blur(2px);
- }
- .searchbar-icon {
- position: absolute;
- right: 27px;
- top: 25px;
- background-color: transparent;
- color: #646464;
- cursor: pointer;
- }
- input[type=text] {
- width: 100%;
- padding: 9px;
- border: none;
- margin: 16px 14px;
- font-size: 18px;
- background-color: #fff;
- text-align: left;
- text-indent: 8px;
- outline: none;
- }
- .searchbar , input[type=text] {
- border-radius: 30px;
- box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
- 
- }
+    color: #fff;
+   
+    font-size: 18px;
+    }
+    
+    .myformadd button{
+    border:none;
+    outline:none;
+    height:40px;
+    width:260px;
+    background:#fff;
+    color:#06144B;
+    font-size:18px;
+    border-radius:20px;
+    padding: 0px 20px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    text-align:center;
+    }
+    
+    .myformadd .close {
+    position: relative;
+    top: 15px;
+    margin-left: 93%;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(134, 134, 134);
+    }
+    
+    .myformadd .close:hover {
+    color: #fff;
+    }
+   
+    span {
+    padding-left: 15px;
+   }
+    
+    
+   .mobile-accordion-lvl2, .mobile-accordion-lv3 {
+    background-color: #061347;;
+    }
+   
+   
+   .accordion {
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #061347;
+    width: 95%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+   } 
+   
+    p.first-level-menu, p.second-level-menu, p.third-level-menu {
+    margin: auto; 
+    padding: 15px 20px;
+    border-bottom: solid #eeeeee 1px;
+    width: 90%;
+    text-align: left;
+    }
+    
+    .accordion-lvl1, .accordion-lvl2 {
+    width: 90%;
+    display: inline-block;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+    background-color: #061347;
+    }
+    
+    .accordion-lvl3 {
+    width: 90%;
+    margin-left: 3%;
+    display: inline-block;
+   }
+   
+    
+   
+    
+    /* Style the element that is used to open and close the accordion class */
+    
+    
+    p.fad-accordion, p.fak-accordion, p.fac-accordion {
+    background-color: #061347;;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 18px 18px 0px;
+    width: 90%;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    margin-bottom: 0px;
+    border-top: solid #f4f4f4 1px;
+    }
+    
+    /* Add a background color to the accordion if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    p.fad-accordion.active, p.fak-accordion.active, p.accordion:hover, p.fac-accordion.active {
+    background-color: #061347;
+    }
+    
+    /* Unicode character for "plus" sign (+) */
+    p.fad-accordion:after, p.fak-accordion:after, p.fac-accordion:after {
+    content: '\2795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+    }
+    
+    p.first-level-menu:after, p.second-level-menu:after, p.third-level-menu:after {
+    content: '\2795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: -5px;
+    cursor: pointer;
+    }
+    
+    
+    /* Unicode character for "minus" sign (-) */
+    p.fad-accordion.active:after, p.fak-accordion.active:after, p.fac-accordion.active:after {
+    content: "\2796";
+    }
+    
+    p.first-level-menu.active:after, p.second-level-menu.active:after, p.third-level-menu.active:after {
+    content: "\2796";
+    }
+    
+    /* Style the element that is used for the panel class */
+    div.first-level-panel{
+    padding: 5px 18px;
+    background-color: #061347;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+    text-align: left;
+    padding-left: 18px;
+    width: 90%;
+    margin: 0 auto;
+    }
+   
+    div.second-level-panel, div.third-level-panel {
+    padding: 5px 18px;
+    background-color: #061347;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+    text-align: left;
+    padding-left: 18px;
+    width: 90%;
+    margin: 5px 0px;
+    }
+    
+   
+    
+    div.first-level-panel.show, div.second-level-panel.show, div.third-level-panel.show {
+    background-color: #061347;
+    opacity: 1;
+    max-height: 500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+    overflow-y: auto;
+    width: 90%;
+    height: 76%;
+    }
+   
+    div.second-level-panel.show, div.third-level-panel.show {
+    opacity: 1;
+    max-height: 500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+    overflow-y: auto;
+    width: 90%;
+    margin-left: 2%;
+    }
+   
+   
+    .searchbar {
+    margin: 0 auto;
+    justify-content: center;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: #061347;
+    backdrop-filter: blur(2px);
+   }
+   .searchbar-icon {
+    position: absolute;
+    right: 27px;
+    top: 25px;
+    background-color: transparent;
+    color: #646464;
+    cursor: pointer;
+   }
+   .srch {
+    width: 100%;
+    padding: 9px;
+    border: none;
+    margin: 16px 14px;
+    font-size: 18px;
+    background-color: #fff;
+    text-align: left;
+    text-indent: 8px;
+    outline: none;
+   }
+   
+   .offerbar , .username{
+       border-radius: 30px;
+       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+      }
+   
+   
+   .offerbar {
+       margin: 0 auto;
+       margin-top: 10px;
+       justify-content: center;
+       width: 80%;
+       max-width: 400px;
+       display: flex;
+       align-items: center;
+       position: relative;
+       overflow: hidden;
+       background-color: #061347;
+       backdrop-filter: blur(2px);
+      }
+   
+      .searchbar , .srch {
+       border-radius: 30px;
+       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+       
+      }
+   
+      .usernamebox{
+       width: 62%;
+      }
+   
+      .username{
+       width: 80%;
+       margin: 0 auto;
+       max-width: 240px;
+       padding: 9px;
+       border: none;
+       margin-top: 16px;
+       margin-bottom: 16px;
+       font-size: 18px;
+       background-color: #fff;
+       text-align: left;
+       text-indent: 8px;
+       outline: none;
+      }
+   
+      .npstatusp{
+       margin: 0 auto;
+       padding-top:2%;
+       padding-bottom: 5px;
+       color: #353c4e;
+       letter-spacing: 2px;
+       width:100%;
+       text-align:center;
+       display: inline-block;
+       }
+
+
+       .accheight{
+        height:350px
+    }
