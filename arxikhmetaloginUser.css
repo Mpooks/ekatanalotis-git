@@ -165,7 +165,6 @@ button.nav {
  }
 
  .ulclass a.active,.ulclass a:hover{
- background: #021727c9;
  transition: 0.5s;
  }
 
@@ -362,10 +361,10 @@ label.logo{
  }
 
  nav ul li a:hover,nav ul li a.active{
- background: none;
- color: #062C5A;
-
- }
+    background: none;
+    color: #7D7E80;
+    
+    }
 
  #check:checked ~ ul{
  right: 0;

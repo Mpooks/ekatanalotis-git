@@ -86,9 +86,18 @@
                 <a class="close" href="#">&times;</a>
                 <h1>Select a product</h1>
                 <div class="searchbar">
-                    <input type="text" class="srch" name="search" placeholder="Search...">
+                    <form autocomplete="off">
+                        <div class="autocomplete" style="width:300px;">
+                            <input id="myInput" type="text" class="srch" name="search" placeholder="Search...">
+                        </div>
+                    </form>
+                    <script src="autocomplete.js"></script> 
                     <span class="searchbar-icon"><i class="fas fa-search"></i></span>
                   </div>
+
+
+
+
                   <div>
                 <div class="accordion">
                     <div class="accheight">
