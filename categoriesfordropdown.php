@@ -3,7 +3,7 @@
 include 'dbconn.php';
 $con = openDB();
 
-$categories = mysqli_query($con, "SELECT cname FROM pcategory");
+$categories = mysqli_query($con, "SELECT cid,cname FROM pcategory");
 $arr = array();
 
 if (mysqli_num_rows($categories) > 0) {

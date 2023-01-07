@@ -11,10 +11,9 @@
         <script src="https://unpkg.com/leaflet@1.3.0/dist/leaflet.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/3.0.2/leaflet-search.min.js"></script>       
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <script type="text/javascript" src="accordion.js"></script>
     </head>
     
-    <body onload="mapd(),categoriesfd()">
+    <body onload="mapd(),categoriesfd(),fillacc()">
 
         <nav>
         <input type="checkbox" id="check">
@@ -80,6 +79,7 @@
         <div id="mapid"></div>  
         <script type="text/javascript" src="adminmap.js"></script>
         <script type="text/javascript" src="setshopc.js"></script>
+        <script type="text/javascript" src="fillaccordion.js"></script>
 
         <div id="offerd" class="overlay">
             <div class="myformadd" id="fad">
@@ -97,163 +97,7 @@
                             <div class="accordion-lvl1">
                                 <div style="border-bottom: solid #f4f4f4 1px;">
                                     <div class="mobile-accordion-lvl2">
-                                        <div>
-                                            <div>
-                                                <p class="second-level-menu">ΚΑΤΗΓΟΡΙΑ</p>
-                                                <div class="second-level-panel">
-                                                    <div class="accordion-lvl2">
-                                                        <div style="border-bottom: solid #f4f4f4 1px;">
-                                                            <div class="mobile-accordion-lvl3">
-                                                                <div>
-                                                                    <p class="third-level-menu">ΥΠΟΚΑΤΗΓΟΡΙΑ</p>
-                                                                    <div class="third-level-panel">
-                                                                        <div class="accordion-lvl3">
-
-                                                                            <div style="border-bottom: solid #f4f4f4 1px;">
-                                                                                <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div>
-                                                                        <p class="third-level-menu">ΥΠΟΚΑΤΗΓΟΡΙΑ</p>
-                                                                        <div class="third-level-panel">
-                                                                            <div class="accordion-lvl3">
-
-                                                                                <div>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div>
-                                                                        <p class="third-level-menu">ΥΠΟΚΑΤΗΓΟΡΙΑ</p>
-                                                                        <div class="third-level-panel">
-                                                                            <div class="accordion-lvl3">
-
-                                                                                <div>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                
-                                            <div>
-                                                <p class="second-level-menu">ΚΑΤΗΓΟΡΙΑ</p>
-                                                <div class="second-level-panel">
-                                                    <div class="accordion-lvl2">
-                                                        <div style="border-bottom: solid #f4f4f4 1px;">
-                                                            <div class="mobile-accordion-lvl3">
-                                                                <div>
-                                                                    <p class="third-level-menu">ΥΠΟΚΑΤΗΓΟΡΙΑ</p>
-                                                                    <div class="third-level-panel">
-                                                                        <div class="accordion-lvl3">
-
-                                                                            <div style="border-bottom: solid #f4f4f4 1px;">
-                                                                                <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div>
-                                                                        <p class="third-level-menu">ΥΠΟΚΑΤΗΓΟΡΙΑ</p>
-                                                                        <div class="third-level-panel">
-                                                                            <div class="accordion-lvl3">
-
-                                                                                <div>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div>
-                                                                        <p class="third-level-menu">ΥΠΟΚΑΤΗΓΟΡΙΑ</p>
-                                                                        <div class="third-level-panel">
-                                                                            <div class="accordion-lvl3">
-
-                                                                                <div>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                
-                                            <div>
-                                                <div>
-                                                    <p class="second-level-menu">ΚΑΤΗΓΟΡΙΑ</p>
-                                                    <div class="second-level-panel">
-                                                        <div class="accordion-lvl2">
-                                                            <div style="border-bottom: solid #f4f4f4 1px;">
-                                                                <div class="mobile-accordion-lvl3">
-                                                                    <div>
-                                                                        <p class="third-level-menu">ΥΠΟΚΑΤΗΓΟΡΙΑ</p>
-                                                                        <div class="third-level-panel">
-                                                                            <div class="accordion-lvl3">
-    
-                                                                                <div style="border-bottom: solid #f4f4f4 1px;">
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                    <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div>
-                                                                            <p class="third-level-menu">ΥΠΟΚΑΤΗΓΟΡΙΑ</p>
-                                                                            <div class="third-level-panel">
-                                                                                <div class="accordion-lvl3">
-    
-                                                                                    <div>
-                                                                                        <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                        <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                        <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div>
-                                                                            <p class="third-level-menu">ΥΠΟΚΑΤΗΓΟΡΙΑ</p>
-                                                                            <div class="third-level-panel">
-                                                                                <div class="accordion-lvl3">
-    
-                                                                                    <div>
-                                                                                        <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                        <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                        <p class="fad-accordion" style="padding: 18px 18px 6px; margin: 12px 0">ΠΡΟΙΟΝ</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                            </div>
-                
+                                        <div id="cats">    
                                         </div>
                                     </div>
                                 </div>

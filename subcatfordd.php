@@ -3,13 +3,13 @@
 include 'dbconn.php';
 $con = openDB();
 
-$catn= $_POST['c'];
-$categories = mysqli_query($con, "SELECT subname FROM subcategory INNER JOIN pcategory ON subcategory.cat_id=pcategory.cid WHERE pcategory.cname='$catn'");
+$cd= $_POST['cs'];
+$categoriess = mysqli_query($con, "SELECT sub_id,cat_id,subname,cname FROM subcategory INNER JOIN pcategory ON subcategory.cat_id=pcategory.cid where cat_id='$cd'");
 $arr = array();
 
-if (mysqli_num_rows($categories) > 0) {
-    while ($cat = mysqli_fetch_assoc($categories)) {
-        $arr[]=$cat;
+if (mysqli_num_rows($categoriess) > 0) {
+    while ($cats = mysqli_fetch_assoc($categoriess)) {
+        $arr[]=$cats;
     }
 }
 
