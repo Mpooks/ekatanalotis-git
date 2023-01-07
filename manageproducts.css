@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 body{ 
  background-color:#062C5A;
  padding:0;
@@ -12,7 +12,7 @@ body{
  }
  
  *{
- font-family: 'Inconsolata';
+    font-family: 'Roboto Condensed', sans-serif, SemiBold, Bahnschrift;
  margin: 0;
  padding: 0;
  }
@@ -386,10 +386,7 @@ body{
   margin-right: 5px;
   }
  
-  p{
-  font-size: 15px;
-  width: 10%;
-  }
+
  
  .boxforinfo .bboxforinfo .showp{
  margin-bottom: 2%;

@@ -62,7 +62,7 @@ body{
  }
  
  nav{
- background: linear-gradient(to right, midnightblue,midnightblue,midnightblue, #18acae);
+ background: midnightblue;
  height:60px;
  width:100%;
  }
@@ -356,10 +356,7 @@ body{
  margin-right: 5px;
  }
 
- p{
- font-size: 15px;
- width: 10%;
- }
+
 
  #mapid{
  border-radius: 10px;

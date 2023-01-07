@@ -160,8 +160,7 @@ body{
  }
 
  .ulclass a.active, .ulclass a:hover{
- background: #021727c9;
- transition: 0.5s;
+  transition: 0.5s;
  }
  
  
@@ -359,7 +358,7 @@ body{
  
  nav ul li a:hover,nav ul li a.active{
  background: none;
- color: #062C5A;
+ color: #7D7E80;
  
  }
  

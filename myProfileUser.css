@@ -230,6 +230,7 @@ label.logo{
  background: linear-gradient( to right, midnightblue, #005f9a, #01dbdf);
  padding: 20px 10px;
  border-bottom-left-radius: 5px;
+ border-top-left-radius: 5px;
  text-align: center;
  color: #fff;
  min-width: 140px;
@@ -258,7 +259,6 @@ label.logo{
 .wrapper .right{
  position: relative;
  min-width: 100px;
- width: 70%;
  background: #fff;
  border-top-right-radius: 5px;
  border-bottom-right-radius: 5px;
