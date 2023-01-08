@@ -689,13 +689,13 @@ background: rgb(212, 191, 0);
  }
 
 
-.accordion {
- margin: 0 auto;
- margin-top: 20px;
- background-color: #061347;
- width: 95%;
- box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
-} 
+ .accordion {
+   margin: 0 auto;
+   margin-top: 100px;
+   background-color: #061347;
+   width: 95%;
+   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  } 
 
  p.first-level-menu, p.second-level-menu, p.third-level-menu {
  margin: auto; 
@@ -818,90 +818,154 @@ background: rgb(212, 191, 0);
 
 
  .searchbar {
- margin: 0 auto;
- justify-content: center;
- width: 60%;
- display: flex;
- align-items: center;
- position: relative;
- overflow: hidden;
- background-color: #061347;
- backdrop-filter: blur(2px);
-}
-.searchbar-icon {
- position: absolute;
- right: 27px;
- top: 25px;
- background-color: transparent;
- color: #646464;
- cursor: pointer;
-}
-.srch {
- width: 100%;
- padding: 9px;
- border: none;
- margin: 16px 14px;
- font-size: 18px;
- background-color: #fff;
- text-align: left;
- text-indent: 8px;
- outline: none;
-}
+   margin: auto 20.5%;
+   justify-content: center;
+   width: 60%;
+   display: flex;
+   align-items: center;
+   position: absolute;
+   overflow: hidden;
+   background-color: #061347;
+   backdrop-filter: blur(2px);
+   z-index: 99;
+  }
+  .searchbar-icon {
+   position: absolute;
+   right: 27px;
+   top: 12px;
+   background-color: transparent;
+   color: #646464;
+   cursor: pointer;
+  }
+  .srch {
+   width: 100%;
+   padding: 9px;
+   border: none;
+   font-size: 18px;
+   background-color: #fff;
+   text-align: left;
+   text-indent: 8px;
+   outline: none;
+  }
+  
+  .offerbar , .username{
+      border-radius: 5px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+     }
+  
+  
+  .offerbar {
+      margin: 0 auto;
+      margin-top: 10px;
+      justify-content: center;
+      width: 80%;
+      max-width: 400px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background-color: #061347;
+      backdrop-filter: blur(2px);
+     }
+  
+     .searchbar , .srch {
+      border-radius: 5px;
+      box-shadow: 0px 4px 4px 0px rgb(253, 253, 253, 0.2);
+      
+     }
+  
+     .usernamebox{
+      width: 62%;
+     }
+  
+     .username{
+      width: 80%;
+      margin: 0 auto;
+      max-width: 240px;
+      padding: 9px;
+      border: none;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      font-size: 18px;
+      background-color: #fff;
+      text-align: left;
+      text-indent: 8px;
+      outline: none;
+     }
+  
+     .npstatusp{
+      margin: 0 auto;
+      padding-top:2%;
+      padding-bottom: 5px;
+      color: #353c4e;
+      letter-spacing: 2px;
+      width:100%;
+      text-align:center;
+      display: inline-block;
+      }
 
-.offerbar , .username{
-    border-radius: 30px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+
+      .accheight{
+       height:350px
    }
 
+   .autocomplete {
+       position: relative;
+       display: inline-block;
+       width: 100%;
+     }
+     
+     .srch input {
+       border: 1px solid transparent;
+       background-color: #f1f1f1;
+       padding: 10px;
+       font-size: 16px;
+     }
+     
+     .srch input[type=text] {
+       background-color: #f1f1f1;
+       width: 100%;
+     }
 
-.offerbar {
-    margin: 0 auto;
-    margin-top: 10px;
-    justify-content: center;
-    width: 80%;
-    max-width: 400px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    background-color: #061347;
-    backdrop-filter: blur(2px);
-   }
+     
+     .autocomplete-items {
+       position: relative;
+       border-bottom: none;
+       border-top: none;
+       z-index: 99;
+       /*position the autocomplete items to be the same width as the container:*/
+       top: 100%;
+       left: 0;
+       right: 0;
+       padding-bottom: 10px;
+     }
+     
+     .autocomplete-items div {
+       padding: 10px;
+       cursor: pointer;
+       background-color: #fff; 
+     }
 
-   .searchbar , .srch {
-    border-radius: 30px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
-    
-   }
+     
+     
+     /*when hovering an item:*/
+     .autocomplete-items div:hover {
+       background-color: #e9e9e9; 
+     }
+     
+     /*when navigating through the items using the arrow keys:*/
+     .autocomplete-active {
+       background-color: DodgerBlue !important; 
+       color: #ffffff; 
+     }
 
-   .usernamebox{
-    width: 62%;
-   }
-
-   .username{
-    width: 80%;
-    margin: 0 auto;
-    max-width: 240px;
-    padding: 9px;
-    border: none;
-    margin-top: 16px;
-    margin-bottom: 16px;
-    font-size: 18px;
-    background-color: #fff;
-    text-align: left;
-    text-indent: 8px;
-    outline: none;
-   }
-
-   .npstatusp{
-    margin: 0 auto;
-    padding-top:2%;
-    padding-bottom: 5px;
-    color: #353c4e;
-    letter-spacing: 2px;
-    width:100%;
-    text-align:center;
-    display: inline-block;
+     #indiv{
+      background-color: #061347;
     }
+
+
+     .autoform{
+       width: 100%;
+     }
 
    
