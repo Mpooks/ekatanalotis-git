@@ -16,7 +16,7 @@ body{
  }
  
 *{
- font-family: 'Roboto Condensed', sans-serif, SemiBold, Bahnschrift;
+ font-family: SemiBold, Bahnschrift;
  margin: 0;
  padding: 0;
 
@@ -141,10 +141,10 @@ label.logo{
  }
 
  nav ul li a:hover,nav ul li a.active{
- background: none;
- color: #062C5A;
-
- }
+    background: none;
+    color: #7D7E80;
+    
+    }
 
  #check:checked ~ ul{
  right: 0;

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
 body{ 
  background-color:#062C5A;
  padding:0;
@@ -12,7 +12,7 @@ body{
  }
  
  *{
- font-family: 'Inconsolata';
+ font-family: SemiBold, Bahnschrift;
  margin: 0;
  padding: 0;
  }
@@ -153,10 +153,10 @@ body{
  }
  
  nav ul li a:hover,nav ul li a.active{
- background: none;
- color: #062C5A;
- 
- }
+    background: none;
+    color: #7D7E80;
+    
+    }
  
  #check:checked ~ ul{
  right: 0;

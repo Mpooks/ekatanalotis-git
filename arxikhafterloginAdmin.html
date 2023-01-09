@@ -86,10 +86,16 @@
                 <a class="close" id="clf" href="#">&times;</a>
                 <h1>Select a product</h1>
                 <div class="searchbar">
-                    <input type="text" class="srch" name="search" placeholder="Search...">
-                    <span class="searchbar-icon"><i class="fas fa-search"></i></span>
-                  </div>
-                  <div>
+                    <form autocomplete="off" class="autoform">
+                        <div class="autocomplete">
+                            <input id="myInput" type="text" class="srch" name="search" placeholder="Search...">
+                        </div>
+                        <span class="searchbar-icon"><i class="fas fa-search"></i></span>
+                    </form>
+                    <script src="autocomplete.js"></script> 
+
+                </div>
+
                 <div class="accordion">
                     <div class="accheight">
                         <p class="first-level-menu">ΚΑΤΗΓΟΡΙΕΣ ΕΠΙΠΕΔΟ 0</p>
