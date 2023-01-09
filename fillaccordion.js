@@ -1,6 +1,28 @@
 async function fillacc(){
 
     const select = document.getElementById("cats");
+    const por=document.getElementById("prod");
+    const cl=document.getElementById("clf");
+    const prc=document.getElementById("price");
+    const stat=document.getElementById("npstatus");
+
+    prc.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        if(por.innerHTML==null || por.innerHTML == ""){
+          stat.innerHTML='You have to select a product first.';
+        }
+          else{
+            var reg = /^[0-9]+\.?[0-9]*$/;
+            if(prc.value.match(reg))
+            {
+              stat.innerHTML='Cool.';
+            }else{
+              stat.innerHTML='The price must be a number.';
+            }
+        }
+      }
+    });
     
     const response = await fetch('./categoriesfordropdown.php');
         
@@ -57,7 +79,12 @@ async function fillacc(){
       pr.classList.add('fad-accordion');
       pr.style.cssText+='padding: 18px 18px 6px; margin: 12px 0';
       pr.textContent=data2[k].pname;
+      const tosh=data2[k].pname;
       ld.appendChild(pr);
+      pr.onclick=function(){
+        stat.innerHTML='';
+        por.innerHTML='Chosen product: '+tosh;
+      }
       }
     }
     a3.appendChild(ld);
@@ -84,7 +111,6 @@ var acc1 = document.getElementsByClassName("first-level-menu");
     if (setClasses) {
     this.classList.toggle("active");
     this.nextElementSibling.classList.toggle("show");
-    console.log('ax travixtika  ')
     }
     }
     }
@@ -104,7 +130,6 @@ var acc1 = document.getElementsByClassName("first-level-menu");
     if (setClasses) {
     this.classList.toggle("active");
     this.nextElementSibling.classList.toggle("show");
-    console.log('ax de travixtika  ')
     }
     }
     }
@@ -124,7 +149,6 @@ var acc1 = document.getElementsByClassName("first-level-menu");
         if (setClasses) {
         this.classList.toggle("active");
         this.nextElementSibling.classList.toggle("show");
-        console.log('ax de travixtika  ')
         }
         }
         }
@@ -133,6 +157,10 @@ var acc1 = document.getElementsByClassName("first-level-menu");
         els[i].classList[fnName](className);
         }
         }
+
+  cl.onclick=function(){
+    por.innerHTML='';
+  }
 }
 
 
