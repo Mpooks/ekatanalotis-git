@@ -52,7 +52,7 @@ async function mapd(){
             
       var data1 = await response1.json();
       if (data1.length==0) {
-        let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<a href="#offerd"><button class="noofbut"> Add </button></a>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+        let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
     
         marker.bindPopup(template[2] + template[0] + template[1] );
@@ -63,9 +63,8 @@ async function mapd(){
         for(j in data1){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
-          console.log(str);
         }
-          let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+')"> Review </button>',`<a href="#offerd"><button id="db" class="but"> Add </button></a>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
+          let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
          marker.addTo(markersLayer);
     }
@@ -97,7 +96,6 @@ async function mapd(){
     
         mymap.setView([lat, lng]);              //focus se kathe neo position meta apo update position
     
-        marker.bindPopup("This is my current location");
     
     }
     
@@ -139,7 +137,7 @@ async function mapd(){
             
       var data1 = await response1.json();
       if (data1.length==0) {
-        let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<a href="#offerd"><button class="noofbut"> Add </button></a>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+        let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
     
         marker.bindPopup(template[2] + template[0] + template[1] );
@@ -150,9 +148,8 @@ async function mapd(){
         for(j in data1){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
-          console.log(str);
         }
-          let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+')"> Review </button>',`<a href="#offerd"><button id="db" class="but"> Add </button></a>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
+          let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
          marker.addTo(markersLayer);
       }
@@ -183,7 +180,7 @@ async function mapd(){
             
       var data1 = await response1.json();
       if (data1.length==0) {
-        let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<a href="#offerd"><button class="noofbut"> Add </button></a>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+        let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
     
         marker.bindPopup(template[2] + template[0] + template[1] );
@@ -194,9 +191,8 @@ async function mapd(){
         for(j in data1){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
-          console.log(str);
         }
-          let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+')"> Review </button>',`<a href="#offerd"><button id="db" class="but"> Add </button></a>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
+          let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
          marker.addTo(markersLayer);
       }
@@ -206,7 +202,6 @@ async function mapd(){
     
       }else{
         var c = document.getElementById('searchtext9').value;
-        console.log(c);
         var formData = new FormData();
         formData.append('shop', c);
         const response = await fetch('./searchpersname.php',{ method: 'POST', body: formData });
@@ -236,17 +231,16 @@ async function mapd(){
               for(j in data1){
                 var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
                 str=str.concat(a);
-                console.log(str);
               }
     
             let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
-            let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+')"> Review </button>',`<a href="#offerd"><button id="db" class="but"> Add </button></a>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
+            let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
                marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
                marker.addTo(markersLayer);  
             
           }else{
           let marker = L.marker(L.latLng(lat,long));
-          let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<a href="#offerd"><button class="noofbut"> Add </button></a>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+          let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
           marker.bindPopup(template[2] + template[0] + template[1] );
              marker.addTo(markersLayer);
         }
@@ -272,7 +266,6 @@ async function mapd(){
     sel.onchange = async function getSelected(){
       document.getElementById('searchtext9').value=null;
         var se = document.getElementById('selectcat').value;
-        console.log(se);
         if(se!=='black'){
         var formData = new FormData();
         formData.append('select', se);
@@ -293,14 +286,13 @@ async function mapd(){
           let marker = L.marker(L.latLng(lat,long), {title: title});
         
           var formData1= new FormData();
-          console.log(sid);
           formData1.append('sH',sid);
           formData1.append('select', se);
           const response1 = await fetch('./offersfromsearchcat.php',{ method: 'POST', body: formData1 });
                 
           var data1 = await response1.json();
           if (data1.length==0) {
-            let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<a href="#offerd"><button class="noofbut"> Add </button></a>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+            let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
     
         marker.bindPopup(template[2] + template[0] + template[1]);
@@ -311,9 +303,8 @@ async function mapd(){
             for(j in data1){
               var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
               str=str.concat(a);
-              console.log(str);
             }
-              let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+')"> Review </button>',`<a href="#offerd"><button class="but"> Add </button></a>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
+              let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
              marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
              marker.addTo(markersLayer);
         }
@@ -341,7 +332,7 @@ async function mapd(){
             
       var data1 = await response1.json();
       if (data1.length==0) {
-        let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<a href="#offerd"><button class="noofbut"> Add </button></a>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
+        let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
     
         marker.bindPopup(template[2] + template[0] + template[1] );
@@ -352,9 +343,8 @@ async function mapd(){
         for(j in data1){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
-          console.log(str);
         }
-          let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+')"> Review </button>',`<a href="#offerd"><button class="but"> Add </button></a>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
+          let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
          marker.addTo(markersLayer);
     }

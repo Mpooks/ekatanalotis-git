@@ -31,7 +31,6 @@ async function userinfo(){
     
     var ndata = await response.json();
 
-     console.log(ndata);
     for (let i = 0; i < ndata.length; i++) {
       if(ndata[i]==0)
       {

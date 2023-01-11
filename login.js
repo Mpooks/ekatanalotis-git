@@ -13,7 +13,6 @@
     const response = await fetch('./authentication.php',{ method: 'POST', body: formData });
     
     var data = await response.json();
-    console.log(data);
     if (data.length==0) {
         statusDiv.innerHTML = 'Not valid credentials.';
     }

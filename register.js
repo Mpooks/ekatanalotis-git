@@ -16,7 +16,6 @@ form.onsubmit =  async function(event) {
    const response = await fetch('./register.php',{ method: 'POST', body: formData });
    
    var data = await response.json();
-   console.log(data);
    if (data.length==0) {
        statusDiv.innerHTML = 'Something went wrong, please try again.';
    }

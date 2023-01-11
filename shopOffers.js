@@ -20,7 +20,7 @@ async function allof(){
   if (data.length===0){
     const st = document.createElement('h2');
       st.classList.add('offerh2');
-      st.textContent='There are no offers active in this shop!';
+      st.textContent='There are no offers from other users to review in this shop!';
       so.appendChild(st);
   }else{
     

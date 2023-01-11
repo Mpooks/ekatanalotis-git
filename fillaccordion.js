@@ -5,18 +5,19 @@ async function fillacc(){
     const cl=document.getElementById("clf");
     const prc=document.getElementById("price");
     const stat=document.getElementById("npstatus");
+    const aut=document.getElementById("myInput");
 
-    prc.addEventListener("keypress", function(event) {
+    prc.addEventListener("keypress",  function(event) {
       if (event.key === "Enter") {
         event.preventDefault();
-        if(por.innerHTML==null || por.innerHTML == ""){
+        if((por.innerHTML==null || por.innerHTML == "") &&  (aut.value == null || aut.value == "")){
           stat.innerHTML='You have to select a product first.';
         }
           else{
             var reg = /^[0-9]+\.?[0-9]*$/;
             if(prc.value.match(reg))
             {
-              stat.innerHTML='Cool.';
+              checkpr();
             }else{
               stat.innerHTML='The price must be a number.';
             }
@@ -83,7 +84,8 @@ async function fillacc(){
       ld.appendChild(pr);
       pr.onclick=function(){
         stat.innerHTML='';
-        por.innerHTML='Chosen product: '+tosh;
+        aut.value = null;
+        por.innerHTML=tosh;
       }
       }
     }
@@ -158,8 +160,60 @@ var acc1 = document.getElementsByClassName("first-level-menu");
         }
         }
 
-  cl.onclick=function(){
+  cl.onclick=async function(){
     por.innerHTML='';
+    prc.value='';
+    stat.innerHTML='';
+    aut.value='';
+    const rr=document.getElementById('rowr');
+
+    const response4 = await fetch('./offersafteradd.php');
+          
+    var data4 = await response4.json();
+    if (data4.length==0) {
+      let content = `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`;
+
+      rr.innerHTML=content;
+    }
+    else{
+      var str='';
+      for(j in data4){
+        var a='<div class="container"><p class="ps">'+data4[j].pname+'</p><p class="popp">Price: '+data4[j].pr+'</p><p class="popp">20% less than yesterday: '+data4[j].ld+'</p><p class="popp">20% less than last week: '+data4[j].lw+'</p><p class="popp">Offer date: '+data4[j].d+'</p><p class="popp">Likes: '+data4[j].lik+'</p><p class="popp">Dislikes: '+data4[j].disl+'</p><p class="popp">In stock: '+data4[j].st+'</p></div>';
+        str=str.concat(a);
+      }
+        let content = '<div class="row" id="rowr">'+str+'</div>';
+        rr.innerHTML=content;
+    }
+  }
+}
+
+async function checkpr(){
+  const por=document.getElementById("prod").innerHTML;
+
+  const prc=document.getElementById("price").value;
+  const stat=document.getElementById("npstatus");
+  var formData3= new FormData();
+  formData3.append('productn', por);
+  formData3.append('pricev', parseFloat(prc));
+  const response3 = await fetch('./addoffer.php',{ method: 'POST', body: formData3});
+                    
+  var data1 = await response3.json();
+  for (let i = 0; i < data1.length; i++) {
+  if(data1[i]==1){
+  stat.innerHTML='You have earned 50 points.';
+  }
+  else if(data1[i]==2){
+  stat.innerHTML='You have earned 20 points.';
+  }
+  else if(data1[i]==3){
+  stat.innerHTML='You have earned 50 points.';
+  }
+  else if(data1[i]==4){
+  stat.innerHTML='You have earned 0 points.';
+  }
+  else{
+  stat.innerHTML='You already have an active offer for this product in this shop.';
+  }
   }
 }
 

@@ -37,7 +37,6 @@ for (i in data) {
   let title = data[i].sname;
   let lat=parseFloat(data[i].latitude);
   let long=parseFloat(data[i].longitude);
-  console.log(title);
   let marker = L.marker(L.latLng(lat,long), {title: title });
   marker.bindPopup("title: " + title);
   marker.addTo(markersLayer);
@@ -88,7 +87,6 @@ for (i in data) {
             let title = data[i].sname;
             let lat=parseFloat(data[i].latitude);
             let long=parseFloat(data[i].longitude);
-            console.log(title);
             let marker = L.marker(L.latLng(lat,long), {title: title });
             marker.bindPopup("title: " + title);
             marker.addTo(markersLayer);

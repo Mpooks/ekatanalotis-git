@@ -4,7 +4,6 @@ const select = document.getElementById("selectcat");
 const response = await fetch('./categoriesfordropdown.php');
     
 var data = await response.json();
-console.log(data);
 for (let i = 0; i < data.length; i++) {
   const op = document.createElement('option');
   op.value=data[i].cname;

@@ -76,7 +76,6 @@ const data = {
   }
   });
   function filterChart(date){
-    console.log(date.value);
     const extra='0';
     if(date.value.includes('-')){
       var year = date.value.substring(0, 4);
@@ -107,8 +106,6 @@ const data = {
 
     const startDate = `${date.value}-01`; 
     const endDate = `${date.value}-${lastDay(year, month)}`;
-    console.log(endDate);
-    console.log(startDate);
     myChart.config.options.scales.x.min = startDate;
     myChart.config.options.scales.x.max = endDate;
     myChart.update();

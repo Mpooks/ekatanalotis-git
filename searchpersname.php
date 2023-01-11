@@ -10,7 +10,7 @@ if (isset($_POST['shop'])) {
 
     $ex= mysqli_query($con, "SELECT * from shop where sname='$s'");
     if (mysqli_num_rows($ex) > 0) {
-        $is = mysqli_query($con, "SELECT count(offer_id),shopid,sname,latitude,longitude,shopid,0 as color from offer inner join shop on offer.sid=shop.shopid where shop.sname='$s' GROUP BY offer.sid;");
+        $is = mysqli_query($con, "SELECT count(offer_id),shopid,sname,latitude,longitude,shopid,0 as color from offer inner join shop on offer.sid=shop.shopid where shop.sname='$s' AND offer.active_offer='ACTIVE' GROUP BY offer.sid;");
         if (mysqli_num_rows($is) > 0) {
 
             while ($i = mysqli_fetch_assoc($is)) {

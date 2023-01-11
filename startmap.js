@@ -61,7 +61,6 @@ async function mapd(){
         for(j in data1){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
-          console.log(str);
         }
           let template = ['<button class="but" onclick="gotol()"> Review </button>',`<button class="but" onclick="gotol()"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
@@ -110,7 +109,6 @@ async function mapd(){
         for(j in data1){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
-          console.log(str);
         }
           let template = ['<button class="but" id="'+sid+'" onclick="gotol()"> Review </button>',`<button class="but" onclick="gotol()"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
@@ -154,7 +152,6 @@ async function mapd(){
         for(j in data1){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
-          console.log(str);
         }
           let template = ['<button class="but" id="'+sid+'" onclick="gotol()"> Review </button>',`<button class="but" onclick="gotol()"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
@@ -166,7 +163,6 @@ async function mapd(){
     
       }else{
         var c = document.getElementById('searchtext9').value;
-        console.log(c);
         var formData = new FormData();
         formData.append('shop', c);
         const response = await fetch('./searchpersname.php',{ method: 'POST', body: formData });
@@ -196,7 +192,6 @@ async function mapd(){
               for(j in data1){
                 var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
                 str=str.concat(a);
-                console.log(str);
               }
     
             let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
@@ -232,7 +227,6 @@ async function mapd(){
     sel.onchange = async function getSelected(){
       document.getElementById('searchtext9').value=null;
         var se = document.getElementById('selectcat').value;
-        console.log(se);
         if(se!=='black'){
         var formData = new FormData();
         formData.append('select', se);
@@ -253,7 +247,6 @@ async function mapd(){
           let marker = L.marker(L.latLng(lat,long), {title: title});
         
           var formData1= new FormData();
-          console.log(sid);
           formData1.append('sH',sid);
           formData1.append('select', se);
           const response1 = await fetch('./offersfromsearchcat.php',{ method: 'POST', body: formData1 });
@@ -271,7 +264,6 @@ async function mapd(){
             for(j in data1){
               var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
               str=str.concat(a);
-              console.log(str);
             }
               let template = ['<button class="but" id="'+sid+'" onclick="gotol()"> Review </button>',`<button class="but" onclick="gotol()"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
              marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
@@ -312,7 +304,6 @@ async function mapd(){
         for(j in data1){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
-          console.log(str);
         }
           let template = ['<button class="but" id="'+sid+'" onclick="gotol()"> Review </button>',`<button class="but" onclick="gotol()"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1]);

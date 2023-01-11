@@ -26,3 +26,10 @@ async function gotodel(sid){
   const response = await fetch('./setcurrentshop.php',{ method: 'POST', body: formData });
   window.location='deleteoffer.html?';
 }
+
+async function getsid(sid){
+  var formData = new FormData();
+  sid=parseInt(sid);
+  formData.append('sh', sid);
+  const response = await fetch('./setcurrentshop.php',{ method: 'POST', body: formData });
+}
