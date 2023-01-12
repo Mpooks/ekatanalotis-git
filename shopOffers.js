@@ -1,6 +1,13 @@
 async function allof(){
     const so = document.getElementById("showoff");
     const f = document.getElementById("showo");
+    const title = document.getElementById("shopt");
+    const response3 = await fetch('./getshopname.php');
+    
+    var data3 = await response3.json();
+    for(let k=0;k<data3.length;k++){
+      title.innerHTML=data3[k].sname;
+    }
     const ldo = new Array();
 
     const response2 = await fetch('./isliked.php');
@@ -189,6 +196,12 @@ async function op(score,oDP,p,pr,ld,lw,d,like,disl,st,pim,us){
 
     window.location.href  = "?#offerd";
   }
+}
+  async function clf(){
+    const so=document.getElementById('showoff');
+    so.innerHTML='';
+    allof();
+    
   }
 
 

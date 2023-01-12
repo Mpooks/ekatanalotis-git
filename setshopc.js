@@ -3,7 +3,7 @@ async function gotoev(sid){
     sid=parseInt(sid);
     formData.append('sh', sid);
     const response = await fetch('./setcurrentshop.php',{ method: 'POST', body: formData });
-    window.location='evaluationUser.html?';
+    window.location='evaluationUser.html?#';
 }
 
 async function gotoeva(sid){
@@ -11,7 +11,7 @@ async function gotoeva(sid){
   sid=parseInt(sid);
   formData.append('sh', sid);
   const response = await fetch('./setcurrentshop.php',{ method: 'POST', body: formData });
-  window.location='evaluationAdmin.html?';
+  window.location='evaluationAdmin.html?#';
 }
 
 
@@ -24,7 +24,7 @@ async function gotodel(sid){
   sid=parseInt(sid);
   formData.append('sh', sid);
   const response = await fetch('./setcurrentshop.php',{ method: 'POST', body: formData });
-  window.location='deleteoffer.html?';
+  window.location='deleteoffer.html';
 }
 
 async function getsid(sid){
