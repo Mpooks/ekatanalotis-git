@@ -117,3 +117,61 @@
   display: block;
   
   }
+
+  .next{
+    position: relative;
+    margin: 0 auto;
+    
+    padding: 0 10px;
+    margin-right: 1%;
+    border:2px solid #005e60;
+    outline:none;
+    height:25px;
+    width: 100px;
+    background: linear-gradient(to right, #01a9ac, #01dbdf);
+    color:#000;
+    font-size:16px;
+    border-radius:20px;
+    text-align:center;
+    font-weight: bold;
+    margin-top: 40px;
+   }
+
+   .previous{
+    position: relative;
+    margin: 0 auto;
+    padding: 0 10px;
+    margin-right: 1%;
+    border:2px solid #005e60;
+    outline:none;
+    height:25px;
+    width: 100px;
+    background: linear-gradient(to right, #01a9ac, #01dbdf);
+    color:#000;
+    font-size:16px;
+    border-radius:20px;
+    text-align:center;
+    font-weight: bold;
+    margin-top: 40px;
+   }
+
+   .reset{
+    border:2px solid #005e60;
+    outline:none;
+    height:25px;
+    width: 70px;
+    background: linear-gradient(to right, #01a9ac, #01dbdf);
+    color:#000;
+    font-size:16px;
+    border-radius:20px;
+    text-align:center;
+    font-weight: bold;
+    float: right;
+    margin-top: 8px;
+   }
+
+   .buttondiv{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+   }
