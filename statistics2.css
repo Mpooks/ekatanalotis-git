@@ -30,7 +30,7 @@
   border: solid 3px rgba(54, 162, 235, 1);
   background: white;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .catsubcat {
@@ -54,6 +54,18 @@
     width: 100px;
     display: block;
     margin-top: 20px;
+    border:2px solid #005e60;
+    outline:none;
+    height:25px;
+    width: 70px;
+    background: linear-gradient(to right, #01a9ac, #01dbdf);
+    color:#000;
+    font-size:16px;
+    border-radius:20px;
+    text-align:center;
+    font-weight: bold;
+
+    margin-top: 8px;
   }
  
   .catsubcat #selectcat{
@@ -175,3 +187,19 @@
     display: inline-block;
     text-align: center;
    }
+
+
+   .reset:hover{
+    cursor:pointer; 
+    opacity: .75;
+    }
+
+    .previous:hover{
+      cursor:pointer; 
+      opacity: .75;
+      }
+
+      .next:hover{
+        cursor:pointer; 
+        opacity: .75;
+        }
