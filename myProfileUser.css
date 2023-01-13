@@ -223,7 +223,7 @@ label.logo{
 .wrapper .left{
  position: relative;
  width: 30%;
- background: linear-gradient( to right, midnightblue, #005f9a, #01dbdf);
+ background: linear-gradient( to right, midnightblue 30%, #005f9a, #01dbdf);
  padding: 20px 10px;
  border-bottom-left-radius: 5px;
  border-top-left-radius: 5px;

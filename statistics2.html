@@ -7,14 +7,16 @@
   </head>
 
 
-  <body>
+  <body onload="charts()">
     <div class="chartMenu">
       <p>AAAAAAAAAAAAAAAA</p>
     </div>
     <div class="chartCard">
       <div class="chartBox">
         <canvas id="myChart"></canvas>
-        <input type="week" onchange="insert(this)" />
+        <input type="text" id="wi" placeholder="YYYY-WW" maxlength="7"/>
+        <button id="wb" class="reset">Reset</button>
+        <a id="valid"></a>
       </div>
     </div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>

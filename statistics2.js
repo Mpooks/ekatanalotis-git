@@ -1,25 +1,30 @@
+async function charts()
+{
+  const lab = new Array();
+  const d = new Array();
+  const response = await fetch('./monthoffersdata.php');
+      
+  let data1 = await response.json();
+  if (data1.length===0){
+  
+  }else{
+  for (let v = 0; v < data1.length; v++) {
+      lab.push(data1[v].offer_date);
+      d.push(data1[v].tof)
+  }
+  }
+
 const data = {
-  labels: ['2022-11-14', '2022-11-21'],
+  labels: lab,
   datasets: [{
-    label: 'Weekly Sales',
-    data: [18, 12, 6, 9, 12, 3, 9],
+    label: 'Total Offers per Week',
+    data: d,
     backgroundColor: [
-      'rgba(255, 26, 104, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(255, 206, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(255, 159, 64, 0.2)',
-      'rgba(0, 0, 0, 0.2)'
+      'rgba(1, 169, 172, 1)',
     ],
     borderColor: [
-      'rgba(255, 26, 104, 1)',
-      'rgba(54, 162, 235, 1)',
-      'rgba(255, 206, 86, 1)',
-      'rgba(75, 192, 192, 1)',
-      'rgba(153, 102, 255, 1)',
-      'rgba(255, 159, 64, 1)',
-      'rgba(0, 0, 0, 1)'
+      'rgba(25, 25, 112, 1)',
+
     ],
     borderWidth: 1
   }]
@@ -27,39 +32,131 @@ const data = {
 
 
 const config = {
-  type: 'bar',
+  type: 'line',
   data,
   options: {
     scales: {
-      x: {
+      x:{ 
+        min: '2022-01-01',
+        max: '2022-12-31',
         type: 'time',
         time: {
-          unit: 'week',
-          displayFormats: {
-            week: 'yyyy-wW'
-          }
-        }
+          unit: 'day',
+        },
+        ticks: {
+          source: 'ticks',
+          unitstepSize: 1,
+          autoSkip: true,
       },
-      y: {
-        beginAtZero: true
+    },
+    y: {
+      beginAtZero: true,
+      min: 0,
+      max: 20,
+      ticks: {
+        // forces step size to be 50 units
+        stepSize: 1
       }
+    }
     }
   }
 };
 
+const bw=document.getElementById("wb");
+const dateErr = document.getElementById('valid');
 
 const myChart = new Chart(
   document.getElementById('myChart'),
   config
 );
+const winp=document.getElementById("wi");
+winp.addEventListener("keypress", async function(event) {
+if (event.key === "Enter") {
+  dateErr.innerHTML = "";
+  convert(winp);
+}
+});
+function convert(datestr){
+  const extra='0';
+    if(datestr.value.includes('-')){
+      var year = datestr.value.substring(0, 4);
+      var week = datestr.value.substring(5, 7);
+      if(datestr.value.substring(6, 7)===""){
+        week=extra.concat(week);
+        datestr.value=year+'-'+week;
+      }
+    }
+    else{
+      var year = datestr.value.substring(0, 4);
+      var week = datestr.value.substring(5, 7);
+      if(datestr.value.substring(5, 6)===""){
+      week=extra.concat(week);
+      datestr.value=year+'-'+week;
+    }else{
+      datestr.value=year+'-'+week;
+      year = datestr.value.substring(0, 4);
+      week = datestr.value.substring(5, 7);
+    }
+    }
+
+    const [startDate,endDate,lastday,startday,month]=getDateOfISOWeek(week,year);
+    myChart.config.options.scales.x.min = year+'-'+startDate;
+    myChart.config.options.scales.x.max = year+'-'+endDate;
+    myChart.update();
+
+    var regex_date = /^\d{1,2}\-\d{1,2}$/;
+
+    if(!regex_date.test(startDate) || !regex_date.test(endDate) ||  month <= 0 || month > 12 || startday <= 0 || startday > 31 || lastday <= 0 || lastday > 31)
+    {
+      myChart.config.options.scales.x.min = '2022-01-01';
+      myChart.config.options.scales.x.max = '2022-12-31';
+      myChart.update();
+      dateErr.innerHTML = "Invalid date.";
+    }
+
+    if(datestr.value === ""){
+      myChart.config.options.scales.x.min = '2022-01-01';
+      myChart.config.options.scales.x.max = '2022-12-31';
+      myChart.update();
+      dateErr.innerHTML = "Invalid date.";
+  }
+}
 
 
-function insert(weekDate){
-  console.log(weekDate)
-  console.log(weekDate.value)
 
-  const DateTime = luxon.DateTime;
-  console.log(luxon.DateTime.fromISO(weekDate.value))
-  myChart.data.labels.push(DateTime.fromISO(weekDate.value));
+  function getDateOfISOWeek(w, y) {
+    var simple = new Date(y, 0, 1 + (w - 1) * 7);
+    var dow = simple.getDay();
+    var ISOweekStart = simple;
+    var lastday;
+    if (dow <= 4)
+        ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
+    else
+        ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
+    
+    lastday = ISOweekStart.getDate() + 6;
+    var month=ISOweekStart.getMonth() + 1;
+    var firstday=ISOweekStart.getDate();
+    const extrafd='0';
+    month=month.toString();
+    firstday=firstday.toString();
+    lastday=lastday.toString();
+    if(month.substring(1, 2)===""){
+      month=extrafd.concat(month);
+    }
+    if(lastday.substring(1, 2)===""){
+      lastday=extrafd.concat(lastday);
+    }
+    if(firstday.substring(1, 2)===""){
+      firstday=extrafd.concat(firstday);
+    }
+    ISOweekStart=month+'-'+firstday;
+    var lastdate=month+'-'+lastday;
+    return [ISOweekStart,lastdate,lastday,firstday,month];
+}
+  bw.onclick= function reset(){
+  myChart.config.options.scales.x.min = '2022-01-01';
+  myChart.config.options.scales.x.max = '2022-12-31';
   myChart.update();
+}
 }
