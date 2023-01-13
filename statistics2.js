@@ -2,7 +2,22 @@ async function charts()
 {
   const lab = new Array();
   const d = new Array();
-  const response = await fetch('./monthoffersdata.php');
+  const search=document.getElementById('sb');
+search.onclick= async function(){
+   lab.length=0;
+   d.length=0;
+    var sel = document.getElementById('selectcat');
+    var subs = document.getElementById('selectsubcat');
+    var cat=sel.value;
+    var subcat=subs.value;
+    if(cat=='black'){
+        alert('You have to select a category first!');
+    }
+    else if(cat!='black'){
+        if(subcat=='blacks'){
+          var formData1 = new FormData();
+formData1.append('select', cat);
+const response = await fetch('./onlycatforstat.php',{ method: 'POST', body: formData1 });
       
   let data1 = await response.json();
   if (data1.length===0){
@@ -10,14 +25,34 @@ async function charts()
   }else{
   for (let v = 0; v < data1.length; v++) {
       lab.push(data1[v].offer_date);
-      d.push(data1[v].tof)
+      d.push(data1[v].tof);
   }
+  }      
+        }
+        else{
+          var formData1 = new FormData();
+formData1.append('select', subcat);
+const response = await fetch('./subcatforstat.php',{ method: 'POST', body: formData1 });
+      
+  let data1 = await response.json();
+  if (data1.length===0){
+  
+  }else{
+  for (let v = 0; v < data1.length; v++) {
+      lab.push(data1[v].offer_date);
+      d.push(data1[v].tof);
   }
+  }    
+        }
+
+}
+myChart.update();
+}
 
 const data = {
   labels: lab,
   datasets: [{
-    label: 'Total Offers per Week',
+    label: 'Average Discount per Week',
     data: d,
     backgroundColor: [
       'rgba(1, 169, 172, 1)',
@@ -30,6 +65,13 @@ const data = {
   }]
 };
 
+currentDate = new Date();
+    stDate = new Date(currentDate.getFullYear(), 0, 1);
+    var days = Math.floor((currentDate - stDate) /
+        (24 * 60 * 60 * 1000));
+         
+  var weekNumber = Math.ceil(days / 7);
+  const [inistartDate,iniendDate,inilastday,inistartday,inimonth,inilastmonth]=getDateOfISOWeek(weekNumber,currentDate.getFullYear());
 
 const config = {
   type: 'line',
@@ -37,8 +79,8 @@ const config = {
   options: {
     scales: {
       x:{ 
-        min: '2022-01-01',
-        max: '2022-12-31',
+        min: currentDate.getFullYear()+'-'+inistartDate,
+        max: currentDate.getFullYear()+'-'+iniendDate,
         type: 'time',
         time: {
           unit: 'day',
@@ -52,7 +94,7 @@ const config = {
     y: {
       beginAtZero: true,
       min: 0,
-      max: 20,
+      max: 100,
       ticks: {
         // forces step size to be 50 units
         stepSize: 1
@@ -98,6 +140,12 @@ function convert(datestr){
       week = datestr.value.substring(5, 7);
     }
     }
+    if(parseInt(week)>52){
+      myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+    myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
+    myChart.update();
+    dateErr.innerHTML = "Invalid date.";
+    }else{
 
     const [startDate,endDate,lastday,startday,month,lastmonth]=getDateOfISOWeek(week,year);
     myChart.config.options.scales.x.min = year+'-'+startDate;
@@ -108,18 +156,19 @@ function convert(datestr){
 
     if(!regex_date.test(startDate) || !regex_date.test(endDate) ||  month <= 0 || month > 12 ||  lastmonth <= 0 || lastmonth > 12 || startday <= 0 || startday > 31 || lastday <= 0 || lastday > 31)
     {
-      myChart.config.options.scales.x.min = '2022-01-01';
-      myChart.config.options.scales.x.max = '2022-12-31';
+      myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+      myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
       myChart.update();
       dateErr.innerHTML = "Invalid date.";
     }
 
     if(datestr.value === ""){
-      myChart.config.options.scales.x.min = '2022-01-01';
-      myChart.config.options.scales.x.max = '2022-12-31';
+      myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+      myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
       myChart.update();
       dateErr.innerHTML = "Invalid date.";
   }
+}
 }
 
 
@@ -133,7 +182,6 @@ function convert(datestr){
         ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
     else
         ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
-    
     lastday = ISOweekStart.getDate() + 6;
     var firstday=ISOweekStart.getDate();
     var month=ISOweekStart.getMonth() + 1; 
@@ -171,8 +219,6 @@ function convert(datestr){
       lastday=lastday-30;
     }
     }
-    console.log(lastmonth);
-    console.log(lastday);
     const extrafd='0';
     month=month.toString();
     lastmonth=lastmonth.toString();
@@ -195,8 +241,8 @@ function convert(datestr){
     return [ISOweekStart,lastdate,lastday,firstday,month,lastmonth];
 }
   bw.onclick= function reset(){
-  myChart.config.options.scales.x.min = '2022-01-01';
-  myChart.config.options.scales.x.max = '2022-12-31';
+  myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+  myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
   myChart.update();
 }
 }
