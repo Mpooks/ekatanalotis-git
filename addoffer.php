@@ -10,6 +10,7 @@ $si= $_SESSION['sid'];
 
 $lwact = 0;
 $ldact = 0;
+$productn=str_replace("'","\'",$productn);
 $fpr = mysqli_query($con, "SELECT pid FROM product WHERE pname='$productn'");
 if (mysqli_num_rows($fpr) > 0) {
     while ($fpro = mysqli_fetch_assoc($fpr)) {

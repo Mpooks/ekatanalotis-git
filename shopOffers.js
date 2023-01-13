@@ -1,7 +1,5 @@
-async function allof(){
-    const so = document.getElementById("showoff");
-    const f = document.getElementById("showo");
-    const ldo = new Array();
+const ldo = new Array();
+async function liked(){
 
     const response2 = await fetch('./isliked.php');
     var data2=await response2.json();
@@ -12,6 +10,17 @@ async function allof(){
         ldo.push(data2[v]);
     }
 }
+}
+async function allof(){
+    const so = document.getElementById("showoff");
+    const f = document.getElementById("showo");
+    const title = document.getElementById("shopt");
+    const response3 = await fetch('./getshopname.php');
+    
+    var data3 = await response3.json();
+    for(let k=0;k<data3.length;k++){
+      title.innerHTML=data3[k].sname;
+    }
 
     
     const response = await fetch('./shopsoffers.php');
@@ -118,6 +127,9 @@ async function op(score,oDP,p,pr,ld,lw,d,like,disl,st,pim,us){
     dsl.textContent='Dislikes: '+disl;
     const lbut=document.getElementById("likeb");
     const dlbut=document.getElementById("dislikeb");
+    dlbut.className='beforebd';
+    lbut.className='beforebl';
+
 
     if(inss.textContent=='YES'){
         document.getElementById("likeb").disabled = false;
@@ -189,6 +201,14 @@ async function op(score,oDP,p,pr,ld,lw,d,like,disl,st,pim,us){
 
     window.location.href  = "?#offerd";
   }
+}
+  async function clf(){
+    const so=document.getElementById('showoff');
+    so.innerHTML='';
+    ldo.length=0;
+    liked();
+    allof();
+    
   }
 
 
