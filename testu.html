@@ -9,7 +9,7 @@
 <body onload="categoriesfd()">
 
     
-    <script type="text/javascript" src="catfordropdown.js"></script>
+    <script type="text/javascript" src="selectsubcat.js"></script>
 
     <form id="file-form" action="uploadfile.php" method="post" enctype="multipart/form-data">
         Upload a File:
@@ -19,11 +19,16 @@
    
 
     <select id="selectcat" >
-        <option>Categories</option>
+        <option value="black">Categories</option>
       </select>
 
+      <select id="selectsubcat" >
+        <option value="blacks">Subcategories</option>
+      </select>
+
+      <button id="sb">Search</button>
+
       <p id="status"></p>
-      <script type="text/javascript" src="uploadFile.js"></script>
 
     
     
