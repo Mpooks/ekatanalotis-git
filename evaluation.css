@@ -231,18 +231,15 @@ body{
  /*Apo edw prosthetw gia thn aksiologhsh*/
 
  .boxforinfo{
- height: 80%;
- margin-left: auto;
- margin-right: auto;
- margin-top: 100px;
- margin-bottom: 100px;
- width: 80%;
- min-width: 360px;
- top: 20%;
- position: relative;
- background-color:#fff;
- border-radius: 5px;
-}
+   background-color: #fff;
+   height: 80%;
+   margin: 0 auto;
+   margin-top: 100px;
+   width: 90%;
+   margin-bottom: 100px;
+   position: relative;
+   border-radius: 5px;
+  }
 
  .boxforinfo .tboxforinfo{
  background: linear-gradient( to right, midnightblue, #01dbdf);

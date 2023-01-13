@@ -303,7 +303,7 @@ hr{
 
 .boxforinfo .bboxforinfo .about_us_text{
     display: block;
-    padding-bottom: 10%;
+    padding-bottom: 6%;
     margin: 0 auto;
     width: 90%;
 
@@ -318,7 +318,9 @@ hr{
 
 
 
-
+p{
+    font-size: min(2vw, 18px);
+}
 
 
 
