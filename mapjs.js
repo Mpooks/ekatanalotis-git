@@ -86,7 +86,7 @@ function success(pos) {
    
 
     marker = L.marker([lat, lng]).addTo(mymap);                             // thetei kuklo kai marker sto map meta apo reload
-    circle = L.circle([lat, lng], { radius: accuracy }).addTo(mymap);
+    circle = L.circle([lat, lng], { radius: 50 }).addTo(mymap);
    
 
     if (!zoomed) {

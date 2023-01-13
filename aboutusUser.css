@@ -231,18 +231,15 @@ body{
  /*Apo edw prosthetw gia thn aksiologhsh*/
 
  .boxforinfo{
- height: 80%;
- margin-left: auto;
- margin-right: auto;
- margin-top: 100px;
- margin-bottom: 100px;
- width: 80%;
- min-width: 360px;
- top: 20%;
- position: relative;
- background-color:#fff;
- border-radius: 5px;
-}
+    background-color: #fff;
+    height: 80%;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 90%;
+    margin-bottom: 100px;
+    position: relative;
+    border-radius: 5px;
+   }
 
  .boxforinfo .tboxforinfo{
  background: linear-gradient( to right, midnightblue, #01dbdf);
@@ -289,23 +286,26 @@ body{
     margin-top: 2%;
     height: 32%;
     width: 60%;
+    max-width: 800px;
 }
 
+hr{
+    border: none;
+}
 .boxforinfo .bboxforinfo .after_pic_line{
     margin-top: 4%;
     margin-bottom: 4%;
     background: linear-gradient( to right, midnightblue, #01dbdf);
     margin-left: 3%;
     margin-right: 3%;
-
-
+    height: 5px;
 }
 
 .boxforinfo .bboxforinfo .about_us_text{
     display: block;
-    padding-bottom: 20%;
-    padding-left: 8%;
-    padding-right: 2%;
+    padding-bottom: 10%;
+    margin: 0 auto;
+    width: 90%;
 
 }
 
