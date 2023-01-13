@@ -52,7 +52,7 @@ myChart.update();
 const data = {
   labels: lab,
   datasets: [{
-    label: 'Average Discount per Week',
+    label: 'Average Discount per Week (%)',
     data: d,
     backgroundColor: [
       'rgba(1, 169, 172, 1)',
