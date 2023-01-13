@@ -14,7 +14,7 @@ var sel = document.getElementById('selectcat');
 var subs = document.getElementById('selectsubcat');
 
 sel.onchange = async function getSelected(){
-subs.innerHTML = "<option value=\"blacks\">Subcategories</option>";
+subs.innerHTML = "<option value=\"blacks\" class=\"dropdown_content\">Subcategories</option>";
 var se = document.getElementById('selectcat').value;
 if(se!=='black'){
 var formData1 = new FormData();
@@ -31,23 +31,5 @@ for (let j = 0; j < data1.length; j++) {
 }
 
 }
-}
-const search=document.getElementById('sb');
-search.onclick=function(){
-    var sel = document.getElementById('selectcat');
-    var subs = document.getElementById('selectsubcat');
-    var cat=sel.value;
-    var subcat=subs.value;
-    if(cat=='black'){
-        alert('You have to select a category first!');
-    }
-    else if(cat!='black'){
-        if(subcat=='blacks'){
-            
-        }
-        else{
-
-        }
-    }
 }
 }

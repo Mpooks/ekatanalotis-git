@@ -6,17 +6,17 @@ $con = openDB();
 $sum = 0;
 $final = array();
 $name= $_POST['select'];
-$categorieid = mysqli_query($con, "SELECT cid FROM pcategory where cname='$name'");
+$categorieid = mysqli_query($con, "SELECT sub_id FROM subcategory where subname='$name'");
 if (mysqli_num_rows($categorieid) > 0) {
-    while ($catid = mysqli_fetch_assoc($categorieid)) {
-        $c = $catid['cid'];
-        $off = mysqli_query($con, "SELECT COUNT(*) AS tof,offer_date FROM offer inner join product on product.pid=offer.product_id inner join pcategory on pcategory.cid=product.pcat_id where cid='$c' GROUP BY offer_date ORDER BY offer_date ASC;");
+    while ($sub = mysqli_fetch_assoc($categorieid)) {
+        $c = $sub['sub_id'];
+        $off = mysqli_query($con, "SELECT COUNT(*) AS tof,offer_date FROM offer inner join product on product.pid=offer.product_id inner join subcategory on subcategory.sub_id=product.psub_id where sub_id='$c' GROUP BY offer_date ORDER BY offer_date ASC;");
 if (mysqli_num_rows($off) > 0) {
             while ($u = mysqli_fetch_assoc($off)) {
                 $sum = 0;
                 $count = $u['tof'];
                 $od = $u['offer_date'];
-                $categoriess = mysqli_query($con, "SELECT product.pid AS prid, offer.price AS offpr FROM offer INNER JOIN product ON product.pid=offer.product_id inner join pcategory on pcategory.cid=product.pcat_id where cid='$c' and offer_date='$od'");
+                $categoriess = mysqli_query($con, "SELECT product.pid AS prid, offer.price AS offpr FROM offer INNER JOIN product ON product.pid=offer.product_id inner join subcategory on subcategory.sub_id=product.psub_id where sub_id='$c' and offer_date='$od'");
                 if (mysqli_num_rows($categoriess) > 0) {
                     while ($cats = mysqli_fetch_assoc($categoriess)) {
                         $op = $cats['offpr'];

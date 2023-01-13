@@ -7,7 +7,7 @@
   </head>
 
 
-  <body onload="charts()">
+  <body onload="charts(),categoriesfd()">
     <div class="catsubcat">
       
       <div class="cat">
@@ -18,12 +18,12 @@
       
       <div class="sub">
         <select id="selectsubcat" >
-          <option value="black" class="dropdown_content">Subcategories</option>
+          <option value="blacks" class="dropdown_content">Subcategories</option>
         </select>
       </div>
     </div>
 
-    <button class="srch">Search</button>
+    <button id="sb" class="srch">Search</button>
 
     <div class="chartCard">
       <div class="chartBox">
@@ -38,5 +38,7 @@
     <script src="https://cdn.jsdelivr.net/npm/luxon@^2"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@^1"></script>
     <script src="statistics2.js"></script>
+    <script type="text/javascript" src="selectsubcat.js"></script>
+
   </body>
 </html>
