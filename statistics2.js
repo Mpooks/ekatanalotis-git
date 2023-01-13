@@ -99,14 +99,14 @@ function convert(datestr){
     }
     }
 
-    const [startDate,endDate,lastday,startday,month]=getDateOfISOWeek(week,year);
+    const [startDate,endDate,lastday,startday,month,lastmonth]=getDateOfISOWeek(week,year);
     myChart.config.options.scales.x.min = year+'-'+startDate;
     myChart.config.options.scales.x.max = year+'-'+endDate;
     myChart.update();
 
     var regex_date = /^\d{1,2}\-\d{1,2}$/;
 
-    if(!regex_date.test(startDate) || !regex_date.test(endDate) ||  month <= 0 || month > 12 || startday <= 0 || startday > 31 || lastday <= 0 || lastday > 31)
+    if(!regex_date.test(startDate) || !regex_date.test(endDate) ||  month <= 0 || month > 12 ||  lastmonth <= 0 || lastmonth > 12 || startday <= 0 || startday > 31 || lastday <= 0 || lastday > 31)
     {
       myChart.config.options.scales.x.min = '2022-01-01';
       myChart.config.options.scales.x.max = '2022-12-31';
@@ -135,14 +135,54 @@ function convert(datestr){
         ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
     
     lastday = ISOweekStart.getDate() + 6;
-    var month=ISOweekStart.getMonth() + 1;
     var firstday=ISOweekStart.getDate();
+    var month=ISOweekStart.getMonth() + 1; 
+    var lastmonth=ISOweekStart.getMonth() + 1; 
+    const isLeap = y => new Date(y, 1, 29).getDate() === 29;
+    if(month==2){
+      if(isLeap(y)==1){
+      if(lastday>29)
+    {
+      lastmonth=month+1;
+      lastday=lastday-29;
+    }
+  }else{
+    if(lastday>28)
+    {
+      lastmonth=month+1;
+      lastday=lastday-28;
+    }
+  }
+    }
+    else if(month==1 || month==3||month==5||month==7||month==8||month==10||month==12){
+      if(lastday>31)
+    {
+      lastmonth=month+1;
+      lastday=lastday-31;
+      if(lastmonth>12){
+        lastmonth=1;
+      }
+    }
+    }
+    else{
+      if(lastday>30)
+    {
+      lastmonth=month+1;
+      lastday=lastday-30;
+    }
+    }
+    console.log(lastmonth);
+    console.log(lastday);
     const extrafd='0';
     month=month.toString();
+    lastmonth=lastmonth.toString();
     firstday=firstday.toString();
     lastday=lastday.toString();
     if(month.substring(1, 2)===""){
       month=extrafd.concat(month);
+    }
+    if(lastmonth.substring(1, 2)===""){
+      lastmonth=extrafd.concat(lastmonth);
     }
     if(lastday.substring(1, 2)===""){
       lastday=extrafd.concat(lastday);
@@ -151,8 +191,8 @@ function convert(datestr){
       firstday=extrafd.concat(firstday);
     }
     ISOweekStart=month+'-'+firstday;
-    var lastdate=month+'-'+lastday;
-    return [ISOweekStart,lastdate,lastday,firstday,month];
+    var lastdate=lastmonth+'-'+lastday;
+    return [ISOweekStart,lastdate,lastday,firstday,month,lastmonth];
 }
   bw.onclick= function reset(){
   myChart.config.options.scales.x.min = '2022-01-01';
