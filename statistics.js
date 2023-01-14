@@ -30,15 +30,14 @@ const data = {
   }]
 };
 
-  // config 
   const config = {
     type: 'line',
     data,
     options: {
       scales: {
         x:{ 
-            min: '2022-01-01',
-            max: '2022-12-31',
+            min: currentDate.getFullYear()+'-01-01',
+            max: currentDate.getFullYear()+'-12-31',
             type: 'time',
             time: {
               unit: 'day',
@@ -52,7 +51,7 @@ const data = {
         y: {
           beginAtZero: true,
           min: 0,
-          max: 20,
+          max: 100,
           ticks: {
             // forces step size to be 50 units
             stepSize: 1
