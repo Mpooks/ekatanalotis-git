@@ -48,7 +48,7 @@ button.nav {
 }
  
 nav{
- background:midnightblue;
+ background:#13225B;
  height:60px;
  width:100%;
  display: inline-block;
@@ -122,7 +122,7 @@ label.logo{
  position: absolute;
  width: auto;
  height: auto;
- background: midnightblue;
+ background: #13225B;
  top: 60px;
  right: -100%;
  text-align: left;
@@ -185,7 +185,7 @@ label.logo{
  display: none;
  position: absolute;
  right: 0;
- background-color: midnightblue;
+ background-color: #13225B;
  min-width: auto;
  padding: 10px 10px;
  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
