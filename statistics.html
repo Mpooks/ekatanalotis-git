@@ -12,7 +12,7 @@
         <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     </head>
     
-    <body onload="charts()">
+    <body onload="charts(),chartsWeek(),categoriesfd()">
 
       <nav>
         <input type="checkbox" id="check">
@@ -58,15 +58,43 @@
 
 
 
-        <div class="weekCard">
-          <div class="weekBox">
-              <canvas id="weekChart"></canvas>
-              <input type="week" onchange="filterChartweek(this)" placeholder="YYYY-MM"/>
-              <button onclick="reset1()">Reset</button>
+        <div class="chartCardWeek">
+          <div class="catsubcat">
+          
+            <div class="cat">
+              <select id="selectcat" >
+                <option value="black" class="dropdown_content">Categories</option>
+              </select>
+            </div>
+            
+            <div class="sub">
+              <select id="selectsubcat" >
+                <option value="blacks" class="dropdown_content">Subcategories</option>
+              </select>
+            </div>
           </div>
-      </div>
       
-      <script type="text/javascript" src="statistics.js"></script>
+          <button id="sb" class="srch">Search</button>
+          <div class="chartBoxWeek">
+            <canvas id="myChartWeek"></canvas>
+            <input type="text" id="wi" placeholder="YYYY-WW" maxlength="7"/>
+            <button id="wb" class="rst">Reset</button>
+            <a id="valid"></a>
+          </div>
+          <div class="buttondiv">
+            <button id="pb" class="previous">Previous</button>
+            <button id="nb" class="next">Next</button>
+    
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/luxon@^2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@^1"></script>
+        <script src="statistics2.js"></script>
+        <script type="text/javascript" src="selectsubcat.js"></script>
+        <script type="text/javascript" src="statistics.js"></script>
+        <script type="text/javascript" src="statistics2.js"></script>
     </body>
 
 

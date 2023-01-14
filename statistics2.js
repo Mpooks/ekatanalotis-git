@@ -1,4 +1,4 @@
-async function charts()
+async function chartsWeek()
 {
   const lab = new Array();
   const d = new Array();
@@ -48,7 +48,7 @@ const response = await fetch('./subcatforstat.php',{ method: 'POST', body: formD
         }
 
 }
-myChart.update();
+myChartWeek.update();
 }
 
 const data = {
@@ -109,8 +109,8 @@ const config = {
 const bw=document.getElementById("wb");
 const dateErr = document.getElementById('valid');
 
-const myChart = new Chart(
-  document.getElementById('myChart'),
+const myChartWeek = new Chart(
+  document.getElementById('myChartWeek'),
   config
 );
 const winp=document.getElementById("wi");
@@ -118,9 +118,9 @@ winp.addEventListener("keypress", async function(event) {
 if (event.key === "Enter") {
   dateErr.innerHTML = "";
   if(winp.value==null || winp.value==""){
-    myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
-    myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
-    myChart.update();
+    myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+    myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
+    myChartWeek.update();
   }else{
   convert(winp);
   }
@@ -149,31 +149,31 @@ function convert(datestr){
     }
     }
     if(parseInt(week)>52){
-      myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
-    myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
-    myChart.update();
+      myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+    myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
+    myChartWeek.update();
     dateErr.innerHTML = "Invalid date.";
     }else{
 
     const [startDate,endDate,lastday,startday,month,lastmonth]=getDateOfISOWeek(week,year);
-    myChart.config.options.scales.x.min = year+'-'+startDate;
-    myChart.config.options.scales.x.max = year+'-'+endDate;
-    myChart.update();
+    myChartWeek.config.options.scales.x.min = year+'-'+startDate;
+    myChartWeek.config.options.scales.x.max = year+'-'+endDate;
+    myChartWeek.update();
 
     var regex_date = /^\d{1,2}\-\d{1,2}$/;
 
     if(!regex_date.test(startDate) || !regex_date.test(endDate) ||  month <= 0 || month > 12 ||  lastmonth <= 0 || lastmonth > 12 || startday <= 0 || startday > 31 || lastday <= 0 || lastday > 31)
     {
-      myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
-      myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
-      myChart.update();
+      myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+      myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
+      myChartWeek.update();
       dateErr.innerHTML = "Invalid date.";
     }
 
     if(datestr.value === ""){
-      myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
-      myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
-      myChart.update();
+      myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+      myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
+      myChartWeek.update();
       dateErr.innerHTML = "Invalid date.";
   }
 }
@@ -201,31 +201,31 @@ function convertforprornext(datestr,np){
     }
     }
     if(parseInt(week)>52){
-      myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
-    myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
-    myChart.update();
+      myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+    myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
+    myChartWeek.update();
     dateErr.innerHTML = "Invalid date.";
     }else{
       if(np==0){
         const [startDate,endDate,lastday,startday,month,lastmonth,lastyear,firstyear]=getlastweek(week,year);
-        myChart.config.options.scales.x.min = lastyear+'-'+startDate;
-        myChart.config.options.scales.x.max = firstyear+'-'+endDate;
-        myChart.update();
+        myChartWeek.config.options.scales.x.min = lastyear+'-'+startDate;
+        myChartWeek.config.options.scales.x.max = firstyear+'-'+endDate;
+        myChartWeek.update();
     
         var regex_date = /^\d{1,2}\-\d{1,2}$/;
     
         if(!regex_date.test(startDate) || !regex_date.test(endDate) ||  month <= 0 || month > 12 ||  lastmonth <= 0 || lastmonth > 12 || startday <= 0 || startday > 31 || lastday <= 0 || lastday > 31)
         {
-          myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
-          myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
-          myChart.update();
+          myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+          myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
+          myChartWeek.update();
           dateErr.innerHTML = "Invalid date.";
         }
     
         if(datestr.value === ""){
-          myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
-          myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
-          myChart.update();
+          myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+          myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
+          myChartWeek.update();
           dateErr.innerHTML = "Invalid date.";
       }
       newweek=parseInt(week)-1;
@@ -241,24 +241,24 @@ function convertforprornext(datestr,np){
       console.log(winp.value);
       }else{
         const [startDate,endDate,lastday,startday,month,lastmonth,firstyear,lastyear]=getnextweek(week,year);
-    myChart.config.options.scales.x.min = firstyear+'-'+startDate;
-    myChart.config.options.scales.x.max = lastyear+'-'+endDate;
-    myChart.update();
+    myChartWeek.config.options.scales.x.min = firstyear+'-'+startDate;
+    myChartWeek.config.options.scales.x.max = lastyear+'-'+endDate;
+    myChartWeek.update();
 
     var regex_date = /^\d{1,2}\-\d{1,2}$/;
 
     if(!regex_date.test(startDate) || !regex_date.test(endDate) ||  month <= 0 || month > 12 ||  lastmonth <= 0 || lastmonth > 12 || startday <= 0 || startday > 31 || lastday <= 0 || lastday > 31)
     {
-      myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
-      myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
-      myChart.update();
+      myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+      myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
+      myChartWeek.update();
       dateErr.innerHTML = "Invalid date.";
     }
 
     if(datestr.value === ""){
-      myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
-      myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
-      myChart.update();
+      myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+      myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
+      myChartWeek.update();
       dateErr.innerHTML = "Invalid date.";
   }
   newweek=parseInt(week)+1;
@@ -346,9 +346,9 @@ function convertforprornext(datestr,np){
     return [ISOweekStart,lastdate,lastday,firstday,month,lastmonth];
 }
   bw.onclick= function reset(){
-  myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
-  myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
-  myChart.update();
+  myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+  myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
+  myChartWeek.update();
 }
 function getlastweek(w, y) {
   var simple = new Date(y, 0, 1 + (w - 1) * 7);
@@ -516,9 +516,9 @@ function getlastweek(w, y) {
 prev.onclick=function(){
 if(winp.value == null || winp.value == ""){
   const [prevstartDate,prevendDate,lastday,firstday,month,lastmonth]=getlastweek(weekNumber,currentDate.getFullYear());
-  myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+prevstartDate;
-  myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+prevendDate;
-  myChart.update();
+  myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+prevstartDate;
+  myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+prevendDate;
+  myChartWeek.update();
   currentDate = new Date();
   stDate = new Date(currentDate.getFullYear(), 0, 1);
   var days = Math.floor((currentDate - stDate) /
@@ -650,9 +650,9 @@ function getnextweek(w, y) {
 next.onclick=function(){
   if(winp.value == null || winp.value == ""){
     const [nextstartDate,nextendDate,lastday,firstday,month,lastmonth]=getnextweek(weekNumber,currentDate.getFullYear());
-    myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+nextstartDate;
-    myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+nextendDate;
-    myChart.update();
+    myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+nextstartDate;
+    myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+nextendDate;
+    myChartWeek.update();
     currentDate = new Date();
     stDate = new Date(currentDate.getFullYear(), 0, 1);
     var days = Math.floor((currentDate - stDate) /
