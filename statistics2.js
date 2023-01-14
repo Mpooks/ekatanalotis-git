@@ -3,6 +3,8 @@ async function charts()
   const lab = new Array();
   const d = new Array();
   const search=document.getElementById('sb');
+  const prev=document.getElementById('pb');
+  const next=document.getElementById('nb');
 search.onclick= async function(){
    lab.length=0;
    d.length=0;
@@ -244,5 +246,11 @@ function convert(datestr){
   myChart.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
   myChart.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
   myChart.update();
+}
+prev.onclick=function(){
+wrasedf=
+}
+next.onclick=function(){
+ aetsyrd =
 }
 }

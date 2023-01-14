@@ -28,6 +28,8 @@ function renderTable() {
     <td>${value.rank1}</td>
     <td>${value.username}</td>
     <td>${value.total_score}</td>
+    <td>${value.last_tokens}</td>
+    <td>${value.total_tokens}</td>
     </tr>`;
  });
  table.innerHTML = result;
