@@ -238,7 +238,6 @@ function convertforprornext(datestr,np){
         newweek=newweek.toString();
       }
       winp.value=year+'-'+newweek;
-      console.log(winp.value);
       }else{
         const [startDate,endDate,lastday,startday,month,lastmonth,firstyear,lastyear]=getnextweek(week,year);
     myChartWeek.config.options.scales.x.min = firstyear+'-'+startDate;
@@ -349,6 +348,7 @@ function convertforprornext(datestr,np){
   myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
   myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
   myChartWeek.update();
+  winp.value = "";
 }
 function getlastweek(w, y) {
   var simple = new Date(y, 0, 1 + (w - 1) * 7);
