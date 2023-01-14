@@ -211,11 +211,10 @@ label.logo{
 
 .wrapper{
  height: 80%;
- margin-left: 10%;
+ margin: 0 auto;
  margin-top: 40px;
  margin-bottom: 100px;
- width: 80%;
- min-width: 360px;
+ width: 90%;
  top: 20%;
  position: relative;
  display: flex;
@@ -232,7 +231,6 @@ label.logo{
  border-bottom-left-radius: 5px;
  text-align: center;
  color: #fff;
- min-width: 140px;
  max-width: 200px;
 }
 
@@ -245,7 +243,7 @@ label.logo{
 
 .wrapper .left h4{
  margin-bottom: 10px;
- font-size: 19px;
+ font-size: min(3vw,19px);
 }
 
 .wrapper .left p{
@@ -368,8 +366,9 @@ tbody tr,td{
  background-size: 20px;
  width: 100px;
  text-align: center;
- color: #000;
+ color: #fff;
  margin-bottom: 10px;
+ width: 90%;
 }
 
 
@@ -380,9 +379,9 @@ tbody tr,td{
  background-size: 20px;
  width: 100px;
  text-align: center;
- color: #000;
+ color: #fff;
  margin-bottom: 10px;
- 
+ width: 90%;
 }
 
 

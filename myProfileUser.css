@@ -207,31 +207,28 @@ label.logo{
 }
 
 .wrapper{
- height: 80%;
- margin-left: 10%;
- margin-top: 40px;
- margin-bottom: 100px;
- width: 80%;
- min-width: 360px;
- top: 20%;
- position: relative;
- display: flex;
-}
-
+   height: 80%;
+   margin: 0 auto;
+   margin-top: 40px;
+   margin-bottom: 100px;
+   width: 90%;
+   top: 20%;
+   position: relative;
+   display: flex;
+  }
 
 
 .wrapper .left{
- position: relative;
- width: 30%;
- background: linear-gradient( to right, midnightblue 30%, #005f9a, #01dbdf);
- padding: 20px 10px;
- border-bottom-left-radius: 5px;
- border-top-left-radius: 5px;
- text-align: center;
- color: #fff;
- min-width: 140px;
- max-width: 200px;
-}
+   position: relative;
+   width: 30%;
+   background: linear-gradient( to right, midnightblue 30%, #005f9a, #01dbdf);
+   padding: 20px 10px;
+   border-top-left-radius: 5px;
+   border-bottom-left-radius: 5px;
+   text-align: center;
+   color: #fff;
+   max-width: 200px;
+  }
 
 .wrapper .left img{
  width: 100%;
@@ -242,7 +239,7 @@ label.logo{
 
 .wrapper .left h4{
  margin-bottom: 10px;
- font-size: 19px;
+ font-size: min(3vw,19px);
 }
 
 .wrapper .left p{
@@ -360,27 +357,28 @@ tbody tr,td{
 }
 
 .total_score, .month_score { 
- padding-right: 25px;
- background: url("score.png") no-repeat right;
- background-size: 20px;
- width: 100px;
- text-align: center;
- color: #fff;
- margin-bottom: 10px;
-}
+   padding-right: 25px;
+   background: url("score.png") no-repeat right;
+   background-size: 20px;
+   width: 100px;
+   text-align: center;
+   color: #fff;
+   margin-bottom: 10px;
+   width: 90%;
+  }
 
 
  
-.month_tokens, .total_tokens{
- padding-right: 25px;
- background: url("token.png") no-repeat right;
- background-size: 20px;
- width: 100px;
- text-align: center;
- color: #fff;
- margin-bottom: 10px;
- 
-}
+  .month_tokens, .total_tokens{
+   padding-right: 25px;
+   background: url("token.png") no-repeat right;
+   background-size: 20px;
+   width: 100px;
+   text-align: center;
+   color: #fff;
+   margin-bottom: 10px;
+   width: 90%;
+  }
 
 
 .changebtn{ /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
