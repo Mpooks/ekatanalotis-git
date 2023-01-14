@@ -243,15 +243,14 @@ label.logo{
 
 .right .subwrap{
  padding: 8px 16px;
+ width:100%;
 }
 
 table {
-   overflow-x: scroll; 
  height: 100px;
  border-collapse: collapse; 
  border-spacing: 0;
  width: 100%;
- table-layout: fixed;
  font-size: 90%;
  text-align: center;
 }
@@ -368,6 +367,6 @@ button:hover{
    padding: 8px 16px;
    }
 
-#mytable{
-   overflow-x: auto;
-}
+   .t_data{
+      overflow-x: auto; 
+   }

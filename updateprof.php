@@ -19,17 +19,28 @@
 if (mysqli_num_rows($thisuser) > 0) {
     while ($t = mysqli_fetch_assoc($thisuser)) {
             if (strcmp($t['username'], $username) === 0) {
-                $user1 = mysqli_query($con, "UPDATE users SET username = '$username',passw = '$password' WHERE id=" . $_SESSION['id']);
+                $user1 = mysqli_query($con, "UPDATE users SET username = '$username' WHERE id=" . $_SESSION['id']);
                 $arr[] = 0;
-            } else {
+            } else if(strcmp($t['username'],$username)!==0) {
                 $checkusername1 = mysqli_query($con, "select * from users where username = '$username'");
                 $count1 = mysqli_num_rows($checkusername1);
                 if ($count1 == 0) {
-                    $user2 = mysqli_query($con, "UPDATE users SET username = '$username',passw = '$password' WHERE id=" . $_SESSION['id']);
+                    $user2 = mysqli_query($con, "UPDATE users SET username = '$username' WHERE id=" . $_SESSION['id']);
                     $arr[] = 0;
                 } else {
                     $arr[] = 1;
                 }
+            }
+            if (strcmp($t['passw'], $password) !== 0) {
+                if(!preg_match_all('$\S*(?=\S{8,})(?=\S*[A-Z])(?=\S*[\d])(?=\S*[\W])\S*$', $password)){
+                    $arr[] = 2;
+            } else {
+                $user1 = mysqli_query($con, "UPDATE users SET passw = '$password' WHERE id=" . $_SESSION['id']);
+                $arr[] = 0;
+            }
+            }
+            if((strcmp($t['username'], $username) === 0)&&(strcmp($t['passw'], $password) === 0)){
+            $arr[] = 3;
             }
     }
 }

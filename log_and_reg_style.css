@@ -50,7 +50,7 @@ body{
 .myform {
  text-align:center;
  width:360px;
- height:580px;
+ height:590px;
  max-width:100%;
  overflow-y: auto;
  background:#13225B;
@@ -63,6 +63,26 @@ body{
  padding-top:10px;
  transition: all 5s ease-in-out;
  }
+
+.fform {
+    text-align:center;
+    width:300px;
+    height:400px;
+    max-width:100%;
+    overflow-y: auto;
+    background:#13225B;
+    color:#fff;
+    top:50%;
+    left:50%;
+    position: relative;
+    transform:translate(-50%,-50%);
+    box-sizing:border-box;
+    padding-top:10px;
+    transition: all 5s ease-in-out;
+}
+.fform:target {
+    display: block;
+    }
 
 @media screen and (max-height: 500px) {
  .myform {
@@ -190,12 +210,12 @@ button.nav {
  
  } 
  
-.myform h1{
+.myform h1,.fform h1{
  margin:0;
  font-size:24px;
  }
  
-.myform p{
+.myform p,.fform p{
  color: #fff;
  margin:0;
  padding-left:30px;
@@ -203,12 +223,12 @@ button.nav {
  font-size: 18px;
  }
  
-.myform input{
+.myform input, .fform input{
  width:80%;
  margin-bottom:20px;
  }
  
-.myform input[type="text"], input[type="password"]
+.myform input[type="text"], input[type="password"],.fform input[type="text"],.fform input[type="password"]
  {
  border:none;
  border-bottom: 2px solid rgb(255, 255, 255);
@@ -219,7 +239,7 @@ button.nav {
  font-size:16px;
  }
  
-.myform button{
+.myform button,.fform button{
  border:none;
  outline:none;
  height:40px;
@@ -234,12 +254,12 @@ button.nav {
  text-align:center;
  }
  
-.myform button:hover{
+.myform button:hover,.fform button:hover  {
  cursor:pointer; 
  opacity: .75;
  }
  
-.myform a{
+.myform a,.fform a{
  text-align:center;
  text-decoration:none;
  font-size:14px;
@@ -273,7 +293,7 @@ button:hover{
  opacity: .75;
  }
  
-.myform .close {
+.myform .close, .fform .close {
  position: absolute;
  top: 15px;
  left:90%;

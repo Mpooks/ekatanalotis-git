@@ -1,16 +1,17 @@
- var form = document.getElementById('logInUser');
- const logc=document.getElementById('cl');
+var fform = document.getElementById('forgotp');
 
- form.onsubmit =  async function(event) {
+const fc=document.getElementById('cf');
 
-    var user=document.getElementById('user').value;
-    var pswrd=document.getElementById('pass').value;
+ fform.onsubmit =  async function(event) {
+
+    var email=document.getElementById('emailf').value;
+    var pswrd=document.getElementById('passf').value;
     var statusDiv = document.getElementById('status');
-    var uploadButton = document.getElementById('logg');
+    var pswrdf = document.getElementById('emailff');
 
     event.preventDefault();
     var formData = new FormData();
-    formData.append('user', user);
+    formData.append('email', user);
     formData.append('pass', pswrd);
     const response = await fetch('./authentication.php',{ method: 'POST', body: formData });
     
@@ -30,7 +31,7 @@
     }
 }
 
-logc.onclick=function(){
+fc.onclick=function(){
     var user=document.getElementById('user');
     var pswrd=document.getElementById('pass');
     var statusDiv = document.getElementById('status');
