@@ -10,10 +10,9 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@3.0.2/dist/leaflet-search.min.css" />
         <script src="https://unpkg.com/leaflet@1.3.0/dist/leaflet.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/3.0.2/leaflet-search.min.js"></script>       
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-        
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>    
     </head>
+    
     <body onload="mapd()">
         <nav>
             <input type="checkbox" id="check">
@@ -21,21 +20,17 @@
                 <img src="barz.png" class="bar">
             </label>
             <label class="logo"> <a href="arxikhafterloginAdmin.html"><img src="pngwing.com.png" class="myImage"/></a>
-            <div class="hello">
-                <p>our e-καταναλωτής</p>
-            </div> 
+                <div class="hello">
+                    <p>our e-καταναλωτής</p>
+                </div> 
             </label>
-            
             <div class="avatarDropdown" style="float:right;">
-    
-            <button class="bnav"><img src="boy.png"></button>
-            
-            <div class="avatarDropdown-content">
-                <a href="myprofileadmin.html">My Profile</a>
-                <a href="logout.php">Log out</a>
-              </div>
+                <button class="bnav"><img src="boy.png"></button>
+                <div class="avatarDropdown-content">
+                    <a href="myprofileadmin.html">My Profile</a>
+                    <a href="logout.php">Log out</a>
+                </div>
             </div>
-    
             <ul>
                 <li><a style="text-decoration:none;"href="arxikhafterloginAdmin.html">Home</a></li>
                 <li><a style="text-decoration:none;"href="manageproducts.html">Products</a></li>
@@ -43,29 +38,26 @@
                 <li><a style="text-decoration:none;"href="#">Statistics</a></li>
                 <li><a style="text-decoration:none;"href="#">Leaderboards</a></li>
             </ul>
-            
-            </nav>
+        </nav>
 
-
-            <div class="boxforinfo">
+        <div class="boxforinfo">
                 <div class="tboxforinfo">
                     <h1>Shops</h1>
                 </div>
                 <div class="bboxforinfo">
-                <form class="info1" id="file-form">
-                    <h3>Upload a File</h3><br>
-                    <input type="file" id="myfile" name="myfile" class="inputfile"><br>
-                    <p id="status"></p> 
-                    <button class="dlt" id="del" name="del">Delete all</button>
-                    <button class="upld" id="up" name="up">Upload</button>
+                    <form class="info1" id="file-form">
+                        <h3>Upload a File</h3><br>
+                        <input type="file" id="myfile" name="myfile" class="inputfile"><br>
+                        <p id="status"></p> 
+                        <button class="dlt" id="del" name="del">Delete all</button>
+                        <button class="upld" id="up" name="up">Upload</button>
+                        <h2>Shops in the database</h2>
+                    </form>
+                    
+                    <div id="mapid"></div>  
+                    <script type="text/javascript" src="testmap.js"></script>
+                </div>
 
-                    <h2>Shops in the database</h2>
-                </form>
-            <div id="mapid"></div>  
-            <script type="text/javascript" src="testmap.js"></script>
-            </div>
-
-            </div>
-
-
+        </div>
     </body>
+</html>

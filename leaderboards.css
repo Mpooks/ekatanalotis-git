@@ -1,3 +1,10 @@
+*{
+   font-family: Bahnschrift SemiBold, Bahnschrift;
+   margin: 0;
+   padding: 0;
+  
+   }
+
 body{ 
  background-color:#062C5A;
  padding:0;
@@ -11,12 +18,7 @@ body{
  scrollbar-color: #01a9ac #01dbdf;
  }
  
-*{
- font-family: Bahnschrift SemiBold, Bahnschrift;
- margin: 0;
- padding: 0;
 
- }
  
  
  
@@ -213,21 +215,17 @@ label.logo{
 .right{
  height: auto;
  margin: 0 auto;
- margin-top: 100px;
  position: relative;
  display: flex;
- min-width: 280px;
- width: 80%;
+ width: 100%;
  background: #fff;
  border-radius: 5px;
- padding: 30px 10px;
- margin-bottom: 100px;
+ padding: 10px 0px;
 }
 
 .right .project{
  margin-bottom: 30px;
  padding: 8px 16px;
- padding-left: 0px;
  height: 460px;
 }
 
@@ -248,13 +246,14 @@ label.logo{
 }
 
 table {
+   overflow-x: scroll; 
  height: 100px;
  border-collapse: collapse; 
+ border-spacing: 0;
  width: 100%;
  table-layout: fixed;
  font-size: 90%;
  text-align: center;
- /*auto edw de kserw giati leitourgei pragmatika*/
 }
 
 td {
@@ -334,3 +333,41 @@ button:hover{
  cursor:pointer; 
  opacity: .75;
  }
+
+
+ .boxforinfo{
+   background-color: #fff;
+   height: 80%;
+   margin: 0 auto;
+   margin-top: 100px;
+   width: 90%;
+   margin-bottom: 100px;
+   position: relative;
+   border-radius: 5px;
+   }
+  
+   .tboxforinfo{
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   background: linear-gradient( to right, midnightblue, #01dbdf);
+   }
+  
+   .boxforinfo .tboxforinfo h1{
+   padding-top:1%;
+   padding-bottom:1%;
+   text-align:center;
+   color:#fff;
+   }
+  
+  
+   .bboxforinfo{
+   padding-top:2%;
+   padding-bottom:2%;
+   margin: 0 auto;
+   text-align: center;
+   padding: 8px 16px;
+   }
+
+#mytable{
+   overflow-x: auto;
+}
