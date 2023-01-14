@@ -254,7 +254,7 @@ button.nav {
  max-width: 100px;
  min-width: 70px;
  width:20%;
- background-color:midnightblue;
+ background-color: #13225B;
  color:#fff;
  font-size:min(2vw, 11px);
  border-radius:20px;
@@ -289,7 +289,7 @@ button:hover{
  }
  
 nav{
- background:midnightblue;
+ background:#13225B;
  height:60px;
  width:100%;
  }

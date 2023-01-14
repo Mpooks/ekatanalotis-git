@@ -166,6 +166,7 @@ button.nav {
 
  .ulclass a.active,.ulclass a:hover{
  transition: 0.5s;
+ background: #021727c9;
  }
 
 
@@ -275,7 +276,7 @@ button:hover{
  }
  
 nav{
- background:midnightblue;
+ background:#13225B;
  height:60px;
  width:100%;
  }
@@ -342,7 +343,7 @@ label.logo{
  position: absolute;
  width: auto;
  height: 180px;
- background: midnightblue;
+ background: #13225B;
  top: 60px;
  right: -100%;
  text-align: left;
@@ -360,7 +361,7 @@ label.logo{
  font-size: 16px;
  }
 
- nav ul li a:hover,nav ul li a.active{
+.ulclass a:hover,.ulclass a.active{
     background: none;
     color: #7D7E80;
     
@@ -405,7 +406,7 @@ label.logo{
  display: none;
  position: absolute;
  right: 0;
- background-color: midnightblue;
+ background-color: #13225B;
  min-width: auto;
  padding: 10px 10px;
  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
