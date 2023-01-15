@@ -71,7 +71,13 @@ const data = {
   minp.addEventListener("keypress", async function(event) {
   if (event.key === "Enter") {
     dateErr.innerHTML = "";
-    filterChart(minp);
+    if(minp.value==null || minp.value==""){
+      myChart.config.options.scales.x.min = currentDate.getFullYear()+'-01-01';
+      myChart.config.options.scales.x.max = currentDate.getFullYear()+'-12-31';
+      myChart.update();
+    }else{
+      filterChart(minp);
+    }
   }
   });
   function filterChart(date){
@@ -113,24 +119,26 @@ const data = {
 
     if(!regex_date.test(startDate) || !regex_date.test(endDate) || year < 1000 || year > 3000 || month == 0 || month > 12)
     {
-      myChart.config.options.scales.x.min = '2022-01-01';
-      myChart.config.options.scales.x.max = '2022-12-31';
+      myChart.config.options.scales.x.min = currentDate.getFullYear()+'-01-01';
+      myChart.config.options.scales.x.max = currentDate.getFullYear()+'-12-31';
       myChart.update();
       dateErr.innerHTML = "Invalid date.";
     }
 
     if(date.value === ""){
-      myChart.config.options.scales.x.min = '2022-01-01';
-      myChart.config.options.scales.x.max = '2022-12-31';
+      myChart.config.options.scales.x.min = currentDate.getFullYear()+'-01-01';
+      myChart.config.options.scales.x.max = currentDate.getFullYear()+'-12-31';
       myChart.update();
       dateErr.innerHTML = "Invalid date.";
   }
     
   }
   bm.onclick= function reset(){
-    myChart.config.options.scales.x.min = '2022-01-01';
-    myChart.config.options.scales.x.max = '2022-12-31';
+    myChart.config.options.scales.x.min = currentDate.getFullYear()+'-01-01';
+    myChart.config.options.scales.x.max = currentDate.getFullYear()+'-12-31';
     myChart.update();
+    minp.value = "";
+    dateErr.innerHTML = "";
   }
 }
 

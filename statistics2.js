@@ -107,7 +107,7 @@ const config = {
 };
 
 const bw=document.getElementById("wb");
-const dateErr = document.getElementById('valid');
+const dateErr = document.getElementById('validw');
 
 const myChartWeek = new Chart(
   document.getElementById('myChartWeek'),
@@ -122,7 +122,18 @@ if (event.key === "Enter") {
     myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
     myChartWeek.update();
   }else{
-  convert(winp);
+  var regex_dates = /^[a-zA-Z!@#\$%\^\&*\)\(+=._]+$/;
+
+  if(regex_dates.test(winp.value))
+  {
+    myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
+    myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
+    myChartWeek.update();
+    dateErr.innerHTML = "Invalid date.";
+  }
+  else{
+    convert(winp);
+  }
   }
 }
 });
@@ -349,6 +360,7 @@ function convertforprornext(datestr,np){
   myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
   myChartWeek.update();
   winp.value = "";
+  dateErr.innerHTML="";
 }
 function getlastweek(w, y) {
   var simple = new Date(y, 0, 1 + (w - 1) * 7);

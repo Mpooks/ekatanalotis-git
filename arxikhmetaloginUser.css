@@ -509,7 +509,7 @@ input:checked + .slider:before {
 
 
 .leaflet-popup-tip-container .leaflet-popup-tip{
-background: rgb(212, 191, 0);
+background: #fff;
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content .container{ 
@@ -527,8 +527,8 @@ background: rgb(212, 191, 0);
 .leaflet-popup-content-wrapper .leaflet-popup-content .row{ 
  display: flex;
  flex-wrap: wrap;
- margin-right: 15px;
- margin-left: 15px;
+ margin: 0 auto;
+ width:100%;
  overflow-y: auto;
  height:240px;
 }
