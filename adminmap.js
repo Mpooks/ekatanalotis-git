@@ -1,5 +1,5 @@
 async function mapd(){
- 
+
     const response = await fetch('./shopsformap.php');
         
     var data = await response.json();
@@ -14,7 +14,7 @@ async function mapd(){
     
     let marker, circle, zoomed;
     
-    navigator.geolocation.watchPosition(success, error);        //vazoume watchposition kai oxi to current position giati theloume sunexi enhmerwsi tou location
+    navigator.geolocation.getCurrentPosition(success, error);        //vazoume watchposition kai oxi to current position giati theloume sunexi enhmerwsi tou location
     
     let markersLayer = L.layerGroup(); 
     
@@ -32,6 +32,7 @@ async function mapd(){
       zoom: null,
       marker: false,
     });
+
     
     mymap.addControl(controlSearch);
     
@@ -74,10 +75,8 @@ async function mapd(){
     
     
     function success(pos) {
-    
-        const lat = pos.coords.latitude;    //geografiko platos 
-        const lng = pos.coords.longitude;      //geografiko mikos 
-        const accuracy = pos.coords.accuracy;
+      const  clat = pos.coords.latitude;    //geografiko platos 
+      const  clng = pos.coords.longitude;      //geografiko mikos 
     
         if (marker) {                           // meta apo kathe update diagrafei to palio marker an uparxei                   
             mymap.removeLayer(marker);
@@ -85,16 +84,8 @@ async function mapd(){
         }
        
     
-        marker = L.marker([lat, lng]).addTo(mymap);                             // thetei kuklo kai marker sto map meta apo reload
-        circle = L.circle([lat, lng], { radius: accuracy }).addTo(mymap);
-       
-    
-        if (!zoomed) {
-            zoomed = mymap.fitBounds(circle.getBounds());       // menw sto idio zoom kathe fora pou allazw position
-        }
-    
-    
-        mymap.setView([lat, lng]);              //focus se kathe neo position meta apo update position
+        marker = L.marker([clat, clng]).addTo(mymap);                             // thetei kuklo kai marker sto map meta apo reload
+        circle = L.circle([clat, clng], { radius: 50 }).addTo(mymap);
     
     
     }

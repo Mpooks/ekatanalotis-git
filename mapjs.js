@@ -1,8 +1,9 @@
+function notclose(){
+  alert("You have to be in a 300m radius to add an offer!");
+}
 async function mapd(){
- 
-const response = await fetch('./shopsformap.php');
-    
-var data = await response.json();
+  setmap();
+var pclat,pclng;
 
 const mymap = L.map('mapid');       //kataskevazoume to map
 
@@ -14,15 +15,61 @@ mymap.addLayer(
 
 let marker, circle, zoomed;
 
-navigator.geolocation.watchPosition(success, error);        //vazoume watchposition kai oxi to current position giati theloume sunexi enhmerwsi tou location
 
 let markersLayer = L.layerGroup(); 
 
 
-mymap.addLayer(markersLayer);
+navigator.geolocation.getCurrentPosition(success,error); 
 
-markersLayer.addTo(mymap);
+function dist(plat,plng){
+  if(typeof pclat !== 'undefined'){
+  if ((pclat == plat) && (pclng == plng)) {
+		return 0;
+	}
+	else {
+		var radlat1 = Math.PI * pclat/180;
+		var radlat2 = Math.PI * plat/180;
+		var theta = pclng-plng;
+		var radtheta = Math.PI * theta/180;
+		var distance = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+		if (distance > 1) {
+			distance = 1;
+		}
+		distance = Math.acos(distance);
+		distance = distance * 180/Math.PI;
+		distance = distance * 60 * 1.1515;
+    distance = (distance * 1.609344)*1000;
+		return distance;
+	}
+  }
+}
+function setcc(clat,clng){
+  pclat=clat;
+  pclng=clng;
 
+}
+function success(pos) {
+    if (marker) {                           // meta apo kathe update diagrafei to palio marker an uparxei                   
+        mymap.removeLayer(marker);
+        mymap.removeLayer(circle);
+    }
+
+    const clat=pos.coords.latitude;    //geografiko platos 
+    const clng=pos.coords.longitude;      //geografiko mikos 
+    marker = L.marker(L.latLng(clat,clng)).addTo(mymap);                             // thetei kuklo kai marker sto map meta apo reload
+    circle = L.circle([clat, clng], { radius: 50 }).addTo(mymap);
+    setcc(clat,clng);
+    setmap();
+  }
+  function error(err) {
+    
+    if (err.code === 1) {
+        alert("Please allow geolocation access");
+    } else {
+        alert("Cannot get current location");
+    }
+
+}
 
 let controlSearch = new L.Control.Search({
   position: "topright",
@@ -35,6 +82,15 @@ let controlSearch = new L.Control.Search({
 
 mymap.addControl(controlSearch);
 
+
+async function setmap(){
+const response = await fetch('./shopsformap.php');
+    
+var data = await response.json();
+mymap.addLayer(markersLayer);
+
+markersLayer.clearLayers();
+
 if (JSON.stringify(data)=='{}') {
 
 }
@@ -45,6 +101,9 @@ for (i in data) {
   let long=parseFloat(data[i].longitude);
   let sid=data[i].shopid;
   let marker = L.marker(L.latLng(lat,long), {title: title});
+  var md=dist(lat,long);
+  console.log(md);
+
 
   var formData1= new FormData();
   formData1.append('s', data[i].shopid);
@@ -52,10 +111,18 @@ for (i in data) {
         
   var data1 = await response1.json();
   if (data1.length==0) {
-    let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
-
+    if(md>300){
+      let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
+    
 
     marker.bindPopup(template[2] + template[0] + template[1] );
+    }
+    else{
+    let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
+    
+
+    marker.bindPopup(template[2] + template[0] + template[1] );
+    }
     marker.addTo(markersLayer);
   }
   else{
@@ -64,8 +131,13 @@ for (i in data) {
       var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
       str=str.concat(a);
     }
-      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
+    if(md>300){
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+    }else{
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
+     marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+    }
      marker.addTo(markersLayer);
 }
 
@@ -73,42 +145,6 @@ for (i in data) {
 }
 
 
-function success(pos) {
-
-    const lat = pos.coords.latitude;    //geografiko platos 
-    const lng = pos.coords.longitude;      //geografiko mikos 
-    const accuracy = pos.coords.accuracy;
-
-    if (marker) {                           // meta apo kathe update diagrafei to palio marker an uparxei                   
-        mymap.removeLayer(marker);
-        mymap.removeLayer(circle);
-    }
-   
-
-    marker = L.marker([lat, lng]).addTo(mymap);                             // thetei kuklo kai marker sto map meta apo reload
-    circle = L.circle([lat, lng], { radius: 50 }).addTo(mymap);
-   
-
-    if (!zoomed) {
-        zoomed = mymap.fitBounds(circle.getBounds());       // menw sto idio zoom kathe fora pou allazw position
-    }
-
-
-    mymap.setView([lat, lng]);              //focus se kathe neo position meta apo update position
-
-}
-
-
-
-function error(err) {
-
-    if (err.code === 1) {
-        alert("Please allow geolocation access");
-    } else {
-        alert("Cannot get current location");
-    }
-
-}
 var redIcon = new L.Icon({iconUrl:'marker-icon-2x-red.png',iconSize: [25, 41],
 iconAnchor: [12, 41],popupAnchor: [1, -34],});
 
@@ -129,17 +165,24 @@ searchc.onclick = async function(event){
   let long=parseFloat(data[i].longitude);
   let sid=data[i].shopid;
   let marker = L.marker(L.latLng(lat,long), {title: title});
-
+  var md=dist(lat,long);
   var formData1= new FormData();
   formData1.append('s', data[i].shopid);
   const response1 = await fetch('./findoffers.php',{ method: 'POST', body: formData1 });
         
   var data1 = await response1.json();
   if (data1.length==0) {
+    if(md>300){
+      let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
+
+
+    marker.bindPopup(template[2] + template[0] + template[1] );
+    }else{
     let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
     marker.bindPopup(template[2] + template[0] + template[1] );
+    }
     marker.addTo(markersLayer);
   }
   else{
@@ -148,8 +191,13 @@ searchc.onclick = async function(event){
       var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
       str=str.concat(a);
     }
-      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
+    if(md>300){
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+    }else{
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
+     marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+    }
      marker.addTo(markersLayer);
   }
 
@@ -172,6 +220,7 @@ el.onclick = async function(event) {
   let long=parseFloat(data[i].longitude);
   let sid=data[i].shopid;
   let marker = L.marker(L.latLng(lat,long), {title: title});
+  var md=dist(lat,long);
 
   var formData1= new FormData();
   formData1.append('s', data[i].shopid);
@@ -179,10 +228,17 @@ el.onclick = async function(event) {
         
   var data1 = await response1.json();
   if (data1.length==0) {
+    if(md>300){
+      let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
+
+
+    marker.bindPopup(template[2] + template[0] + template[1] );
+    }else{
     let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
     marker.bindPopup(template[2] + template[0] + template[1] );
+    }
     marker.addTo(markersLayer);
   }
   else{
@@ -191,8 +247,13 @@ el.onclick = async function(event) {
       var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
       str=str.concat(a);
     }
-      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
+    if(md>300){
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+    }else{
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
+     marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+    }
      marker.addTo(markersLayer);
   }
 
@@ -218,6 +279,7 @@ el.onclick = async function(event) {
       let long=parseFloat(data[i].longitude);
       let sid=data[i].shopid;
       let col=data[i].color;
+      var md=dist(lat,long);
       if(col==0){
       var formData1= new FormData();
       formData1.append('sH', data[i].shopid);
@@ -233,14 +295,24 @@ el.onclick = async function(event) {
           }
 
         let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
-        let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
+        if(md>300){
+          let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
            marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+        }else{
+        let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
+           marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+        }
            marker.addTo(markersLayer);  
         
       }else{
       let marker = L.marker(L.latLng(lat,long));
+      if(md>300){
+        let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
+      marker.bindPopup(template[2] + template[0] + template[1]);
+      }else{
       let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
       marker.bindPopup(template[2] + template[0] + template[1]);
+      }
          marker.addTo(markersLayer);
     }
     
@@ -283,6 +355,7 @@ sel.onchange = async function getSelected(){
       let long=parseFloat(data[i].longitude);
       let sid=data[i].shopid;
       let marker = L.marker(L.latLng(lat,long), {title: title});
+      var md=dist(lat,long);
     
       var formData1= new FormData();
       formData1.append('sH',sid);
@@ -291,10 +364,17 @@ sel.onchange = async function getSelected(){
             
       var data1 = await response1.json();
       if (data1.length==0) {
+        if(md>300){
+          let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
+
+
+    marker.bindPopup(template[2] + template[0] + template[1] );
+        }else{
         let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
     marker.bindPopup(template[2] + template[0] + template[1] );
+        }
         marker.addTo(markersLayer);
       }
       else{
@@ -303,8 +383,13 @@ sel.onchange = async function getSelected(){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
         }
-          let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
+        if(md>300){
+          let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+        }else{
+          let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
+         marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+        }
          marker.addTo(markersLayer);
     }
     }
@@ -324,6 +409,7 @@ sel.onchange = async function getSelected(){
   let long=parseFloat(data[i].longitude);
   let sid=data[i].shopid;
   let marker = L.marker(L.latLng(lat,long), {title: title});
+  var md=dist(lat,long);
 
   var formData1= new FormData();
   formData1.append('s', data[i].shopid);
@@ -331,10 +417,17 @@ sel.onchange = async function getSelected(){
         
   var data1 = await response1.json();
   if (data1.length==0) {
+    if(md>300){
+      let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
+
+
+    marker.bindPopup(template[2] + template[0] + template[1] );
+    }else{
     let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
     marker.bindPopup(template[2] + template[0] + template[1] );
+    }
     marker.addTo(markersLayer);
   }
   else{
@@ -343,13 +436,19 @@ sel.onchange = async function getSelected(){
       var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
       str=str.concat(a);
     }
-      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
+    if(md>300){
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
+      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+    }else{
+      let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+    }
      marker.addTo(markersLayer);
 }
           }
           }
 
+}
 }
 }
 }
