@@ -36,8 +36,14 @@ async function userinfo(){
       {
         statusDiv.innerHTML = "You have successfully updated your information!";
       }
-      else{
+      else if(ndata[i]==1){
         statusDiv.innerHTML = "This username is already taken!";
+      }
+      else if(ndata[i]==2){
+        statusDiv.innerHTML = 'Password must contain at least 8 digits, one capital letter, one number, one special character.';
+      }
+      else{
+        statusDiv.innerHTML = "Your credentials have not changed!";
       }
     }
   }

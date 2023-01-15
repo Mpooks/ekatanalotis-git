@@ -13,7 +13,7 @@
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>    
     </head>
     
-    <body onload="mapd()">
+    <body onload="mapd(),logornot()">
         <nav>
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
@@ -35,8 +35,8 @@
                 <li><a style="text-decoration:none;"href="arxikhafterloginAdmin.html">Home</a></li>
                 <li><a style="text-decoration:none;"href="manageproducts.html">Products</a></li>
                 <li><a class="active" style="text-decoration:none;"href="manageshops.html">Stores</a></li>
-                <li><a style="text-decoration:none;"href="#">Statistics</a></li>
-                <li><a style="text-decoration:none;"href="#">Leaderboards</a></li>
+                <li><a style="text-decoration:none;"href="statistics.html">Statistics</a></li>
+                <li><a style="text-decoration:none;"href="leaderboards.html">Leaderboards</a></li>
             </ul>
         </nav>
 
@@ -56,6 +56,7 @@
                     
                     <div id="mapid"></div>  
                     <script type="text/javascript" src="testmap.js"></script>
+                    <script type="text/javascript" src="isloggedin.js"></script>
                 </div>
 
         </div>

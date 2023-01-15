@@ -1,4 +1,6 @@
  var form = document.getElementById('logInUser');
+ const logc=document.getElementById('cl');
+
  form.onsubmit =  async function(event) {
 
     var user=document.getElementById('user').value;
@@ -26,5 +28,14 @@
         }
     }
     }
+}
+
+logc.onclick=function(){
+    var user=document.getElementById('user');
+    var pswrd=document.getElementById('pass');
+    var statusDiv = document.getElementById('status');
+    user.value='';
+    pswrd.value='';
+    statusDiv.innerHTML='';
 }
 

@@ -64,7 +64,7 @@
             <div class="myform">
 
                 <img src="boy.png" class="userimage"/>
-                <a class="close" href="#">&times;</a>
+                <a class="close" id="cl" href="#">&times;</a>
                 <h1> Log In</h1>
                 <br>
                 <form id="logInUser" >
@@ -80,7 +80,7 @@
                 <br>
                     <button type="submit" id="logg">Log In</button><br>
                     <br>
-                <a href="loginphp.php"> Forgot your password? </a>
+                <a href="#forgot"> Forgot your password? </a>
                 <br>
                 <a href="#signUp"> Don't have an account yet? Sign Up </a>
                 </form>
@@ -88,12 +88,36 @@
 
         </div>
             </div>
+            <div id="forgot" class="overlay">
+            <div class="myform">
+                <a class="close" id="cf" href="#logIn">&times;</a>
+                <h1>Remember password</h1>
+                <br>
+                <br>
+                <form id="forgotp" >
+                <p>Username</p>
+                <input type="text" id="userf" name="userf" required placeholder="Enter your username">
+                <br>
+                <p>Email</p>
+                <input type="text" id="emailf" name="emailf" required placeholder="Enter your email"><br>
+                <p>New Password </p>
+                <input type="password" id="passf" name="passf" required placeholder="Enter your password"><br>
+                <p>Re-enter Password </p>
+                <input type="password" id="passff" name="passff" required placeholder="Re-enter your password"><br>
+                <br>
+                <a id="statusf"></a>
+                <br>
+                    <button type="submit" id="bf">Change</button><br>
+                </form>
+                <script type="text/javascript" src="forgot.js"></script>
+                </div>
+            </div>
 
         <div id="signUp" class="overlay">
             <div class="myform">
 
                 <img src="girl.png" class="userimage"/>
-                <a class="close" href="#">&times;</a>
+                <a class="close" id="cr" href="#">&times;</a>
                 <h1> Sign Up</h1>
                 <form id="RegisterUser">
                     <p>Email</p>

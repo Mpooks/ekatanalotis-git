@@ -1,4 +1,6 @@
 var form = document.getElementById('RegisterUser');
+const regc=document.getElementById('cr');
+
 form.onsubmit =  async function(event) {
    var email=document.getElementById('emailr').value;
    var cpswrd=document.getElementById('cpassr').value;
@@ -6,6 +8,7 @@ form.onsubmit =  async function(event) {
    var pswrd=document.getElementById('passr').value;
    var statusDiv = document.getElementById('statusr');
    var uploadButton = document.getElementById('regg');
+
 
    event.preventDefault();
    var formData = new FormData();
@@ -39,7 +42,7 @@ form.onsubmit =  async function(event) {
         }
         else if(data[i]==4)
         {
-            statusDiv.innerHTML = 'This email is not valid.';
+            statusDiv.innerHTML = 'The form of the email is not valid.';
         }
         else if(data[i]==5)
         {
@@ -55,5 +58,18 @@ form.onsubmit =  async function(event) {
         }
    }
    }
+}
+
+regc.onclick=function(){
+    var email=document.getElementById('emailr');
+    var cpswrd=document.getElementById('cpassr');
+    var user=document.getElementById('userr');
+    var pswrd=document.getElementById('passr');
+    var statusDiv = document.getElementById('statusr');
+    user.value='';
+    pswrd.value='';
+    email.value='';
+    cpswrd.value='';
+    statusDiv.innerHTML='';
 }
 
