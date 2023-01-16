@@ -4,7 +4,6 @@ async function gotoev(sid,md){
     formData.append('sh', sid);
     const response = await fetch('./setcurrentshop.php',{ method: 'POST', body: formData });
     if(md<=300){
-      alert(md);
     window.location='evaluationUser.html?#';
     }
     else if(md>300){
@@ -12,12 +11,17 @@ async function gotoev(sid,md){
     }
 }
 
-async function gotoeva(sid){
+async function gotoeva(sid,md){
   var formData = new FormData();
   sid=parseInt(sid);
   formData.append('sh', sid);
   const response = await fetch('./setcurrentshop.php',{ method: 'POST', body: formData });
+  if(md<=300){
   window.location='evaluationAdmin.html?#';
+}
+else if(md>300){
+  alert("You have to be in a 300m radius to add an offer!");
+}
 }
 
 

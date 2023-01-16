@@ -1,6 +1,7 @@
 function notclose(){
   alert("You have to be in a 300m radius to add an offer!");
 }
+const wantedd=300;
 async function mapd(){
   setmap();
 var pclat,pclng;
@@ -102,7 +103,6 @@ for (i in data) {
   let sid=data[i].shopid;
   let marker = L.marker(L.latLng(lat,long), {title: title});
   var md=dist(lat,long);
-  console.log(md);
 
 
   var formData1= new FormData();
@@ -111,7 +111,7 @@ for (i in data) {
         
   var data1 = await response1.json();
   if (data1.length==0) {
-    if(md>300){
+    if(md>wantedd){
       let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
 
@@ -131,7 +131,7 @@ for (i in data) {
       var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
       str=str.concat(a);
     }
-    if(md>300){
+    if(md>wantedd){
       let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
     }else{
@@ -172,7 +172,7 @@ searchc.onclick = async function(event){
         
   var data1 = await response1.json();
   if (data1.length==0) {
-    if(md>300){
+    if(md>wantedd){
       let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
@@ -191,7 +191,7 @@ searchc.onclick = async function(event){
       var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
       str=str.concat(a);
     }
-    if(md>300){
+    if(md>wantedd){
       let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
     }else{
@@ -228,7 +228,7 @@ el.onclick = async function(event) {
         
   var data1 = await response1.json();
   if (data1.length==0) {
-    if(md>300){
+    if(md>wantedd){
       let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
@@ -247,7 +247,7 @@ el.onclick = async function(event) {
       var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
       str=str.concat(a);
     }
-    if(md>300){
+    if(md>wantedd){
       let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
     }else{
@@ -295,7 +295,7 @@ el.onclick = async function(event) {
           }
 
         let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
-        if(md>300){
+        if(md>wantedd){
           let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
            marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
         }else{
@@ -306,7 +306,7 @@ el.onclick = async function(event) {
         
       }else{
       let marker = L.marker(L.latLng(lat,long));
-      if(md>300){
+      if(md>wantedd){
         let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
       marker.bindPopup(template[2] + template[0] + template[1]);
       }else{
@@ -364,7 +364,7 @@ sel.onchange = async function getSelected(){
             
       var data1 = await response1.json();
       if (data1.length==0) {
-        if(md>300){
+        if(md>wantedd){
           let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
@@ -383,7 +383,7 @@ sel.onchange = async function getSelected(){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
         }
-        if(md>300){
+        if(md>wantedd){
           let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
         }else{
@@ -417,7 +417,7 @@ sel.onchange = async function getSelected(){
         
   var data1 = await response1.json();
   if (data1.length==0) {
-    if(md>300){
+    if(md>wantedd){
       let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
@@ -436,7 +436,7 @@ sel.onchange = async function getSelected(){
       var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
       str=str.concat(a);
     }
-    if(md>300){
+    if(md>wantedd){
       let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
       marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
     }else{
