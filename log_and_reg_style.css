@@ -50,7 +50,7 @@ body{
 .myform {
  text-align:center;
  width:360px;
- height:590px;
+ height:550px;
  max-width:100%;
  overflow-y: auto;
  background:#13225B;
@@ -109,11 +109,17 @@ button.nav {
 
  .kat_proiod_text_div {
  position: relative;
- display: inline-block;
  white-space: nowrap;
  width: 60%;
  text-align: center;
- top: 20px;
+ }
+
+ .kat_proiod_text_div h3{
+    position: relative;
+    display: table;
+    margin: 0 auto;
+    top: 19px;
+    font-size: 18px;
  }
  
  .serch_bar_div .search-bar .dropdown_div {
@@ -126,16 +132,13 @@ button.nav {
  width: 40%;
  font-size: 18px;
  position: absolute;
- border-style:solid;
  background-color: hsl(0, 0%, 100%);
- box-shadow: midnightblue;
  border: none;
  border-left: 2px solid;
  border-color: rgba(178, 175, 175, 0.701);
  border-top-right-radius: 60px;
  border-bottom-right-radius: 60px;
  text-align: center;
- 
  }
  
 
@@ -421,9 +424,9 @@ background: #fff;
  width:100%;
  font-size:15px;
  text-align:center;
- text-decoration: underline; 
  text-decoration-color: #181c25; 
 }
+
 .leaflet-popup-content-wrapper .leaflet-popup-content .ps{
  color: #353c4e;
  letter-spacing: 2px;
@@ -451,7 +454,6 @@ background: #fff;
 }
 .leaflet-popup-content-wrapper .leaflet-popup-content .noofbut{
  width:40%;
- text-align:center;
  border:none;
  border-radius: 20%;
  height:30px;
