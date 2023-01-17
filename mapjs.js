@@ -6,6 +6,10 @@ async function mapd(){
   setmap();
 var pclat,pclng;
 
+const redIcon = new L.Icon({iconUrl:'marker-icon-2x-red.png',iconSize: [25, 41],
+iconAnchor: [12, 41],popupAnchor: [1, -34],});
+const violetIcon = new L.Icon({iconUrl:'marker-icon-2x-violet.png',iconSize: [25, 41],
+iconAnchor: [12, 41],popupAnchor: [1, -34],});
 const mymap = L.map('mapid');       //kataskevazoume to map
 
 mymap.setView([38.25972,21.74328] , 16);   //thetoume suntetagmenes kai to zoom
@@ -23,25 +27,23 @@ let markersLayer = L.layerGroup();
 navigator.geolocation.getCurrentPosition(success,error); 
 
 function dist(plat,plng){
-  if(typeof pclat !== 'undefined'){
   if ((pclat == plat) && (pclng == plng)) {
-		return 0;
-	}
-	else {
-		var radlat1 = Math.PI * pclat/180;
-		var radlat2 = Math.PI * plat/180;
-		var theta = pclng-plng;
-		var radtheta = Math.PI * theta/180;
-		var distance = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-		if (distance > 1) {
-			distance = 1;
-		}
-		distance = Math.acos(distance);
-		distance = distance * 180/Math.PI;
-		distance = distance * 60 * 1.1515;
+    return 0;
+  }
+  else {
+    var radlat1 = Math.PI * pclat/180;
+    var radlat2 = Math.PI * plat/180;
+    var theta = pclng-plng;
+    var radtheta = Math.PI * theta/180;
+    var distance = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+    if (distance > 1) {
+      distance = 1;
+    }
+    distance = Math.acos(distance);
+    distance = distance * 180/Math.PI;
+    distance = distance * 60 * 1.1515;
     distance = (distance * 1.609344)*1000;
-		return distance;
-	}
+    return distance;
   }
 }
 function setcc(clat,clng){
@@ -57,8 +59,9 @@ function success(pos) {
 
     const clat=pos.coords.latitude;    //geografiko platos 
     const clng=pos.coords.longitude;      //geografiko mikos 
-    marker = L.marker(L.latLng(clat,clng)).addTo(mymap);                             // thetei kuklo kai marker sto map meta apo reload
+    marker = L.marker(L.latLng(clat,clng), {icon:violetIcon}).addTo(mymap);                             // thetei kuklo kai marker sto map meta apo reload
     circle = L.circle([clat, clng], { radius: 50 }).addTo(mymap);
+    circle.setStyle({color: 'violet'});
     setcc(clat,clng);
     setmap();
   }
@@ -111,7 +114,7 @@ for (i in data) {
         
   var data1 = await response1.json();
   if (data1.length==0) {
-    if(md>wantedd){
+    if(md>wantedd || isNaN(md)){
       let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
 
@@ -131,7 +134,7 @@ for (i in data) {
       var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
       str=str.concat(a);
     }
-    if(md>wantedd){
+    if(md>wantedd || isNaN(md)){
       let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
     }else{
@@ -145,8 +148,6 @@ for (i in data) {
 }
 
 
-var redIcon = new L.Icon({iconUrl:'marker-icon-2x-red.png',iconSize: [25, 41],
-iconAnchor: [12, 41],popupAnchor: [1, -34],});
 
 var is = document.getElementById('searchtext9');
 var el = document.querySelector(".search-button");
@@ -172,7 +173,7 @@ searchc.onclick = async function(event){
         
   var data1 = await response1.json();
   if (data1.length==0) {
-    if(md>wantedd){
+    if(md>wantedd || isNaN(md)){
       let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
@@ -191,7 +192,7 @@ searchc.onclick = async function(event){
       var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
       str=str.concat(a);
     }
-    if(md>wantedd){
+    if(md>wantedd || isNaN(md)){
       let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
     }else{
@@ -228,7 +229,7 @@ el.onclick = async function(event) {
         
   var data1 = await response1.json();
   if (data1.length==0) {
-    if(md>wantedd){
+    if(md>wantedd || isNaN(md)){
       let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
@@ -247,7 +248,7 @@ el.onclick = async function(event) {
       var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
       str=str.concat(a);
     }
-    if(md>wantedd){
+    if(md>wantedd || isNaN(md)){
       let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
      marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
     }else{
@@ -295,7 +296,7 @@ el.onclick = async function(event) {
           }
 
         let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
-        if(md>wantedd){
+        if(md>wantedd || isNaN(md)){
           let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
            marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
         }else{
@@ -306,7 +307,7 @@ el.onclick = async function(event) {
         
       }else{
       let marker = L.marker(L.latLng(lat,long));
-      if(md>wantedd){
+      if(md>wantedd || isNaN(md)){
         let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
       marker.bindPopup(template[2] + template[0] + template[1]);
       }else{
@@ -364,7 +365,7 @@ sel.onchange = async function getSelected(){
             
       var data1 = await response1.json();
       if (data1.length==0) {
-        if(md>wantedd){
+        if(md>wantedd || isNaN(md)){
           let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
@@ -383,7 +384,7 @@ sel.onchange = async function getSelected(){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
         }
-        if(md>wantedd){
+        if(md>wantedd || isNaN(md)){
           let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
         }else{
@@ -417,7 +418,7 @@ sel.onchange = async function getSelected(){
         
   var data1 = await response1.json();
   if (data1.length==0) {
-    if(md>wantedd){
+    if(md>wantedd || isNaN(md)){
       let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
 
 
@@ -436,7 +437,7 @@ sel.onchange = async function getSelected(){
       var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
       str=str.concat(a);
     }
-    if(md>wantedd){
+    if(md>wantedd || isNaN(md)){
       let template = ['<button class="but" id="'+sid+'" onclick="gotoev('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>'];
       marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
     }else{

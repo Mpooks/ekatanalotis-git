@@ -6,7 +6,10 @@ async function mapd(){
     setmap();
     var pclat,pclng;
 
-    
+    const redIcon = new L.Icon({iconUrl:'marker-icon-2x-red.png',iconSize: [25, 41],
+    iconAnchor: [12, 41],popupAnchor: [1, -34],});
+    const violetIcon = new L.Icon({iconUrl:'marker-icon-2x-violet.png',iconSize: [25, 41],
+    iconAnchor: [12, 41],popupAnchor: [1, -34],});
     const mymap = L.map('mapid');       //kataskevazoume to map
     
     mymap.setView([38.25972,21.74328] , 16);   //thetoume suntetagmenes kai to zoom
@@ -20,7 +23,6 @@ async function mapd(){
     
     navigator.geolocation.getCurrentPosition(success, error);        //vazoume watchposition kai oxi to current position giati theloume sunexi enhmerwsi tou location
     function dist(plat,plng){
-      if(typeof pclat !== 'undefined'){
       if ((pclat == plat) && (pclng == plng)) {
         return 0;
       }
@@ -39,7 +41,6 @@ async function mapd(){
         distance = (distance * 1.609344)*1000;
         return distance;
       }
-      }
     }
     function setcc(clat,clng){
       pclat=clat;
@@ -54,8 +55,9 @@ async function mapd(){
     
         const clat=pos.coords.latitude;    //geografiko platos 
         const clng=pos.coords.longitude;      //geografiko mikos 
-        marker = L.marker(L.latLng(clat,clng)).addTo(mymap);                             // thetei kuklo kai marker sto map meta apo reload
+        marker = L.marker(L.latLng(clat,clng), {icon:violetIcon}).addTo(mymap);                             // thetei kuklo kai marker sto map meta apo reload
         circle = L.circle([clat, clng], { radius: 50 }).addTo(mymap);
+        circle.setStyle({color: 'violet'});
         setcc(clat,clng);
         setmap();
       }
@@ -99,14 +101,13 @@ async function mapd(){
       let sid=data[i].shopid;
       let marker = L.marker(L.latLng(lat,long), {title: title});
       var md=dist(lat,long);
-    
       var formData1= new FormData();
       formData1.append('s', data[i].shopid);
       const response1 = await fetch('./findoffers.php',{ method: 'POST', body: formData1 });
             
       var data1 = await response1.json();
       if (data1.length==0) {
-        if(md>wantedd){
+        if(md>wantedd || isNaN(md)){
         let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
         marker.bindPopup(template[2] + template[0] + template[1] );
       }
@@ -122,7 +123,7 @@ async function mapd(){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
         }
-        if(md>wantedd){
+        if(md>wantedd || isNaN(md)){
           let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
         }
@@ -136,9 +137,6 @@ async function mapd(){
     }
     }
     
-    
-    var redIcon = new L.Icon({iconUrl:'marker-icon-2x-red.png',iconSize: [25, 41],
-    iconAnchor: [12, 41],popupAnchor: [1, -34],});
     
     var is = document.getElementById('searchtext9');
     var el = document.querySelector(".search-button");
@@ -158,13 +156,14 @@ async function mapd(){
       let sid=data[i].shopid;
       let marker = L.marker(L.latLng(lat,long), {title: title});
       var md=dist(lat,long);
+      
       var formData1= new FormData();
       formData1.append('s', data[i].shopid);
       const response1 = await fetch('./findoffers.php',{ method: 'POST', body: formData1 });
             
       var data1 = await response1.json();
       if (data1.length==0) {
-        if(md>wantedd){
+        if(md>wantedd || isNaN(md)){
           let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
     
@@ -183,7 +182,7 @@ async function mapd(){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
         }
-        if(md>wantedd){
+        if(md>wantedd || isNaN(md)){
           let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
         }else{
@@ -220,7 +219,7 @@ async function mapd(){
             
       var data1 = await response1.json();
       if (data1.length==0) {
-        if(md>wantedd){
+        if(md>wantedd || isNaN(md)){
           let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
     
@@ -239,7 +238,7 @@ async function mapd(){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
         }
-        if(md>wantedd){
+        if(md>wantedd || isNaN(md)){
           let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
         }else{
@@ -287,7 +286,7 @@ async function mapd(){
               }
     
             let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
-            if(md>wantedd){
+            if(md>wantedd || isNaN(md)){
               let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
                marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
             }else{
@@ -298,7 +297,7 @@ async function mapd(){
             
           }else{
           let marker = L.marker(L.latLng(lat,long));
-          if(md>wantedd){
+          if(md>wantedd || isNaN(md)){
             let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
           marker.bindPopup(template[2] + template[0] + template[1] );
           }else{
@@ -356,7 +355,7 @@ async function mapd(){
                 
           var data1 = await response1.json();
           if (data1.length==0) {
-            if(md>wantedd){
+            if(md>wantedd || isNaN(md)){
               let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
     
@@ -375,7 +374,7 @@ async function mapd(){
               var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
               str=str.concat(a);
             }
-            if(md>wantedd){
+            if(md>wantedd || isNaN(md)){
               let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
              marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
             }else{
@@ -409,7 +408,7 @@ async function mapd(){
             
       var data1 = await response1.json();
       if (data1.length==0) {
-        if(md>wantedd){
+        if(md>wantedd || isNaN(md)){
           let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
     
@@ -428,7 +427,7 @@ async function mapd(){
           var a='<div class="container"><p class="ps">'+data1[j].pname+'</p><p class="popp">Price: '+data1[j].pr+'</p><p class="popp">20% less than yesterday: '+data1[j].ld+'</p><p class="popp">20% less than last week: '+data1[j].lw+'</p><p class="popp">Offer date: '+data1[j].d+'</p><p class="popp">Likes: '+data1[j].lik+'</p><p class="popp">Dislikes: '+data1[j].disl+'</p><p class="popp">In stock: '+data1[j].st+'</p></div>';
           str=str.concat(a);
         }
-        if(md>wantedd){
+        if(md>wantedd || isNaN(md)){
           let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
         }else{
