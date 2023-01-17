@@ -154,10 +154,15 @@ body{
  
  nav ul li a:hover,nav ul li a.active{
     background: none;
-    color: #7D7E80;
+    color: #062C5A;
     
     }
  
+        .ulclass a:hover,.ulclass a.active{
+        background: none;
+        color: #03205a;
+        
+        }
  #check:checked ~ ul{
  right: 0;
  }
@@ -263,7 +268,6 @@ body{
  padding-top:2%;
  padding-bottom:2%;
  margin: 0 auto;
- text-align: center;
  padding: 8px 16px;
  }
 
@@ -282,6 +286,7 @@ body{
  display: inline-block;
  border-bottom: 1px solid #e0e0e0;
  width: 100%;
+ text-transform: uppercase;
  }
  .boxforinfo .bboxforinfo .info1 p{
  padding-top:2%;
@@ -301,6 +306,7 @@ body{
  text-align:center;
  display: inline-block;
  border-bottom: 1px solid #e0e0e0;
+ text-transform: uppercase;
  }
  
  

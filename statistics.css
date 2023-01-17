@@ -289,7 +289,7 @@ body{
  height: 80%;
  width: 90%;
  margin: 0 auto;
- margin-top: 5%;
+ margin-top: 60px;
  color: #000;
  display: flex;
  align-items: center;
@@ -357,12 +357,12 @@ body{
 }
 
 .reset{
- border:2px solid #005e60;
+ border:2px solid #01A9AC;
  outline:none;
  height:25px;
  width: 70px;
- background: linear-gradient(to right, #01a9ac, #01dbdf);
- color:#000;
+ background: #01dbdf;
+ color:#fff;
  font-size:16px;
  border-radius:20px;
  text-align:center;
@@ -421,12 +421,12 @@ input{
    width: 100px;
    display: block;
    margin-top: 20px;
-   border:2px solid #005e60;
+   border:2px solid #01a9ac;
    outline:none;
    height:25px;
    width: 70px;
-   background: linear-gradient(to right, #01a9ac, #01dbdf);
-   color:#000;
+   background: #01dbdf;
+   color:#fff;
    font-size:16px;
    border-radius:20px;
    text-align:center;
@@ -446,7 +446,7 @@ input{
    height: 60px;
    width: 95%;
    font-size: 18px;
-   border: solid 3px rgba(54, 162, 235, 1);
+   border: solid 2px #01A9AC;
    background: white;
    border-radius: 20px;
    text-align: center;
@@ -466,7 +466,7 @@ input{
    height: 60px;
    width: 95%;
    font-size: 18px;
-   border: solid 3px rgba(54, 162, 235, 1);
+   border: solid 2px #01A9AC;
    background: white;
    border-radius: 20px;
    text-align: center;
@@ -506,12 +506,12 @@ input{
    margin: 0 auto;
    padding: 0 10px;
    margin-right: 1%;
-   border:2px solid #005e60;
+   border:2px solid #01A9AC;
    outline:none;
    height:25px;
    width: 100px;
-   background: linear-gradient(to right, #01a9ac, #01dbdf);
-   color:#000;
+   background: #01dbdf;
+   color:#fff;
    font-size:16px;
    border-radius:20px;
    text-align:center;
@@ -524,12 +524,12 @@ input{
    margin: 0 auto;
    padding: 0 10px;
    margin-right: 1%;
-   border:2px solid #005e60;
+   border:2px solid #01A9AC;
    outline:none;
    height:25px;
    width: 100px;
-   background: linear-gradient(to right, #01a9ac, #01dbdf);
-   color:#000;
+   background: #01dbdf;
+   color:#fff;
    font-size:16px;
    border-radius:20px;
    text-align:center;
@@ -538,12 +538,12 @@ input{
    }
   
    .rst{
-   border:2px solid #005e60;
+   border:2px solid #01A9AC;
    outline:none;
    height:25px;
    width: 70px;
-   background: linear-gradient(to right, #01a9ac, #01dbdf);
-   color:#000;
+   background: #01dbdf;
+   color:#fff;
    font-size:16px;
    border-radius:20px;
    text-align:center;

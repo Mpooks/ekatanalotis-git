@@ -385,20 +385,20 @@ tbody tr,td{
 }
 
 
-.changebtn{ /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
- border:2px solid #01a9ac;
- outline:none;
- height:40px;
- width:80px;
- background: #01dbdf;
- color:#fff;
- font-size:16px;
- border-radius:20px;
- padding: 0px 20px;
- margin-top: 30px;
- text-align:center;
- font-weight: bold;
- }
+.changebtn{ 
+   border:2px solid #01a9ac;
+   outline:none;
+   height:25px;
+   width:80px;
+   background: #01dbdf;
+   color:#fff;
+   font-size:16px;
+   border-radius:20px;
+   padding: 0px 20px;
+   margin-top: 25px;
+   text-align:center;
+   font-weight: bold;
+   }
  
  button:hover{
  cursor:pointer; 

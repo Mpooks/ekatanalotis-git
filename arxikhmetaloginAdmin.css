@@ -106,13 +106,19 @@ body{
  }
  
  .kat_proiod_text_div {
- position: relative;
- display: inline-block;
- white-space: nowrap;
- width: 60%;
- text-align: center;
- top: 20px;
- }
+  position: relative;
+  white-space: nowrap;
+  width: 60%;
+  text-align: center;
+  }
+ 
+  .kat_proiod_text_div h3{
+     position: relative;
+     display: table;
+     margin: 0 auto;
+     top: 19px;
+     font-size: 18px;
+  }
  
  
  .serch_bar_div .search-bar .dropdown_div {

@@ -21,8 +21,9 @@ body{
     
     .hello{
     display:inline-block;
-    font-size: min(2vw, 17px);
     }
+
+
     
    
     
@@ -257,6 +258,7 @@ body{
     padding-bottom:1%;
     text-align:center;
     color:#fff;
+    font-size: 30px;
     }
    
    
@@ -276,7 +278,8 @@ body{
    
    
    p{
-       font-size: min(2vw, 18px);
+
+       word-break: break-word;
    }
    
    
@@ -337,3 +340,7 @@ body{
     }
    }
 
+   .hello p{
+    display:inline-block;
+    font-size: min(2vw, 17px);
+    }
