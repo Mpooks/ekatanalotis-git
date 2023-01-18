@@ -47,7 +47,7 @@ body{
 .myform {
  text-align:center;
  width:360px;
- height:550px;
+ height:570px;
  max-width:100%;
  overflow-y: auto;
  background:#13225B;
@@ -247,12 +247,11 @@ button.nav {
  color:#fff;
  }
  
-.bnav{ /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
+.bnav{ 
  border:2px solid #fff;
  outline:none;
  height:40px;
- max-width: 100px;
- min-width: 70px;
+ max-width:100px;
  width:20%;
  background-color: #13225B;
  color:#fff;
@@ -495,3 +494,10 @@ background: #fff;
  margin-right: 10px;
  }
 }
+
+@media (max-width: 425px){
+   .bnav{
+   font-size: 7px;
+   line-height:20px;
+   }
+  }

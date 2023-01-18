@@ -1,7 +1,7 @@
 function notclose(){
-  alert("You have to be in a 300m radius to add an offer!");
+  alert("You have to be in a 50m radius to add an offer!");
 }
-const wantedd=300;
+const wantedd=50;
 async function mapd(){
   setmap();
 var pclat,pclng;
