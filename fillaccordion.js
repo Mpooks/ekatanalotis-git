@@ -22,6 +22,7 @@ async function fillacc(){
               stat.innerHTML='The price must be a number.';
             }
         }
+        setmap();
       }
     });
     
@@ -165,25 +166,6 @@ var acc1 = document.getElementsByClassName("first-level-menu");
     prc.value='';
     stat.innerHTML='';
     aut.value='';
-    const rr=document.getElementById('rowr');
-
-    const response4 = await fetch('./offersafteradd.php');
-          
-    var data4 = await response4.json();
-    if (data4.length==0) {
-      let content = `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`;
-
-      rr.innerHTML=content;
-    }
-    else{
-      var str='';
-      for(j in data4){
-        var a='<div class="container"><p class="ps">'+data4[j].pname+'</p><p class="popp">Price: '+data4[j].pr+'</p><p class="popp">20% less than yesterday: '+data4[j].ld+'</p><p class="popp">20% less than last week: '+data4[j].lw+'</p><p class="popp">Offer date: '+data4[j].d+'</p><p class="popp">Likes: '+data4[j].lik+'</p><p class="popp">Dislikes: '+data4[j].disl+'</p><p class="popp">In stock: '+data4[j].st+'</p></div>';
-        str=str.concat(a);
-      }
-        let content = '<div class="row" id="rowr">'+str+'</div>';
-        rr.innerHTML=content;
-    }
   }
 }
 

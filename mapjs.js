@@ -1,17 +1,16 @@
 function notclose(){
   alert("You have to be in a 50m radius to add an offer!");
 }
+
 const wantedd=50;
-async function mapd(){
-  setmap();
 var pclat,pclng;
 
 const redIcon = new L.Icon({iconUrl:'marker-icon-2x-red.png',iconSize: [25, 41],
 iconAnchor: [12, 41],popupAnchor: [1, -34],});
 const violetIcon = new L.Icon({iconUrl:'marker-icon-2x-violet.png',iconSize: [25, 41],
 iconAnchor: [12, 41],popupAnchor: [1, -34],});
-const mymap = L.map('mapid');       //kataskevazoume to map
 
+const mymap = L.map('mapid');       //kataskevazoume to map
 mymap.setView([38.25972,21.74328] , 16);   //thetoume suntetagmenes kai to zoom
 
 mymap.addLayer(
@@ -22,10 +21,6 @@ let marker, circle, zoomed;
 
 
 let markersLayer = L.layerGroup(); 
-
-
-navigator.geolocation.getCurrentPosition(success,error); 
-
 function dist(plat,plng){
   if ((pclat == plat) && (pclng == plng)) {
     return 0;
@@ -51,6 +46,11 @@ function setcc(clat,clng){
   pclng=clng;
 
 }
+async function mapd(){
+  setmap();
+navigator.geolocation.getCurrentPosition(success,error); 
+
+
 function success(pos) {
     if (marker) {                           // meta apo kathe update diagrafei to palio marker an uparxei                   
         mymap.removeLayer(marker);
@@ -86,7 +86,7 @@ let controlSearch = new L.Control.Search({
 
 mymap.addControl(controlSearch);
 
-
+}
 async function setmap(){
 const response = await fetch('./shopsformap.php');
     
@@ -449,7 +449,6 @@ sel.onchange = async function getSelected(){
           }
           }
 
-}
 }
 }
 }

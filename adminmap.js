@@ -1,52 +1,52 @@
 function notclose(){
   alert("You have to be in a 50m radius to add an offer!");
 }
+var pclat,pclng;
 const wantedd=50;
+const mymap = L.map('mapid');       //kataskevazoume to map
+const redIcon = new L.Icon({iconUrl:'marker-icon-2x-red.png',iconSize: [25, 41],
+iconAnchor: [12, 41],popupAnchor: [1, -34],});
+const violetIcon = new L.Icon({iconUrl:'marker-icon-2x-violet.png',iconSize: [25, 41],
+iconAnchor: [12, 41],popupAnchor: [1, -34],});
+
+mymap.setView([38.25972,21.74328] , 16);   //thetoume suntetagmenes kai to zoom
+
+mymap.addLayer(
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png")
+  );  // eisagwgi dedomenwn sto map mas mesw tou link
+
+let marker, circle;
+let markersLayer = L.layerGroup(); 
+function dist(plat,plng){
+  if ((pclat == plat) && (pclng == plng)) {
+    return 0;
+  }
+  else {
+    var radlat1 = Math.PI * pclat/180;
+    var radlat2 = Math.PI * plat/180;
+    var theta = pclng-plng;
+    var radtheta = Math.PI * theta/180;
+    var distance = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+    if (distance > 1) {
+      distance = 1;
+    }
+    distance = Math.acos(distance);
+    distance = distance * 180/Math.PI;
+    distance = distance * 60 * 1.1515;
+    distance = (distance * 1.609344)*1000;
+    return distance;
+  }
+}
+function setcc(clat,clng){
+  pclat=clat;
+  pclng=clng;
+
+}
 async function mapd(){
     setmap();
-    var pclat,pclng;
-
-    const redIcon = new L.Icon({iconUrl:'marker-icon-2x-red.png',iconSize: [25, 41],
-    iconAnchor: [12, 41],popupAnchor: [1, -34],});
-    const violetIcon = new L.Icon({iconUrl:'marker-icon-2x-violet.png',iconSize: [25, 41],
-    iconAnchor: [12, 41],popupAnchor: [1, -34],});
-    const mymap = L.map('mapid');       //kataskevazoume to map
-    
-    mymap.setView([38.25972,21.74328] , 16);   //thetoume suntetagmenes kai to zoom
-    
-    mymap.addLayer(
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png")
-      );  // eisagwgi dedomenwn sto map mas mesw tou link
-    
-    let marker, circle, zoomed;
-    let markersLayer = L.layerGroup(); 
     
     navigator.geolocation.getCurrentPosition(success, error);        //vazoume watchposition kai oxi to current position giati theloume sunexi enhmerwsi tou location
-    function dist(plat,plng){
-      if ((pclat == plat) && (pclng == plng)) {
-        return 0;
-      }
-      else {
-        var radlat1 = Math.PI * pclat/180;
-        var radlat2 = Math.PI * plat/180;
-        var theta = pclng-plng;
-        var radtheta = Math.PI * theta/180;
-        var distance = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-        if (distance > 1) {
-          distance = 1;
-        }
-        distance = Math.acos(distance);
-        distance = distance * 180/Math.PI;
-        distance = distance * 60 * 1.1515;
-        distance = (distance * 1.609344)*1000;
-        return distance;
-      }
-    }
-    function setcc(clat,clng){
-      pclat=clat;
-      pclng=clng;
-    
-    }
+
     function success(pos) {
         if (marker) {                           // meta apo kathe update diagrafei to palio marker an uparxei                   
             mymap.removeLayer(marker);
@@ -81,8 +81,7 @@ async function mapd(){
     });
     
     mymap.addControl(controlSearch);
-    
-    
+  }
     async function setmap(){
     const response = await fetch('./shopsformap.php');
         
@@ -442,4 +441,5 @@ async function mapd(){
     }
     }
     }
-  }
+  
+ 
