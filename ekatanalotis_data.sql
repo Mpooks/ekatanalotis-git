@@ -1,3 +1,4 @@
+USE ekatanalotis;
 INSERT INTO users VALUES
 (1,'thomas_tamv@mail.com','thomas_tamv','EPast*2*!Xk5ratc','2023-01-02',10000,1000,200,50,'YES'),
 (2,'mitsos_bal@mail.com','mits_bal','K^BYb!6x*fGzpL9w','2023-01-02',10000,1000,200,50,'YES'),
@@ -43,3 +44,43 @@ INSERT INTO users VALUES
 (42,'kalisti@mail.com','kalisti','7mX2b!tVX#$fv%=2','2023-01-03',5321,2423,232,102,'NO'),
 (43,'stef@mail.com','stefi','qBkzzXeb9Wy!7p7n','2023-01-03',2344,493,300,140,'NO'),
 (44,'bill_pour@mail.com','bil_p','qOkszBeb9Ay!1p0k','2023-01-03',2344,493,300,140,'NO');
+
+INSERT INTO offer VALUES(0, 5164741179, 0 , 2.0,  'YES', 'YES', '2022-12-23', 5, 1, 'YES', 4, 'ACTIVE', '2022-12-23'),
+(null, 354449389, 1 , 2.0,  'YES', 'YES', '2022-12-23', 5, 1, 'NO', 32, 'ACTIVE', '2022-12-23'),
+(null, 364381224, 2 , 1.0,  'YES', 'YES', '2022-12-23', 15, 0, 'YES', 11, 'ACTIVE', '2022-12-23'),
+(null, 364381224, 3 , 3.0,  'NO', 'NO', '2022-12-23', 1, 0, 'NO', 21, 'INACTIVE', '2022-12-22'),
+(null, 1643818267, 4 , 8.11,  'NO', 'NO', '2022-12-23', 0, 9, 'NO', 10, 'ACTIVE', '2022-12-23'),
+(null, 1763830009, 5 , 1.30,  'NO', 'YES', '2022-12-23', 3, 1, 'YES', 10, 'ACTIVE', '2022-12-23'),
+(null, 1763830474, 6 , 4.02,  'YES', 'YES', '2022-12-23', 11, 1, 'NO',5, 'INACTIVE', '2022-12-22'),
+(null, 1997401665, 7 , 5.0,  'NO', 'NO', '2022-12-23', 3, 8, 'NO', 22, 'INACTIVE', '2022-12-22'),
+(null, 3354481184, 8 , 3.66,  'YES', 'YES', '2022-12-23', 1, 1, 'YES', 44, 'ACTIVE', '2022-12-23'),
+(null, 4101518891, 9 , 1.88,  'NO', 'NO', '2022-12-23', 5, 0, 'NO', 7, 'ACTIVE', '2022-12-23'),
+(null, 4356183595, 10 , 3.01,  'YES', 'YES', '2022-12-23', 2, 1, 'YES', 37, 'ACTIVE', '2022-12-23'),
+(null, 4931300543, 11 , 2.12,  'NO', 'YES', '2022-12-23', 10, 3, 'YES', 42, 'ACTIVE', '2022-12-23');
+
+INSERT INTO userlikes VALUES(5,5, 'LIKE'),
+(8,10, 'DISLIKE'),
+(12,1, 'LIKE'),
+(15,11, 'LIKE'),
+(41,2, 'LIKE'),
+(44,2, 'LIKE'),
+(19,2, 'LIKE'),
+(18,1, 'DISLIKE'),
+(17,2, 'LIKE'),
+(7,2,  'LIKE'),
+(8,7, 'DISLIKE'),
+(22,7, 'DISLIKE'),
+(26,7, 'DISLIKE'),
+(29,7, 'DISLIKE'),
+(20,11, 'LIKE'),
+(37,11, 'LIKE'),
+(38,11, 'LIKE'),
+(31,11, 'LIKE'),
+(44,10, 'LIKE'),
+(9,10, 'DISLIKE'),
+(14,9, 'LIKE'),
+(11,5, 'LIKE'),
+(13,7, 'DISLIKE'),
+(25,6, 'LIKE'),
+(28,6, 'LIKE'),
+(30,6, 'LIKE');

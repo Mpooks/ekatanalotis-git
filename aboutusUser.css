@@ -83,7 +83,7 @@ body{
  line-height: 60px;
  margin: 0 0px;
  padding-left: 0px;
- padding-right: 10px;
+ padding-right: 20px;
  }
  
  nav ul li a{
@@ -132,7 +132,7 @@ body{
  ul{
  position: absolute;
  width: auto;
- height: auto;
+ height: 180px;
  background: #13225B;
  top: 60px;
  right: -100%;
@@ -169,7 +169,7 @@ body{
  overflow: hidden;
  }
  
- .avatarDropdown .bnav{ /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
+ .avatarDropdown .bnav{ 
  border:2px solid #fff;
  outline:none;
  height:40px;
@@ -318,7 +318,7 @@ hr{
 
 
 
-p{
+.about_us_text p{
     font-size:20px;
     word-break: break-all;
 }
