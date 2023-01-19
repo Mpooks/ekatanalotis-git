@@ -154,7 +154,7 @@ label.logo{
  overflow: hidden;
  }
 
- .avatarDropdown .bnav{ /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
+ .avatarDropdown .bnav{ 
  border:2px solid #fff;
  outline:none;
  height:40px;
