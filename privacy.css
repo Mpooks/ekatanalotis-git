@@ -93,10 +93,10 @@ body{
     border-radius: 3px;
     }
     
-    .ulclass a.active,.ulclass a:hover{
-        transition: 0.5s;
-        background: #021727c9;
-        }
+    a.active,a:hover{
+    background: #021727c9;
+    transition: 0.5s;
+    }
     
     .checkbtn{
     font-size: 30px;
@@ -123,7 +123,7 @@ body{
     }
     }
     
-   
+    
     
     .avatarDropdown{
     
@@ -146,6 +146,12 @@ body{
     margin-left: 20px;
     transition: transform 0.7s ease-in-out;
     }
+
+    .ulclass a.active,.ulclass a:hover{
+        transition: 0.5s;
+        background: #021727c9;
+        }
+       
     
     .vertical {
     border-left: 6px solid black;
@@ -193,17 +199,15 @@ body{
     /*Apo edw prosthetw gia thn aksiologhsh*/
    
     .boxforinfo{
-    height: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    width: 90%;
-    top: 20%;
-    position: relative;
-    background-color:#fff;
-    border-radius: 5px;
-   }
+       background-color: #fff;
+       height: 80%;
+       margin: 0 auto;
+       margin-top: 100px;
+       width: 90%;
+       margin-bottom: 100px;
+       position: relative;
+       border-radius: 5px;
+      }
    
     .boxforinfo .tboxforinfo{
     background: linear-gradient( to right, midnightblue, #01dbdf);
@@ -228,45 +232,64 @@ body{
    
     }
     
-
- 
    
-    .boxforinfo .bboxforinfo  .tel_uni{
-       margin: 0 auto;
-       display: block;
-       font-size: 30px; 
-        width: 90%;
-        padding: 8px 16px;
-        border-radius: 10px;
-        box-shadow: 0px 5px 4px -1px rgba(0,0,0,0.1);
-        margin-bottom: 2%;
-   }
-
-   .boxforinfo .bboxforinfo  .email_uni{
-    margin: 0 auto;
-    display: block;
-    font-size: 30px; 
-     width: 90%;
-     padding: 8px 16px;
-     border-radius: 10px;
-     box-shadow: 0px 5px 4px -1px rgba(0,0,0,0.1);
-     margin-bottom: 2%;
+   
+    .boxforinfo .bboxforinfo .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 15px;
+    margin-left: 15px;
+    overflow-y: auto;
+    height:300px;
     }
-
-    .boxforinfo .bboxforinfo  .pin_uni{
-        margin: 0 auto;
-        display: block;
-        font-size: 30px; 
-         width: 90%;
-         padding: 8px 16px;
-         border-radius: 10px;
-         box-shadow: 0px 5px 4px -1px rgba(0,0,0,0.1);
+   
+    .boxforinfo .bboxforinfo .about_us_pic{
+       display: block;
+       display: flex;
+       justify-content: center;
+   
+    }
+   
+    .boxforinfo .bboxforinfo  .about_us_pic .info_pic{
+       margin-top: 2%;
+       height: 32%;
+       width: 60%;
+       max-width: 800px;
+   }
+   
+   hr{
+       border: none;
+   }
+   .boxforinfo .bboxforinfo .after_pic_line{
+       margin-top: 4%;
+       margin-bottom: 4%;
+       background: linear-gradient( to right, midnightblue, #01dbdf);
+       margin-left: 3%;
+       margin-right: 3%;
+       height: 5px;
+   }
+   
+   .boxforinfo .bboxforinfo .about_us_text{
+       display: block;
+       padding-bottom: 2%;
+       margin: 0 auto;
+       width: 90%;
+   
+   }
+   
+   .boxforinfo .bboxforinfo .end_line{
+       width: 100%;
+       height: 40px;
+       background-color: #c2c2c2;
+   
+   }
+   
+   
+   
+  .pclass{
+    font-size:20px;
+    word-break: break-all;
 }
-   
-
-   
-   
-   
    
    
    
@@ -325,25 +348,6 @@ body{
     margin-right: 10px;
     }
    }
-
-
-
-   .tel_li{
-    list-style-type: none;
-    margin: 0 auto;
-    text-decoration: none;
-
-   }
-
-   .ul_class{
-    width: 100%;
-   }
-
-   .tel_li a{
-    text-decoration: none;
-    color: #000;
-    word-break: break-word;
-   }
    @media (max-width: 858px){
     .checkbtn{
     display: block;
@@ -388,4 +392,3 @@ body{
     }
     
     }
-

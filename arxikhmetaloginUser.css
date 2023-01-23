@@ -499,11 +499,12 @@ input:checked + .slider:before {
  border-style: solid;
  border-color: midnightblue;
  margin: 0 auto;
- width: 700px;
- height: 360px;
+ width: 900px;
+ height: 460px;
  max-width: 100%;
  margin-top: 50px;
  z-index: 0;
+ margin-bottom: 100px;
 }
 
 .leaflet-popup-content-wrapper .leaflet-popup-content{ 
