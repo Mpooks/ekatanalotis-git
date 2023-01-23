@@ -122,9 +122,10 @@ if (event.key === "Enter") {
     myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
     myChartWeek.update();
   }else{
-  var regex_dates = /^[a-zA-Z!@#\$%\^\&*\)\(+=._]+$/;
+  /*var regex_dates = /^[a-zA-Z!@#\$%\^\&*\)\(+=._]+$/;*/
+  var regex_dates = /^\d{4}\-\d{1,2}$/;
 
-  if(regex_dates.test(winp.value))
+  if(!regex_dates.test(winp.value))
   {
     myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
     myChartWeek.config.options.scales.x.max = currentDate.getFullYear()+'-'+iniendDate;
@@ -526,6 +527,7 @@ function getlastweek(w, y) {
   return [ISOweekStart,lastdate,lastday,firstday,month,lastmonth,lastyear,firstyear];
 }
 prev.onclick=function(){
+  if(!(dateErr.innerHTML == "Invalid date.")){
 if(winp.value == null || winp.value == ""){
   const [prevstartDate,prevendDate,lastday,firstday,month,lastmonth]=getlastweek(weekNumber,currentDate.getFullYear());
   myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+prevstartDate;
@@ -552,6 +554,10 @@ year=currentDate.getFullYear();
 }else{
   convertforprornext(winp,0);
 }
+  }
+  else{
+    winp.value='';
+  }
 }
 
 function getnextweek(w, y) {
@@ -660,6 +666,7 @@ function getnextweek(w, y) {
 }
 
 next.onclick=function(){
+  if(!(dateErr.innerHTML == "Invalid date.")){
   if(winp.value == null || winp.value == ""){
     const [nextstartDate,nextendDate,lastday,firstday,month,lastmonth]=getnextweek(weekNumber,currentDate.getFullYear());
     myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+nextstartDate;
@@ -679,5 +686,9 @@ next.onclick=function(){
   }else{
     convertforprornext(winp,1);
   }
+}
+else{
+  winp.value='';
+}
 }
 }

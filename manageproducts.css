@@ -3,7 +3,7 @@ body{
  padding:0;
  margin:0;
  box-sizing:border-box;
- background: url("https://www.creativefabrica.com/wp-content/uploads/2020/03/14/A-Illustration-Vector-City-Background-Graphics-3644670-1.jpg") no-repeat center center fixed;
+ background: url("./A-Illustration-Vector-City-Background-Graphics-3644670-1.jpg") no-repeat center center fixed;
  background-size:cover;
  align-items:center;
  justify-content:center;
@@ -169,7 +169,7 @@ body{
  overflow: hidden;
  }
  
- .avatarDropdown .bnav{      /*ANTI GIA Button evala to bnav, giati eixate kanei define auto to class kai den to eixate thesei edw */
+ .avatarDropdown .bnav{      
  border:2px solid #fff;
  outline:none;
  height:40px;

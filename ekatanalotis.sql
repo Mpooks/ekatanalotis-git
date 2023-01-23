@@ -24,8 +24,8 @@ CREATE TABLE shop (
   shopid BIGINT NOT NULL AUTO_INCREMENT,
   sname VARCHAR(255) NOT NULL,
   stype ENUM('supermarket','convenience') NOT NULL,
-  latitude FLOAT NOT NULL,
-  longitude FLOAT NOT NULL,
+  latitude DOUBLE NOT NULL,
+  longitude DOUBLE NOT NULL,
   PRIMARY KEY (shopid),
   INDEX (sname)
 );
@@ -113,6 +113,12 @@ ON DELETE CASCADE ON UPDATE CASCADE,
 CONSTRAINT OFFERID
 FOREIGN KEY (liked_offer) REFERENCES offer(offer_id)
 ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE updatedMonth(
+thism DATE NOT NULL,
+idone ENUM('YES','NO') NOT NULL DEFAULT 'NO',
+PRIMARY KEY(thism)
 );
 
 
