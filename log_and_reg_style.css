@@ -361,17 +361,18 @@ input:checked + .slider:before {
  border-radius: 50%;
  }
 
-#mapid{
- border-radius: 10px;
- border-style: solid;
- border-color: midnightblue;
- margin: 0 auto;
- width: 700px;
- height: 360px;
- max-width: 100%;
- margin-top: 50px;
- z-index: 0;
-}
+ #mapid{
+   border-radius: 10px;
+   border-style: solid;
+   border-color: midnightblue;
+   margin: 0 auto;
+   width: 900px;
+   height: 460px;
+   max-width: 100%;
+   margin-top: 50px;
+   z-index: 0;
+   margin-bottom: 187px;
+  }
  
 .leaflet-popup-content-wrapper .leaflet-popup-content{ 
  height: 290px;

@@ -34,21 +34,10 @@ body{
  }
  }
  
- 
-
- 
- 
  .myImage{
  vertical-align:middle;
  height: 64px;
- }
- 
- .userimage{
- height:150px;
- width:150px;
  } 
- 
- 
  
  button:hover{
  cursor:pointer; 
