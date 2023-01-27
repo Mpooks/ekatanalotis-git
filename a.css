@@ -3,12 +3,20 @@ body {font-family: Verdana, sans-serif;}
 .mySlides {display: none;}
 img {vertical-align: middle;}
 
+
+.slideshow_text{
+  text-align: center;
+  font-size: 30px;
+  color: whitesmoke;
+  margin-bottom: 40px;
+  margin-top: -4%;
+}
+
 /* Slideshow container */
 .slideshow-container {
   max-width: 500px;
   position: relative;
   margin: auto;
-  margin-top: -6%;
 }
 
 
@@ -35,6 +43,8 @@ img {vertical-align: middle;}
   animation-name: fade;
   animation-duration: 1.5s;
 }
+
+
 
 @keyframes fade {
   from {opacity: .4} 
