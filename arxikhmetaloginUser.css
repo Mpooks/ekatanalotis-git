@@ -131,7 +131,7 @@ button.nav {
  }
 
  .serch_bar_div .search-bar .dropdown_div #selectcat{
- height: 54px;
+ height: 100%;
  width: 40%;
  font-size: 18px;
  position: absolute;
