@@ -193,15 +193,13 @@ body{
     /*Apo edw prosthetw gia thn aksiologhsh*/
    
     .boxforinfo{
+    background-color: #fff;
     height: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     margin-top: 100px;
-    margin-bottom: 226px;
     width: 90%;
-    top: 20%;
+    margin-bottom: 100px;
     position: relative;
-    background-color:#fff;
     border-radius: 5px;
    }
    
