@@ -86,10 +86,10 @@ body{
     border-radius: 3px;
     }
     
-    a.active,a:hover{
-    background: #021727c9;
-    transition: 0.5s;
-    }
+    .ulclass a.active,.ulclass a:hover{
+        transition: 0.5s;
+        background: #021727c9;
+        }
     
     .checkbtn{
     font-size: 30px;
