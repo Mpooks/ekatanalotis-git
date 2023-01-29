@@ -73,7 +73,7 @@ currentDate = new Date();
         (24 * 60 * 60 * 1000));
          
   var weekNumber = Math.ceil(days / 7);
-  const [inistartDate,iniendDate,inilastday,inistartday,inimonth,inilastmonth]=getDateOfISOWeek(weekNumber,currentDate.getFullYear());
+  const [inistartDate,iniendDate,inilastday,inistartday,inimonth,inilastmonth,inilastyear]=getDateOfISOWeek(weekNumber,currentDate.getFullYear());
 
 const config = {
   type: 'line',
@@ -167,9 +167,9 @@ function convert(datestr){
     dateErr.innerHTML = "Invalid date.";
     }else{
 
-    const [startDate,endDate,lastday,startday,month,lastmonth]=getDateOfISOWeek(week,year);
+    const [startDate,endDate,lastday,startday,month,lastmonth,lastyear]=getDateOfISOWeek(week,year);
     myChartWeek.config.options.scales.x.min = year+'-'+startDate;
-    myChartWeek.config.options.scales.x.max = year+'-'+endDate;
+    myChartWeek.config.options.scales.x.max = lastyear+'-'+endDate;
     myChartWeek.update();
 
     var regex_date = /^\d{1,2}\-\d{1,2}$/;
@@ -298,6 +298,7 @@ function convertforprornext(datestr,np){
         ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
     else
         ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
+    var lastyear=y;
     lastday = ISOweekStart.getDate() + 6;
     var firstday=ISOweekStart.getDate();
     var month=ISOweekStart.getMonth() + 1; 
@@ -325,6 +326,7 @@ function convertforprornext(datestr,np){
       lastday=lastday-31;
       if(lastmonth>12){
         lastmonth=1;
+        lastyear=parseInt(lastyear)+1;
       }
     }
     }
@@ -340,6 +342,7 @@ function convertforprornext(datestr,np){
     lastmonth=lastmonth.toString();
     firstday=firstday.toString();
     lastday=lastday.toString();
+    lastyear=lastyear.toString();
     if(month.substring(1, 2)===""){
       month=extrafd.concat(month);
     }
@@ -354,7 +357,7 @@ function convertforprornext(datestr,np){
     }
     ISOweekStart=month+'-'+firstday;
     var lastdate=lastmonth+'-'+lastday;
-    return [ISOweekStart,lastdate,lastday,firstday,month,lastmonth];
+    return [ISOweekStart,lastdate,lastday,firstday,month,lastmonth,lastyear];
 }
   bw.onclick= function reset(){
   myChartWeek.config.options.scales.x.min = currentDate.getFullYear()+'-'+inistartDate;
