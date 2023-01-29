@@ -8,8 +8,15 @@ body{
  align-items:center;
  justify-content:center;
  overflow-x: hidden;
+ height: 100%;
+position: relative;
  }
- 
+
+ html{
+  height: 100%;
+ }
+
+
 *{
  font-family: Bahnschrift SemiBold, Bahnschrift;
  margin: 0;
@@ -127,7 +134,7 @@ body{
  }
 
  .serch_bar_div .search-bar .dropdown_div #selectcat{
- height: 60px;
+ height: 100%;
  width: 40%;
  font-size: 18px;
  position: absolute;
@@ -972,3 +979,5 @@ background: #fff;
       .autoform{
         width: 100%;
       }
+
+      
