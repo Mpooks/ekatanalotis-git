@@ -7,7 +7,7 @@ async function gotoev(sid,md){
     window.location='evaluationUser.html?#';
     }
     else if(md>50 || isNaN(md)){
-      alert("You have to be in a 50m radius to add an offer!");
+      alert("You have to be in a 50m radius to evaluate an offer!");
     }
 }
 
@@ -20,7 +20,7 @@ async function gotoeva(sid,md){
   window.location='evaluationAdmin.html?#';
 }
 else if(md>50 || isNaN(md)){
-  alert("You have to be in a 50m radius to add an offer!");
+  alert("You have to be in a 50m radius to evaluate an offer!");
 }
 }
 
