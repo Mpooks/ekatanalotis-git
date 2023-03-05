@@ -11,7 +11,8 @@ async function mapd(){
     mymap.addLayer(
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png")
       );  // eisagwgi dedomenwn sto map mas mesw tou link
-    
+      var redIcon = new L.Icon({iconUrl:'marker-icon-2x-red.png',iconSize: [25, 41],
+      iconAnchor: [12, 41],popupAnchor: [1, -34],});
     let marker, circle, zoomed;
         
     let markersLayer = L.layerGroup(); 
@@ -42,7 +43,7 @@ async function mapd(){
       let lat=parseFloat(data[i].latitude);
       let long=parseFloat(data[i].longitude);
       let sid=data[i].shopid;
-      let marker = L.marker(L.latLng(lat,long), {title: title});
+      
     
       var formData1= new FormData();
       formData1.append('s', data[i].shopid);
@@ -52,7 +53,7 @@ async function mapd(){
       if (data1.length==0) {
         let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="noofbut" onclick="gotol()"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
     
-    
+        let marker = L.marker(L.latLng(lat,long), {title: title});
         marker.bindPopup(template[2] + template[0] + template[1] );
         marker.addTo(markersLayer);
       }
@@ -63,16 +64,14 @@ async function mapd(){
           str=str.concat(a);
         }
           let template = ['<button class="but" onclick="gotol()"> Review </button>',`<button class="but" onclick="gotol()"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
-         marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+          let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+          marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
          marker.addTo(markersLayer);
     }
     
     }
     }
     
-    
-    var redIcon = new L.Icon({iconUrl:'marker-icon-2x-red.png',iconSize: [25, 41],
-    iconAnchor: [12, 41],popupAnchor: [1, -34],});
     
     var is = document.getElementById('searchtext9');
     var el = document.querySelector(".search-button");
@@ -90,7 +89,7 @@ async function mapd(){
       let lat=parseFloat(data[i].latitude);
       let long=parseFloat(data[i].longitude);
       let sid=data[i].shopid;
-      let marker = L.marker(L.latLng(lat,long), {title: title});
+      
     
       var formData1= new FormData();
       formData1.append('s', data[i].shopid);
@@ -100,7 +99,7 @@ async function mapd(){
       if (data1.length==0) {
         let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="noofbut" onclick="gotol()"> New offer </button></a>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
     
-    
+        let marker = L.marker(L.latLng(lat,long), {title: title});
         marker.bindPopup(template[2] + template[0] + template[1] );
         marker.addTo(markersLayer);
       }
@@ -111,7 +110,8 @@ async function mapd(){
           str=str.concat(a);
         }
           let template = ['<button class="but" id="'+sid+'" onclick="gotol()"> Review </button>',`<button class="but" onclick="gotol()"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
-         marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+          let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+          marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
          marker.addTo(markersLayer);
       }
     
@@ -133,7 +133,7 @@ async function mapd(){
       let lat=parseFloat(data[i].latitude);
       let long=parseFloat(data[i].longitude);
       let sid=data[i].shopid;
-      let marker = L.marker(L.latLng(lat,long), {title: title});
+      
     
       var formData1= new FormData();
       formData1.append('s', data[i].shopid);
@@ -143,7 +143,7 @@ async function mapd(){
       if (data1.length==0) {
         let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="noofbut" onclick="gotol()"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
     
-    
+        let marker = L.marker(L.latLng(lat,long), {title: title});
         marker.bindPopup(template[2] + template[0] + template[1] );
         marker.addTo(markersLayer);
       }
@@ -154,7 +154,8 @@ async function mapd(){
           str=str.concat(a);
         }
           let template = ['<button class="but" id="'+sid+'" onclick="gotol()"> Review </button>',`<button class="but" onclick="gotol()"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
-         marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+          let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+          marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
          marker.addTo(markersLayer);
       }
     
@@ -244,7 +245,7 @@ async function mapd(){
           let lat=parseFloat(data[i].latitude);
           let long=parseFloat(data[i].longitude);
           let sid=data[i].shopid;
-          let marker = L.marker(L.latLng(lat,long), {title: title});
+          
         
           var formData1= new FormData();
           formData1.append('sH',sid);
@@ -255,7 +256,7 @@ async function mapd(){
           if (data1.length==0) {
             let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="noofbut" onclick="gotol()"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
     
-    
+            let marker = L.marker(L.latLng(lat,long), {title: title});
         marker.bindPopup(template[2] + template[0] + template[1] );
             marker.addTo(markersLayer);
           }
@@ -266,7 +267,8 @@ async function mapd(){
               str=str.concat(a);
             }
               let template = ['<button class="but" id="'+sid+'" onclick="gotol()"> Review </button>',`<button class="but" onclick="gotol()"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
-             marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+              let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+              marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
              marker.addTo(markersLayer);
         }
         }
@@ -285,7 +287,7 @@ async function mapd(){
       let lat=parseFloat(data[i].latitude);
       let long=parseFloat(data[i].longitude);
       let sid=data[i].shopid;
-      let marker = L.marker(L.latLng(lat,long), {title: title});
+     
     
       var formData1= new FormData();
       formData1.append('s', data[i].shopid);
@@ -295,7 +297,7 @@ async function mapd(){
       if (data1.length==0) {
         let template = [ `<div class="row"><h2 class="popuph2">No offers!</h2></div>`,`<button class="noofbut" onclick="gotol()"> New offer </button>`,'<h3 class="popuph3">'+data[i].sname+'</h3>']
     
-    
+        let marker = L.marker(L.latLng(lat,long), {title: title});
         marker.bindPopup(template[2] + template[0] + template[1] );
         marker.addTo(markersLayer);
       }
@@ -306,7 +308,8 @@ async function mapd(){
           str=str.concat(a);
         }
           let template = ['<button class="but" id="'+sid+'" onclick="gotol()"> Review </button>',`<button class="but" onclick="gotol()"> New offer </button>`,'<h2 class="popuph3">'+title+'</h2>','<div class="row">'+str+'</div>'];
-         marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
+          let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+          marker.bindPopup(template[2] + template[3] + template[0] + template[1]);
          marker.addTo(markersLayer);
     }
               }

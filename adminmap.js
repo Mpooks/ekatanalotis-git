@@ -98,7 +98,7 @@ async function mapd(){
       let lat=parseFloat(data[i].latitude);
       let long=parseFloat(data[i].longitude);
       let sid=data[i].shopid;
-      let marker = L.marker(L.latLng(lat,long), {title: title});
+      
       var md=dist(lat,long);
       var formData1= new FormData();
       formData1.append('s', data[i].shopid);
@@ -108,13 +108,17 @@ async function mapd(){
       if (data1.length==0) {
         if(md>wantedd || isNaN(md)){
         let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
+        let marker = L.marker(L.latLng(lat,long), {title: title});
         marker.bindPopup(template[2] + template[0] + template[1] );
+        marker.addTo(markersLayer);
       }
       else{
         let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
+        let marker = L.marker(L.latLng(lat,long), {title: title});
         marker.bindPopup(template[2] + template[0] + template[1] );
-      }
         marker.addTo(markersLayer);
+      }
+        
       }
       else{
         var str='';
@@ -124,13 +128,17 @@ async function mapd(){
         }
         if(md>wantedd || isNaN(md)){
           let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
-         marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          marker.addTo(markersLayer);
         }
         else{
           let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
-         marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          marker.addTo(markersLayer);
         }
-         marker.addTo(markersLayer);
+         
     }
     
     }
@@ -153,7 +161,7 @@ async function mapd(){
       let lat=parseFloat(data[i].latitude);
       let long=parseFloat(data[i].longitude);
       let sid=data[i].shopid;
-      let marker = L.marker(L.latLng(lat,long), {title: title});
+      
       var md=dist(lat,long);
       
       var formData1= new FormData();
@@ -165,15 +173,16 @@ async function mapd(){
         if(md>wantedd || isNaN(md)){
           let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
-    
+          let marker = L.marker(L.latLng(lat,long), {title: title});
           marker.bindPopup(template[2] + template[0] + template[1] );
+          marker.addTo(markersLayer);
         }else{
         let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
-    
+        let marker = L.marker(L.latLng(lat,long), {title: title});
         marker.bindPopup(template[2] + template[0] + template[1] );
-        }
         marker.addTo(markersLayer);
+        }
       }
       else{
         var str='';
@@ -183,12 +192,15 @@ async function mapd(){
         }
         if(md>wantedd || isNaN(md)){
           let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
-         marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          marker.addTo(markersLayer);
         }else{
           let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
-         marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          marker.addTo(markersLayer);
         }
-         marker.addTo(markersLayer);
       }
     
       }
@@ -209,7 +221,7 @@ async function mapd(){
       let lat=parseFloat(data[i].latitude);
       let long=parseFloat(data[i].longitude);
       let sid=data[i].shopid;
-      let marker = L.marker(L.latLng(lat,long), {title: title});
+      
       var md=dist(lat,long);
     
       var formData1= new FormData();
@@ -221,15 +233,16 @@ async function mapd(){
         if(md>wantedd || isNaN(md)){
           let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
-    
+          let marker = L.marker(L.latLng(lat,long), {title: title});
         marker.bindPopup(template[2] + template[0] + template[1] );
+        marker.addTo(markersLayer);
         }else{
         let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
-    
+        let marker = L.marker(L.latLng(lat,long), {title: title});
         marker.bindPopup(template[2] + template[0] + template[1] );
-        }
         marker.addTo(markersLayer);
+        }
       }
       else{
         var str='';
@@ -239,12 +252,15 @@ async function mapd(){
         }
         if(md>wantedd || isNaN(md)){
           let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
-         marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          marker.addTo(markersLayer);
         }else{
           let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
-         marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          marker.addTo(markersLayer);
         }
-         marker.addTo(markersLayer);
       }
     
       }
@@ -288,22 +304,24 @@ async function mapd(){
             if(md>wantedd || isNaN(md)){
               let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
                marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+               marker.addTo(markersLayer);
             }else{
             let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
                marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+               marker.addTo(markersLayer);
             }
-               marker.addTo(markersLayer);  
             
           }else{
           let marker = L.marker(L.latLng(lat,long));
           if(md>wantedd || isNaN(md)){
             let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
           marker.bindPopup(template[2] + template[0] + template[1] );
+          marker.addTo(markersLayer);
           }else{
           let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
           marker.bindPopup(template[2] + template[0] + template[1] );
+          marker.addTo(markersLayer);
           }
-             marker.addTo(markersLayer);
         }
         
         
@@ -344,7 +362,7 @@ async function mapd(){
           let lat=parseFloat(data[i].latitude);
           let long=parseFloat(data[i].longitude);
           let sid=data[i].shopid;
-          let marker = L.marker(L.latLng(lat,long), {title: title});
+          
           var md=dist(lat,long);
         
           var formData1= new FormData();
@@ -357,15 +375,16 @@ async function mapd(){
             if(md>wantedd || isNaN(md)){
               let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
-    
+              let marker = L.marker(L.latLng(lat,long), {title: title});
               marker.bindPopup(template[2] + template[0] + template[1]);
+              marker.addTo(markersLayer);
             }else{
             let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
-    
+            let marker = L.marker(L.latLng(lat,long), {title: title});
         marker.bindPopup(template[2] + template[0] + template[1]);
+        marker.addTo(markersLayer);
             }
-            marker.addTo(markersLayer);
           }
           else{
             var str='';
@@ -375,12 +394,15 @@ async function mapd(){
             }
             if(md>wantedd || isNaN(md)){
               let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
-             marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+              let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+              marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+              marker.addTo(markersLayer);
             }else{
               let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
-             marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+              let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+              marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+              marker.addTo(markersLayer);
             }
-             marker.addTo(markersLayer);
         }
         }
         }
@@ -398,7 +420,7 @@ async function mapd(){
       let lat=parseFloat(data[i].latitude);
       let long=parseFloat(data[i].longitude);
       let sid=data[i].shopid;
-      let marker = L.marker(L.latLng(lat,long), {title: title});
+      
       var md=dist(lat,long);
     
       var formData1= new FormData();
@@ -410,15 +432,16 @@ async function mapd(){
         if(md>wantedd || isNaN(md)){
           let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<button class="noofbut" onclick="notclose()"> Add </button>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
-    
+          let marker = L.marker(L.latLng(lat,long), {title: title});
         marker.bindPopup(template[2] + template[0] + template[1] );
+        marker.addTo(markersLayer);
         }else{
         let template = [ `<div class="row" id="rowr"><h2 class="popuph2">No offers!</h2></div>`,'<a href="#offerd"><button class="noofbut" onclick="getsid('+sid+')"> Add </button></a>','<h3 class="popuph3">'+data[i].sname+'</h3>']
     
-    
+        let marker = L.marker(L.latLng(lat,long), {title: title});
         marker.bindPopup(template[2] + template[0] + template[1] );
-        }
         marker.addTo(markersLayer);
+        }
       }
       else{
         var str='';
@@ -428,12 +451,15 @@ async function mapd(){
         }
         if(md>wantedd || isNaN(md)){
           let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<button class="but" onclick="notclose()"> Add </button>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
-         marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          marker.addTo(markersLayer);
         }else{
           let template = ['<button class="but" id="'+sid+'" onclick="gotoeva('+sid+','+md+')"> Review </button>','<a href="#offerd"><button class="but" onclick="getsid('+sid+')"> Add </button></a>','<h2 class="popuph3">'+title+'</h2>','<div class="row" id="rowr">'+str+'</div>','<button class="but" onclick="gotodel('+sid+')"> Delete </button>'];
-         marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          let marker = L.marker(L.latLng(lat,long), {icon:redIcon});
+          marker.bindPopup(template[2] + template[3] + template[0] + template[1] + template[4]);
+          marker.addTo(markersLayer);
         }
-         marker.addTo(markersLayer);
     }
               }
               }
